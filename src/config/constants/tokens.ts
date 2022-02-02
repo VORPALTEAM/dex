@@ -13,14 +13,14 @@ const defineTokens = <T extends TokenList>(t: T) => t
 export const mainnetTokens = defineTokens({
   wbnb: new Token(
     MAINNET,
-    '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c',
+    '0x094616F0BdFB0b526bD735Bf66Eca0Ad254ca81F',
     18,
     'WBNB',
     'Wrapped BNB',
     'https://www.binance.com/',
   ),
   // bnb here points to the wbnb contract. Wherever the currency BNB is required, conditional checks for the symbol 'BNB' can be used
-  bnb: new Token(MAINNET, '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c', 18, 'BNB', 'BNB', 'https://www.binance.com/'),
+  bnb: new Token(MAINNET, '0x094616F0BdFB0b526bD735Bf66Eca0Ad254ca81F', 18, 'BNB', 'BNB', 'https://www.binance.com/'),
   cake: new Token(
     MAINNET,
     '0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82',
@@ -1937,6 +1937,7 @@ export const testnetTokens = defineTokens({
     'Wrapped BNB',
     'https://www.binance.com/',
   ),
+  avk: new Token(TESTNET, '0x836634ce58c151d690dcd457fd38982bbc974548', 18, 'AVK', 'Avokado Token', ''),
   cake: new Token(
     TESTNET,
     '0xa35062141Fa33BCA92Ce69FeD37D0E8908868AAe',
@@ -1984,7 +1985,7 @@ const tokens = () => {
   return mainnetTokens
 }
 
-const unserializedTokens = tokens()
+const unserializedTokens = testnetTokens
 
 type SerializedTokenList = Record<keyof typeof unserializedTokens, SerializedToken>
 

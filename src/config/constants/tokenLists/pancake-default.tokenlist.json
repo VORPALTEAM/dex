@@ -11,12 +11,69 @@
   "keywords": ["pancake", "default"],
   "tokens": [
     {
+      "name": "CAKE Token",
+      "symbol": "CAKE",
+      "address": "0xa35062141Fa33BCA92Ce69FeD37D0E8908868AAe",
+      "chainId": 97,
+      "decimals": 18,
+      "logoURI": ""
+    },
+    {
+      "name": "NMBL1",
+      "symbol": "NMBL1",
+      "address": "0x90d14eea111e4c5204630ef982f74cec478260ec",
+      "chainId": 97,
+      "decimals": 18,
+      "logoURI": ""
+    },
+    {
+      "name": "NMBL2",
+      "symbol": "NMBL2",
+      "address": "0x938c6cd3ade027dd7de645d69626f166a2d05103",
+      "chainId": 97,
+      "decimals": 18,
+      "logoURI": ""
+    },
+    {
+      "name": "PROFIT Token",
+      "symbol": "PIB",
+      "address": "0x62CD80B62FA44Ea994B4080334015ED4108D919A",
+      "chainId": 97,
+      "decimals": 18,
+      "logoURI": ""
+    },
+    {
+      
+      "name": "BUSD Token",
+      "symbol": "BUSD",
+      "address": "0x78867bbeef44f2326bf8ddd1941a4439382ef2a7",
+      "chainId": 97,
+      "decimals": 18,
+      "logoURI": ""
+    },
+    {
+      "name": "AVOKADO Token",
+      "symbol": "AVK",
+      "address": "0x836634ce58c151d690dcd457fd38982bbc974548",
+      "chainId": 97,
+      "decimals": 18,
+      "logoURI": ""
+    },
+    {
+      "name": "Tether USD",
+      "symbol": "USDT",
+      "address": "0xcb2951e90d8dcf16e1fa84ac0c83f48906d6a744",
+      "chainId": 97,
+      "decimals": 6,
+      "logoURI": ""
+    },
+    {
       "name": "WBNB Token",
       "symbol": "WBNB",
-      "address": "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c",
-      "chainId": 56,
+      "address": "0xae13d989dac2f0debff460ac112a837c89baa7cd",
+      "chainId": 97,
       "decimals": 18,
-      "logoURI": "https://pancakeswap.finance/images/tokens/0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c.png"
+      "logoURI": "https://pancakeswap.finance/images/tokens/0x094616F0BdFB0b526bD735Bf66Eca0Ad254ca81F.png"
     },
     {
       "name": "BUSD Token",

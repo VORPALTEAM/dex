@@ -1,4 +1,4 @@
 // BNB Address
-const BNB_ADDRESS = '0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c'
+const BNB_ADDRESS = '0x094616F0BdFB0b526bD735Bf66Eca0Ad254ca81F'
 
 export { BNB_ADDRESS }

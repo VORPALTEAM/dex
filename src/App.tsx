@@ -1,15 +1,15 @@
 import React, { lazy } from 'react'
 import { Router, Redirect, Route, Switch } from 'react-router-dom'
 import { ResetCSS } from '@pancakeswap/uikit'
-import { useWeb3React } from '@web3-react/core'
+// import { useWeb3React } from '@web3-react/core'
 import BigNumber from 'bignumber.js'
 import useEagerConnect from 'hooks/useEagerConnect'
 import useUserAgent from 'hooks/useUserAgent'
 import useScrollOnRouteChange from 'hooks/useScrollOnRouteChange'
 import { usePollBlockNumber } from 'state/block/hooks'
 import { usePollCoreFarmData } from 'state/farms/hooks'
-import { useFetchProfile } from 'state/profile/hooks'
-import { nftsBaseUrl } from 'views/Nft/market/constants'
+// import { useFetchProfile } from 'state/profile/hooks'
+// import { nftsBaseUrl } from 'views/Nft/market/constants'
 import SubgraphHealthIndicator from 'components/SubgraphHealthIndicator'
 import GlobalStyle from './style/Global'
 import Menu from './components/Menu'
@@ -31,7 +31,7 @@ import RedirectOldRemoveLiquidityPathStructure from './views/RemoveLiquidity/red
 import { RedirectPathToSwapOnly, RedirectToSwap } from './views/Swap/redirects'
 import { useInactiveListener } from './hooks/useInactiveListener'
 import useSentryUser from './hooks/useSentryUser'
-import useNftClaimStatusCheck from './hooks/useNftClaimStatusCheck'
+// import useNftClaimStatusCheck from './hooks/useNftClaimStatusCheck'
 
 // Route-based code splitting
 // Only pool is included in the main bundle because of it's the most visited page
@@ -65,7 +65,7 @@ BigNumber.config({
 })
 
 const App: React.FC = () => {
-  const { account } = useWeb3React()
+  // const { account } = useWeb3React()
 
   usePollBlockNumber()
   useEagerConnect()

@@ -37,6 +37,16 @@ const farms: SerializedFarmConfig[] = [
     token: serializedTokens.busd,
     quoteToken: serializedTokens.wbnb,
   },
+  {
+    pid: 1,
+    lpSymbol: 'SWAP-A LP',
+    lpAddresses: {
+      97: '0x34b826a48b3e97287d31e1d79bea48fcbf49426b',
+      56: '0x34b826a48b3e97287d31e1d79bea48fcbf49426b',
+    },
+    token: serializedTokens.rtt,
+    quoteToken: serializedTokens.swt,
+  },
   /**
    * V3 by order of release (some may be out of PID order due to multiplier boost)
    */

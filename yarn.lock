@@ -13479,6 +13479,11 @@ jsbi@^3.1.1:
   resolved "https://registry.yarnpkg.com/jsbi/-/jsbi-3.1.5.tgz#70c2aaa2f75e1dc7604fed45298061ca23724046"
   integrity sha512-w2BY0VOYC1ahe+w6Qhl4SFoPvPsZ9NPHY4bwass+LCgU7RK3PBoVQlQ3G1s7vI8W3CYyJiEXcbKF7FIM/L8q3Q==
 
+jsbi@^3.1.4:
+  version "3.2.5"
+  resolved "https://registry.yarnpkg.com/jsbi/-/jsbi-3.2.5.tgz#b37bb90e0e5c2814c1c2a1bcd8c729888a2e37d6"
+  integrity sha512-aBE4n43IPvjaddScbvWRA2YlTzKEynHzu7MqOyTipdHucf/VxS63ViCjxYRg86M8Rxwbt/GfzHl1kKERkt45fQ==
+
 jsbn@~0.1.0:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/jsbn/-/jsbn-0.1.1.tgz#a5e654c2e5a2deb5f201d96cefbca80c0ef2f513"
@@ -16486,6 +16491,29 @@ performance-now@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/performance-now/-/performance-now-2.1.0.tgz#6309f4e0e5fa913ec1c69307ae364b4b377c9e7b"
   integrity sha1-Ywn04OX6kT7BxpMHrjZLSzd8nns=
+
+pickleswap-sdk@^2.4.3:
+  version "2.4.3"
+  resolved "https://registry.yarnpkg.com/pickleswap-sdk/-/pickleswap-sdk-2.4.3.tgz#f9dd0df4418a8481a99ee5d2aab0d8af7c8156ff"
+  integrity sha512-wf/1lo2TDM2zK2geTSis2oCJgWwOwjR42zFlAnheL/vaUFGdfgJFosQBFmajIbtNWDKV0xLL1MMzsZebXZ445w==
+  dependencies:
+    big.js "^5.2.2"
+    decimal.js-light "^2.5.0"
+    jsbi "^3.1.4"
+    tiny-invariant "^1.1.0"
+    tiny-warning "^1.0.3"
+    toformat "^2.0.0"
+
+pickleswap-uikit@^0.65.6:
+  version "0.65.6"
+  resolved "https://registry.yarnpkg.com/pickleswap-uikit/-/pickleswap-uikit-0.65.6.tgz#d50ee3b252a9fb46eb5d7e507ff768bb7aa43b42"
+  integrity sha512-I10FA7KIXaiRgZas3z23Lm8SNFZ+66uwQL7o4azzxctiQ6N1QSMXqGh3V6YEpq22bMAr9AJEVJPsA2ZsM4L8cA==
+  dependencies:
+    "@popperjs/core" "^2.9.2"
+    "@types/styled-system" "^5.1.10"
+    lodash "^4.17.20"
+    react-popper "^2.2.5"
+    styled-system "^5.1.5"
 
 picomatch@^2.0.4, picomatch@^2.2.1, picomatch@^2.2.2, picomatch@^2.2.3:
   version "2.3.0"

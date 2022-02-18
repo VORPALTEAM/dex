@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useState } from 'react'
 import { BigNumber } from '@ethersproject/bignumber'
 import { TransactionResponse } from '@ethersproject/providers'
 import { Currency, currencyEquals, ETHER, TokenAmount, WETH } from '@pancakeswap/sdk'
-import { Button, Text, Flex, AddIcon, CardBody, Message, useModal } from '@pancakeswap/uikit'
+import { Button, Text, Flex, AddIcon, CardBody, Message, useModal } from 'pickleswap-uikit'
 import { RouteComponentProps } from 'react-router-dom'
 import { useIsTransactionUnsupported } from 'hooks/Trades'
 import { useTranslation } from 'contexts/Localization'
@@ -167,11 +167,12 @@ export default function AddLiquidity({
         wrappedCurrency(currencyB, chainId)?.address ?? '',
         parsedAmountA.raw.toString(),
         parsedAmountB.raw.toString(),
-        amountsMin[Field.CURRENCY_A].toString(),
-        amountsMin[Field.CURRENCY_B].toString(),
+        "0",
+        "0",
         account,
         deadline.toHexString(),
       ]
+      
       value = null
     }
 

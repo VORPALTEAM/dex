@@ -1931,11 +1931,25 @@ export const mainnetTokens = defineTokens({
 export const testnetTokens = defineTokens({
   wbnb: new Token(
     TESTNET,
-    '0x094616F0BdFB0b526bD735Bf66Eca0Ad254ca81F',
+    '0xdbb9adb7c7ce5ceecec2f86e2908070e2cc68288',
     18,
     'WBNB',
     'Wrapped BNB',
     'https://www.binance.com/',
+  ),
+  swt: new Token(
+    TESTNET,
+    '0x676f285194abf08f12b00110dcd510e36df1237b',
+    18,
+    'SWT',
+    'SWT Token',
+  ),
+  rtt: new Token(
+    TESTNET,
+    '0xa4cd3cbb12709115d400b11b29abfd6072d465be',
+    18,
+    'RTT',
+    'RTT Token',
   ),
   avk: new Token(TESTNET, '0x836634ce58c151d690dcd457fd38982bbc974548', 18, 'AVK', 'Avokado Token', ''),
   cake: new Token(

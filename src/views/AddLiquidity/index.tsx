@@ -167,12 +167,12 @@ export default function AddLiquidity({
         wrappedCurrency(currencyB, chainId)?.address ?? '',
         parsedAmountA.raw.toString(),
         parsedAmountB.raw.toString(),
-        "0",
-        "0",
+        '0',
+        '0',
         account,
         deadline.toHexString(),
       ]
-      
+
       value = null
     }
 

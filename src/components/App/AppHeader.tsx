@@ -40,18 +40,16 @@ const AppHeader: React.FC<Props> = ({ title, subtitle, helper, backTo, noConfig 
           </Heading>
           <Flex alignItems="center">
             {helper && <QuestionHelper text={helper} mr="4px" placement="top-start" />}
-            <Text color="textSubtle" fontSize="14px">
-              {subtitle}
-            </Text>
+            <Text fontSize="14px">{subtitle}</Text>
           </Flex>
         </Flex>
       </Flex>
       {!noConfig && (
         <Flex alignItems="center">
           <NotificationDot show={expertMode}>
-            <GlobalSettings />
+            <GlobalSettings color="text" />
           </NotificationDot>
-          <Transactions />
+          <Transactions color="text" />
         </Flex>
       )}
     </AppHeaderContainer>

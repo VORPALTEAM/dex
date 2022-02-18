@@ -15,7 +15,19 @@ import { AppHeader, AppBody } from '../../components/App'
 import Page from '../Page'
 
 const Body = styled(CardBody)`
-  background-color: ${({ theme }) => theme.colors.dropdownDeep};
+  background-color: #1a192e;
+`
+
+const CustomButton = styled(Button)`
+  display: flex;
+  justify-content: center;
+  width: 192px;
+  height: 30px;
+  align-items: center;
+  border: 1px solid #acf800;
+  border-radius: 15px;
+  color: #acf800;
+  padding: 10px;
 `
 
 export default function Pool() {
@@ -94,16 +106,25 @@ export default function Pool() {
               <Text color="textSubtle" mb="8px">
                 {t("Don't see a pool you joined?")}
               </Text>
-              <Button id="import-pool-link" variant="secondary" scale="sm" as={Link} to="/find">
+              <CustomButton id="import-pool-link" variant="secondary" scale="sm" as={Link} to="/find">
                 {t('Find other LP tokens')}
-              </Button>
+              </CustomButton>
             </Flex>
           )}
         </Body>
         <CardFooter style={{ textAlign: 'center' }}>
-          <Button id="join-pool-button" as={Link} to="/add" width="100%" startIcon={<AddIcon color="white" />}>
-            {t('Add Liquidity')}
-          </Button>
+          <div style={{ textAlign: 'center', padding: '23px' }}>
+            <Button
+              variant="subPrimary"
+              id="join-pool-button"
+              as={Link}
+              to="/add"
+              width="100%"
+              startIcon={<AddIcon color="white" />}
+            >
+              {t('Add Liquidity')}
+            </Button>
+          </div>
         </CardFooter>
       </AppBody>
     </Page>

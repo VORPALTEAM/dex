@@ -16492,10 +16492,10 @@ performance-now@^2.1.0:
   resolved "https://registry.yarnpkg.com/performance-now/-/performance-now-2.1.0.tgz#6309f4e0e5fa913ec1c69307ae364b4b377c9e7b"
   integrity sha1-Ywn04OX6kT7BxpMHrjZLSzd8nns=
 
-pickleswap-sdk@^2.4.3:
-  version "2.4.3"
-  resolved "https://registry.yarnpkg.com/pickleswap-sdk/-/pickleswap-sdk-2.4.3.tgz#f9dd0df4418a8481a99ee5d2aab0d8af7c8156ff"
-  integrity sha512-wf/1lo2TDM2zK2geTSis2oCJgWwOwjR42zFlAnheL/vaUFGdfgJFosQBFmajIbtNWDKV0xLL1MMzsZebXZ445w==
+pickleswap-sdk2@^2.5.6:
+  version "2.5.6"
+  resolved "https://registry.yarnpkg.com/pickleswap-sdk2/-/pickleswap-sdk2-2.5.6.tgz#5d1def4c1a7fc68d34941fef4c3e6c2792ca21cb"
+  integrity sha512-KWROZtmRXNmiY9CW80R4zoxqweJLDVFW28uwnTWqzoKBoo9bLohDVWj/YVRRlptbqqRqEKHRd0Qc5uF5YrNY+A==
   dependencies:
     big.js "^5.2.2"
     decimal.js-light "^2.5.0"
@@ -16504,10 +16504,10 @@ pickleswap-sdk@^2.4.3:
     tiny-warning "^1.0.3"
     toformat "^2.0.0"
 
-pickleswap-uikit@^0.65.11:
-  version "0.65.11"
-  resolved "https://registry.yarnpkg.com/pickleswap-uikit/-/pickleswap-uikit-0.65.11.tgz#7381104bca832cbc188df90c370b445b0c318b63"
-  integrity sha512-kGvWcpmuHcS2lYsrTWANpbbWU40ZtEspEfzMDrGQYUqeUG7BoegiTit/ucArXjaRCSs7aXJS5lC/GebrGFK1UQ==
+pickleswap-uikit@^0.69.4:
+  version "0.69.4"
+  resolved "https://registry.yarnpkg.com/pickleswap-uikit/-/pickleswap-uikit-0.69.4.tgz#382073be139f68e3ef41f653af9dff9bc43c2bfa"
+  integrity sha512-5XLMOPyeD0r6QcOdMeIZ2IhNJEDxHKhvc9PmX28FzxJXYqSMaaHK4IfC9I6AQRy2MwHQssOPuJdrSeisaTR+4g==
   dependencies:
     "@popperjs/core" "^2.9.2"
     "@types/styled-system" "^5.1.10"

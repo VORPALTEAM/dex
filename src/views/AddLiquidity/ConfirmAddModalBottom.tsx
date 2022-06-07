@@ -1,10 +1,18 @@
-import { Currency, CurrencyAmount, Fraction, Percent } from '@pancakeswap/sdk'
+import { Currency, CurrencyAmount, Fraction, Percent } from 'pickleswap-sdk2'
 import React from 'react'
-import { Button, Text } from '@pancakeswap/uikit'
+import styled from 'styled-components'
+import { Button, Text, Flex } from 'pickleswap-uikit'
 import { useTranslation } from 'contexts/Localization'
 import { RowBetween, RowFixed } from '../../components/Layout/Row'
 import { CurrencyLogo } from '../../components/Logo'
 import { Field } from '../../state/mint/actions'
+
+const StyledButton = styled(Button)`
+  width: 340px;
+  height: 70px;
+  background: #4da1a3;
+  border-radius: 6px;
+`
 
 function ConfirmAddModalBottom({
   noLiquidity,
@@ -57,9 +65,11 @@ function ConfirmAddModalBottom({
         <Text>{t('Share of Pool')}:</Text>
         <Text>{noLiquidity ? '100' : poolTokenPercentage?.toSignificant(4)}%</Text>
       </RowBetween>
-      <Button onClick={onAdd} mt="20px">
-        {noLiquidity ? t('Create Pool & Supply') : t('Confirm Supply')}
-      </Button>
+      <Flex pb={60} justifyContent="center">
+        <StyledButton onClick={onAdd} mt="20px">
+          {noLiquidity ? t('Create Pool & Supply') : t('Confirm Supply')}
+        </StyledButton>
+      </Flex>
     </>
   )
 }

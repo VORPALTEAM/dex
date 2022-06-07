@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { escapeRegExp } from 'utils'
-import { Text, Button, Input, Flex, Box } from '@pancakeswap/uikit'
+import styled from 'styled-components'
+import { Text, Button, Input, Flex, Box } from 'pickleswap-uikit'
 import { useTranslation } from 'contexts/Localization'
 import { useUserSlippageTolerance, useUserTransactionTTL } from 'state/user/hooks'
 import QuestionHelper from '../../QuestionHelper'
@@ -14,6 +15,14 @@ enum SlippageError {
 enum DeadlineError {
   InvalidInput = 'InvalidInput',
 }
+
+const StyledInput = styled(Input)`
+  color: #dbd8e3;
+  background-color: #fff;
+  border: 1px solid #fff;
+  box-shadow: 0px 0px 5px 1px #d3cee0, inset 0px 0px 5px 2px rgb(0 0 0 / 15%);
+  border-radius: 20px;
+`
 
 const inputRegex = RegExp(`^\\d*(?:\\\\[.])?\\d*$`) // match escaped "." characters via in a non-capturing group
 
@@ -97,7 +106,8 @@ const SlippageTabs = () => {
               setSlippageInput('')
               setUserSlippageTolerance(10)
             }}
-            variant={userSlippageTolerance === 10 ? 'primary' : 'tertiary'}
+            // variant={userSlippageTolerance === 10 ? 'primary' : 'tertiary'}
+            style={{ color: 'black', backgroundColor: 'transparent', border: '1px solid #352F44', boxShadow: 'none' }}
           >
             0.1%
           </Button>
@@ -109,7 +119,8 @@ const SlippageTabs = () => {
               setSlippageInput('')
               setUserSlippageTolerance(50)
             }}
-            variant={userSlippageTolerance === 50 ? 'primary' : 'tertiary'}
+            // variant={userSlippageTolerance === 50 ? 'primary' : 'tertiary'}
+            style={{ color: 'black', backgroundColor: 'transparent', border: '1px solid #352F44', boxShadow: 'none' }}
           >
             0.5%
           </Button>
@@ -121,13 +132,14 @@ const SlippageTabs = () => {
               setSlippageInput('')
               setUserSlippageTolerance(100)
             }}
-            variant={userSlippageTolerance === 100 ? 'primary' : 'tertiary'}
+            // variant={userSlippageTolerance === 100 ? 'primary' : 'tertiary'}
+            style={{ color: 'black', backgroundColor: 'transparent', border: '1px solid #352F44', boxShadow: 'none' }}
           >
             1.0%
           </Button>
           <Flex alignItems="center">
             <Box width="76px" mt="4px">
-              <Input
+              <StyledInput
                 scale="sm"
                 inputMode="decimal"
                 pattern="^[0-9]*[.,]?[0-9]{0,2}$"
@@ -145,7 +157,7 @@ const SlippageTabs = () => {
                 isSuccess={![10, 50, 100].includes(userSlippageTolerance)}
               />
             </Box>
-            <Text color="primary" bold ml="2px">
+            <Text color="text" bold ml="2px">
               %
             </Text>
           </Flex>
@@ -160,7 +172,7 @@ const SlippageTabs = () => {
           </Text>
         )}
       </Flex>
-      <Flex justifyContent="space-between" alignItems="center" mb="24px">
+      <Flex justifyContent="space-between" alignItems="center" mb="19px">
         <Flex alignItems="center">
           <Text>{t('Tx deadline (mins)')}</Text>
           <QuestionHelper
@@ -171,7 +183,7 @@ const SlippageTabs = () => {
         </Flex>
         <Flex>
           <Box width="52px" mt="4px">
-            <Input
+            <StyledInput
               scale="sm"
               inputMode="numeric"
               pattern="^[0-9]+$"

@@ -1,6 +1,6 @@
 import React from 'react'
-import { Price } from '@pancakeswap/sdk'
-import { Flex, Text } from '@pancakeswap/uikit'
+import { Price } from 'pickleswap-sdk2'
+import { Flex, Text } from 'pickleswap-uikit'
 import { multiplyPriceByAmount } from 'utils/prices'
 import { useTranslation } from 'contexts/Localization'
 import { formatBnb } from '../helpers'

@@ -1,4 +1,4 @@
-import { ChainId, Token } from '@pancakeswap/sdk'
+import { ChainId, Token } from 'pickleswap-sdk2'
 import { serializeToken } from 'state/user/hooks/helpers'
 import { SerializedToken } from './types'
 
@@ -1931,18 +1931,21 @@ export const mainnetTokens = defineTokens({
 export const testnetTokens = defineTokens({
   wbnb: new Token(
     TESTNET,
-    '0xdbb9adb7c7ce5ceecec2f86e2908070e2cc68288',
+    '0x8BC473Ce9f557fD47298f7Ce8b4459999E720a28',
     18,
     'WBNB',
     'Wrapped BNB',
     'https://www.binance.com/',
   ),
-  swt: new Token(TESTNET, '0x676f285194abf08f12b00110dcd510e36df1237b', 18, 'SWT', 'SWT Token'),
-  rtt: new Token(TESTNET, '0xa4cd3cbb12709115d400b11b29abfd6072d465be', 18, 'RTT', 'RTT Token'),
+  one: new Token(TESTNET, '0xAd962dA76091272dE4B89E2ebf28c7fF28f985AF', 18, '1', '1 Token', ''),
+  two: new Token(TESTNET, '0xea34969cd9C0D96d4a29B0FAfe17637a2823deaC', 18, '2', '2 Token', ''),
+  rtt: new Token(TESTNET, '0xa4cD3cBB12709115d400b11b29AbFd6072d465Be', 18, 'RTT', 'RTT Token', ''),
+  swt: new Token(TESTNET, '0x676F285194AbF08f12B00110dcD510E36DF1237b', 18, 'SWT', 'SWT Token', ''),
+  bsw: new Token(TESTNET, '0xb99D0130C9Bba7928f7F62600eBe0125A50106aF', 18, 'BSW', 'BSW Token', ''),
   avk: new Token(TESTNET, '0x836634ce58c151d690dcd457fd38982bbc974548', 18, 'AVK', 'Avokado Token', ''),
   cake: new Token(
     TESTNET,
-    '0xa35062141Fa33BCA92Ce69FeD37D0E8908868AAe',
+    '0xDEBdFD14ED0BFDacB2EC7aEe3011a456878Da32C',
     18,
     'CAKE',
     'PancakeSwap Token',
@@ -1958,7 +1961,7 @@ export const testnetTokens = defineTokens({
   ),
   syrup: new Token(
     TESTNET,
-    '0xfE1e507CeB712BDe086f3579d2c03248b2dB77f9',
+    '0xcA8CB8f54360Fdd20a202009A84CC7A478744594',
     18,
     'SYRUP',
     'SyrupBar Token',

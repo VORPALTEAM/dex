@@ -1,5 +1,6 @@
 // import tokens from './tokens'
 import { SerializedFarmConfig } from './types'
+// import serializedTokens from './tokens'
 
 const priceHelperLps: SerializedFarmConfig[] = [
   /**
@@ -9,6 +10,16 @@ const priceHelperLps: SerializedFarmConfig[] = [
    * Prices are then fetched for all farms (masterchef + priceHelperLps).
    * Before storing to redux, farms without a PID are filtered out.
    */
+  // {
+  //   pid: 1,
+  //   lpSymbol: 'RTT-SWT',
+  //   lpAddresses: {
+  //     97: '0x0C55d02a31271A0F365D5d544E1eD27d6B8d21cf',
+  //     56: '0x0C55d02a31271A0F365D5d544E1eD27d6B8d21cf',
+  //   },
+  //   token: serializedTokens.rtt,
+  //   quoteToken: serializedTokens.swt,
+  // },
 ]
 
 export default priceHelperLps

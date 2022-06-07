@@ -14,7 +14,10 @@
     "format:check": "prettier --check \"**/*.{js,jsx,ts,tsx}\"",
     "format:write": "prettier --write \"**/*.{js,jsx,ts,tsx}\"",
     "updateLPsAPR": "NODE_PATH=./src ts-node --compiler-options '{\"module\":\"commonjs\"}' scripts/updateLPsAPR.ts",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "tsc": "tsc --noEmit",
+    "updateUI": "yarn remove pickleswap-uikit && yarn add pickleswap-uikit && yarn start",
+    "updateSDK": "yarn remove pickleswap-sdk2 && yarn add pickleswap-sdk2 && yarn start"
   },
   "browserslist": {
     "production": [
@@ -66,8 +69,8 @@
     "multicodec": "^2.0.0",
     "multihashes": "^3.0.1",
     "numeral": "^2.0.6",
-    "pickleswap-sdk": "^2.4.3",
-    "pickleswap-uikit": "^0.65.11",
+    "pickleswap-sdk2": "^2.5.6",
+    "pickleswap-uikit": "^0.69.4",
     "qs": "^6.9.4",
     "react": "^17.0.1",
     "react-countup": "^4.3.3",

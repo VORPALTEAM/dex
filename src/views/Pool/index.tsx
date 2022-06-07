@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react'
 import styled from 'styled-components'
-import { Pair } from '@pancakeswap/sdk'
-// import { Flex, CardBody, CardFooter, AddIcon } from '@pancakeswap/uikit'
+import { Pair } from 'pickleswap-sdk2'
+// import { Pair } from 'pickleswap-sdk2'
 import { Button, Text, Flex, CardBody, CardFooter, AddIcon } from 'pickleswap-uikit'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'contexts/Localization'
@@ -97,7 +97,7 @@ export default function Pool() {
 
   return (
     <Page>
-      <AppBody>
+      <AppBody width={620}>
         <AppHeader title={t('Your Liquidity')} subtitle={t('Remove liquidity to receive tokens back')} />
         <Body>
           {renderBody()}
@@ -119,7 +119,7 @@ export default function Pool() {
               id="join-pool-button"
               as={Link}
               to="/add"
-              width="100%"
+              width="340px"
               startIcon={<AddIcon color="white" />}
             >
               {t('Add Liquidity')}

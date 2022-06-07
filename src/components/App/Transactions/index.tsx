@@ -1,5 +1,5 @@
 import React from 'react'
-import { HistoryIcon, Button, useModal } from '@pancakeswap/uikit'
+import { HistoryIcon, Button, useModal } from 'pickleswap-uikit'
 import TransactionsModal from './TransactionsModal'
 
 interface Props {

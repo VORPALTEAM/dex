@@ -1,5 +1,5 @@
 import React from 'react'
-import { useModal, Button, Skeleton } from '@pancakeswap/uikit'
+import { useModal, Button, Skeleton } from 'pickleswap-uikit'
 import WhitelistedBiddersModal from './WhitelistedBiddersModal'
 import useWhitelistedAddresses from '../hooks/useWhitelistedAddresses'
 

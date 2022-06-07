@@ -42,17 +42,18 @@ export interface SerializedFarm extends SerializedFarmConfig {
   tokenPriceBusd?: string
   quoteTokenPriceBusd?: string
   tokenAmountTotal?: SerializedBigNumber
+  quoteTokenAmountTotal?: SerializedBigNumber
   lpTotalInQuoteToken?: SerializedBigNumber
   lpTotalSupply?: SerializedBigNumber
   tokenPriceVsQuote?: SerializedBigNumber
   poolWeight?: SerializedBigNumber
   userData?: SerializedFarmUserData
 }
-
 export interface DeserializedFarm extends DeserializedFarmConfig {
   tokenPriceBusd?: string
   quoteTokenPriceBusd?: string
   tokenAmountTotal?: BigNumber
+  quoteTokenAmountTotal?: BigNumber
   lpTotalInQuoteToken?: BigNumber
   lpTotalSupply?: BigNumber
   tokenPriceVsQuote?: BigNumber

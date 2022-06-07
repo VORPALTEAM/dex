@@ -49,6 +49,22 @@
       "chainId": 97,
       "decimals": 18,
       "logoURI": ""
+    },
+    {
+      "name": "Cake Token",
+      "symbol": "CAKE",
+      "address": "0xdf08a3b4884DB37F69bB3b6a5fc8803d641d3F92",
+      "chainId": 97,
+      "decimals": 18,
+      "logoURI": ""
+    },
+    {
+      "name": "Syrop Token",
+      "symbol": "SYP",
+      "address": "0xf0ef57148f77B9C6ae7650969fB542177e90a41A",
+      "chainId": 97,
+      "decimals": 18,
+      "logoURI": ""
     }
   ]
 }

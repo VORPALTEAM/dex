@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import { Flex, Box, Text, ExpandableLabel, LinkExternal, Grid, HelpIcon, useTooltip } from '@pancakeswap/uikit'
+import { Flex, Box, Text, ExpandableLabel, LinkExternal, Grid, HelpIcon, useTooltip } from 'pickleswap-uikit'
 import { useTranslation } from 'contexts/Localization'
 import { getApy } from 'utils/compoundApyHelpers'
 
 const Footer = styled(Flex)`
   width: 100%;
-  background: ${({ theme }) => theme.colors.dropdown};
+  background: transparent;
 `
 
 const BulletList = styled.ul`

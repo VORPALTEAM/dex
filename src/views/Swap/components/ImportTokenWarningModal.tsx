@@ -1,6 +1,6 @@
 import React from 'react'
-import { Token } from '@pancakeswap/sdk'
-import { Modal, InjectedModalProps } from '@pancakeswap/uikit'
+import { Token } from 'pickleswap-sdk2'
+import { Modal, InjectedModalProps } from 'pickleswap-uikit'
 import ImportToken from 'components/SearchModal/ImportToken'
 import { useTranslation } from 'contexts/Localization'
 

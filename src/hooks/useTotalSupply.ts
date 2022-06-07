@@ -1,5 +1,5 @@
 import { BigNumber } from '@ethersproject/bignumber'
-import { Token, TokenAmount } from '@pancakeswap/sdk'
+import { Token, TokenAmount } from 'pickleswap-sdk2'
 import { useTokenContract } from './useContract'
 import { useSingleCallResult } from '../state/multicall/hooks'
 

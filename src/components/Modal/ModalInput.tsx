@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Text, Button, Input, InputProps, Flex, Link } from '@pancakeswap/uikit'
+import { Text, Button, Input, InputProps, Flex, Link } from 'pickleswap-uikit'
 import { useTranslation } from 'contexts/Localization'
 import { parseUnits } from 'ethers/lib/utils'
 import { formatBigNumber } from 'utils/formatBalance'
@@ -28,7 +28,7 @@ const getBoxShadow = ({ isWarning = false, theme }) => {
 const StyledTokenInput = styled.div<InputProps>`
   display: flex;
   flex-direction: column;
-  background-color: ${({ theme }) => theme.colors.input};
+  background-color: ${({ theme }) => theme.colors.backgroundAlt1};
   border-radius: 16px;
   box-shadow: ${getBoxShadow};
   color: ${({ theme }) => theme.colors.text};
@@ -42,6 +42,8 @@ const StyledInput = styled(Input)`
   margin: 0 8px;
   padding: 0 8px;
   border: none;
+  color: ${({ theme }) => theme.colors.contrast};
+  opacity: 0.5;
 
   ${({ theme }) => theme.mediaQueries.xs} {
     width: 80px;
@@ -49,6 +51,13 @@ const StyledInput = styled(Input)`
 
   ${({ theme }) => theme.mediaQueries.sm} {
     width: auto;
+  }
+
+  &:focus:not(:disabled) {
+    outline: none;
+    box-shadow: none;
+    color: ${({ theme }) => theme.colors.contrast};
+    opacity: 1;
   }
 `
 
@@ -58,6 +67,12 @@ const StyledErrorMessage = styled(Text)`
   a {
     display: inline;
   }
+`
+
+const StyledButton = styled(Button)`
+  background-color: ${({ theme }) => theme.colors.primary};
+  color: ${({ theme }) => theme.colors.text};
+  border-radius: 15px;
 `
 
 const ModalInput: React.FC<ModalInputProps> = ({
@@ -86,10 +101,14 @@ const ModalInput: React.FC<ModalInputProps> = ({
     <div style={{ position: 'relative' }}>
       <StyledTokenInput isWarning={isBalanceZero}>
         <Flex justifyContent="space-between" pl="16px">
-          <Text fontSize="14px">{inputTitle}</Text>
-          <Text fontSize="14px">{t('Balance: %balance%', { balance: displayBalance(max) })}</Text>
+          <Text color="contrast" fontFamily="RobotoBold" fontSize="12px">
+            {inputTitle}
+          </Text>
+          <Text color="contrast" fontFamily="RobotoBold" fontSize="12px">
+            {t('Balance: %balance%', { balance: displayBalance(max) })}
+          </Text>
         </Flex>
-        <Flex alignItems="flex-end" justifyContent="space-around">
+        <Flex alignItems="center" justifyContent="space-around">
           <StyledInput
             pattern={`^[0-9]*[.,]?[0-9]{0,${decimals}}$`}
             inputMode="decimal"
@@ -99,10 +118,12 @@ const ModalInput: React.FC<ModalInputProps> = ({
             placeholder="0"
             value={value}
           />
-          <Button scale="sm" onClick={onSelectMax} mr="8px">
+          <StyledButton scale="sm" onClick={onSelectMax} mr="8px">
             {t('Max')}
-          </Button>
-          <Text fontSize="16px">{symbol}</Text>
+          </StyledButton>
+          <Text style={{ opacity: 0.5 }} color="contrast" fontFamily="Roboto" fontSize="18px">
+            {symbol}
+          </Text>
         </Flex>
       </StyledTokenInput>
       {isBalanceZero && (

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Flex, Text } from '@pancakeswap/uikit'
+import { Flex, Text } from 'pickleswap-uikit'
 import styled from 'styled-components'
 import { useTranslation } from 'contexts/Localization'
 import RulesCard from './RulesCard'

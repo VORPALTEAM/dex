@@ -1,15 +1,9 @@
 import React from 'react'
 import { useWeb3React } from '@web3-react/core'
-import {
-  Flex,
-  LogoutIcon,
-  useModal,
-  UserMenu as UIKitUserMenu,
-  UserMenuDivider,
-  UserMenuItem,
-} from '@pancakeswap/uikit'
+import { UserMenu as UIKitUserMenu, UserMenuItem, UserMenuDivider, Flex, LogoutIcon, useModal } from 'pickleswap-uikit'
 import history from 'routerHistory'
 import useAuth from 'hooks/useAuth'
+import styled from 'styled-components'
 import { useProfile } from 'state/profile/hooks'
 import ConnectWalletButton from 'components/ConnectWalletButton'
 import { FetchStatus, useGetBnbBalance } from 'hooks/useTokenBalance'
@@ -18,6 +12,13 @@ import { nftsBaseUrl } from 'views/Nft/market/constants'
 import WalletModal, { WalletView, LOW_BNB_BALANCE } from './WalletModal'
 import ProfileUserMenuItem from './ProfileUserMenutItem'
 import WalletUserMenuItem from './WalletUserMenuItem'
+
+const StyledButton = styled(ConnectWalletButton)`
+  background-color: antiquewhite;
+  background: ${({ theme }) => theme.colors.primary};
+  color: black;
+  border-radius: 20px;
+`
 
 const UserMenu = () => {
   const { t } = useTranslation()
@@ -32,7 +33,7 @@ const UserMenu = () => {
   const hasLowBnbBalance = fetchStatus === FetchStatus.SUCCESS && balance.lte(LOW_BNB_BALANCE)
 
   if (!account) {
-    return <ConnectWalletButton scale="sm" />
+    return <StyledButton scale="sm" />
   }
 
   return (

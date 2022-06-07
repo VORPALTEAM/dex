@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from 'react'
-import { Currency, Token } from '@pancakeswap/sdk'
+import { Currency, Token } from 'pickleswap-sdk2'
 import {
   ModalContainer,
   ModalHeader,
@@ -10,7 +10,7 @@ import {
   InjectedModalProps,
   Heading,
   Button,
-} from '@pancakeswap/uikit'
+} from 'pickleswap-uikit'
 import styled from 'styled-components'
 import usePrevious from 'hooks/usePreviousValue'
 import { TokenList } from '@uniswap/token-lists'
@@ -27,13 +27,58 @@ const Footer = styled.div`
   text-align: center;
 `
 
-const StyledModalContainer = styled(ModalContainer)`
-  max-width: 420px;
-  width: 100%;
+const StyledButton = styled(Button)`
+  font-family: 'RobotoBold';
+  color: #2a2338;
+  background-color: transparent;
+  box-shadow: none;
+`
+
+const StyledModalButton = styled(ModalBackButton)``
+
+const StyledModalCloseButtonContainer = styled.div`
+  & > button {
+    width: 20px;
+  }
+`
+
+const StyledModalCloseButton = styled(ModalCloseButton)``
+
+const StyledModalTitle = styled(ModalTitle)`
+  justify-content: center;
+  padding-top: 45px;
+`
+
+const StyledModalManageTitle = styled(ModalTitle)`
+  justify-content: flex-start;
+  font-family: 'RoundsBlack';
+
+  & > button {
+    width: 13px;
+    margin-right: 20px;
+    padding-top: 10px;
+  }
+`
+
+const StyledModalHeader = styled(ModalHeader)`
+  width: 475px;
+  margin: auto;
+  flex-direction: row;
+  border-bottom: ${({ theme }) => `1px solid ${theme.colors.text}`};
+`
+
+const StyledModalManageHeader = styled(ModalHeader)`
+  width: 360px;
+  border-bottom: none;
+  /* padding: 12px 24px 0px 45px; */
+  flex-direction: row;
+  margin: auto;
 `
 
 const StyledModalBody = styled(ModalBody)`
-  padding: 24px;
+  width: 474px;
+  margin: auto;
+  padding: 10px 0px 24px 0px;
   overflow-y: auto;
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -89,15 +134,39 @@ export default function CurrencySearchModal({
     [CurrencyModalView.importList]: { title: t('Import List'), onBack: () => setModalView(CurrencyModalView.search) },
   }
 
+  const StyledModalContainer = styled(ModalContainer)`
+    max-width: ${modalView === CurrencyModalView.manage ? '400px' : '554px'};
+    width: 100%;
+    border-radius: 40px;
+  `
+
   return (
     <StyledModalContainer minWidth="320px">
-      <ModalHeader>
-        <ModalTitle>
-          {config[modalView].onBack && <ModalBackButton onBack={config[modalView].onBack} />}
-          <Heading>{config[modalView].title}</Heading>
-        </ModalTitle>
-        <ModalCloseButton onDismiss={onDismiss} />
-      </ModalHeader>
+      {modalView === CurrencyModalView.manage ? (
+        <StyledModalManageHeader>
+          <StyledModalManageTitle>
+            {config[modalView].onBack && <StyledModalButton onBack={config[modalView].onBack} />}
+            <Heading fontSize="18px" fontFamily="RoundsBlack">
+              {config[modalView].title}
+            </Heading>
+          </StyledModalManageTitle>
+          <StyledModalCloseButtonContainer>
+            <StyledModalCloseButton onDismiss={onDismiss} />
+          </StyledModalCloseButtonContainer>
+        </StyledModalManageHeader>
+      ) : (
+        <StyledModalHeader>
+          <StyledModalTitle>
+            {config[modalView].onBack && <ModalBackButton onBack={config[modalView].onBack} />}
+            <Heading fontSize="18px" fontFamily="RoundsBlack">
+              {config[modalView].title}
+            </Heading>
+          </StyledModalTitle>
+          <StyledModalCloseButtonContainer>
+            <StyledModalCloseButton onDismiss={onDismiss} />
+          </StyledModalCloseButtonContainer>
+        </StyledModalHeader>
+      )}
       <StyledModalBody>
         {modalView === CurrencyModalView.search ? (
           <CurrencySearch
@@ -124,14 +193,14 @@ export default function CurrencySearchModal({
         )}
         {modalView === CurrencyModalView.search && (
           <Footer>
-            <Button
+            <StyledButton
               scale="sm"
-              variant="text"
+              variant="primary"
               onClick={() => setModalView(CurrencyModalView.manage)}
               className="list-token-manage-button"
             >
               {t('Manage Tokens')}
-            </Button>
+            </StyledButton>
           </Footer>
         )}
       </StyledModalBody>

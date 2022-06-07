@@ -4,7 +4,7 @@ import { Text, Flex, Heading, IconButton, ArrowBackIcon, NotificationDot } from 
 import { Link } from 'react-router-dom'
 import { useExpertModeManager } from 'state/user/hooks'
 import GlobalSettings from 'components/Menu/GlobalSettings'
-import Transactions from './Transactions'
+// import Transactions from './Transactions'
 import QuestionHelper from '../QuestionHelper'
 
 interface Props {
@@ -18,8 +18,10 @@ interface Props {
 const AppHeaderContainer = styled(Flex)`
   align-items: center;
   justify-content: space-between;
-  padding: 24px;
-  width: 100%;
+  padding: 24px 0px 24px 0px;
+  width: 580px;
+  margin: 74px auto 20px auto;
+  border-top: 1px solid ${({ theme }) => theme.colors.cardBorder};
   border-bottom: 1px solid ${({ theme }) => theme.colors.cardBorder};
 `
 
@@ -38,9 +40,9 @@ const AppHeader: React.FC<Props> = ({ title, subtitle, helper, backTo, noConfig 
           <Heading as="h2" mb="8px">
             {title}
           </Heading>
-          <Flex alignItems="center">
-            {helper && <QuestionHelper text={helper} mr="4px" placement="top-start" />}
+          <Flex alignItems="self-end">
             <Text fontSize="14px">{subtitle}</Text>
+            {helper && <QuestionHelper color="text" text={helper} mr="4px" placement="top-start" />}
           </Flex>
         </Flex>
       </Flex>
@@ -49,7 +51,7 @@ const AppHeader: React.FC<Props> = ({ title, subtitle, helper, backTo, noConfig 
           <NotificationDot show={expertMode}>
             <GlobalSettings color="text" />
           </NotificationDot>
-          <Transactions color="text" />
+          {/* <Transactions color="text" /> */}
         </Flex>
       )}
     </AppHeaderContainer>

@@ -11,42 +11,72 @@ const farms: SerializedFarmConfig[] = [
     pid: 0,
     lpSymbol: 'CAKE',
     lpAddresses: {
-      97: '0x9C21123D94b93361a29B2C2EFB3d5CD8B17e0A9e',
+      97: '0x8bce255da73839a550d1df6651503e6dd38c320d',
       56: '0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82',
     },
     token: serializedTokens.syrup,
     quoteToken: serializedTokens.wbnb,
   },
   {
-    pid: 251,
-    lpSymbol: 'CAKE-BNB LP',
-    lpAddresses: {
-      97: '0x3ed8936cAFDF85cfDBa29Fbe5940A5b0524824F4',
-      56: '0x0eD7e52944161450477ee417DE9Cd3a859b14fD0',
-    },
-    token: serializedTokens.cake,
-    quoteToken: serializedTokens.wbnb,
-  },
-  {
-    pid: 252,
-    lpSymbol: 'BUSD-BNB LP',
-    lpAddresses: {
-      97: '',
-      56: '0x58F876857a02D6762E0101bb5C46A8c1ED44Dc16',
-    },
-    token: serializedTokens.busd,
-    quoteToken: serializedTokens.wbnb,
-  },
-  {
     pid: 1,
-    lpSymbol: 'SWAP-A LP',
+    lpSymbol: 'RTT-SWT',
     lpAddresses: {
-      97: '0x34b826a48b3e97287d31e1d79bea48fcbf49426b',
-      56: '0x34b826a48b3e97287d31e1d79bea48fcbf49426b',
+      97: '0x6f8d31aacd635501efcbe096b49efe4a04423cec',
+      56: '0x6f8d31aacd635501efcbe096b49efe4a04423cec',
     },
     token: serializedTokens.rtt,
     quoteToken: serializedTokens.swt,
   },
+  // {
+  //   pid: 3,
+  //   lpSymbol: 'RTT-SWT',
+  //   lpAddresses: {
+  //     97: '0x6f8d31aacd635501efcbe096b49efe4a04423cec',
+  //     56: '0x6f8d31aacd635501efcbe096b49efe4a04423cec',
+  //   },
+  //   token: serializedTokens.rtt,
+  //   quoteToken: serializedTokens.swt,
+  // },
+  // {
+  //   pid: 1,
+  //   lpSymbol: ' LP',
+  //   lpAddresses: {
+  //     97: '0x0C55d02a31271A0F365D5d544E1eD27d6B8d21cf',
+  //     56: '0x0eD7e52944161450477ee417DE9Cd3a859b14fD0',
+  //   },
+  //   token: serializedTokens.cake,
+  //   quoteToken: serializedTokens.wbnb,
+  // },
+  // {
+  //   pid: 252,
+  //   lpSymbol: 'BUSD-BNB LP',
+  //   lpAddresses: {
+  //     97: '',
+  //     56: '0x58F876857a02D6762E0101bb5C46A8c1ED44Dc16',
+  //   },
+  //   token: serializedTokens.busd,
+  //   quoteToken: serializedTokens.wbnb,
+  // },
+  // {
+  //   pid: 1,
+  //   lpSymbol: 'RTT-SWT',
+  //   lpAddresses: {
+  //     97: '0x0C55d02a31271A0F365D5d544E1eD27d6B8d21cf',
+  //     56: '0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82',
+  //   },
+  //   token: serializedTokens.rtt,
+  //   quoteToken: serializedTokens.swt,
+  // },
+  // {
+  //   pid: 251,
+  //   lpSymbol: 'RTT-SWT',
+  //   lpAddresses: {
+  //     97: '0x0C55d02a31271A0F365D5d544E1eD27d6B8d21cf',
+  //     56: '0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82',
+  //   },
+  //   token: serializedTokens.rtt,
+  //   quoteToken: serializedTokens.swt,
+  // },
   /**
    * V3 by order of release (some may be out of PID order due to multiplier boost)
    */

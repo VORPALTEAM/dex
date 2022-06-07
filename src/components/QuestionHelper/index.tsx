@@ -1,5 +1,5 @@
 import React from 'react'
-import { HelpIcon, useTooltip, Box, BoxProps, Placement } from '@pancakeswap/uikit'
+import { HelpIcon, useTooltip, Box, BoxProps, Placement } from 'pickleswap-uikit'
 import styled from 'styled-components'
 
 interface Props extends BoxProps {
@@ -22,7 +22,7 @@ const QuestionHelper: React.FC<Props> = ({ text, placement = 'right-end', size =
     <Box {...props}>
       {tooltipVisible && tooltip}
       <QuestionWrapper ref={targetRef}>
-        <HelpIcon color="textSubtle" width={size} />
+        <HelpIcon color="contrast" width={size} />
       </QuestionWrapper>
     </Box>
   )

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Flex, Button, Text } from '@pancakeswap/uikit'
+import { Flex, Button, Text } from 'pickleswap-uikit'
 import QuestionHelper from 'components/QuestionHelper'
 import { useTranslation } from 'contexts/Localization'
 import { GAS_PRICE_GWEI, GAS_PRICE } from 'state/user/hooks/helpers'
@@ -7,7 +7,7 @@ import { useGasPriceManager } from 'state/user/hooks'
 
 const GasSettings = () => {
   const { t } = useTranslation()
-  const [gasPrice, setGasPrice] = useGasPriceManager()
+  const [, setGasPrice] = useGasPriceManager()
 
   return (
     <Flex flexDirection="column">
@@ -29,7 +29,7 @@ const GasSettings = () => {
           onClick={() => {
             setGasPrice(GAS_PRICE_GWEI.default)
           }}
-          variant={gasPrice === GAS_PRICE_GWEI.default ? 'primary' : 'tertiary'}
+          style={{ color: 'black', backgroundColor: 'transparent', border: '1px solid #352F44', boxShadow: 'none' }}
         >
           {t('Standard (%gasPrice%)', { gasPrice: GAS_PRICE.default })}
         </Button>
@@ -40,7 +40,7 @@ const GasSettings = () => {
           onClick={() => {
             setGasPrice(GAS_PRICE_GWEI.fast)
           }}
-          variant={gasPrice === GAS_PRICE_GWEI.fast ? 'primary' : 'tertiary'}
+          style={{ color: 'black', backgroundColor: 'transparent', border: '1px solid #352F44', boxShadow: 'none' }}
         >
           {t('Fast (%gasPrice%)', { gasPrice: GAS_PRICE.fast })}
         </Button>
@@ -51,7 +51,8 @@ const GasSettings = () => {
           onClick={() => {
             setGasPrice(GAS_PRICE_GWEI.instant)
           }}
-          variant={gasPrice === GAS_PRICE_GWEI.instant ? 'primary' : 'tertiary'}
+          // variant={gasPrice === GAS_PRICE_GWEI.instant ? 'primary' : 'tertiary'}
+          style={{ color: 'black', backgroundColor: 'transparent', border: '1px solid #352F44', boxShadow: 'none' }}
         >
           {t('Instant (%gasPrice%)', { gasPrice: GAS_PRICE.instant })}
         </Button>

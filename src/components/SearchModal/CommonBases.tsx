@@ -1,6 +1,6 @@
 import React from 'react'
-import { ChainId, Currency, currencyEquals, ETHER, Token } from '@pancakeswap/sdk'
-import { Text } from '@pancakeswap/uikit'
+import { ChainId, Currency, currencyEquals, ETHER, Token } from 'pickleswap-sdk2'
+import { Text } from 'pickleswap-uikit'
 import styled from 'styled-components'
 import { useTranslation } from 'contexts/Localization'
 
@@ -11,15 +11,24 @@ import { AutoRow } from '../Layout/Row'
 import { CurrencyLogo } from '../Logo'
 
 const BaseWrapper = styled.div<{ disable?: boolean }>`
-  border: 1px solid ${({ theme, disable }) => (disable ? 'transparent' : theme.colors.dropdown)};
+  // border: 1px solid ${({ theme, disable }) => (disable ? 'transparent' : theme.colors.dropdown)};
+  width: 118px;
   border-radius: 10px;
   display: flex;
   padding: 6px;
 
+  ${Text} {
+    font-family: 'RobotoBold';
+  }
+
   align-items: center;
   :hover {
     cursor: ${({ disable }) => !disable && 'pointer'};
-    background-color: ${({ theme, disable }) => !disable && theme.colors.background};
+    /* background-color: ${({ theme, disable }) => !disable && theme.colors.background}; */
+    ${Text} {
+      color: ${({ theme }) => theme.colors.purple};
+      font-family: 'RobotoBold';
+    }
   }
 
   background-color: ${({ theme, disable }) => disable && theme.colors.dropdown};
@@ -39,7 +48,9 @@ export default function CommonBases({
   return (
     <AutoColumn gap="md">
       <AutoRow>
-        <Text fontSize="14px">{t('Common bases')}</Text>
+        <Text fontFamily="RobotoBold" fontSize="16px">
+          {t('Common bases')}
+        </Text>
         <QuestionHelper text={t('These tokens are commonly paired with other tokens.')} ml="4px" />
       </AutoRow>
       <AutoRow gap="auto">

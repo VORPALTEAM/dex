@@ -1,6 +1,6 @@
 import React from 'react'
-import { Modal, ModalBody, Text, Image, Button, Link, OpenNewIcon } from '@pancakeswap/uikit'
-import { Token } from '@pancakeswap/sdk'
+import { Modal, ModalBody, Text, Image, Button, Link, OpenNewIcon } from 'pickleswap-uikit'
+import { Token } from 'pickleswap-sdk2'
 import { useTranslation } from 'contexts/Localization'
 
 interface Props {

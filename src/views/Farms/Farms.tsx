@@ -1,9 +1,10 @@
+/* eslint-disable no-console */
 import React, { useEffect, useCallback, useState, useMemo, useRef } from 'react'
-import { Route, useRouteMatch, useLocation, NavLink } from 'react-router-dom'
+import { Route, useRouteMatch, useLocation } from 'react-router-dom'
 import BigNumber from 'bignumber.js'
 import { useWeb3React } from '@web3-react/core'
-import { Image, Heading, RowType, Toggle, Text, Button, ArrowForwardIcon, Flex } from '@pancakeswap/uikit'
-import { ChainId } from '@pancakeswap/sdk'
+import { Image, Heading, RowType, Toggle, Text, Flex, SearchIcon, InputGroup } from 'pickleswap-uikit'
+import { ChainId } from 'pickleswap-sdk2'
 import styled from 'styled-components'
 import FlexLayout from 'components/Layout/Flex'
 import Page from 'components/Layout/Page'
@@ -20,14 +21,16 @@ import { useUserFarmStakedOnly, useUserFarmsViewMode } from 'state/user/hooks'
 import { ViewMode } from 'state/user/actions'
 import PageHeader from 'components/PageHeader'
 import SearchInput from 'components/SearchInput'
-import Select, { OptionProps } from 'components/Select/Select'
+import { OptionProps } from 'components/Select/Select'
 import Loading from 'components/Loading'
+import CustomSelect from '../../components/CustomSelectContainer/CustomSelectContainer'
 import FarmCard, { FarmWithStakedValue } from './components/FarmCard/FarmCard'
 import Table from './components/FarmTable/FarmTable'
 import FarmTabButtons from './components/FarmTabButtons'
 import { RowProps } from './components/FarmTable/Row'
 import ToggleView from './components/ToggleView/ToggleView'
 import { DesktopColumnSchema } from './components/types'
+import Wallpaper from '../../images/wallpaper.png'
 
 const ControlContainer = styled.div`
   display: flex;
@@ -42,7 +45,8 @@ const ControlContainer = styled.div`
   ${({ theme }) => theme.mediaQueries.sm} {
     flex-direction: row;
     flex-wrap: wrap;
-    padding: 16px 32px;
+    /* padding: 16px 0px; */
+    padding-bottom: 16px;
     margin-bottom: 0;
   }
 `
@@ -68,6 +72,7 @@ const FilterContainer = styled.div`
   align-items: center;
   width: 100%;
   padding: 8px 0px;
+  gap: 20px;
 
   ${({ theme }) => theme.mediaQueries.sm} {
     width: auto;
@@ -94,6 +99,10 @@ const ViewControls = styled.div`
       padding: 0;
     }
   }
+`
+
+const FarmsContainer = styled.div<{ background?: string }>`
+  background: ${({ background }) => `url(${background})`};
 `
 
 const StyledImage = styled(Image)`
@@ -368,22 +377,22 @@ const Farms: React.FC = () => {
   }
 
   return (
-    <>
+    <FarmsContainer background={Wallpaper}>
       <PageHeader>
-        <Heading as="h1" scale="xxl" color="secondary" mb="24px">
+        <Heading as="h1" scale="xxl" color="primary" mb="16px">
           {t('Farms')}
         </Heading>
-        <Heading scale="lg" color="text">
+        <Heading scale="lg" color="contrast">
           {t('Stake LP tokens to earn.')}
         </Heading>
-        <NavLink exact activeClassName="active" to="/farms/auction" id="lottery-pot-banner">
+        {/* <NavLink exact activeClassName="active" to="/farms/auction" id="lottery-pot-banner">
           <Button p="0" variant="text">
             <Text color="primary" bold fontSize="16px" mr="4px">
               {t('Community Auctions')}
             </Text>
             <ArrowForwardIcon color="primary" />
           </Button>
-        </NavLink>
+        </NavLink> */}
       </PageHeader>
       <Page>
         <ControlContainer>
@@ -393,6 +402,8 @@ const Farms: React.FC = () => {
               <Toggle
                 id="staked-only-farms"
                 checked={stakedOnly}
+                defaultColor="contrast"
+                checkedColor="backgroundAlt1"
                 onChange={() => setStakedOnly(!stakedOnly)}
                 scale="sm"
               />
@@ -401,7 +412,7 @@ const Farms: React.FC = () => {
             <FarmTabButtons hasStakeInFinishedFarms={stakedInactiveFarms.length > 0} />
           </ViewControls>
           <FilterContainer>
-            <LabelWrapper>
+            {/* <LabelWrapper>
               <Text textTransform="uppercase">{t('Sort by')}</Text>
               <Select
                 options={[
@@ -428,10 +439,16 @@ const Farms: React.FC = () => {
                 ]}
                 onOptionChange={handleSortOptionChange}
               />
-            </LabelWrapper>
-            <LabelWrapper style={{ marginLeft: 16 }}>
-              <Text textTransform="uppercase">{t('Search')}</Text>
-              <SearchInput onChange={handleChangeQuery} placeholder="Search Farms" />
+            </LabelWrapper> */}
+            <CustomSelect
+              title={t('Sort by')}
+              handleSortOptionChange={(option: OptionProps) => handleSortOptionChange(option)}
+            />
+            <LabelWrapper>
+              {/* <SearchInput onChange={handleChangeQuery} placeholder="SEARCH" /> */}
+              <InputGroup startIcon={<SearchIcon color="primary" />}>
+                <SearchInput onChange={handleChangeQuery} placeholder="SEARCH" />
+              </InputGroup>
             </LabelWrapper>
           </FilterContainer>
         </ControlContainer>
@@ -444,7 +461,7 @@ const Farms: React.FC = () => {
         <div ref={observerRef} />
         <StyledImage src="/images/decorations/3dpan.png" alt="Pancake illustration" width={120} height={103} />
       </Page>
-    </>
+    </FarmsContainer>
   )
 }
 

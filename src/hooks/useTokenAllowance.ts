@@ -1,4 +1,4 @@
-import { Token, TokenAmount } from '@pancakeswap/sdk'
+import { Token, TokenAmount } from 'pickleswap-sdk2'
 import { useMemo } from 'react'
 
 import { useTokenContract } from './useContract'

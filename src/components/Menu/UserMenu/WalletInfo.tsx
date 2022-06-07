@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Button, Flex, InjectedModalProps, LinkExternal, Message, Skeleton, Text } from '@pancakeswap/uikit'
+import { Box, Button, Flex, InjectedModalProps, LinkExternal, Message, Skeleton, Text } from 'pickleswap-uikit'
 import { useWeb3React } from '@web3-react/core'
 import useTokenBalance, { FetchStatus, useGetBnbBalance } from 'hooks/useTokenBalance'
 import useAuth from 'hooks/useAuth'
@@ -28,7 +28,7 @@ const WalletInfo: React.FC<WalletInfoProps> = ({ hasLowBnbBalance, onDismiss }) 
 
   return (
     <>
-      <Text color="secondary" fontSize="12px" textTransform="uppercase" fontWeight="bold" mb="8px">
+      <Text color="text" fontSize="12px" textTransform="uppercase" fontWeight="bold" mb="8px">
         {t('Your Address')}
       </Text>
       <CopyAddress account={account} mb="24px" />
@@ -41,7 +41,7 @@ const WalletInfo: React.FC<WalletInfoProps> = ({ hasLowBnbBalance, onDismiss }) 
         </Message>
       )}
       <Flex alignItems="center" justifyContent="space-between">
-        <Text color="textSubtle">{t('BNB Balance')}</Text>
+        <Text color="text">{t('BNB Balance')}</Text>
         {fetchStatus !== FetchStatus.SUCCESS ? (
           <Skeleton height="22px" width="60px" />
         ) : (
@@ -49,7 +49,7 @@ const WalletInfo: React.FC<WalletInfoProps> = ({ hasLowBnbBalance, onDismiss }) 
         )}
       </Flex>
       <Flex alignItems="center" justifyContent="space-between" mb="24px">
-        <Text color="textSubtle">{t('CAKE Balance')}</Text>
+        <Text color="text">{t('CAKE Balance')}</Text>
         {cakeFetchStatus !== FetchStatus.SUCCESS ? (
           <Skeleton height="22px" width="60px" />
         ) : (

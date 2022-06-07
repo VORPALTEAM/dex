@@ -1,4 +1,4 @@
-import { ChainId, Pair, Token } from '@pancakeswap/sdk'
+import { ChainId, Pair, Token } from 'pickleswap-sdk2'
 import flatMap from 'lodash/flatMap'
 import { useCallback, useMemo } from 'react'
 import { useDispatch, useSelector } from 'react-redux'

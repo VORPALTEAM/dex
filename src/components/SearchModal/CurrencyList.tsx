@@ -1,6 +1,6 @@
 import React, { CSSProperties, MutableRefObject, useCallback, useMemo } from 'react'
-import { Currency, CurrencyAmount, currencyEquals, ETHER, Token } from '@pancakeswap/sdk'
-import { Text } from '@pancakeswap/uikit'
+import { Currency, CurrencyAmount, currencyEquals, ETHER, Token } from 'pickleswap-sdk2'
+import { Text } from 'pickleswap-uikit'
 import styled from 'styled-components'
 import { FixedSizeList } from 'react-window'
 import { wrappedCurrency } from 'utils/wrappedCurrency'
@@ -49,8 +49,14 @@ const MenuItem = styled(RowBetween)<{ disabled: boolean; selected: boolean }>`
   grid-gap: 8px;
   cursor: ${({ disabled }) => !disabled && 'pointer'};
   pointer-events: ${({ disabled }) => disabled && 'none'};
+  ${Text} {
+    font-family: 'RobotoBold';
+  }
   :hover {
-    background-color: ${({ theme, disabled }) => !disabled && theme.colors.background};
+    /* background-color: ${({ theme, disabled }) => !disabled && theme.colors.background}; */
+    ${Text} {
+      color: ${({ theme }) => theme.colors.purple};
+    }
   }
   opacity: ${({ disabled, selected }) => (disabled || selected ? 0.5 : 1)};
 `
@@ -86,8 +92,10 @@ function CurrencyRow({
     >
       <CurrencyLogo currency={currency} size="24px" />
       <Column>
-        <Text bold>{currency.symbol}</Text>
-        <Text color="textSubtle" small ellipsis maxWidth="200px">
+        <Text color="text" bold>
+          {currency.symbol}
+        </Text>
+        <Text style={{ fontSize: '12px' }} color="text" ellipsis maxWidth="200px">
           {!isOnSelectedList && customAdded && 'Added by user •'} {currency.name}
         </Text>
       </Column>
@@ -173,7 +181,7 @@ export default function CurrencyList({
       }
       return (
         <CurrencyRow
-          style={style}
+          style={{ ...style, padding: '4px 31px' }}
           currency={currency}
           isSelected={isSelected}
           onSelect={handleSelect}

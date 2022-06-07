@@ -1,5 +1,5 @@
-import { Currency } from '@pancakeswap/sdk'
-import { Box, BunnyPlaceholderIcon, Flex, Text } from '@pancakeswap/uikit'
+import { Currency } from 'pickleswap-sdk2'
+import { Box, BunnyPlaceholderIcon, Flex, Text } from 'pickleswap-uikit'
 import TradingView, { TradingViewLabel, useTradingViewEvent } from 'components/TradingView'
 import { useTranslation } from 'contexts/Localization'
 import useDebounce from 'hooks/useDebounce'

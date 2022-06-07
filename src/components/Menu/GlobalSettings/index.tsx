@@ -1,5 +1,5 @@
 import React from 'react'
-import { Flex, IconButton, CogIcon, useModal } from '@pancakeswap/uikit'
+import { Flex, IconButton, CogIcon, useModal } from 'pickleswap-uikit'
 import SettingsModal from './SettingsModal'
 
 type Props = {
@@ -13,7 +13,7 @@ const GlobalSettings = ({ color, mr = '8px' }: Props) => {
   return (
     <Flex>
       <IconButton onClick={onPresentSettingsModal} variant="text" scale="sm" mr={mr} id="open-settings-dialog-button">
-        <CogIcon height={24} width={24} color={color || 'textSubtle'} />
+        <CogIcon height={30} width={30} color={color || 'contrast'} />
       </IconButton>
     </Flex>
   )

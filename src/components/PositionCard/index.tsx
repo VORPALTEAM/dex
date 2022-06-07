@@ -1,16 +1,17 @@
 import React, { useState } from 'react'
-import { JSBI, Pair, Percent } from '@pancakeswap/sdk'
+import { JSBI, Pair, Percent } from 'pickleswap-sdk2'
 import {
   Button,
   Text,
-  ChevronUpIcon,
+  // ChevronUpIcon,
   ChevronDownIcon,
   Card,
   CardBody,
   Flex,
   CardProps,
   AddIcon,
-} from '@pancakeswap/uikit'
+  darkColors,
+} from 'pickleswap-uikit'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import { useTranslation } from 'contexts/Localization'
@@ -129,7 +130,7 @@ export function MinimalPositionCard({ pair, showUnwrapped = false }: PositionCar
         </Card>
       ) : (
         <LightCard>
-          <Text fontSize="14px" style={{ textAlign: 'center' }}>
+          <Text fontSize="14px" color="#F1F6F9" style={{ textAlign: 'center' }}>
             <span role="img" aria-label="pancake-icon">
               🥞
             </span>{' '}
@@ -174,12 +175,12 @@ export default function FullPositionCard({ pair, ...props }: PositionCardProps) 
       : [undefined, undefined]
 
   return (
-    <Card style={{ borderRadius: '12px' }} {...props}>
+    <Card background={darkColors.backgroundAlt1} style={{ borderRadius: '12px' }} {...props}>
       <Flex justifyContent="space-between" role="button" onClick={() => setShowMore(!showMore)} p="16px">
         <Flex flexDirection="column">
           <Flex alignItems="center" mb="4px">
             <DoubleCurrencyLogo currency0={currency0} currency1={currency1} size={20} />
-            <Text bold ml="8px">
+            <Text color="textSubtle" bold ml="8px">
               {!currency0 || !currency1 ? <Dots>{t('Loading')}</Dots> : `${currency0.symbol}/${currency1.symbol}`}
             </Text>
           </Flex>
@@ -187,7 +188,7 @@ export default function FullPositionCard({ pair, ...props }: PositionCardProps) 
             {userPoolBalance?.toSignificant(4)}
           </Text>
         </Flex>
-        {showMore ? <ChevronUpIcon /> : <ChevronDownIcon />}
+        {showMore ? <ChevronDownIcon style={{ transform: 'rotate(180deg)' }} width={20} /> : <ChevronDownIcon />}
       </Flex>
 
       {showMore && (
@@ -201,7 +202,9 @@ export default function FullPositionCard({ pair, ...props }: PositionCardProps) 
             </RowFixed>
             {token0Deposited ? (
               <RowFixed>
-                <Text ml="6px">{token0Deposited?.toSignificant(6)}</Text>
+                <Text color="textSubtle" ml="6px">
+                  {token0Deposited?.toSignificant(6)}
+                </Text>
               </RowFixed>
             ) : (
               '-'
@@ -217,7 +220,9 @@ export default function FullPositionCard({ pair, ...props }: PositionCardProps) 
             </RowFixed>
             {token1Deposited ? (
               <RowFixed>
-                <Text ml="6px">{token1Deposited?.toSignificant(6)}</Text>
+                <Text color="textSubtle" ml="6px">
+                  {token1Deposited?.toSignificant(6)}
+                </Text>
               </RowFixed>
             ) : (
               '-'
@@ -226,7 +231,7 @@ export default function FullPositionCard({ pair, ...props }: PositionCardProps) 
 
           <FixedHeightRow>
             <Text color="textSubtle">{t('Share of Pool')}</Text>
-            <Text>
+            <Text color="textSubtle">
               {poolTokenPercentage
                 ? `${poolTokenPercentage.toFixed(2) === '0.00' ? '<0.01' : poolTokenPercentage.toFixed(2)}%`
                 : '-'}
@@ -234,13 +239,15 @@ export default function FullPositionCard({ pair, ...props }: PositionCardProps) 
           </FixedHeightRow>
 
           {userPoolBalance && JSBI.greaterThan(userPoolBalance.raw, BIG_INT_ZERO) && (
-            <Flex flexDirection="column">
+            <Flex flexDirection="column" alignItems="center" marginTop="30px">
               <Button
                 as={Link}
                 to={`/remove/${currencyId(currency0)}/${currencyId(currency1)}`}
                 variant="primary"
-                width="100%"
-                mb="8px"
+                width="240px"
+                height="40px"
+                marginBottom="11px"
+                style={{ borderRadius: '20px' }}
               >
                 {t('Remove')}
               </Button>
@@ -249,7 +256,8 @@ export default function FullPositionCard({ pair, ...props }: PositionCardProps) 
                 to={`/add/${currencyId(currency0)}/${currencyId(currency1)}`}
                 variant="text"
                 startIcon={<AddIcon color="primary" />}
-                width="100%"
+                width="240px"
+                height="20px"
               >
                 {t('Add liquidity instead')}
               </Button>

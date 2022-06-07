@@ -1,7 +1,7 @@
 import React, { useCallback } from 'react'
 import useActiveWeb3React from 'hooks/useActiveWeb3React'
 import { useDispatch } from 'react-redux'
-import { Modal, ModalBody, Text, Button, Flex, InjectedModalProps } from '@pancakeswap/uikit'
+import { Modal, ModalBody, Text, Button, Flex, InjectedModalProps } from 'pickleswap-uikit'
 import { useTranslation } from 'contexts/Localization'
 import { orderBy } from 'lodash'
 import { isTransactionRecent, useAllTransactions } from 'state/transactions/hooks'
@@ -43,7 +43,7 @@ const TransactionsModal: React.FC<InjectedModalProps> = ({ onDismiss }) => {
   }, [dispatch, chainId])
 
   return (
-    <Modal title={t('Recent Transactions')} headerBackground="gradients.cardHeader" onDismiss={onDismiss}>
+    <Modal title={t('Recent Transactions')} headerBackground="colors.backgroundAlt" onDismiss={onDismiss}>
       {account ? (
         <ModalBody>
           {!!pending.length || !!confirmed.length ? (

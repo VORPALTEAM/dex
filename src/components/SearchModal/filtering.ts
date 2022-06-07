@@ -1,5 +1,5 @@
 import { useMemo } from 'react'
-import { Token } from '@pancakeswap/sdk'
+import { Token } from 'pickleswap-sdk2'
 import { isAddress } from '../../utils'
 
 export function filterTokens(tokens: Token[], search: string): Token[] {

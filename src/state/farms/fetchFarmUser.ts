@@ -1,9 +1,11 @@
+/* eslint-disable no-debugger */
 import BigNumber from 'bignumber.js'
 import erc20ABI from 'config/abi/erc20.json'
 import masterchefABI from 'config/abi/masterchef.json'
 import multicall from 'utils/multicall'
 import { getAddress, getMasterChefAddress } from 'utils/addressHelpers'
 import { SerializedFarmConfig } from 'config/constants/types'
+// import { getMasterchefContract } from 'utils/contractHelpers'
 
 export const fetchFarmUserAllowances = async (account: string, farmsToFetch: SerializedFarmConfig[]) => {
   const masterChefAddress = getMasterChefAddress()
@@ -57,16 +59,24 @@ export const fetchFarmUserStakedBalances = async (account: string, farmsToFetch:
 
 export const fetchFarmUserEarnings = async (account: string, farmsToFetch: SerializedFarmConfig[]) => {
   const masterChefAddress = getMasterChefAddress()
+  // const masterChefContract = getMasterchefContract()
+
+  // const tmp = farmsToFetch.map(async (farm) => {
+  //   const pending = await masterChefContract.pendingBSW(farm.pid, account)
+  //   console.log(pending);
+
+  // })
 
   const calls = farmsToFetch.map((farm) => {
     return {
       address: masterChefAddress,
-      name: 'pendingCake',
+      name: 'pendingvorpal',
       params: [farm.pid, account],
     }
   })
 
   const rawEarnings = await multicall(masterchefABI, calls)
+
   const parsedEarnings = rawEarnings.map((earnings) => {
     return new BigNumber(earnings).toJSON()
   })

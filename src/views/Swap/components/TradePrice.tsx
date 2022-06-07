@@ -1,6 +1,6 @@
 import React from 'react'
-import { Price } from '@pancakeswap/sdk'
-import { Text, AutoRenewIcon } from '@pancakeswap/uikit'
+import { Price } from 'pickleswap-sdk2'
+import { Text, AutoRenewIcon } from 'pickleswap-uikit'
 import { StyledBalanceMaxMini } from './styleds'
 
 interface TradePriceProps {
@@ -18,12 +18,15 @@ export default function TradePrice({ price, showInverted, setShowInverted }: Tra
     : `${price?.baseCurrency?.symbol} per ${price?.quoteCurrency?.symbol}`
 
   return (
-    <Text style={{ justifyContent: 'center', alignItems: 'center', display: 'flex' }}>
+    <Text
+      fontFamily="RobotoBold"
+      style={{ fontSize: '16px', justifyContent: 'center', alignItems: 'center', display: 'flex' }}
+    >
       {show ? (
         <>
           {formattedPrice ?? '-'} {label}
           <StyledBalanceMaxMini onClick={() => setShowInverted(!showInverted)}>
-            <AutoRenewIcon width="14px" />
+            <AutoRenewIcon width="20px" />
           </StyledBalanceMaxMini>
         </>
       ) : (

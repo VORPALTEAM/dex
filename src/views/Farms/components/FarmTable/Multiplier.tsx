@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Text, HelpIcon, Skeleton, useTooltip } from '@pancakeswap/uikit'
+import { Text, HelpIcon, Skeleton, useTooltip } from 'pickleswap-uikit'
 import { useTranslation } from 'contexts/Localization'
 
 const ReferenceElement = styled.div`
@@ -53,7 +53,7 @@ const Multiplier: React.FunctionComponent<MultiplierProps> = ({ multiplier }) =>
     <Container>
       <MultiplierWrapper>{displayMultiplier}</MultiplierWrapper>
       <ReferenceElement ref={targetRef}>
-        <HelpIcon color="textSubtle" />
+        <HelpIcon color="text" />
       </ReferenceElement>
       {tooltipVisible && tooltip}
     </Container>

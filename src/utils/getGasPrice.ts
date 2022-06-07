@@ -1,4 +1,4 @@
-import { ChainId } from '@pancakeswap/sdk'
+import { ChainId } from 'pickleswap-sdk2'
 import store from 'state'
 import { GAS_PRICE_GWEI } from 'state/user/hooks/helpers'
 

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Box, CopyIcon, Flex, FlexProps, IconButton } from '@pancakeswap/uikit'
+import { Box, CopyIcon, Flex, FlexProps, IconButton } from 'pickleswap-uikit'
 import styled from 'styled-components'
 import { useTranslation } from 'contexts/Localization'
 
@@ -22,7 +22,7 @@ const Address = styled.div`
   & > input {
     background: transparent;
     border: 0;
-    color: ${({ theme }) => theme.colors.text};
+    color: ${({ theme }) => theme.colors.textSubtle};
     display: block;
     font-weight: 600;
     font-size: 16px;

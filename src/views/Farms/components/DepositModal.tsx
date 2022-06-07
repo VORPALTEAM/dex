@@ -1,7 +1,7 @@
 import BigNumber from 'bignumber.js'
 import React, { useCallback, useMemo, useState } from 'react'
 import styled from 'styled-components'
-import { Flex, Text, Button, Modal, LinkExternal, CalculateIcon, IconButton, Skeleton } from '@pancakeswap/uikit'
+import { Flex, Text, Button, Modal, LinkExternal, CalculateIcon, IconButton, Skeleton, Heading } from 'pickleswap-uikit'
 import { ModalActions, ModalInput } from 'components/Modal'
 import RoiCalculatorModal from 'components/RoiCalculatorModal'
 import { useTranslation } from 'contexts/Localization'
@@ -20,6 +20,27 @@ const AnnualRoiDisplay = styled(Text)`
   overflow: hidden;
   text-align: right;
   text-overflow: ellipsis;
+`
+
+const StyledModal = styled(Modal)`
+  ${Heading} {
+    font-family: 'RoundsBlack';
+  }
+`
+
+const StyledButton = styled(Button)`
+  width: 100%;
+  height: 40px;
+  background-color: ${({ theme }) => theme.colors.backgroundAlt1};
+  color: ${({ theme }) => theme.colors.contrast};
+  box-shadow: none;
+  border-radius: 6px;
+`
+
+const StyledLinkExternal = styled(LinkExternal)`
+  font-family: 'RobotoBold';
+  font-size: 18px;
+  color: ${({ theme }) => theme.colors.purple};
 `
 
 interface DepositModalProps {
@@ -111,7 +132,7 @@ const DepositModal: React.FC<DepositModalProps> = ({
   }
 
   return (
-    <Modal title={t('Stake LP tokens')} onDismiss={onDismiss}>
+    <StyledModal title={t('Stake LP tokens')} onDismiss={onDismiss}>
       <ModalInput
         value={val}
         onSelectMax={handleSelectMax}
@@ -122,7 +143,7 @@ const DepositModal: React.FC<DepositModalProps> = ({
         inputTitle={t('Stake')}
       />
       <Flex mt="24px" alignItems="center" justifyContent="space-between">
-        <Text mr="8px" color="textSubtle">
+        <Text mr="8px" fontSize="18px" color="text">
           {t('Annual ROI at current rates')}:
         </Text>
         {Number.isFinite(annualRoi) ? (
@@ -142,10 +163,10 @@ const DepositModal: React.FC<DepositModalProps> = ({
         )}
       </Flex>
       <ModalActions>
-        <Button variant="secondary" onClick={onDismiss} width="100%" disabled={pendingTx}>
+        <StyledButton onClick={onDismiss} width="100%" disabled={pendingTx}>
           {t('Cancel')}
-        </Button>
-        <Button
+        </StyledButton>
+        <StyledButton
           width="100%"
           disabled={
             pendingTx || !lpTokensToStake.isFinite() || lpTokensToStake.eq(0) || lpTokensToStake.gt(fullBalanceNumber)
@@ -168,12 +189,12 @@ const DepositModal: React.FC<DepositModalProps> = ({
           }}
         >
           {pendingTx ? t('Confirming') : t('Confirm')}
-        </Button>
+        </StyledButton>
       </ModalActions>
-      <LinkExternal href={addLiquidityUrl} style={{ alignSelf: 'center' }}>
+      <StyledLinkExternal href={addLiquidityUrl} style={{ alignSelf: 'center' }}>
         {t('Get %symbol%', { symbol: tokenName })}
-      </LinkExternal>
-    </Modal>
+      </StyledLinkExternal>
+    </StyledModal>
   )
 }
 

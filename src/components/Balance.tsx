@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 import CountUp from 'react-countup'
-import { Text, TextProps } from '@pancakeswap/uikit'
+import { Text, TextProps } from 'pickleswap-uikit'
 
 interface BalanceProps extends TextProps {
   value: number
@@ -28,7 +28,7 @@ const Balance: React.FC<BalanceProps> = ({
   }, [value])
 
   return (
-    <Text color={isDisabled ? 'textDisabled' : color} onClick={onClick} {...props}>
+    <Text style={{ opacity: 0.5 }} color="text" onClick={onClick} {...props}>
       <CountUp
         start={previousValue.current}
         end={value}

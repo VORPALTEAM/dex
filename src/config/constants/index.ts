@@ -1,7 +1,7 @@
-import { ChainId, JSBI, Percent, Token } from '@pancakeswap/sdk'
+import { ChainId, JSBI, Percent, Token } from 'pickleswap-sdk2'
 import { mainnetTokens, testnetTokens } from './tokens'
 
-export const ROUTER_ADDRESS = '0xf08d6A98Afdda431718193320224c8815AFfe074'
+export const ROUTER_ADDRESS = '0x18f74a09F8303c84490E3B1E8C0cAEfa5B752417'
 
 // a list of tokens by chain
 type ChainTokenList = {
@@ -20,7 +20,7 @@ export const BASES_TO_CHECK_TRADES_AGAINST: ChainTokenList = {
     mainnetTokens.eth,
     mainnetTokens.usdc,
   ],
-  [ChainId.TESTNET]: [testnetTokens.wbnb, testnetTokens.cake, testnetTokens.busd],
+  [ChainId.TESTNET]: [testnetTokens.rtt, testnetTokens.swt, testnetTokens.one, testnetTokens.two],
 }
 
 /**

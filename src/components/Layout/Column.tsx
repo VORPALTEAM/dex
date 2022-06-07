@@ -7,7 +7,8 @@ const Column = styled.div`
 `
 export const ColumnCenter = styled(Column)`
   width: 100%;
-  align-items: center;
+  align-items: flex-start;
+  gap: 35px;
 `
 
 export const AutoColumn = styled.div<{

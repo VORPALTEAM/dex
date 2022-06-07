@@ -1,6 +1,6 @@
 import React, { useRef, RefObject, useCallback, useState, useMemo } from 'react'
-import { Token } from '@pancakeswap/sdk'
-import { Text, Button, CloseIcon, IconButton, LinkExternal, Input, Link } from '@pancakeswap/uikit'
+import { Token } from 'pickleswap-sdk2'
+import { Text, Button, CloseIcon, IconButton, LinkExternal, Input, Link } from 'pickleswap-uikit'
 import styled from 'styled-components'
 import Row, { RowBetween, RowFixed } from 'components/Layout/Row'
 import { useToken } from 'hooks/Tokens'
@@ -28,6 +28,17 @@ const Footer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+`
+
+const StyledInput = styled(Input)`
+  width: 322px;
+  height: 40px;
+  color: #dbd8e3;
+  background-color: #fff;
+  border: 1px solid #fff;
+  box-shadow: 0px 0px 5px 1px #d3cee0, inset 0px 0px 5px 2px rgb(0 0 0 / 15%);
+  border-radius: 6px;
+  font-size: 12px;
 `
 
 export default function ManageTokens({
@@ -94,8 +105,8 @@ export default function ManageTokens({
     <Wrapper>
       <Column style={{ width: '100%', flex: '1 1' }}>
         <AutoColumn gap="14px">
-          <Row>
-            <Input
+          <Row justify="center">
+            <StyledInput
               id="token-search-input"
               scale="lg"
               placeholder="0x0000"
@@ -106,7 +117,11 @@ export default function ManageTokens({
               isWarning={!isAddressValid}
             />
           </Row>
-          {!isAddressValid && <Text color="failure">{t('Enter valid token address')}</Text>}
+          {!isAddressValid && (
+            <Text fontSize="12px" style={{ width: '322px', margin: 'auto' }} color="failure">
+              {t('Enter valid token address')}
+            </Text>
+          )}
           {searchToken && (
             <ImportRow
               token={searchToken}
@@ -117,8 +132,8 @@ export default function ManageTokens({
           )}
         </AutoColumn>
         {tokenList}
-        <Footer>
-          <Text bold color="textSubtle">
+        <Footer style={{ paddingLeft: 40 }}>
+          <Text fontFamily="RobotoBold" fontSize="12px" color="text">
             {userAddedTokens?.length} {userAddedTokens.length === 1 ? t('Custom Token') : t('Custom Tokens')}
           </Text>
           {userAddedTokens.length > 0 && (

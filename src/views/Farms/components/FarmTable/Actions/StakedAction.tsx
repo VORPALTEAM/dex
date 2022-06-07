@@ -1,8 +1,8 @@
-import { AddIcon, Button, Heading, IconButton, MinusIcon, Skeleton, Text, useModal } from '@pancakeswap/uikit'
+import { AddIcon, Button, Heading, IconButton, MinusIcon, Skeleton, Text, useModal } from 'pickleswap-uikit'
 import { useWeb3React } from '@web3-react/core'
 import { BigNumber } from 'bignumber.js'
 import Balance from 'components/Balance'
-import ConnectWalletButton from 'components/ConnectWalletButton'
+// import ConnectWalletButton from 'components/ConnectWalletButton'
 import { BASE_ADD_LIQUIDITY_URL } from 'config'
 import { useTranslation } from 'contexts/Localization'
 import { useERC20 } from 'hooks/useContract'
@@ -18,6 +18,7 @@ import { getBalanceAmount, getBalanceNumber, getFullDisplayBalance } from 'utils
 import getLiquidityUrlPathParts from 'utils/getLiquidityUrlPathParts'
 import { logError } from 'utils/sentry'
 import { FarmWithStakedValue } from 'views/Farms/components/FarmCard/FarmCard'
+import StyledConnectWalletButton from '../../../../../style/ConnectWalletButton'
 import useApproveFarm from '../../../hooks/useApproveFarm'
 import useStakeFarms from '../../../hooks/useStakeFarms'
 import useUnstakeFarms from '../../../hooks/useUnstakeFarms'
@@ -27,6 +28,16 @@ import { ActionContainer, ActionContent, ActionTitles } from './styles'
 
 const IconButtonWrapper = styled.div`
   display: flex;
+`
+
+const StyledIconButton = styled(IconButton)`
+  width: 45px;
+  height: 45px;
+
+  background: #ededed;
+  border: 1px solid #ffffff;
+  box-shadow: 0px 0px 5px 1px #ffffff, inset 0px 0px 5px 2px rgba(0, 0, 0, 0.15);
+  border-radius: 6px;
 `
 
 interface StackedActionProps extends FarmWithStakedValue {
@@ -127,12 +138,12 @@ const Staked: React.FunctionComponent<StackedActionProps> = ({
     return (
       <ActionContainer>
         <ActionTitles>
-          <Text bold textTransform="uppercase" color="textSubtle" fontSize="12px">
+          <Text bold textTransform="uppercase" fontFamily="RobotoBold" color="text" fontSize="12px">
             {t('Start Farming')}
           </Text>
         </ActionTitles>
         <ActionContent>
-          <ConnectWalletButton width="100%" />
+          <StyledConnectWalletButton width="100%" />
         </ActionContent>
       </ActionContainer>
     )
@@ -143,10 +154,10 @@ const Staked: React.FunctionComponent<StackedActionProps> = ({
       return (
         <ActionContainer>
           <ActionTitles>
-            <Text bold textTransform="uppercase" color="secondary" fontSize="12px" pr="4px">
+            <Text bold textTransform="uppercase" fontFamily="RobotoBold" color="text" fontSize="12px" pr="4px">
               {lpSymbol}
             </Text>
-            <Text bold textTransform="uppercase" color="textSubtle" fontSize="12px">
+            <Text bold textTransform="uppercase" fontFamily="RobotoBold" color="text" fontSize="12px">
               {t('Staked')}
             </Text>
           </ActionTitles>
@@ -156,7 +167,8 @@ const Staked: React.FunctionComponent<StackedActionProps> = ({
               {stakedBalance.gt(0) && lpPrice.gt(0) && (
                 <Balance
                   fontSize="12px"
-                  color="textSubtle"
+                  fontFamily="RobotoBold"
+                  color="text"
                   decimals={2}
                   value={getBalanceNumber(lpPrice.times(stakedBalance))}
                   unit=" USD"
@@ -165,16 +177,16 @@ const Staked: React.FunctionComponent<StackedActionProps> = ({
               )}
             </div>
             <IconButtonWrapper>
-              <IconButton variant="secondary" onClick={onPresentWithdraw} mr="6px">
-                <MinusIcon color="primary" width="14px" />
-              </IconButton>
-              <IconButton
+              <StyledIconButton variant="secondary" onClick={onPresentWithdraw} mr="6px">
+                <MinusIcon color="backgroundAlt1" width="24px" />
+              </StyledIconButton>
+              <StyledIconButton
                 variant="secondary"
                 onClick={onPresentDeposit}
                 disabled={['history', 'archived'].some((item) => location.pathname.includes(item))}
               >
-                <AddIcon color="primary" width="14px" />
-              </IconButton>
+                <AddIcon color="backgroundAlt1" width="24px" />
+              </StyledIconButton>
             </IconButtonWrapper>
           </ActionContent>
         </ActionContainer>
@@ -184,18 +196,19 @@ const Staked: React.FunctionComponent<StackedActionProps> = ({
     return (
       <ActionContainer>
         <ActionTitles>
-          <Text bold textTransform="uppercase" color="textSubtle" fontSize="12px" pr="4px">
+          <Text bold textTransform="uppercase" fontFamily="RobotoBold" color="text" fontSize="12px" pr="4px">
             {t('Stake')}
           </Text>
-          <Text bold textTransform="uppercase" color="secondary" fontSize="12px">
+          <Text bold textTransform="uppercase" fontFamily="RobotoBold" color="text" fontSize="12px">
             {lpSymbol}
           </Text>
         </ActionTitles>
         <ActionContent>
           <Button
             width="100%"
+            height="40px"
             onClick={onPresentDeposit}
-            variant="secondary"
+            variant="farmsButton"
             disabled={['history', 'archived'].some((item) => location.pathname.includes(item))}
           >
             {t('Stake LP')}
@@ -209,7 +222,7 @@ const Staked: React.FunctionComponent<StackedActionProps> = ({
     return (
       <ActionContainer>
         <ActionTitles>
-          <Text bold textTransform="uppercase" color="textSubtle" fontSize="12px">
+          <Text bold textTransform="uppercase" fontFamily="RobotoBold" color="text" fontSize="12px">
             {t('Start Farming')}
           </Text>
         </ActionTitles>

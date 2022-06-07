@@ -1,18 +1,19 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Text, Heading, Card, CardHeader, CardBody, Flex } from '@pancakeswap/uikit'
+import { Text, Heading, Card, CardHeader, CardBody, Flex } from 'pickleswap-uikit'
 import { useTranslation } from 'contexts/Localization'
 import useApproveConfirmTransaction from 'hooks/useApproveConfirmTransaction'
 import { useCake, useFarmAuctionContract } from 'hooks/useContract'
 import { ethersToBigNumber } from 'utils/bigNumber'
 import { useWeb3React } from '@web3-react/core'
-import ConnectWalletButton from 'components/ConnectWalletButton'
+// import ConnectWalletButton from 'components/ConnectWalletButton'
 import useToast from 'hooks/useToast'
 import { useCallWithGasPrice } from 'hooks/useCallWithGasPrice'
 import { getBalanceNumber } from 'utils/formatBalance'
 import { ethers } from 'ethers'
 import ApproveConfirmButtons, { ButtonArrangement } from 'components/ApproveConfirmButtons'
 import { ToastDescriptionWithTx } from 'components/Toast'
+import StyledConnectWalletButton from '../../../style/ConnectWalletButton'
 import useReclaimAuctionBid from '../hooks/useReclaimAuctionBid'
 
 const StyledReclaimBidCard = styled(Card)`
@@ -98,7 +99,7 @@ const ReclaimBidCard: React.FC = () => {
             confirmLabel={t('Reclaim')}
           />
         ) : (
-          <ConnectWalletButton />
+          <StyledConnectWalletButton />
         )}
       </CardBody>
     </StyledReclaimBidCard>

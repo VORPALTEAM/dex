@@ -1,5 +1,5 @@
-import { Currency, ETHER, Token } from '@pancakeswap/sdk'
-import { BinanceIcon } from '@pancakeswap/uikit'
+import { Currency, ETHER, Token } from 'pickleswap-sdk2'
+import { darkColors, BinanceIcon } from 'pickleswap-uikit'
 import React, { useMemo } from 'react'
 import styled from 'styled-components'
 import useHttpLocations from '../../hooks/useHttpLocations'
@@ -39,5 +39,13 @@ export default function CurrencyLogo({
     return <BinanceIcon width={size} style={style} />
   }
 
-  return <StyledLogo size={size} srcs={srcs} alt={`${currency?.symbol ?? 'token'} logo`} style={style} />
+  return (
+    <StyledLogo
+      color={darkColors.textSubtle}
+      size={size}
+      srcs={srcs}
+      alt={`${currency?.symbol ?? 'token'} logo`}
+      style={style}
+    />
+  )
 }

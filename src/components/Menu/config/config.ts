@@ -1,6 +1,6 @@
-import { MenuItemsType, DropdownMenuItemType } from '@pancakeswap/uikit'
+import { MenuItemsType, DropdownMenuItemType } from 'pickleswap-uikit'
 import { ContextApi } from 'contexts/Localization/types'
-import { nftsBaseUrl } from 'views/Nft/market/constants'
+// import { nftsBaseUrl } from 'views/Nft/market/constants'
 
 export type ConfigMenuItemsType = MenuItemsType & { hideSubNav?: boolean }
 
@@ -36,44 +36,58 @@ const config: (t: ContextApi['t']) => ConfigMenuItemsType[] = (t) => [
       },
     ],
   },
+  // {
+  //   label: t('Win'),
+  //   href: '/prediction',
+  //   icon: 'Trophy',
+  //   items: [
+  //     {
+  //       label: t('Trading Competition'),
+  //       href: '/competition',
+  //     },
+  //     {
+  //       label: t('Prediction (BETA)'),
+  //       href: '/prediction',
+  //     },
+  //     {
+  //       label: t('Lottery'),
+  //       href: '/lottery',
+  //     },
+  //   ],
+  // },
   {
-    label: t('Win'),
-    href: '/prediction',
+    label: t('Soon'),
+    href: '/soon',
     icon: 'Trophy',
-    items: [
-      {
-        label: t('Trading Competition'),
-        href: '/competition',
-      },
-      {
-        label: t('Prediction (BETA)'),
-        href: '/prediction',
-      },
-      {
-        label: t('Lottery'),
-        href: '/lottery',
-      },
-    ],
+    hideSubNav: false,
+    items: [],
   },
   {
-    label: t('NFT'),
-    href: `${nftsBaseUrl}`,
-    icon: 'Nft',
-    items: [
-      {
-        label: t('Overview'),
-        href: `${nftsBaseUrl}`,
-      },
-      {
-        label: t('Collections'),
-        href: `${nftsBaseUrl}/collections`,
-      },
-      {
-        label: t('Activity'),
-        href: `${nftsBaseUrl}/activity`,
-      },
-    ],
+    label: t('Sale'),
+    href: '/sale',
+    icon: 'Trophy',
+    hideSubNav: false,
+    items: [],
   },
+  // {
+  //   label: t('NFT'),
+  //   href: `${nftsBaseUrl}`,
+  //   icon: 'Nft',
+  //   items: [
+  //     {
+  //       label: t('Overview'),
+  //       href: `${nftsBaseUrl}`,
+  //     },
+  //     {
+  //       label: t('Collections'),
+  //       href: `${nftsBaseUrl}/collections`,
+  //     },
+  //     {
+  //       label: t('Activity'),
+  //       href: `${nftsBaseUrl}/activity`,
+  //     },
+  //   ],
+  // },
   {
     label: '',
     href: '/info',

@@ -1,6 +1,7 @@
 import BigNumber from 'bignumber.js'
 import React, { useCallback, useMemo, useState } from 'react'
-import { Button, Modal } from '@pancakeswap/uikit'
+import styled from 'styled-components'
+import { Button, Modal, Heading } from 'pickleswap-uikit'
 import { ModalActions, ModalInput } from 'components/Modal'
 import { useTranslation } from 'contexts/Localization'
 import { getFullDisplayBalance } from 'utils/formatBalance'
@@ -13,6 +14,21 @@ interface WithdrawModalProps {
   onDismiss?: () => void
   tokenName?: string
 }
+
+const StyledModal = styled(Modal)`
+  ${Heading} {
+    font-family: 'RoundsBlack';
+  }
+`
+
+const StyledButton = styled(Button)`
+  width: 100%;
+  height: 40px;
+  background-color: ${({ theme }) => theme.colors.backgroundAlt1};
+  color: ${({ theme }) => theme.colors.contrast};
+  box-shadow: none;
+  border-radius: 6px;
+`
 
 const WithdrawModal: React.FC<WithdrawModalProps> = ({ onConfirm, onDismiss, max, tokenName = '' }) => {
   const [val, setVal] = useState('')
@@ -40,7 +56,7 @@ const WithdrawModal: React.FC<WithdrawModalProps> = ({ onConfirm, onDismiss, max
   }, [fullBalance, setVal])
 
   return (
-    <Modal title={t('Unstake LP tokens')} onDismiss={onDismiss}>
+    <StyledModal title={t('Unstake LP tokens')} onDismiss={onDismiss}>
       <ModalInput
         onSelectMax={handleSelectMax}
         onChange={handleChange}
@@ -50,10 +66,10 @@ const WithdrawModal: React.FC<WithdrawModalProps> = ({ onConfirm, onDismiss, max
         inputTitle={t('Unstake')}
       />
       <ModalActions>
-        <Button variant="secondary" onClick={onDismiss} width="100%" disabled={pendingTx}>
+        <StyledButton onClick={onDismiss} width="100%" disabled={pendingTx}>
           {t('Cancel')}
-        </Button>
-        <Button
+        </StyledButton>
+        <StyledButton
           disabled={pendingTx || !valNumber.isFinite() || valNumber.eq(0) || valNumber.gt(fullBalanceNumber)}
           onClick={async () => {
             setPendingTx(true)
@@ -74,9 +90,9 @@ const WithdrawModal: React.FC<WithdrawModalProps> = ({ onConfirm, onDismiss, max
           width="100%"
         >
           {pendingTx ? t('Confirming') : t('Confirm')}
-        </Button>
+        </StyledButton>
       </ModalActions>
-    </Modal>
+    </StyledModal>
   )
 }
 

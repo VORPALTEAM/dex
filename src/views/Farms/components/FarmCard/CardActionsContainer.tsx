@@ -1,4 +1,4 @@
-import { Button, Flex, Text } from '@pancakeswap/uikit'
+import { Button, Flex, Text } from 'pickleswap-uikit'
 import BigNumber from 'bignumber.js'
 import ConnectWalletButton from 'components/ConnectWalletButton'
 import { useTranslation } from 'contexts/Localization'
@@ -11,12 +11,16 @@ import { DeserializedFarm } from 'state/types'
 import styled from 'styled-components'
 import { getAddress } from 'utils/addressHelpers'
 import { logError } from 'utils/sentry'
+import StyledConnectWalletButton from '../../../../style/ConnectWalletButton'
 import useApproveFarm from '../../hooks/useApproveFarm'
 import HarvestAction from './HarvestAction'
 import StakeAction from './StakeAction'
 
 const Action = styled.div`
-  padding-top: 16px;
+  border-top: ${({ theme }) => `1px solid ${theme.colors.text}`};
+  border-bottom: ${({ theme }) => `1px solid ${theme.colors.text}`};
+  padding: 8px 0px;
+  margin: 10px 0px 7px 0px;
 `
 export interface FarmWithStakedValue extends DeserializedFarm {
   apr?: number
@@ -70,7 +74,15 @@ const CardActions: React.FC<FarmCardActionsProps> = ({ farm, account, addLiquidi
         addLiquidityUrl={addLiquidityUrl}
       />
     ) : (
-      <Button mt="8px" width="100%" disabled={requestedApproval} onClick={handleApprove}>
+      <Button
+        style={{ boxShadow: 'none' }}
+        mt="8px"
+        width="100%"
+        height="40px"
+        variant="farmsButton"
+        disabled={requestedApproval}
+        onClick={handleApprove}
+      >
         {t('Enable Contract')}
       </Button>
     )
@@ -79,23 +91,23 @@ const CardActions: React.FC<FarmCardActionsProps> = ({ farm, account, addLiquidi
   return (
     <Action>
       <Flex>
-        <Text bold textTransform="uppercase" color="secondary" fontSize="12px" pr="4px">
-          CAKE
+        <Text bold fontFamily="RobotoBold" textTransform="uppercase" color="purple" fontSize="12px" pr="4px">
+          Pickle
         </Text>
-        <Text bold textTransform="uppercase" color="textSubtle" fontSize="12px">
+        <Text bold fontFamily="RobotoBold" textTransform="uppercase" color="text" fontSize="12px">
           {t('Earned')}
         </Text>
       </Flex>
       <HarvestAction earnings={earnings} pid={pid} />
       <Flex>
-        <Text bold textTransform="uppercase" color="secondary" fontSize="12px" pr="4px">
+        <Text bold fontFamily="RobotoBold" textTransform="uppercase" color="purple" fontSize="12px" pr="4px">
           {farm.lpSymbol}
         </Text>
-        <Text bold textTransform="uppercase" color="textSubtle" fontSize="12px">
+        <Text bold fontFamily="RobotoBold" textTransform="uppercase" color="text" fontSize="12px">
           {t('Staked')}
         </Text>
       </Flex>
-      {!account ? <ConnectWalletButton mt="8px" width="100%" /> : renderApprovalOrStakeButton()}
+      {!account ? <StyledConnectWalletButton mt="8px" style={{ width: '100%' }} /> : renderApprovalOrStakeButton()}
     </Action>
   )
 }

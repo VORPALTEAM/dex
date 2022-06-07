@@ -1,5 +1,5 @@
 import { createAction } from '@reduxjs/toolkit'
-import { ChainId } from '@pancakeswap/sdk'
+import { ChainId } from 'pickleswap-sdk2'
 
 export interface SerializableTransactionReceipt {
   to: string

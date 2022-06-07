@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-// import { Box } from '@pancakeswap/uikit'
+// import { Box } from 'pickleswap-uikit'
 import { Box } from 'pickleswap-uikit'
 
 const Card = styled(Box)<{
@@ -20,7 +20,12 @@ export default Card
 
 export const LightCard = styled(Card)`
   border: 1px solid ${({ theme }) => theme.colors.background};
-  background-color: ${({ theme }) => theme.colors.backgroundAlt};
+  background-color: #352f44;
+`
+
+export const CustomCard = styled(Card)`
+  border: 1px solid ${({ theme }) => theme.colors.background};
+  background-color: transparent;
 `
 
 export const LightGreyCard = styled(Card)`

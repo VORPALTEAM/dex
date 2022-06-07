@@ -42,6 +42,20 @@ const pools: SerializedPoolConfig[] = [
     sortOrder: 1,
     isFinished: false,
   },
+  {
+    sousId: 1,
+    stakingToken: serializedTokens.bsw,
+    earningToken: serializedTokens.rtt,
+    contractAddress: {
+      97: '0x1c0F325Ef7A162558d051EceF3559a8efE2933E3',
+      56: '0x1c0F325Ef7A162558d051EceF3559a8efE2933E3',
+    },
+    poolCategory: PoolCategory.CORE,
+    harvest: true,
+    tokenPerBlock: '200',
+    sortOrder: 1,
+    isFinished: false,
+  },
 ]
 
 export default pools

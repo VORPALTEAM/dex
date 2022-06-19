@@ -29,6 +29,10 @@ const StyledInput = styled(Input)`
   box-shadow: 0px 0px 5px 1px #d3cee0, inset 0px 0px 5px 2px rgb(0 0 0 / 15%);
   border-radius: 20px;
   font-size: 12px;
+
+  &:focus:not(:disabled) {
+    border: none;
+  }
 `
 
 const StyledListContainer = styled.div`

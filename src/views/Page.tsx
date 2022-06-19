@@ -13,7 +13,7 @@ const StyledPage = styled.div<{ $removePadding: boolean }>`
   padding: ${({ $removePadding }) => ($removePadding ? '0' : '16px')};
   padding-bottom: 0;
   min-height: calc(100vh - 64px);
-  background-image: url(${Wallpaper});
+  background: no-repeat url(${Wallpaper});
 
   ${({ theme }) => theme.mediaQueries.xs} {
     background-size: auto;

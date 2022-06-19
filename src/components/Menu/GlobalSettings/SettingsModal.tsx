@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import { Text, Toggle, Flex, Modal, InjectedModalProps } from 'pickleswap-uikit'
+import { Text, Toggle, Flex, Modal, InjectedModalProps, Heading } from 'pickleswap-uikit'
 import {
   useAudioModeManager,
   useExpertModeManager,
@@ -21,6 +21,15 @@ const ScrollableContainer = styled(Flex)`
   max-height: 400px;
   ${({ theme }) => theme.mediaQueries.sm} {
     max-height: none;
+  }
+`
+
+const StyledModal = styled(Modal)`
+  border-bottom: ${({ theme }) => `1px solid ${theme.colors.text}`};
+  border-radius: 40px;
+
+  ${Heading} {
+    font-family: 'RoundsBlack';
   }
 `
 
@@ -59,7 +68,7 @@ const SettingsModal: React.FC<InjectedModalProps> = ({ onDismiss }) => {
   }
 
   return (
-    <Modal
+    <StyledModal
       title={t('Settings')}
       headerBackground="colors.backgroundAlt"
       onDismiss={onDismiss}
@@ -67,7 +76,7 @@ const SettingsModal: React.FC<InjectedModalProps> = ({ onDismiss }) => {
     >
       <ScrollableContainer>
         <Flex pb="24px" flexDirection="column">
-          <Text bold textTransform="uppercase" fontSize="16px" color="text" mb="24px">
+          <Text fontFamily="RobotoBold" fontSize="16px" color="text" mb="10px">
             {t('Global')}
           </Text>
           {/* <Flex justifyContent="space-between">
@@ -76,7 +85,7 @@ const SettingsModal: React.FC<InjectedModalProps> = ({ onDismiss }) => {
           </Flex> */}
           <GasSettings />
         </Flex>
-        <Flex pt="24px" flexDirection="column" borderTop={`1px ${theme.colors.cardBorder} solid`}>
+        <Flex pt="24px" flexDirection="column" borderTop={`1px ${theme.colors.text} solid`}>
           <Text bold textTransform="uppercase" fontSize="16px" color="text" mb="24px">
             {t('Swaps & Liquidity')}
           </Text>
@@ -89,6 +98,8 @@ const SettingsModal: React.FC<InjectedModalProps> = ({ onDismiss }) => {
               text={t('Bypasses confirmation modals and allows high slippage trades. Use at your own risk.')}
               placement="top-start"
               ml="4px"
+              color="text"
+              size="20px"
             />
           </Flex>
           <Toggle
@@ -103,7 +114,12 @@ const SettingsModal: React.FC<InjectedModalProps> = ({ onDismiss }) => {
         <Flex justifyContent="space-between" alignItems="center" mb="19px">
           <Flex alignItems="center">
             <Text>{t('Disable Multihops')}</Text>
-            <QuestionHelper text={t('Restricts swaps to direct pairs only.')} placement="top-start" ml="4px" />
+            <QuestionHelper
+              text={t('Restricts swaps to direct pairs only.')}
+              placement="top-start"
+              ml="4px"
+              size="20px"
+            />
           </Flex>
           <Toggle
             id="toggle-disable-multihop-button"
@@ -143,6 +159,7 @@ const SettingsModal: React.FC<InjectedModalProps> = ({ onDismiss }) => {
               text={t('Fun sounds to make a truly immersive pancake-flipping trading experience')}
               placement="top-start"
               ml="4px"
+              size="20px"
             />
           </Flex>
           <Toggle
@@ -154,7 +171,7 @@ const SettingsModal: React.FC<InjectedModalProps> = ({ onDismiss }) => {
           />
         </Flex>
       </ScrollableContainer>
-    </Modal>
+    </StyledModal>
   )
 }
 

@@ -7,6 +7,7 @@ export const BodyWrapper = styled(Card)`
   width: ${({ width }) => `${width}px` ?? '100%'};
   z-index: 1;
   background: transparent;
+  padding: 0;
 `
 
 /**

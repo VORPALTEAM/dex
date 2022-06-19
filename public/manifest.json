@@ -1,7 +1,7 @@
 {
-  "short_name": "PancakeSwap",
-  "name": "PancakeSwap",
-  "description": "Farm CAKE with Pancake LP Tokens",
+  "short_name": "Vorpal",
+  "name": "Vorpal",
+  "description": "Farm CAKE with Vorpal LP Tokens",
   "homepage_url": "https://pancakeswap.finance",
   "start_url": ".",
   "display": "standalone",

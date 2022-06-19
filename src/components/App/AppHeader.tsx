@@ -20,9 +20,14 @@ const AppHeaderContainer = styled(Flex)`
   justify-content: space-between;
   padding: 24px 0px 24px 0px;
   width: 580px;
-  margin: 74px auto 20px auto;
-  border-top: 1px solid ${({ theme }) => theme.colors.cardBorder};
-  border-bottom: 1px solid ${({ theme }) => theme.colors.cardBorder};
+  margin: 50px auto 20px auto;
+  border-top: 1px solid ${({ theme }) => theme.colors.text};
+  border-bottom: 1px solid ${({ theme }) => theme.colors.text};
+`
+
+const CustomHeading = styled(Heading)`
+  font-family: 'RoundsBlack';
+  font-size: '24px';
 `
 
 const AppHeader: React.FC<Props> = ({ title, subtitle, helper, backTo, noConfig = false }) => {
@@ -37,12 +42,12 @@ const AppHeader: React.FC<Props> = ({ title, subtitle, helper, backTo, noConfig 
           </IconButton>
         )}
         <Flex flexDirection="column">
-          <Heading as="h2" mb="8px">
+          <CustomHeading as="h2" mb="8px">
             {title}
-          </Heading>
+          </CustomHeading>
           <Flex alignItems="self-end">
-            <Text fontSize="14px">{subtitle}</Text>
-            {helper && <QuestionHelper color="text" text={helper} mr="4px" placement="top-start" />}
+            <Text fontSize="12px">{subtitle}</Text>
+            {helper && <QuestionHelper size="20px" color="text" text={helper} mr="4px" placement="top-start" />}
           </Flex>
         </Flex>
       </Flex>

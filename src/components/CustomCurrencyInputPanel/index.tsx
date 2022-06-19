@@ -111,7 +111,7 @@ export default function CurrencyInputPanel({
             <ColumnCenter>
               <NumericalInput
                 className="token-amount-input"
-                style={{ width: '100%', textAlign: 'start', color: darkColors.textSubtle }}
+                style={{ width: '100%', textAlign: 'start', color: darkColors.textSubtle, fontSize: '18px' }}
                 value={value}
                 onUserInput={(val) => {
                   onUserInput(val)
@@ -145,7 +145,7 @@ export default function CurrencyInputPanel({
                     {pair?.token0.symbol}:{pair?.token1.symbol}
                   </Text>
                 ) : (
-                  <Text color="textSubtle" id="pair">
+                  <Text fontSize="18px" color="textSubtle" id="pair">
                     {(currency && currency.symbol && currency.symbol.length > 20
                       ? `${currency.symbol.slice(0, 4)}...${currency.symbol.slice(
                           currency.symbol.length - 5,

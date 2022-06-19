@@ -60,7 +60,7 @@ const CurrencyInputHeader: React.FC<Props> = ({ title, subtitle }) => {
             {title}
           </Heading>
           <StyledSubTitle alignItems="center">
-            <Text color="text" fontSize="14px" fontFamily="RobotoBold">
+            <Text color="text" fontSize="12px" fontFamily="RobotoBold">
               {subtitle.toUpperCase()}
             </Text>
           </StyledSubTitle>

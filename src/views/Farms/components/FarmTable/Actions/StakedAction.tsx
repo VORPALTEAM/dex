@@ -40,6 +40,19 @@ const StyledIconButton = styled(IconButton)`
   border-radius: 6px;
 `
 
+const StyledButton = styled(Button)`
+  /* width: 100px; */
+  width: 100%;
+  height: 40px;
+  background: ${({ theme }) => theme.colors.text};
+  border: ${({ theme }) => theme.colors.contrast};
+  box-shadow: 0px 0px 5px 1px #ffffff, inset 0px 0px 5px 2px rgba(0, 0, 0, 0.15);
+  border-radius: 6px;
+  color: ${({ theme }) => theme.colors.contrast};
+  white-space: nowrap;
+  font-size: 18px;
+`
+
 interface StackedActionProps extends FarmWithStakedValue {
   userDataReady: boolean
   lpLabel?: string
@@ -236,14 +249,14 @@ const Staked: React.FunctionComponent<StackedActionProps> = ({
   return (
     <ActionContainer>
       <ActionTitles>
-        <Text bold textTransform="uppercase" color="textSubtle" fontSize="12px">
+        <Text fontFamily="RobotoBold" textTransform="uppercase" color="text" fontSize="12px">
           {t('Enable Farm')}
         </Text>
       </ActionTitles>
       <ActionContent>
-        <Button width="100%" disabled={requestedApproval} onClick={handleApprove} variant="secondary">
+        <StyledButton disabled={requestedApproval} onClick={handleApprove} variant="secondary">
           {t('Enable')}
-        </Button>
+        </StyledButton>
       </ActionContent>
     </ActionContainer>
   )

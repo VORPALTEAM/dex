@@ -31,6 +31,7 @@ function TradeSummary({ trade, allowedSlippage }: { trade: Trade; allowedSlippag
             )}
             ml="4px"
             placement="top-start"
+            color="contrast"
           />
         </RowFixed>
         <RowFixed>
@@ -52,6 +53,7 @@ function TradeSummary({ trade, allowedSlippage }: { trade: Trade; allowedSlippag
             text={t('The difference between the market price and estimated price due to trade size.')}
             ml="4px"
             placement="top-start"
+            color="contrast"
           />
         </RowFixed>
         <FormattedPriceImpact priceImpact={priceImpactWithoutFee} />
@@ -74,6 +76,7 @@ function TradeSummary({ trade, allowedSlippage }: { trade: Trade; allowedSlippag
             }
             ml="4px"
             placement="top-start"
+            color="contrast"
           />
         </RowFixed>
         <Text color="textSubtle" fontSize="12px">
@@ -110,6 +113,7 @@ export function AdvancedSwapDetails({ trade }: AdvancedSwapDetailsProps) {
                     text={t('Routing through these tokens resulted in the best price for your trade.')}
                     ml="4px"
                     placement="top-start"
+                    color="contrast"
                   />
                 </span>
                 <SwapRoute trade={trade} />

@@ -32,6 +32,7 @@ const StyledButton = styled(Button)`
   color: #2a2338;
   background-color: transparent;
   box-shadow: none;
+  text-transform: uppercase;
 `
 
 const StyledModalButton = styled(ModalBackButton)``

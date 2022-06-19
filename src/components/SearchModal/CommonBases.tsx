@@ -48,7 +48,7 @@ export default function CommonBases({
   return (
     <AutoColumn gap="md">
       <AutoRow>
-        <Text fontFamily="RobotoBold" fontSize="16px">
+        <Text textTransform="uppercase" fontFamily="RobotoBold" fontSize="12px">
           {t('Common bases')}
         </Text>
         <QuestionHelper text={t('These tokens are commonly paired with other tokens.')} ml="4px" />
@@ -62,14 +62,14 @@ export default function CommonBases({
           }}
           disable={selectedCurrency === ETHER}
         >
-          <CurrencyLogo currency={ETHER} style={{ marginRight: 8 }} />
+          <CurrencyLogo size="36px" currency={ETHER} style={{ marginRight: 8 }} />
           <Text>BNB</Text>
         </BaseWrapper>
         {(chainId ? SUGGESTED_BASES[chainId] : []).map((token: Token) => {
           const selected = selectedCurrency instanceof Token && selectedCurrency.address === token.address
           return (
             <BaseWrapper onClick={() => !selected && onSelect(token)} disable={selected} key={token.address}>
-              <CurrencyLogo currency={token} style={{ marginRight: 8 }} />
+              <CurrencyLogo size="36px" currency={token} style={{ marginRight: 8 }} />
               <Text>{token.symbol}</Text>
             </BaseWrapper>
           )

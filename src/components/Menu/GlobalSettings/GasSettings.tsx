@@ -4,10 +4,39 @@ import QuestionHelper from 'components/QuestionHelper'
 import { useTranslation } from 'contexts/Localization'
 import { GAS_PRICE_GWEI, GAS_PRICE } from 'state/user/hooks/helpers'
 import { useGasPriceManager } from 'state/user/hooks'
+// import styled from 'styled-components'
+
+// const StyledButton = styled(Button)`
+//   color: 'black';
+//   background-color: 'transparent';
+//   border: ${({ theme }) => `1px solid ${theme.colors.back}`};
+//   box-shadow: 'none';
+// `
 
 const GasSettings = () => {
   const { t } = useTranslation()
-  const [, setGasPrice] = useGasPriceManager()
+  const [gasPrice, setGasPrice] = useGasPriceManager()
+
+  const disableButtonStyles = {
+    color: 'black',
+    backgroundColor: 'transparent',
+    border: '1px solid #352F44',
+    boxShadow: 'none',
+    borderRadius: '15px',
+    width: '116px',
+    height: '30px',
+    fontSize: '14px',
+  }
+  const activeButtonStyles = {
+    color: '#F1F6F9',
+    backgroundColor: '#352F44',
+    border: '1px solid #352F44',
+    boxShadow: 'none',
+    borderRadius: '15px',
+    width: '116px',
+    height: '30px',
+    fontSize: '14px',
+  }
 
   return (
     <Flex flexDirection="column">
@@ -19,9 +48,10 @@ const GasSettings = () => {
           )}
           placement="top-start"
           ml="4px"
+          size="20px"
         />
       </Flex>
-      <Flex flexWrap="wrap">
+      <Flex justifyContent="space-between" flexWrap="wrap">
         <Button
           mt="4px"
           mr="4px"
@@ -29,7 +59,7 @@ const GasSettings = () => {
           onClick={() => {
             setGasPrice(GAS_PRICE_GWEI.default)
           }}
-          style={{ color: 'black', backgroundColor: 'transparent', border: '1px solid #352F44', boxShadow: 'none' }}
+          style={gasPrice === GAS_PRICE_GWEI.default ? activeButtonStyles : disableButtonStyles}
         >
           {t('Standard (%gasPrice%)', { gasPrice: GAS_PRICE.default })}
         </Button>
@@ -40,7 +70,7 @@ const GasSettings = () => {
           onClick={() => {
             setGasPrice(GAS_PRICE_GWEI.fast)
           }}
-          style={{ color: 'black', backgroundColor: 'transparent', border: '1px solid #352F44', boxShadow: 'none' }}
+          style={gasPrice === GAS_PRICE_GWEI.fast ? activeButtonStyles : disableButtonStyles}
         >
           {t('Fast (%gasPrice%)', { gasPrice: GAS_PRICE.fast })}
         </Button>
@@ -51,8 +81,7 @@ const GasSettings = () => {
           onClick={() => {
             setGasPrice(GAS_PRICE_GWEI.instant)
           }}
-          // variant={gasPrice === GAS_PRICE_GWEI.instant ? 'primary' : 'tertiary'}
-          style={{ color: 'black', backgroundColor: 'transparent', border: '1px solid #352F44', boxShadow: 'none' }}
+          style={gasPrice === GAS_PRICE_GWEI.instant ? activeButtonStyles : disableButtonStyles}
         >
           {t('Instant (%gasPrice%)', { gasPrice: GAS_PRICE.instant })}
         </Button>

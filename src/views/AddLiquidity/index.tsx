@@ -47,8 +47,20 @@ import Page from '../Page'
 // `
 
 const StyledEnableButton = styled(Button)`
-  background: #352f44;
+  background: ${({ theme }) => theme.colors.turquoise};
+  color: ${({ theme }) => theme.colors.contrast};
   border-radius: 6px;
+`
+
+const StyledSupplyButton = styled(Button)`
+  background: ${({ theme }) => theme.colors.turquoise};
+  height: 70px;
+  font-size: 18px;
+  color: ${({ theme }) => theme.colors.contrast};
+`
+
+const StyledMessageBox = styled(Message)`
+  width: 100%;
 `
 
 export default function AddLiquidity({
@@ -343,15 +355,17 @@ export default function AddLiquidity({
           <AutoColumn gap="20px" style={{ width: '580px' }}>
             {noLiquidity && (
               <ColumnCenter>
-                <Message variant="warning">
+                <StyledMessageBox variant="customWarning">
                   <div>
-                    <Text bold mb="8px">
+                    <Text color="yellow" bold mb="8px">
                       {t('You are the first liquidity provider.')}
                     </Text>
-                    <Text mb="8px">{t('The ratio of tokens you add will set the price of this pool.')}</Text>
-                    <Text>{t('Once you are happy with the rate click supply to review.')}</Text>
+                    <Text color="yellow" mb="8px">
+                      {t('The ratio of tokens you add will set the price of this pool.')}
+                    </Text>
+                    <Text color="yellow">{t('Once you are happy with the rate click supply to review.')}</Text>
                   </div>
-                </Message>
+                </StyledMessageBox>
               </ColumnCenter>
             )}
             <CustomCurrencyInputPanel
@@ -443,7 +457,7 @@ export default function AddLiquidity({
                       )}
                     </RowBetween>
                   )}
-                <Button
+                <StyledSupplyButton
                   style={{ width: '340px' }}
                   variant={
                     !isValid && !!parsedAmounts[Field.CURRENCY_A] && !!parsedAmounts[Field.CURRENCY_B]
@@ -460,7 +474,7 @@ export default function AddLiquidity({
                   disabled={!isValid || approvalA !== ApprovalState.APPROVED || approvalB !== ApprovalState.APPROVED}
                 >
                   {error ?? t('Supply')}
-                </Button>
+                </StyledSupplyButton>
               </AutoColumn>
             )}
           </AutoColumn>

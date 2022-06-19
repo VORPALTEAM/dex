@@ -28,6 +28,12 @@ const CustomButton = styled(Button)`
   border-radius: 15px;
   color: #acf800;
   padding: 10px;
+  font-size: 14px;
+`
+
+const StyledButton = styled(Button)`
+  font-size: 18px;
+  text-transform: uppercase;
 `
 
 export default function Pool() {
@@ -89,7 +95,7 @@ export default function Pool() {
       ))
     }
     return (
-      <Text color="textSubtle" textAlign="center">
+      <Text color="textSubtle" fontSize="18px" textAlign="center">
         {t('No liquidity found.')}
       </Text>
     )
@@ -121,6 +127,7 @@ export default function Pool() {
               to="/add"
               width="340px"
               startIcon={<AddIcon color="white" />}
+              style={{ textTransform: 'uppercase' }}
             >
               {t('Add Liquidity')}
             </Button>

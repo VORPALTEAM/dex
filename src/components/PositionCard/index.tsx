@@ -34,6 +34,10 @@ const FixedHeightRow = styled(RowBetween)`
   height: 24px;
 `
 
+const StyledCardBody = styled(CardBody)`
+  background-color: ${({ theme }) => theme.colors.backgroundAlt1};
+`
+
 interface PositionCardProps extends CardProps {
   pair: Pair
   showUnwrapped?: boolean
@@ -73,11 +77,11 @@ export function MinimalPositionCard({ pair, showUnwrapped = false }: PositionCar
     <>
       {userPoolBalance && JSBI.greaterThan(userPoolBalance.raw, JSBI.BigInt(0)) ? (
         <Card>
-          <CardBody>
+          <StyledCardBody>
             <AutoColumn gap="16px">
               <FixedHeightRow>
                 <RowFixed>
-                  <Text color="secondary" bold>
+                  <Text fontSize="14px" color="turquoise" bold>
                     {t('LP tokens in your wallet')}
                   </Text>
                 </RowFixed>
@@ -85,40 +89,44 @@ export function MinimalPositionCard({ pair, showUnwrapped = false }: PositionCar
               <FixedHeightRow onClick={() => setShowMore(!showMore)}>
                 <RowFixed>
                   <DoubleCurrencyLogo currency0={currency0} currency1={currency1} margin size={20} />
-                  <Text small color="textSubtle">
+                  <Text small color="contrast">
                     {currency0.symbol}-{currency1.symbol} LP
                   </Text>
                 </RowFixed>
                 <RowFixed>
-                  <Text>{userPoolBalance ? userPoolBalance.toSignificant(4) : '-'}</Text>
+                  <Text color="contrast">{userPoolBalance ? userPoolBalance.toSignificant(4) : '-'}</Text>
                 </RowFixed>
               </FixedHeightRow>
               <AutoColumn gap="4px">
                 <FixedHeightRow>
-                  <Text color="textSubtle" small>
+                  <Text color="contrast" small>
                     {t('Share of Pool')}:
                   </Text>
-                  <Text>{poolTokenPercentage ? `${poolTokenPercentage.toFixed(6)}%` : '-'}</Text>
+                  <Text color="contrast">{poolTokenPercentage ? `${poolTokenPercentage.toFixed(6)}%` : '-'}</Text>
                 </FixedHeightRow>
                 <FixedHeightRow>
-                  <Text color="textSubtle" small>
+                  <Text color="contrast" small>
                     {t('Pooled %asset%', { asset: currency0.symbol })}:
                   </Text>
                   {token0Deposited ? (
                     <RowFixed>
-                      <Text ml="6px">{token0Deposited?.toSignificant(6)}</Text>
+                      <Text color="contrast" ml="6px">
+                        {token0Deposited?.toSignificant(6)}
+                      </Text>
                     </RowFixed>
                   ) : (
                     '-'
                   )}
                 </FixedHeightRow>
                 <FixedHeightRow>
-                  <Text color="textSubtle" small>
+                  <Text color="contrast" small>
                     {t('Pooled %asset%', { asset: currency1.symbol })}:
                   </Text>
                   {token1Deposited ? (
                     <RowFixed>
-                      <Text ml="6px">{token1Deposited?.toSignificant(6)}</Text>
+                      <Text color="contrast" ml="6px">
+                        {token1Deposited?.toSignificant(6)}
+                      </Text>
                     </RowFixed>
                   ) : (
                     '-'
@@ -126,7 +134,7 @@ export function MinimalPositionCard({ pair, showUnwrapped = false }: PositionCar
                 </FixedHeightRow>
               </AutoColumn>
             </AutoColumn>
-          </CardBody>
+          </StyledCardBody>
         </Card>
       ) : (
         <LightCard>
@@ -180,11 +188,11 @@ export default function FullPositionCard({ pair, ...props }: PositionCardProps) 
         <Flex flexDirection="column">
           <Flex alignItems="center" mb="4px">
             <DoubleCurrencyLogo currency0={currency0} currency1={currency1} size={20} />
-            <Text color="textSubtle" bold ml="8px">
+            <Text color="contrast" bold ml="8px">
               {!currency0 || !currency1 ? <Dots>{t('Loading')}</Dots> : `${currency0.symbol}/${currency1.symbol}`}
             </Text>
           </Flex>
-          <Text fontSize="14px" color="textSubtle">
+          <Text fontSize="14px" color="contrast">
             {userPoolBalance?.toSignificant(4)}
           </Text>
         </Flex>
@@ -196,13 +204,13 @@ export default function FullPositionCard({ pair, ...props }: PositionCardProps) 
           <FixedHeightRow>
             <RowFixed>
               <CurrencyLogo size="20px" currency={currency0} />
-              <Text color="textSubtle" ml="4px">
+              <Text color="contrast" ml="4px">
                 {t('Pooled %asset%', { asset: currency0.symbol })}:
               </Text>
             </RowFixed>
             {token0Deposited ? (
               <RowFixed>
-                <Text color="textSubtle" ml="6px">
+                <Text color="contrast" ml="6px">
                   {token0Deposited?.toSignificant(6)}
                 </Text>
               </RowFixed>
@@ -214,13 +222,13 @@ export default function FullPositionCard({ pair, ...props }: PositionCardProps) 
           <FixedHeightRow>
             <RowFixed>
               <CurrencyLogo size="20px" currency={currency1} />
-              <Text color="textSubtle" ml="4px">
+              <Text color="contrast" ml="4px">
                 {t('Pooled %asset%', { asset: currency1.symbol })}:
               </Text>
             </RowFixed>
             {token1Deposited ? (
               <RowFixed>
-                <Text color="textSubtle" ml="6px">
+                <Text color="contrast" ml="6px">
                   {token1Deposited?.toSignificant(6)}
                 </Text>
               </RowFixed>
@@ -230,8 +238,8 @@ export default function FullPositionCard({ pair, ...props }: PositionCardProps) 
           </FixedHeightRow>
 
           <FixedHeightRow>
-            <Text color="textSubtle">{t('Share of Pool')}</Text>
-            <Text color="textSubtle">
+            <Text color="contrast">{t('Share of Pool')}</Text>
+            <Text color="contrast">
               {poolTokenPercentage
                 ? `${poolTokenPercentage.toFixed(2) === '0.00' ? '<0.01' : poolTokenPercentage.toFixed(2)}%`
                 : '-'}

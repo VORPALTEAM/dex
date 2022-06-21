@@ -16504,10 +16504,10 @@ pickleswap-sdk2@^2.5.6:
     tiny-warning "^1.0.3"
     toformat "^2.0.0"
 
-pickleswap-uikit@^0.69.4:
-  version "0.69.4"
-  resolved "https://registry.yarnpkg.com/pickleswap-uikit/-/pickleswap-uikit-0.69.4.tgz#382073be139f68e3ef41f653af9dff9bc43c2bfa"
-  integrity sha512-5XLMOPyeD0r6QcOdMeIZ2IhNJEDxHKhvc9PmX28FzxJXYqSMaaHK4IfC9I6AQRy2MwHQssOPuJdrSeisaTR+4g==
+pickleswap-uikit@^0.70.0:
+  version "0.70.0"
+  resolved "https://registry.yarnpkg.com/pickleswap-uikit/-/pickleswap-uikit-0.70.0.tgz#a9c316cf3cada8cb852ed1b39af5e76cb7d3e262"
+  integrity sha512-YNBm8vJg1Vw1y9U/nSNkZKmkTCiQSgMntN+cU7arYfjUn07lH8Vp8xlYBXOYNMKerTPJ4ypod9oSIc+rJe9JnA==
   dependencies:
     "@popperjs/core" "^2.9.2"
     "@types/styled-system" "^5.1.10"

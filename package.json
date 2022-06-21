@@ -70,7 +70,7 @@
     "multihashes": "^3.0.1",
     "numeral": "^2.0.6",
     "pickleswap-sdk2": "^2.5.6",
-    "pickleswap-uikit": "^0.69.9",
+    "pickleswap-uikit": "^0.70.0",
     "qs": "^6.9.4",
     "react": "^17.0.1",
     "react-countup": "^4.3.3",

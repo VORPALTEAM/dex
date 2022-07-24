@@ -1,7 +1,7 @@
 import React from 'react'
 import { useTranslation } from 'contexts/Localization'
 import styled from 'styled-components'
-import { Text, Flex, LinkExternal, Skeleton } from 'pickleswap-uikit'
+import { Text, Flex, LinkExternal, Skeleton } from 'vorpaltesttoolkit'
 
 export interface ExpandableSectionProps {
   bscScanAddress?: string

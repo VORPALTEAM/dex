@@ -1,5 +1,5 @@
 import { Currency } from 'pickleswap-sdk2'
-import { Box, BunnyPlaceholderIcon, Flex, Text } from 'pickleswap-uikit'
+import { Box, BunnyPlaceholderIcon, Flex, Text } from 'vorpaltesttoolkit'
 import TradingView, { TradingViewLabel, useTradingViewEvent } from 'components/TradingView'
 import { useTranslation } from 'contexts/Localization'
 import useDebounce from 'hooks/useDebounce'

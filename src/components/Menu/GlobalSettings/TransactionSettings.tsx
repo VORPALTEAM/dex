@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { escapeRegExp } from 'utils'
 import styled from 'styled-components'
-import { Text, Button, Input, Flex, Box } from 'pickleswap-uikit'
+import { Text, Button, Input, Flex, Box } from 'vorpaltesttoolkit'
 import { useTranslation } from 'contexts/Localization'
 import { useUserSlippageTolerance, useUserTransactionTTL } from 'state/user/hooks'
 import QuestionHelper from '../../QuestionHelper'
@@ -87,7 +87,7 @@ const SlippageTabs = () => {
   const disableButtonStyles = {
     color: 'black',
     backgroundColor: 'transparent',
-    border: '1px solid #352F44',
+    border: '1px solid #DBD8E3',
     boxShadow: 'none',
     borderRadius: '15px',
     width: '65.6px',
@@ -96,8 +96,8 @@ const SlippageTabs = () => {
   }
   const activeButtonStyles = {
     color: '#F1F6F9',
-    backgroundColor: '#352F44',
-    border: '1px solid #352F44',
+    backgroundColor: '#DBD8E3',
+    border: '1px solid #DBD8E3',
     boxShadow: 'none',
     borderRadius: '15px',
     width: '65.6px',

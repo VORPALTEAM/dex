@@ -1,7 +1,7 @@
 import React from 'react'
 import { useTranslation } from 'contexts/Localization'
 import styled from 'styled-components'
-import { Flex, Box, Text, Skeleton } from 'pickleswap-uikit'
+import { Flex, Box, Text, Skeleton } from 'vorpaltesttoolkit'
 import TeamPodiumIcon from './TeamPodiumIcon'
 import { PodiumBase } from '../../../svgs'
 import { TeamLeaderboardProps } from '../../../types'

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Flex, Text, Button, Heading, useModal, Skeleton } from 'pickleswap-uikit'
+import { Flex, Text, Button, Heading, useModal, Skeleton } from 'vorpaltesttoolkit'
 import BigNumber from 'bignumber.js'
 import { Token } from 'pickleswap-sdk2'
 import { useTranslation } from 'contexts/Localization'

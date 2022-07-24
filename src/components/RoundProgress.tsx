@@ -1,5 +1,5 @@
 import React from 'react'
-import { Progress, ProgressProps } from 'pickleswap-uikit'
+import { Progress, ProgressProps } from 'vorpaltesttoolkit'
 
 interface RoundProgressProps extends ProgressProps {
   lockTimestamp: number

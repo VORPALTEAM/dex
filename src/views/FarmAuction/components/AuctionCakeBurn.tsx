@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Text, Flex, Skeleton, Image } from 'pickleswap-uikit'
+import { Text, Flex, Skeleton, Image } from 'vorpaltesttoolkit'
 import { useFarmAuctionContract } from 'hooks/useContract'
 import { useTranslation } from 'contexts/Localization'
 import { usePriceCakeBusd } from 'state/farms/hooks'

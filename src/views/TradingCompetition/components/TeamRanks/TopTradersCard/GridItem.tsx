@@ -1,5 +1,5 @@
 import React from 'react'
-import { Heading, Text, Flex } from 'pickleswap-uikit'
+import { Heading, Text, Flex } from 'vorpaltesttoolkit'
 import styled from 'styled-components'
 import truncateHash from 'utils/truncateHash'
 import { LeaderboardDataItem } from '../../../types'

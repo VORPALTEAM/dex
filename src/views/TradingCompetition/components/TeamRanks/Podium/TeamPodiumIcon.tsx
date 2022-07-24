@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Flex, Image, Skeleton } from 'pickleswap-uikit'
+import { Flex, Image, Skeleton } from 'vorpaltesttoolkit'
 import Sticker from '../../Sticker'
 
 const Wrapper = styled(Flex)<{ imageSize?: number }>`

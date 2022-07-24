@@ -1,4 +1,4 @@
-import { EventStatus, StepStatus } from 'pickleswap-uikit'
+import { EventStatus, StepStatus } from 'vorpaltesttoolkit'
 import { SaleStatusEnum } from 'views/PancakeSquad/types'
 import { getEventStepStatus, getEventStepStatusType } from 'views/PancakeSquad/utils'
 

@@ -1,4 +1,4 @@
-import { Button, Flex, Text } from 'pickleswap-uikit'
+import { Button, Flex, Text } from 'vorpaltesttoolkit'
 import BigNumber from 'bignumber.js'
 import ConnectWalletButton from 'components/ConnectWalletButton'
 import { useTranslation } from 'contexts/Localization'

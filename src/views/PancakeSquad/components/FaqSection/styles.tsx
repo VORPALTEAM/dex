@@ -1,4 +1,4 @@
-import { Flex, Text } from 'pickleswap-uikit'
+import { Flex, Text } from 'vorpaltesttoolkit'
 import styled from 'styled-components'
 
 export const StyledFaqSection = styled(Flex)`

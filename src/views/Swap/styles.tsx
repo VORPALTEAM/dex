@@ -1,4 +1,4 @@
-import { Box, Flex } from 'pickleswap-uikit'
+import { Box, Flex } from 'vorpaltesttoolkit'
 import styled from 'styled-components'
 
 export const StyledSwapContainer = styled(Flex)<{ $isChartExpanded: boolean }>`

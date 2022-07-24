@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { Flex } from 'pickleswap-uikit'
+import { Flex } from 'vorpaltesttoolkit'
 
 interface StickerProps {
   backgroundColor?: string

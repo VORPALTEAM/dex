@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react'
 import styled from 'styled-components'
-import { Card, CardBody, Box, CardProps } from 'pickleswap-uikit'
+import { Card, CardBody, Box, CardProps } from 'vorpaltesttoolkit'
 
 const StyledCard = styled(Card)<{ background: string; rotation?: string }>`
   height: fit-content;

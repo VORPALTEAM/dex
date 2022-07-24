@@ -1,5 +1,5 @@
 import React from 'react'
-import { Flex, Button, Text } from 'pickleswap-uikit'
+import { Flex, Button, Text } from 'vorpaltesttoolkit'
 import QuestionHelper from 'components/QuestionHelper'
 import { useTranslation } from 'contexts/Localization'
 import { GAS_PRICE_GWEI, GAS_PRICE } from 'state/user/hooks/helpers'
@@ -20,7 +20,7 @@ const GasSettings = () => {
   const disableButtonStyles = {
     color: 'black',
     backgroundColor: 'transparent',
-    border: '1px solid #352F44',
+    border: '1px solid #DBD8E3',
     boxShadow: 'none',
     borderRadius: '15px',
     width: '116px',
@@ -29,8 +29,8 @@ const GasSettings = () => {
   }
   const activeButtonStyles = {
     color: '#F1F6F9',
-    backgroundColor: '#352F44',
-    border: '1px solid #352F44',
+    backgroundColor: '#DBD8E3',
+    border: '1px solid #DBD8E3',
     boxShadow: 'none',
     borderRadius: '15px',
     width: '116px',

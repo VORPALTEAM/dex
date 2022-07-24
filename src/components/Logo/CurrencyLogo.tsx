@@ -1,5 +1,5 @@
 import { Currency, ETHER, Token } from 'pickleswap-sdk2'
-import { darkColors, BinanceIcon } from 'pickleswap-uikit'
+import { darkColors, BinanceIcon } from 'vorpaltesttoolkit'
 import React, { useMemo } from 'react'
 import styled from 'styled-components'
 import useHttpLocations from '../../hooks/useHttpLocations'

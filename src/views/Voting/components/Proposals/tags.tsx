@@ -1,5 +1,5 @@
 import React from 'react'
-import { TagProps } from 'pickleswap-uikit'
+import { TagProps } from 'vorpaltesttoolkit'
 import { ClosedTag, CommunityTag, CoreTag, SoonTag, VoteNowTag } from 'components/Tags'
 import { ProposalState } from 'state/types'
 

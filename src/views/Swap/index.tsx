@@ -12,7 +12,7 @@ import {
   useMatchBreakpoints,
   CustomArrowUpDownIcon,
   useModal,
-} from 'pickleswap-uikit'
+} from 'vorpaltesttoolkit'
 import { useIsTransactionUnsupported } from 'hooks/Trades'
 import UnsupportedCurrencyFooter from 'components/UnsupportedCurrencyFooter'
 import Footer from 'components/Menu/Footer'
@@ -78,7 +78,7 @@ const Label = styled(Text)`
 const StyledButton = styled(Button)`
   width: 260px;
   height: 40px;
-  background: #352f44;
+  background: #DBD8E3;
   color: ${({ theme }) => theme.colors.contrast};
   font-size: 18px;
   border-radius: 6px;
@@ -87,7 +87,7 @@ const StyledButton = styled(Button)`
 const StyledEnableButton = styled(Button)`
   width: 226px;
   height: 40px;
-  background: #352f44;
+  background: #DBD8E3;
   border-radius: 6px;
 `
 

@@ -1,6 +1,6 @@
 import React, { Fragment, memo } from 'react'
 import { Trade } from 'pickleswap-sdk2'
-import { Text, Flex, ChevronRightIcon } from 'pickleswap-uikit'
+import { Text, Flex, ChevronRightIcon } from 'vorpaltesttoolkit'
 import { unwrappedToken } from 'utils/wrappedCurrency'
 
 export default memo(function SwapRoute({ trade }: { trade: Trade }) {

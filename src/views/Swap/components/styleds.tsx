@@ -1,4 +1,4 @@
-import { ErrorIcon, Text } from 'pickleswap-uikit'
+import { ErrorIcon, Text } from 'vorpaltesttoolkit'
 import { AutoColumn } from 'components/Layout/Column'
 import React from 'react'
 import styled, { css } from 'styled-components'

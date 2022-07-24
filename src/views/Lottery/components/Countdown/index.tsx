@@ -1,5 +1,5 @@
 import React from 'react'
-import { Flex, Heading, Skeleton } from 'pickleswap-uikit'
+import { Flex, Heading, Skeleton } from 'vorpaltesttoolkit'
 import getTimePeriods from 'utils/getTimePeriods'
 import Timer from './Timer'
 import useNextEventCountdown from '../../hooks/useNextEventCountdown'

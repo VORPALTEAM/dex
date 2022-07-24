@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { CustomArrowDown, Text } from 'pickleswap-uikit'
+import { CustomArrowDown, Text } from 'vorpaltesttoolkit'
 import { useTranslation } from 'contexts/Localization'
 
 export interface ExpandableSectionButtonProps {

@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { ChevronDownIcon, CustomArrowDown, useMatchBreakpoints } from 'pickleswap-uikit'
+import { ChevronDownIcon, CustomArrowDown, useMatchBreakpoints } from 'vorpaltesttoolkit'
 import { useTranslation } from 'contexts/Localization'
 
 interface DetailsProps {

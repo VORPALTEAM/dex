@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Flex, Skeleton, PocketWatchIcon, Text } from 'pickleswap-uikit'
+import { Flex, Skeleton, PocketWatchIcon, Text } from 'vorpaltesttoolkit'
 import { useTranslation } from 'contexts/Localization'
 import getTimePeriods from 'utils/getTimePeriods'
 import { CompetitionSteps, LIVE } from 'config/constants/trading-competition/phases'

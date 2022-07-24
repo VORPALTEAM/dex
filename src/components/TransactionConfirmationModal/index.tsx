@@ -20,7 +20,7 @@ import {
   ModalContainer,
   ModalHeader,
   ModalTitle,
-} from 'pickleswap-uikit'
+} from 'vorpaltesttoolkit'
 import { registerToken } from 'utils/wallet'
 import { useTranslation } from 'contexts/Localization'
 import useActiveWeb3React from 'hooks/useActiveWeb3React'
@@ -57,7 +57,7 @@ const StyledButton = styled(Button)`
 const StyledAddMetamskButton = styled(Button)`
   width: 340px;
   height: 40px;
-  background: #352f44;
+  background: #DBD8E3;
   border-radius: 6px;
   color: #4da1a3;
 `

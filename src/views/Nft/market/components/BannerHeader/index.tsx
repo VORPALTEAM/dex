@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react'
-import { Flex, Box, FlexProps } from 'pickleswap-uikit'
+import { Flex, Box, FlexProps } from 'vorpaltesttoolkit'
 import BannerImage from './BannerImage'
 
 interface BannerHeaderProps extends FlexProps {

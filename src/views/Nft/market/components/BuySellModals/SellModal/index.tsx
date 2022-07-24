@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { InjectedModalProps } from 'pickleswap-uikit'
+import { InjectedModalProps } from 'vorpaltesttoolkit'
 import { useWeb3React } from '@web3-react/core'
 import { parseUnits } from 'ethers/lib/utils'
 import useTheme from 'hooks/useTheme'

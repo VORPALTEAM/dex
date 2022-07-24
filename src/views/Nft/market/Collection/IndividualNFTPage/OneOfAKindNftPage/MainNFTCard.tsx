@@ -1,4 +1,4 @@
-import { BinanceIcon, Box, Button, Card, CardBody, Flex, Skeleton, Text, useModal } from 'pickleswap-uikit'
+import { BinanceIcon, Box, Button, Card, CardBody, Flex, Skeleton, Text, useModal } from 'vorpaltesttoolkit'
 import { useTranslation } from 'contexts/Localization'
 import { useBNBBusdPrice } from 'hooks/useBUSDPrice'
 import React from 'react'

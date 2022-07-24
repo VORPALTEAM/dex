@@ -1,5 +1,5 @@
 import React from 'react'
-import { Flex, Box, Text, Button } from 'pickleswap-uikit'
+import { Flex, Box, Text, Button } from 'vorpaltesttoolkit'
 import { useTranslation } from 'contexts/Localization'
 import { Divider } from '../shared/styles'
 

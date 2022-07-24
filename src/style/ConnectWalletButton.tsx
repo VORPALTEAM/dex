@@ -4,7 +4,7 @@ import ConnectWalletButton from '../components/ConnectWalletButton'
 const StyledConnectWalletButton = styled(ConnectWalletButton)`
   width: 260px;
   height: 40px;
-  background: #352f44;
+  background: #DBD8E3;
   color: ${({ theme }) => theme.colors.contrast};
   border-radius: 6px;
   margin: auto;

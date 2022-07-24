@@ -1,6 +1,6 @@
 import React, { lazy } from 'react'
 import { Router, Redirect, Route, Switch } from 'react-router-dom'
-import { ResetCSS } from 'pickleswap-uikit'
+import { ResetCSS } from 'vorpaltesttoolkit'
 // import { useWeb3React } from '@web3-react/core'
 import BigNumber from 'bignumber.js'
 import useEagerConnect from 'hooks/useEagerConnect'

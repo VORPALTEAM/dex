@@ -12,7 +12,7 @@ import {
   ModalCloseButton,
   Button,
   AutoRenewIcon,
-} from 'pickleswap-uikit'
+} from 'vorpaltesttoolkit'
 import { useTranslation } from 'contexts/Localization'
 import { getAllV1History } from './helpers'
 

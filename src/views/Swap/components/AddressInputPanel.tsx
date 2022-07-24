@@ -1,6 +1,6 @@
 import React, { useCallback } from 'react'
 import styled from 'styled-components'
-import { Text, Link } from 'pickleswap-uikit'
+import { Text, Link } from 'vorpaltesttoolkit'
 import { useTranslation } from 'contexts/Localization'
 import useENS from '../../../hooks/ENS/useENS'
 import useActiveWeb3React from '../../../hooks/useActiveWeb3React'

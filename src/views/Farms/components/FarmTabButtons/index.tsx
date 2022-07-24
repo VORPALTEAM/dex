@@ -2,7 +2,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { useLocation, Link, useRouteMatch } from 'react-router-dom'
-import { ButtonMenu, ButtonMenuItem, NotificationDot } from 'pickleswap-uikit'
+import { ButtonMenu, ButtonMenuItem, NotificationDot } from 'vorpaltesttoolkit'
 import { useTranslation } from 'contexts/Localization'
 
 interface FarmTabButtonsProps {

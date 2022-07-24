@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { HelpIcon } from 'pickleswap-uikit'
+import { HelpIcon } from 'vorpaltesttoolkit'
 
 const BAD_SRCS: string[] = []
 

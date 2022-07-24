@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from 'react'
-import { FallingBunnies, FallingBunniesProps, useKonamiCheatCode } from 'pickleswap-uikit'
+import { FallingBunnies, FallingBunniesProps, useKonamiCheatCode } from 'vorpaltesttoolkit'
 
 const EasterEgg: React.FC<FallingBunniesProps> = (props) => {
   const [show, setShow] = useState(false)

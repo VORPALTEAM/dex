@@ -1,5 +1,5 @@
 import React, { useMemo, useEffect } from 'react'
-import { Text, Heading, Card } from 'pickleswap-uikit'
+import { Text, Heading, Card } from 'vorpaltesttoolkit'
 import Page from 'components/Layout/Page'
 import TokenTable from 'views/Info/components/InfoTables/TokensTable'
 import { useAllTokenData, useTokenDatas } from 'state/info/hooks'

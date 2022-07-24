@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, lightColors, Progress, Text } from 'pickleswap-uikit'
+import { Box, lightColors, Progress, Text } from 'vorpaltesttoolkit'
 import { ContextApi } from 'contexts/Localization/types'
 import { SaleStatusEnum, UserStatusEnum } from '../../types'
 

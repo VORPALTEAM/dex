@@ -1,5 +1,5 @@
 import React from 'react'
-import { Flex } from 'pickleswap-uikit'
+import { Flex } from 'vorpaltesttoolkit'
 import styled from 'styled-components'
 
 const Wrapper = styled(Flex)`

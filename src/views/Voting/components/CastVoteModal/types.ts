@@ -1,4 +1,4 @@
-import { InjectedModalProps } from 'pickleswap-uikit'
+import { InjectedModalProps } from 'vorpaltesttoolkit'
 
 export enum ConfirmVoteView {
   MAIN = 'main',

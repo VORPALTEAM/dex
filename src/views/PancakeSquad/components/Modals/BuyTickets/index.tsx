@@ -14,7 +14,7 @@ import {
   ModalProps,
   ModalTitle,
   Text,
-} from 'pickleswap-uikit'
+} from 'vorpaltesttoolkit'
 import { useTranslation } from 'contexts/Localization'
 import useTheme from 'hooks/useTheme'
 import React, { useState } from 'react'

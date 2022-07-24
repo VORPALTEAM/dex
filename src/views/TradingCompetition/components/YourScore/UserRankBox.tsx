@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Flex, Text, FlexProps } from 'pickleswap-uikit'
+import { Flex, Text, FlexProps } from 'vorpaltesttoolkit'
 
 interface UserRankProps extends FlexProps {
   title?: string

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Modal, ModalBody, Text, Image, Button, Link, OpenNewIcon } from 'pickleswap-uikit'
+import { Modal, ModalBody, Text, Image, Button, Link, OpenNewIcon } from 'vorpaltesttoolkit'
 import { Token } from 'pickleswap-sdk2'
 import { useTranslation } from 'contexts/Localization'
 

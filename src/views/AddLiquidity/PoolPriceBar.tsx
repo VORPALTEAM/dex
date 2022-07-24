@@ -1,6 +1,6 @@
 import { Currency, Percent, Price } from 'pickleswap-sdk2'
 import React from 'react'
-import { Text } from 'pickleswap-uikit'
+import { Text } from 'vorpaltesttoolkit'
 import { useTranslation } from 'contexts/Localization'
 import { AutoColumn } from '../../components/Layout/Column'
 import { AutoRow } from '../../components/Layout/Row'

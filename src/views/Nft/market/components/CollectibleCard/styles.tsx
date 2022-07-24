@@ -11,7 +11,7 @@ import {
   Text,
   WalletFilledIcon,
   Skeleton,
-} from 'pickleswap-uikit'
+} from 'vorpaltesttoolkit'
 import { Price } from 'pickleswap-sdk2'
 import { useTranslation } from 'contexts/Localization'
 import { multiplyPriceByAmount } from 'utils/prices'

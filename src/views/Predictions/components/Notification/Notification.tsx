@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Card, CardBody, Heading } from 'pickleswap-uikit'
+import { Card, CardBody, Heading } from 'vorpaltesttoolkit'
 
 interface NotificationProps {
   title: string

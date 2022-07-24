@@ -1,4 +1,4 @@
-import { Button, Flex, Skeleton, useModal } from 'pickleswap-uikit'
+import { Button, Flex, Skeleton, useModal } from 'vorpaltesttoolkit'
 import BigNumber from 'bignumber.js'
 import { useTranslation } from 'contexts/Localization'
 import React from 'react'

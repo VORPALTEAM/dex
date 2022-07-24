@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Text, HelpIcon, Skeleton, useTooltip } from 'pickleswap-uikit'
+import { Text, HelpIcon, Skeleton, useTooltip } from 'vorpaltesttoolkit'
 import { useTranslation } from 'contexts/Localization'
 
 const ReferenceElement = styled.div`

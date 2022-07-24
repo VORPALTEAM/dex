@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { BoxProps, Box, Flex, FlexProps } from 'pickleswap-uikit'
+import { BoxProps, Box, Flex, FlexProps } from 'vorpaltesttoolkit'
 import Container from 'components/Layout/Container'
 import CurvedDivider from './CurvedDivider'
 import { ClipFill, DividerFill } from './types'

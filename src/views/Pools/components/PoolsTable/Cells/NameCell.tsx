@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import BigNumber from 'bignumber.js'
-import { Text, useMatchBreakpoints, TokenPairImage as UITokenPairImage } from 'pickleswap-uikit'
+import { Text, useMatchBreakpoints, TokenPairImage as UITokenPairImage } from 'vorpaltesttoolkit'
 import { useTranslation } from 'contexts/Localization'
 import { useVaultPoolByKey } from 'state/pools/hooks'
 import { DeserializedPool } from 'state/types'

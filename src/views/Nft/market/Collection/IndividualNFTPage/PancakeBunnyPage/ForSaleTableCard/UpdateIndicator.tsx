@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Flex, useTooltip } from 'pickleswap-uikit'
+import { Flex, useTooltip } from 'vorpaltesttoolkit'
 import { useLoadingState } from 'state/nftMarket/hooks'
 import { useTranslation } from 'contexts/Localization'
 import CountdownCircle from './CountdownCircle'

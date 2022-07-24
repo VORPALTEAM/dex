@@ -1,5 +1,5 @@
 import React from 'react'
-import { Heading, Flex, Text, Skeleton, ChartIcon, CommunityIcon, SwapIcon } from 'pickleswap-uikit'
+import { Heading, Flex, Text, Skeleton, ChartIcon, CommunityIcon, SwapIcon } from 'vorpaltesttoolkit'
 import { useTranslation } from 'contexts/Localization'
 import { useGetStats } from 'hooks/api'
 import useTheme from 'hooks/useTheme'

@@ -12,7 +12,7 @@ import {
   Text,
   Th,
   useMatchBreakpoints,
-} from 'pickleswap-uikit'
+} from 'vorpaltesttoolkit'
 import { getCollectionActivity, getNftsFromDifferentCollectionsApi } from 'state/nftMarket/helpers'
 import Container from 'components/Layout/Container'
 import TableLoader from 'components/TableLoader'

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Flex, UserMenuItem, WarningIcon } from 'pickleswap-uikit'
+import { Flex, UserMenuItem, WarningIcon } from 'vorpaltesttoolkit'
 import { useTranslation } from 'contexts/Localization'
 
 interface WalletUserMenuItemProps {

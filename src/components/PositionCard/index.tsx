@@ -11,7 +11,7 @@ import {
   CardProps,
   AddIcon,
   darkColors,
-} from 'pickleswap-uikit'
+} from 'vorpaltesttoolkit'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import { useTranslation } from 'contexts/Localization'

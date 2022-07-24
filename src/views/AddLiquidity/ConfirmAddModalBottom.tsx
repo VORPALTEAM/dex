@@ -1,7 +1,7 @@
 import { Currency, CurrencyAmount, Fraction, Percent } from 'pickleswap-sdk2'
 import React from 'react'
 import styled from 'styled-components'
-import { Button, Text, Flex } from 'pickleswap-uikit'
+import { Button, Text, Flex } from 'vorpaltesttoolkit'
 import { useTranslation } from 'contexts/Localization'
 import { RowBetween, RowFixed } from '../../components/Layout/Row'
 import { CurrencyLogo } from '../../components/Logo'

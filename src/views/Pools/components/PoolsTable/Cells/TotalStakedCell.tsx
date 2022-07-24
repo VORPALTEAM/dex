@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react'
-import { Flex, Skeleton, Text } from 'pickleswap-uikit'
+import { Flex, Skeleton, Text } from 'vorpaltesttoolkit'
 import styled from 'styled-components'
 import { useTranslation } from 'contexts/Localization'
 import BigNumber from 'bignumber.js'

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import BigNumber from 'bignumber.js'
-import { Flex, Text } from 'pickleswap-uikit'
+import { Flex, Text } from 'vorpaltesttoolkit'
 import styled from 'styled-components'
 import { BIG_ZERO } from 'utils/bigNumber'
 import { useTranslation } from 'contexts/Localization'

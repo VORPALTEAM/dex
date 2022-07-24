@@ -1,5 +1,5 @@
 import React from 'react'
-import { light, dark, ModalProvider } from 'pickleswap-uikit'
+import { light, dark, ModalProvider } from 'vorpaltesttoolkit'
 import { Web3ReactProvider } from '@web3-react/core'
 import { HelmetProvider } from 'react-helmet-async'
 import { Provider } from 'react-redux'

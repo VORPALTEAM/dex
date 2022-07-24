@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box } from 'pickleswap-uikit'
+import { Box } from 'vorpaltesttoolkit'
 import { PredictionUser } from 'state/types'
 import MobileRow from './MobileRow'
 

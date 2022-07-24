@@ -1,4 +1,4 @@
-import { Language } from 'pickleswap-uikit'
+import { Language } from 'vorpaltesttoolkit'
 
 export const AR: Language = { locale: 'ar-SA', language: 'العربية', code: 'ar' }
 export const BN: Language = { locale: 'bn-BD', language: 'বাংলা', code: 'bn' }

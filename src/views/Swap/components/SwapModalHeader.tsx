@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react'
 import { Trade, TradeType } from 'pickleswap-sdk2'
-import { Button, Text, ErrorIcon, ArrowDownIcon } from 'pickleswap-uikit'
+import { Button, Text, ErrorIcon, ArrowDownIcon } from 'vorpaltesttoolkit'
 import { Field } from 'state/swap/actions'
 import { useTranslation } from 'contexts/Localization'
 import { computeSlippageAdjustedAmounts, computeTradePriceBreakdown, warningSeverity } from 'utils/prices'

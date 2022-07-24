@@ -16,7 +16,7 @@ import {
   Spinner,
   Image,
   useMatchBreakpoints,
-} from 'pickleswap-uikit'
+} from 'vorpaltesttoolkit'
 import Page from 'components/Layout/Page'
 import { getBscScanLink } from 'utils'
 import truncateHash from 'utils/truncateHash'

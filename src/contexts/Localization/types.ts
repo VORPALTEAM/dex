@@ -1,5 +1,5 @@
 import { ReactText } from 'react'
-import { Language } from 'pickleswap-uikit'
+import { Language } from 'vorpaltesttoolkit'
 
 export type ContextData = {
   [key: string]: ReactText

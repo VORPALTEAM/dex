@@ -1,5 +1,5 @@
 import React from 'react'
-import { Grid, GridProps } from 'pickleswap-uikit'
+import { Grid, GridProps } from 'vorpaltesttoolkit'
 
 const FilterFooter: React.FC<GridProps> = ({ children, ...props }) => (
   <Grid

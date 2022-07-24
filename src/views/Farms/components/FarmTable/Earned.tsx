@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Skeleton } from 'pickleswap-uikit'
+import { Skeleton } from 'vorpaltesttoolkit'
 
 export interface EarnedProps {
   earnings: number

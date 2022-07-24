@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Text, Flex, Box, CloseIcon, IconButton, useMatchBreakpoints } from 'pickleswap-uikit'
+import { Text, Flex, Box, CloseIcon, IconButton, useMatchBreakpoints } from 'vorpaltesttoolkit'
 import { useTranslation } from 'contexts/Localization'
 import { usePhishingBannerManager } from 'state/user/hooks'
 

@@ -1,6 +1,6 @@
 import React from 'react'
 import { LotteryTicket } from 'config/constants/types'
-import { Flex, Text } from 'pickleswap-uikit'
+import { Flex, Text } from 'vorpaltesttoolkit'
 import { useTranslation } from 'contexts/Localization'
 import styled from 'styled-components'
 import _uniqueId from 'lodash/uniqueId'

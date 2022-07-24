@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Token } from 'pickleswap-sdk2'
-import { ButtonMenu, ButtonMenuItem, ModalBody } from 'pickleswap-uikit'
+import { ButtonMenu, ButtonMenuItem, ModalBody } from 'vorpaltesttoolkit'
 import styled from 'styled-components'
 import { TokenList } from '@uniswap/token-lists'
 import { useTranslation } from 'contexts/Localization'
@@ -19,7 +19,7 @@ const StyledButtonMenuItem = styled(ButtonMenuItem)`
   border-radius: 16px;
   text-transform: uppercase;
   background-color: ${({ isActive }) => {
-    return isActive ? '#352F44' : 'transparent'
+    return isActive ? '#DBD8E3' : 'transparent'
   }};
 
   color: ${({ isActive }) => {

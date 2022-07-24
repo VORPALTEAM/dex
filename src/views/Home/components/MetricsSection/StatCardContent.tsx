@@ -1,5 +1,5 @@
 import React from 'react'
-import { Heading, Flex, Text, useMatchBreakpoints } from 'pickleswap-uikit'
+import { Heading, Flex, Text, useMatchBreakpoints } from 'vorpaltesttoolkit'
 
 const StatCardContent: React.FC<{ headingText: string; bodyText: string; highlightColor: string }> = ({
   headingText,

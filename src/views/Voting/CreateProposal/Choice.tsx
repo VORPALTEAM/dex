@@ -1,5 +1,5 @@
 import React, { ChangeEvent, InputHTMLAttributes, useState } from 'react'
-import { Box, CloseIcon, IconButton, Input, InputProps } from 'pickleswap-uikit'
+import { Box, CloseIcon, IconButton, Input, InputProps } from 'vorpaltesttoolkit'
 
 interface ChoiceProps extends InputProps, InputHTMLAttributes<HTMLInputElement> {
   onTextInput: (value: string) => void

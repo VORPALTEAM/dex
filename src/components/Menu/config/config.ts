@@ -1,4 +1,4 @@
-import { MenuItemsType, DropdownMenuItemType } from 'pickleswap-uikit'
+import { MenuItemsType, DropdownMenuItemType } from 'vorpaltesttoolkit'
 import { ContextApi } from 'contexts/Localization/types'
 // import { nftsBaseUrl } from 'views/Nft/market/constants'
 

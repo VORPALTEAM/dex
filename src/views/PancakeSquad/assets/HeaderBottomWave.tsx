@@ -1,4 +1,4 @@
-import { Svg, SvgProps } from 'pickleswap-uikit'
+import { Svg, SvgProps } from 'vorpaltesttoolkit'
 import * as React from 'react'
 
 const Icon: React.FC<SvgProps & { isDark: boolean }> = ({ isDark, ...props }) => {

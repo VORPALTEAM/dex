@@ -9,7 +9,7 @@ import {
   // NotificationDot,
   Text,
   // ChartDisableIcon,
-} from 'pickleswap-uikit'
+} from 'vorpaltesttoolkit'
 // import TransactionsModal from 'components/App/Transactions/TransactionsModal'
 // import GlobalSettings from 'components/Menu/GlobalSettings'
 // import { useExpertModeManager } from 'state/user/hooks'

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useTranslation } from 'contexts/Localization'
-import { Text, Flex, Checkbox, Button } from 'pickleswap-uikit'
+import { Text, Flex, Checkbox, Button } from 'vorpaltesttoolkit'
 
 interface AcknowledgementProps {
   handleContinueClick: () => void

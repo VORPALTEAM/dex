@@ -1,6 +1,6 @@
 import React, { CSSProperties, MutableRefObject, useCallback, useMemo } from 'react'
 import { Currency, CurrencyAmount, currencyEquals, ETHER, Token } from 'pickleswap-sdk2'
-import { Text } from 'pickleswap-uikit'
+import { Text } from 'vorpaltesttoolkit'
 import styled from 'styled-components'
 import { FixedSizeList } from 'react-window'
 import { wrappedCurrency } from 'utils/wrappedCurrency'

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Card, CardBody, CardHeader, Flex, Heading, LinkExternal, Text } from 'pickleswap-uikit'
+import { Box, Card, CardBody, CardHeader, Flex, Heading, LinkExternal, Text } from 'vorpaltesttoolkit'
 import styled from 'styled-components'
 import { format } from 'date-fns'
 import { Proposal } from 'state/types'

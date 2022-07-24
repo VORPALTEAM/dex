@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Flex, LaurelLeftIcon, LaurelRightIcon } from 'pickleswap-uikit'
+import { Flex, LaurelLeftIcon, LaurelRightIcon } from 'vorpaltesttoolkit'
 import { RibbonProps } from '../../types'
 import {
   RibbonDownMidExpanding,

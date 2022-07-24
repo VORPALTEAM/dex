@@ -9,7 +9,7 @@ import {
   TradingViewIcon,
   LineGraphIcon,
   useMatchBreakpoints,
-} from 'pickleswap-uikit'
+} from 'vorpaltesttoolkit'
 import { CurrencyLogo, DoubleCurrencyLogo } from 'components/Logo'
 import { useTranslation } from 'contexts/Localization'
 import React from 'react'

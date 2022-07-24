@@ -1,6 +1,6 @@
 import React, { CSSProperties } from 'react'
 import { Token } from 'pickleswap-sdk2'
-import { Button, Text, CheckmarkCircleIcon } from 'pickleswap-uikit'
+import { Button, Text, CheckmarkCircleIcon } from 'vorpaltesttoolkit'
 import { AutoRow, RowFixed } from 'components/Layout/Row'
 import { AutoColumn } from 'components/Layout/Column'
 import CurrencyLogo from 'components/Logo/CurrencyLogo'

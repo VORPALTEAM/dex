@@ -1,6 +1,6 @@
 import React from 'react'
 import { useLocation, useParams } from 'react-router'
-import { Text } from 'pickleswap-uikit'
+import { Text } from 'vorpaltesttoolkit'
 import { Collection } from 'state/nftMarket/types'
 import { formatNumber } from 'utils/formatBalance'
 import { useTranslation } from 'contexts/Localization'

@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react'
-import { Box, Grid, GridProps, Heading } from 'pickleswap-uikit'
+import { Box, Grid, GridProps, Heading } from 'vorpaltesttoolkit'
 
 interface MarketPageTitleProps extends GridProps {
   title: string

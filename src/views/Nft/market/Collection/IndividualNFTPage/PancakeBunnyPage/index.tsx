@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo } from 'react'
 import { useWeb3React } from '@web3-react/core'
-import { Flex } from 'pickleswap-uikit'
+import { Flex } from 'vorpaltesttoolkit'
 import orderBy from 'lodash/orderBy'
 import sum from 'lodash/sum'
 import Page from 'components/Layout/Page'

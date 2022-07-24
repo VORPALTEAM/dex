@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { useModal } from 'pickleswap-uikit'
+import { useModal } from 'vorpaltesttoolkit'
 import AvatarImage from 'views/Nft/market/components/BannerHeader/AvatarImage'
 import EditProfileModal from './EditProfileModal'
 

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Button } from 'pickleswap-uikit'
+import { Button } from 'vorpaltesttoolkit'
 import { ContextApi } from 'contexts/Localization/types'
 import { UserStatusEnum } from 'views/PancakeSquad/types'
 

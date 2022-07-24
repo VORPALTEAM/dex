@@ -1,5 +1,5 @@
 import React from 'react'
-import { Flex, Skeleton } from 'pickleswap-uikit'
+import { Flex, Skeleton } from 'vorpaltesttoolkit'
 
 export const SkeletonCardActions = () => {
   return <Skeleton height="48px" />

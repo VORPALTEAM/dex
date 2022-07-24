@@ -1,4 +1,4 @@
-import { EventStatus } from 'pickleswap-uikit'
+import { EventStatus } from 'vorpaltesttoolkit'
 import { ContextApi } from 'contexts/Localization/types'
 import formatTimePeriod from 'utils/formatTimePeriod'
 import getTimePeriods from 'utils/getTimePeriods'

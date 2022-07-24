@@ -1,7 +1,7 @@
 import React, { useMemo, useState } from 'react'
 import styled from 'styled-components'
 import { Trade, TradeType } from 'pickleswap-sdk2'
-import { Button, Text, AutoRenewIcon } from 'pickleswap-uikit'
+import { Button, Text, AutoRenewIcon } from 'vorpaltesttoolkit'
 import { useTranslation } from 'contexts/Localization'
 import { Field } from 'state/swap/actions'
 import {
@@ -25,7 +25,7 @@ const SwapModalFooterContainer = styled(AutoColumn)`
 `
 
 const StyledButton = styled(Button)`
-  background: #352f44;
+  background: #DBD8E3;
   border-radius: 6px;
   margin: 36px auto;
 `

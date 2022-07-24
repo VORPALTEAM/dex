@@ -1,6 +1,6 @@
 import React from 'react'
 import { useTheme } from 'styled-components'
-import { Svg, SvgProps } from 'pickleswap-uikit'
+import { Svg, SvgProps } from 'vorpaltesttoolkit'
 
 interface MultiplierProps extends SvgProps {
   isActive: boolean

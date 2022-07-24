@@ -15,7 +15,7 @@ import {
   MessageText,
   useModal,
   Link,
-} from 'pickleswap-uikit'
+} from 'vorpaltesttoolkit'
 import styled from 'styled-components'
 import { useWeb3React } from '@web3-react/core'
 import { Token } from 'pickleswap-sdk2'

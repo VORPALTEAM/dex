@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, useModal, WaitIcon, ButtonProps } from 'pickleswap-uikit'
+import { Button, useModal, WaitIcon, ButtonProps } from 'vorpaltesttoolkit'
 import { useTranslation } from 'contexts/Localization'
 import { useLottery } from 'state/lottery/hooks'
 import { LotteryStatus } from 'config/constants/types'

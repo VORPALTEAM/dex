@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, ButtonProps, useModal } from 'pickleswap-uikit'
+import { Button, ButtonProps, useModal } from 'vorpaltesttoolkit'
 import CollectRoundWinningsModal from './CollectRoundWinningsModal'
 
 interface CollectWinningsButtonProps extends ButtonProps {

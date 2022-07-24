@@ -1,5 +1,5 @@
 import React from 'react'
-import { Heading, TextProps } from 'pickleswap-uikit'
+import { Heading, TextProps } from 'vorpaltesttoolkit'
 import useTheme from 'hooks/useTheme'
 
 interface HeadingProps extends TextProps {

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Flex, ExpandableLabel, CardFooter } from 'pickleswap-uikit'
+import { Flex, ExpandableLabel, CardFooter } from 'vorpaltesttoolkit'
 import { useTranslation } from 'contexts/Localization'
 import { LotteryRound } from 'state/types'
 import FooterExpanded from './FooterExpanded'

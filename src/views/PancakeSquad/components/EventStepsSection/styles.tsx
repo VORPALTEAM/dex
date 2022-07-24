@@ -1,4 +1,4 @@
-import { Flex } from 'pickleswap-uikit'
+import { Flex } from 'vorpaltesttoolkit'
 import styled from 'styled-components'
 
 export const StyledEventStepsSectionContainer = styled(Flex)<{ $isDark: boolean }>`

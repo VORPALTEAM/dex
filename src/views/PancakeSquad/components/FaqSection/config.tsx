@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text } from 'pickleswap-uikit'
+import { Text } from 'vorpaltesttoolkit'
 import { ContextApi } from 'contexts/Localization/types'
 
 type FAQsType = {

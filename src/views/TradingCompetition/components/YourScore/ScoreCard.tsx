@@ -11,7 +11,7 @@ import {
   LaurelRightIcon,
   CheckmarkCircleIcon,
   useModal,
-} from 'pickleswap-uikit'
+} from 'vorpaltesttoolkit'
 import { CLAIM, OVER } from 'config/constants/trading-competition/phases'
 import ConnectWalletButton from 'components/ConnectWalletButton'
 import { useTranslation } from 'contexts/Localization'

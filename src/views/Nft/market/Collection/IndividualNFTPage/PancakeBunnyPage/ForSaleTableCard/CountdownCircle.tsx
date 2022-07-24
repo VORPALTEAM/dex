@@ -1,4 +1,4 @@
-import { Spinner, Text } from 'pickleswap-uikit'
+import { Spinner, Text } from 'vorpaltesttoolkit'
 import React from 'react'
 import styled, { keyframes } from 'styled-components'
 

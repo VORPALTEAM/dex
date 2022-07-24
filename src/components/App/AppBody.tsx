@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Card } from 'pickleswap-uikit'
+import { Card } from 'vorpaltesttoolkit'
 
 export const BodyWrapper = styled(Card)`
   border-radius: 40px;

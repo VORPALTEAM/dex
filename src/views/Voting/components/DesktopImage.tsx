@@ -1,4 +1,4 @@
-import { Image } from 'pickleswap-uikit'
+import { Image } from 'vorpaltesttoolkit'
 import styled from 'styled-components'
 
 const DesktopImage = styled(Image)`

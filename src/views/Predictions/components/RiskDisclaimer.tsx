@@ -11,7 +11,7 @@ import {
   ModalTitle,
   Heading,
   Box,
-} from 'pickleswap-uikit'
+} from 'vorpaltesttoolkit'
 import { useTranslation } from 'contexts/Localization'
 import styled from 'styled-components'
 

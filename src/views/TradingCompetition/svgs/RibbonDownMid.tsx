@@ -1,5 +1,5 @@
 import React from 'react'
-import { Svg, SvgProps } from 'pickleswap-uikit'
+import { Svg, SvgProps } from 'vorpaltesttoolkit'
 
 const RibbonDownMid: React.FC<SvgProps> = (props) => {
   return (

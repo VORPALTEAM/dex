@@ -1,6 +1,6 @@
 import React from 'react'
 import { useLocation } from 'react-router'
-import { Menu as UikitMenu } from 'pickleswap-uikit'
+import { Menu as UikitMenu } from 'vorpaltesttoolkit'
 import { languageList } from 'config/localization/languages'
 import { useTranslation } from 'contexts/Localization'
 import PhishingWarningBanner from 'components/PhishingWarningBanner'

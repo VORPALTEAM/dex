@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Box } from 'pickleswap-uikit'
+import { Box } from 'vorpaltesttoolkit'
 import Container from '../Layout/Container'
 import { PageHeaderProps } from './types'
 

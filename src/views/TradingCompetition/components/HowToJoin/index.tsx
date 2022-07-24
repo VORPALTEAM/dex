@@ -1,5 +1,5 @@
 import React from 'react'
-import { Flex, Text, Heading } from 'pickleswap-uikit'
+import { Flex, Text, Heading } from 'vorpaltesttoolkit'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import { useTranslation } from 'contexts/Localization'

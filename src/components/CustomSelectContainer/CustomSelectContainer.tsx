@@ -1,6 +1,6 @@
 import React from 'react'
 import { useTranslation } from 'contexts/Localization'
-import { Text } from 'pickleswap-uikit'
+import { Text } from 'vorpaltesttoolkit'
 import CustomSelect, { OptionProps } from 'components/CustomSelect/CustomSelect'
 import styled from 'styled-components'
 

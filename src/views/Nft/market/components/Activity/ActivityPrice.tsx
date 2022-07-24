@@ -1,5 +1,5 @@
 import React from 'react'
-import { Flex, BinanceIcon, Text, Skeleton } from 'pickleswap-uikit'
+import { Flex, BinanceIcon, Text, Skeleton } from 'vorpaltesttoolkit'
 import { multiplyPriceByAmount } from 'utils/prices'
 
 const ActivityPrice = ({ bnbBusdPrice, price }) => {

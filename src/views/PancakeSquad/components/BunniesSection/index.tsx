@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Box, Button, Flex, Text } from 'pickleswap-uikit'
+import { Box, Button, Flex, Text } from 'vorpaltesttoolkit'
 import { useTranslation } from 'contexts/Localization'
 import ColoredWordHeading from 'views/Home/components/ColoredWordHeading'
 import { LandingBodyWrapper } from 'views/PancakeSquad/styles'

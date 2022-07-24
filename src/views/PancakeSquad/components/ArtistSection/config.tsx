@@ -1,5 +1,5 @@
 import React from 'react'
-import { InstagramIcon, TwitterIcon } from 'pickleswap-uikit'
+import { InstagramIcon, TwitterIcon } from 'vorpaltesttoolkit'
 import { ContextApi } from 'contexts/Localization/types'
 
 type ArtistConfigType = {

@@ -1,4 +1,4 @@
-import { Flex, lightColors } from 'pickleswap-uikit'
+import { Flex, lightColors } from 'vorpaltesttoolkit'
 import styled, { keyframes } from 'styled-components'
 
 const flyingAnim = () => keyframes`

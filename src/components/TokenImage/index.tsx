@@ -4,7 +4,7 @@ import {
   TokenPairImageProps as UIKitTokenPairImageProps,
   TokenImage as UIKitTokenImage,
   ImageProps,
-} from 'pickleswap-uikit'
+} from 'vorpaltesttoolkit'
 import tokens from 'config/constants/tokens'
 import { Token } from 'pickleswap-sdk2'
 

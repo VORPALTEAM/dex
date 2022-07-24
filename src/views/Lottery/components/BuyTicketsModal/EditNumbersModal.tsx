@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Modal, Text, Flex, Button, ArrowBackIcon, AutoRenewIcon } from 'pickleswap-uikit'
+import { Modal, Text, Flex, Button, ArrowBackIcon, AutoRenewIcon } from 'vorpaltesttoolkit'
 import useTheme from 'hooks/useTheme'
 import { useTranslation } from 'contexts/Localization'
 import TicketInput from './TicketInput'

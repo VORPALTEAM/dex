@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Card, CardHeader, CardBody, CommunityIcon, Heading, PrizeIcon, Text } from 'pickleswap-uikit'
+import { Card, CardHeader, CardBody, CommunityIcon, Heading, PrizeIcon, Text } from 'vorpaltesttoolkit'
 import { Team } from 'config/constants/types'
 import { useTranslation } from 'contexts/Localization'
 import ComingSoon from './ComingSoon'

@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 import { useCountUp } from 'react-countup'
-import { Card, CardBody, Flex, PlayCircleOutlineIcon, Skeleton, Text, TooltipText, useTooltip } from 'pickleswap-uikit'
+import { Card, CardBody, Flex, PlayCircleOutlineIcon, Skeleton, Text, TooltipText, useTooltip } from 'vorpaltesttoolkit'
 import { useTranslation } from 'contexts/Localization'
 import { NodeRound, NodeLedger, BetPosition } from 'state/types'
 import { formatBigNumberToFixed } from 'utils/formatBalance'

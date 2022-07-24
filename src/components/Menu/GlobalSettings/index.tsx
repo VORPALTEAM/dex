@@ -1,5 +1,5 @@
 import React from 'react'
-import { Flex, IconButton, CustomCogIcon, useModal } from 'pickleswap-uikit'
+import { Flex, IconButton, CustomCogIcon, useModal } from 'vorpaltesttoolkit'
 import SettingsModal from './SettingsModal'
 
 type Props = {

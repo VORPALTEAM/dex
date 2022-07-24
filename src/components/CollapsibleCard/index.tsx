@@ -8,7 +8,7 @@ import {
   IconButton,
   ChevronUpIcon,
   ChevronDownIcon,
-} from 'pickleswap-uikit'
+} from 'vorpaltesttoolkit'
 
 interface CollapsibleCardProps extends CardProps {
   initialOpenState?: boolean

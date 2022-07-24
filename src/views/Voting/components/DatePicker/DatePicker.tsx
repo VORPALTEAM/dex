@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDatePicker, { ReactDatePickerProps } from 'react-datepicker'
-import { Input, InputProps } from 'pickleswap-uikit'
+import { Input, InputProps } from 'vorpaltesttoolkit'
 
 import 'react-datepicker/dist/react-datepicker.css'
 

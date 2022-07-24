@@ -1,4 +1,4 @@
-import { Box } from 'pickleswap-uikit'
+import { Box } from 'vorpaltesttoolkit'
 import styled from 'styled-components'
 
 const IfoLayout = styled(Box)`

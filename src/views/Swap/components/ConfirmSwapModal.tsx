@@ -1,6 +1,6 @@
 import React, { useCallback, useMemo } from 'react'
 import { currencyEquals, Trade } from 'pickleswap-sdk2'
-import { InjectedModalProps } from 'pickleswap-uikit'
+import { InjectedModalProps } from 'vorpaltesttoolkit'
 import { useTranslation } from 'contexts/Localization'
 import TransactionConfirmationModal, {
   ConfirmationModalContent,

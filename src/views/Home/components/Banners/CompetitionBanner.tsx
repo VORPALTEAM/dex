@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Text, Flex, Button, ArrowForwardIcon, Heading, useMatchBreakpoints } from 'pickleswap-uikit'
+import { Text, Flex, Button, ArrowForwardIcon, Heading, useMatchBreakpoints } from 'vorpaltesttoolkit'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'contexts/Localization'
 

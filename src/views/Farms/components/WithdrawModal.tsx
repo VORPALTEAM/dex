@@ -1,7 +1,7 @@
 import BigNumber from 'bignumber.js'
 import React, { useCallback, useMemo, useState } from 'react'
 import styled from 'styled-components'
-import { Button, Modal, Heading } from 'pickleswap-uikit'
+import { Button, Modal, Heading } from 'vorpaltesttoolkit'
 import { ModalActions, ModalInput } from 'components/Modal'
 import { useTranslation } from 'contexts/Localization'
 import { getFullDisplayBalance } from 'utils/formatBalance'

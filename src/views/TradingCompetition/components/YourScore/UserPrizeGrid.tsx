@@ -1,4 +1,4 @@
-import { BlockIcon, CheckmarkCircleIcon, Flex, Image, Skeleton, Text } from 'pickleswap-uikit'
+import { BlockIcon, CheckmarkCircleIcon, Flex, Image, Skeleton, Text } from 'vorpaltesttoolkit'
 import { useTranslation } from 'contexts/Localization'
 import React from 'react'
 import styled from 'styled-components'

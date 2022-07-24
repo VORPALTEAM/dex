@@ -1,5 +1,5 @@
 import React from 'react'
-import { Heading, Text } from 'pickleswap-uikit'
+import { Heading, Text } from 'vorpaltesttoolkit'
 import { useTranslation } from 'contexts/Localization'
 import ConnectWalletButton from 'components/ConnectWalletButton'
 

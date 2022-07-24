@@ -1,6 +1,6 @@
 import React, { ImgHTMLAttributes } from 'react'
 import styled from 'styled-components'
-import { BunnyPlaceholderIcon } from 'pickleswap-uikit'
+import { BunnyPlaceholderIcon } from 'vorpaltesttoolkit'
 
 interface AchievementAvatarProps extends ImgHTMLAttributes<HTMLImageElement> {
   badge?: string

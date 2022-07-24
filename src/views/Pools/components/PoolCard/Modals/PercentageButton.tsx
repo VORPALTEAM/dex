@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Button } from 'pickleswap-uikit'
+import { Button } from 'vorpaltesttoolkit'
 
 interface PercentageButtonProps {
   onClick: () => void

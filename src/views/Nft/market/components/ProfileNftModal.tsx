@@ -1,5 +1,5 @@
 import React from 'react'
-import { InjectedModalProps, Modal, Flex, Text, Button, useModal, Link, Grid, LinkExternal } from 'pickleswap-uikit'
+import { InjectedModalProps, Modal, Flex, Text, Button, useModal, Link, Grid, LinkExternal } from 'vorpaltesttoolkit'
 import useTheme from 'hooks/useTheme'
 import styled from 'styled-components'
 import { NftToken } from 'state/nftMarket/types'

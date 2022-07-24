@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Flex, Skeleton } from 'pickleswap-uikit'
+import { Box, Flex, Skeleton } from 'vorpaltesttoolkit'
 import times from 'lodash/times'
 import styled from 'styled-components'
 

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Price } from 'pickleswap-sdk2'
-import { Flex, Text } from 'pickleswap-uikit'
+import { Flex, Text } from 'vorpaltesttoolkit'
 import { multiplyPriceByAmount } from 'utils/prices'
 import { useTranslation } from 'contexts/Localization'
 import { formatBnb } from '../helpers'

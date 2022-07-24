@@ -21839,6 +21839,17 @@ vm-browserify@^1.0.1:
   resolved "https://registry.yarnpkg.com/vm-browserify/-/vm-browserify-1.1.2.tgz#78641c488b8e6ca91a75f511e7a3b32a86e5dda0"
   integrity sha512-2ham8XPWTONajOR0ohOKOHXkm3+gaBmGut3SRuu75xLd/RRaY6vqgh8NBYYk7+RW3u5AtzPQZG8F10LHkl0lAQ==
 
+vorpaltesttoolkit@^0.70.6:
+  version "0.70.6"
+  resolved "https://registry.yarnpkg.com/vorpaltesttoolkit/-/vorpaltesttoolkit-0.70.6.tgz#1046b203977985fd6ac89a768a5fee2df0ac19c1"
+  integrity sha512-x74O6Ijb0mM0c/DzGy+Q3bzWuUO/PlwclUMrIKnpbmUAMgL/VEwrLBWsANfkud8BHqk7l7R3agJw1w7yOtgtxA==
+  dependencies:
+    "@popperjs/core" "^2.9.2"
+    "@types/styled-system" "^5.1.10"
+    lodash "^4.17.20"
+    react-popper "^2.2.5"
+    styled-system "^5.1.5"
+
 vuvuzela@1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/vuvuzela/-/vuvuzela-1.0.3.tgz#3be145e58271c73ca55279dd851f12a682114b0b"

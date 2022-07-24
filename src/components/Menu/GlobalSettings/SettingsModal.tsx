@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import { Text, Toggle, Flex, Modal, InjectedModalProps, Heading } from 'pickleswap-uikit'
+import { Text, Toggle, Flex, Modal, InjectedModalProps, Heading } from 'vorpaltesttoolkit'
 import {
   useAudioModeManager,
   useExpertModeManager,

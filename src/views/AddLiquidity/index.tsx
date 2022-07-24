@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useState } from 'react'
 import { BigNumber } from '@ethersproject/bignumber'
 import { TransactionResponse } from '@ethersproject/providers'
 import { Currency, currencyEquals, ETHER, TokenAmount, WETH } from 'pickleswap-sdk2'
-import { Button, Text, Flex, AddIcon, CardBody, Message, useModal } from 'pickleswap-uikit'
+import { Button, Text, Flex, AddIcon, CardBody, Message, useModal } from 'vorpaltesttoolkit'
 import { RouteComponentProps } from 'react-router-dom'
 import { useIsTransactionUnsupported } from 'hooks/Trades'
 import { useTranslation } from 'contexts/Localization'
@@ -488,7 +488,7 @@ export default function AddLiquidity({
               width: '100%',
               maxWidth: '620px',
               marginTop: '1rem',
-              backgroundColor: '#352F44',
+              backgroundColor: '#DBD8E3',
               color: '#F1F6F9',
               borderRadius: '40px',
             }}

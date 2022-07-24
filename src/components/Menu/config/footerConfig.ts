@@ -1,4 +1,4 @@
-import { FooterLinkType } from 'pickleswap-uikit'
+import { FooterLinkType } from 'vorpaltesttoolkit'
 import { ContextApi } from 'contexts/Localization/types'
 
 export const footerLinks: (t: ContextApi['t']) => FooterLinkType[] = (t) => [

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Currency, Pair } from 'pickleswap-sdk2'
-import { Button, ChevronDownIcon, Text, Flex, Box, darkColors, useModal } from 'pickleswap-uikit'
+import { Button, ChevronDownIcon, Text, Flex, Box, darkColors, useModal } from 'vorpaltesttoolkit'
 import styled from 'styled-components'
 import { useTranslation } from 'contexts/Localization'
 import useActiveWeb3React from 'hooks/useActiveWeb3React'

@@ -1,5 +1,5 @@
 import React from 'react'
-import { BunnyPlaceholderIcon, Flex, Heading } from 'pickleswap-uikit'
+import { BunnyPlaceholderIcon, Flex, Heading } from 'vorpaltesttoolkit'
 import { useTranslation } from 'contexts/Localization'
 
 interface ComingSoonProps {

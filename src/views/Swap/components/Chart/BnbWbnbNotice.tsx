@@ -1,4 +1,4 @@
-import { Flex, Text } from 'pickleswap-uikit'
+import { Flex, Text } from 'vorpaltesttoolkit'
 import { useTranslation } from 'contexts/Localization'
 import React from 'react'
 import { StyledPriceChart } from './styles'

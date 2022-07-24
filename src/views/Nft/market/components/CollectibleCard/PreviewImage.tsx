@@ -1,5 +1,5 @@
 import React from 'react'
-import { BackgroundImage, BoxProps } from 'pickleswap-uikit'
+import { BackgroundImage, BoxProps } from 'vorpaltesttoolkit'
 import PlaceholderImage from './PlaceholderImage'
 
 interface PreviewImageProps extends BoxProps {

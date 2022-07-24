@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Card, Text } from 'pickleswap-uikit'
+import { Box, Card, Text } from 'vorpaltesttoolkit'
 import { useTranslation } from 'contexts/Localization'
 import PreviousBetsTable from '../PreviousBetsTable'
 

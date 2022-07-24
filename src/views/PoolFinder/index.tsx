@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react'
 import { Currency, ETHER, JSBI, TokenAmount } from 'pickleswap-sdk2'
-import { Button, ChevronDownIcon, Text, AddIcon, useModal } from 'pickleswap-uikit'
+import { Button, ChevronDownIcon, Text, AddIcon, useModal } from 'vorpaltesttoolkit'
 import styled from 'styled-components'
 import { useTranslation } from 'contexts/Localization'
 import { LightCard } from '../../components/Card'

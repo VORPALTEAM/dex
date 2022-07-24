@@ -1,5 +1,5 @@
 import React from 'react'
-import { Svg, SvgProps } from 'pickleswap-uikit'
+import { Svg, SvgProps } from 'vorpaltesttoolkit'
 
 export const MatchExampleA: React.FC<{ isDark: boolean } & SvgProps> = ({ isDark, ...rest }) => {
   return (

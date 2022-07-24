@@ -10,7 +10,7 @@ import {
   InjectedModalProps,
   Heading,
   Button,
-} from 'pickleswap-uikit'
+} from 'vorpaltesttoolkit'
 import styled from 'styled-components'
 import usePrevious from 'hooks/usePreviousValue'
 import { TokenList } from '@uniswap/token-lists'

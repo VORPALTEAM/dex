@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { Box } from 'pickleswap-uikit'
+import { Box } from 'vorpaltesttoolkit'
 
 const Row = styled(Box)<{
   width?: string

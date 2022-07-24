@@ -11,7 +11,7 @@ import {
   BinanceIcon,
   Skeleton,
   useModal,
-} from 'pickleswap-uikit'
+} from 'vorpaltesttoolkit'
 import { useWeb3React } from '@web3-react/core'
 import { NftLocation, NftToken } from 'state/nftMarket/types'
 import ConnectWalletButton from 'components/ConnectWalletButton'

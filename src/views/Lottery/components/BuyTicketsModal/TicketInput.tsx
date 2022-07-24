@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react'
 import styled from 'styled-components'
-import { Flex, Text } from 'pickleswap-uikit'
+import { Flex, Text } from 'vorpaltesttoolkit'
 import { useTranslation } from 'contexts/Localization'
 import { Ticket, UpdateTicketAction } from './useTicketsReducer'
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import { InjectedModalProps, Modal, Flex, Text, Button, Image, Link, BinanceIcon } from 'pickleswap-uikit'
+import { InjectedModalProps, Modal, Flex, Text, Button, Image, Link, BinanceIcon } from 'vorpaltesttoolkit'
 import { Price } from 'pickleswap-sdk2'
 import useTheme from 'hooks/useTheme'
 import styled from 'styled-components'

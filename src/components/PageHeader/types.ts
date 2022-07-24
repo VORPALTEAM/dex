@@ -1,4 +1,4 @@
-import { BoxProps } from 'pickleswap-uikit'
+import { BoxProps } from 'vorpaltesttoolkit'
 
 export interface PageHeaderProps extends BoxProps {
   background?: string

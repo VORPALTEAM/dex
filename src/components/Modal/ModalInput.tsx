@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Text, Button, Input, InputProps, Flex, Link } from 'pickleswap-uikit'
+import { Text, Button, Input, InputProps, Flex, Link } from 'vorpaltesttoolkit'
 import { useTranslation } from 'contexts/Localization'
 import { parseUnits } from 'ethers/lib/utils'
 import { formatBigNumber } from 'utils/formatBalance'

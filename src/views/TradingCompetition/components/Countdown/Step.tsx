@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { LogoIcon, CheckmarkCircleIcon, CircleOutlineIcon, Flex, Text } from 'pickleswap-uikit'
+import { LogoIcon, CheckmarkCircleIcon, CircleOutlineIcon, Flex, Text } from 'vorpaltesttoolkit'
 import { CountdownProps } from '../../types'
 
 const sharedFlexStyles = `

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Price } from 'pickleswap-sdk2'
-import { Text, AutoRenewIcon } from 'pickleswap-uikit'
+import { Text, AutoRenewIcon } from 'vorpaltesttoolkit'
 import { StyledBalanceMaxMini } from './styleds'
 
 interface TradePriceProps {

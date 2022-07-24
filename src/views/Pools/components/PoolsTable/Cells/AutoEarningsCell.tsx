@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Skeleton, Text, useTooltip, HelpIcon, Flex, Box, useMatchBreakpoints } from 'pickleswap-uikit'
+import { Skeleton, Text, useTooltip, HelpIcon, Flex, Box, useMatchBreakpoints } from 'vorpaltesttoolkit'
 import { DeserializedPool } from 'state/types'
 import Balance from 'components/Balance'
 import { useVaultPoolByKey } from 'state/pools/hooks'

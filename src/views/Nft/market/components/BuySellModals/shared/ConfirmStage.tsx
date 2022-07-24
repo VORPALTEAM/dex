@@ -1,5 +1,5 @@
 import React from 'react'
-import { Flex, Text, Button, Spinner } from 'pickleswap-uikit'
+import { Flex, Text, Button, Spinner } from 'vorpaltesttoolkit'
 import { useTranslation } from 'contexts/Localization'
 
 interface ConfirmStageProps {

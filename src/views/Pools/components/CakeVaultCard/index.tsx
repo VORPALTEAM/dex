@@ -11,7 +11,7 @@ import {
   LinkExternal,
   Link,
   TokenPairImage,
-} from 'pickleswap-uikit'
+} from 'vorpaltesttoolkit'
 import { useTranslation } from 'contexts/Localization'
 import { useWeb3React } from '@web3-react/core'
 import ConnectWalletButton from 'components/ConnectWalletButton'

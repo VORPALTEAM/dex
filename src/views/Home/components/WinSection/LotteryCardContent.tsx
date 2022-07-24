@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useMemo } from 'react'
-import { Flex, Text, Skeleton, Button, ArrowForwardIcon } from 'pickleswap-uikit'
+import { Flex, Text, Skeleton, Button, ArrowForwardIcon } from 'vorpaltesttoolkit'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'contexts/Localization'
 import { useSlowFresh } from 'hooks/useRefresh'

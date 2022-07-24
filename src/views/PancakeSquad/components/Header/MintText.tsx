@@ -1,4 +1,4 @@
-import { Flex, lightColors, Text } from 'pickleswap-uikit'
+import { Flex, lightColors, Text } from 'vorpaltesttoolkit'
 import { ContextApi } from 'contexts/Localization/types'
 import React from 'react'
 import { SaleStatusEnum, UserStatusEnum } from '../../types'

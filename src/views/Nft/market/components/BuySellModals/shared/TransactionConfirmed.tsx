@@ -1,5 +1,5 @@
 import React from 'react'
-import { Flex, Text, Button, ArrowUpIcon, LinkExternal } from 'pickleswap-uikit'
+import { Flex, Text, Button, ArrowUpIcon, LinkExternal } from 'vorpaltesttoolkit'
 import { useTranslation } from 'contexts/Localization'
 import { getBscScanLink } from 'utils'
 import useActiveWeb3React from 'hooks/useActiveWeb3React'

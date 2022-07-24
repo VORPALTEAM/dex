@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, useWalletModal } from 'pickleswap-uikit'
+import { Button, useWalletModal } from 'vorpaltesttoolkit'
 import useAuth from 'hooks/useAuth'
 import { useTranslation } from 'contexts/Localization'
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Skeleton } from 'pickleswap-uikit'
+import { Box, Skeleton } from 'vorpaltesttoolkit'
 import styled from 'styled-components'
 import { LeaderboardDataItem } from '../../../types'
 import GridItem from './GridItem'

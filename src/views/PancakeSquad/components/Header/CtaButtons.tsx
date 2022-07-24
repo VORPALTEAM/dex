@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React from 'react'
 import { BigNumber } from 'ethers'
-import { Flex } from 'pickleswap-uikit'
+import { Flex } from 'vorpaltesttoolkit'
 import { ContextApi } from 'contexts/Localization/types'
 import { DefaultTheme } from 'styled-components'
 import { SaleStatusEnum, UserStatusEnum } from '../../types'

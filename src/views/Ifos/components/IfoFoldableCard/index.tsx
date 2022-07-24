@@ -7,7 +7,7 @@ import {
   ExpandableLabel,
   ExpandableButton,
   useMatchBreakpoints,
-} from 'pickleswap-uikit'
+} from 'vorpaltesttoolkit'
 import { useWeb3React } from '@web3-react/core'
 import BigNumber from 'bignumber.js'
 import { ToastDescriptionWithTx } from 'components/Toast'

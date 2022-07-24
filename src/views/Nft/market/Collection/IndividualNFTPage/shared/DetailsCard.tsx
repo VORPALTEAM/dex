@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Box, Flex, Text, SearchIcon, Link } from 'pickleswap-uikit'
+import { Box, Flex, Text, SearchIcon, Link } from 'vorpaltesttoolkit'
 import { getBscScanLink } from 'utils'
 import { formatNumber } from 'utils/formatBalance'
 import uriToHttp from 'utils/uriToHttp'

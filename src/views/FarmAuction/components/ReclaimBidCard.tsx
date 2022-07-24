@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Text, Heading, Card, CardHeader, CardBody, Flex } from 'pickleswap-uikit'
+import { Text, Heading, Card, CardHeader, CardBody, Flex } from 'vorpaltesttoolkit'
 import { useTranslation } from 'contexts/Localization'
 import useApproveConfirmTransaction from 'hooks/useApproveConfirmTransaction'
 import { useCake, useFarmAuctionContract } from 'hooks/useContract'

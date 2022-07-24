@@ -1,5 +1,5 @@
 import React from 'react'
-import { Modal, Flex, Text } from 'pickleswap-uikit'
+import { Modal, Flex, Text } from 'vorpaltesttoolkit'
 import { ethers } from 'ethers'
 import { formatUnits } from '@ethersproject/units'
 import { useAppDispatch } from 'state'

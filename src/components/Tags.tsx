@@ -10,7 +10,7 @@ import {
   TimerIcon,
   BlockIcon,
   VoteIcon,
-} from 'pickleswap-uikit'
+} from 'vorpaltesttoolkit'
 import { useTranslation } from 'contexts/Localization'
 
 const StyledCoreTag = styled(Tag)`

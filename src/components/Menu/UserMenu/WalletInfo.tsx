@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Button, Flex, InjectedModalProps, LinkExternal, Message, Skeleton, Text } from 'pickleswap-uikit'
+import { Box, Button, Flex, InjectedModalProps, LinkExternal, Message, Skeleton, Text } from 'vorpaltesttoolkit'
 import { useWeb3React } from '@web3-react/core'
 import useTokenBalance, { FetchStatus, useGetBnbBalance } from 'hooks/useTokenBalance'
 import useAuth from 'hooks/useAuth'

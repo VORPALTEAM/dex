@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from 'react'
-import { Text, Box, Card, Flex, Skeleton } from 'pickleswap-uikit'
+import { Text, Box, Card, Flex, Skeleton } from 'vorpaltesttoolkit'
 import LineChart from 'views/Info/components/InfoCharts/LineChart'
 import BarChart from 'views/Info/components/InfoCharts/BarChart'
 import CandleChart from 'views/Info/components/InfoCharts/CandleChart'

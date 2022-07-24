@@ -1,6 +1,6 @@
 import React from 'react'
 import { Trade, TradeType } from 'pickleswap-sdk2'
-import { Text } from 'pickleswap-uikit'
+import { Text } from 'vorpaltesttoolkit'
 import { Field } from 'state/swap/actions'
 import { useTranslation } from 'contexts/Localization'
 import { useUserSlippageTolerance } from 'state/user/hooks'

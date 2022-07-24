@@ -1,6 +1,6 @@
 import React from 'react'
 import { useWeb3React } from '@web3-react/core'
-import { UserMenu as UIKitUserMenu, UserMenuItem, UserMenuDivider, Flex, LogoutIcon, useModal } from 'pickleswap-uikit'
+import { UserMenu as UIKitUserMenu, UserMenuItem, UserMenuDivider, Flex, LogoutIcon, useModal } from 'vorpaltesttoolkit'
 import history from 'routerHistory'
 import useAuth from 'hooks/useAuth'
 import styled from 'styled-components'

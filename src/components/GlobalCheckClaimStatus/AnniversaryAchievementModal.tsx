@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { AutoRenewIcon, Box, Button, Flex, InjectedModalProps, Modal, Text } from 'pickleswap-uikit'
+import { AutoRenewIcon, Box, Button, Flex, InjectedModalProps, Modal, Text } from 'vorpaltesttoolkit'
 import styled from 'styled-components'
 import confetti from 'canvas-confetti'
 import { useTranslation } from 'contexts/Localization'

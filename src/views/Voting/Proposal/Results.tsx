@@ -11,7 +11,7 @@ import {
   Skeleton,
   Tag,
   CheckmarkCircleIcon,
-} from 'pickleswap-uikit'
+} from 'vorpaltesttoolkit'
 import { useWeb3React } from '@web3-react/core'
 import times from 'lodash/times'
 import { Vote, VotingStateLoadingStatus } from 'state/types'

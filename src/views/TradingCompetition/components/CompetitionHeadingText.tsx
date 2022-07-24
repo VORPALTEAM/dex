@@ -1,4 +1,4 @@
-import { Heading } from 'pickleswap-uikit'
+import { Heading } from 'vorpaltesttoolkit'
 import styled, { DefaultTheme } from 'styled-components'
 
 const H1SizeStyles = (theme: DefaultTheme) => `

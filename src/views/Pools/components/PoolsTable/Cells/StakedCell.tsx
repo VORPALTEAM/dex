@@ -1,4 +1,4 @@
-import { Box, Flex, Skeleton, Text, useMatchBreakpoints } from 'pickleswap-uikit'
+import { Box, Flex, Skeleton, Text, useMatchBreakpoints } from 'vorpaltesttoolkit'
 import BigNumber from 'bignumber.js'
 import Balance from 'components/Balance'
 import { useTranslation } from 'contexts/Localization'

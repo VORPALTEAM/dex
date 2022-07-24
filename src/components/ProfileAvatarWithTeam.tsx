@@ -1,5 +1,5 @@
 import React from 'react'
-import { NoProfileAvatarIcon } from 'pickleswap-uikit'
+import { NoProfileAvatarIcon } from 'vorpaltesttoolkit'
 import { Profile } from 'state/types'
 import styled from 'styled-components'
 

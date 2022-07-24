@@ -1,4 +1,4 @@
-import { SubMenuItems } from 'pickleswap-uikit'
+import { SubMenuItems } from 'vorpaltesttoolkit'
 import styled from 'styled-components'
 
 const BaseSubMenu = styled(SubMenuItems)`

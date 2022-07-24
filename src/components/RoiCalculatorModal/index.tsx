@@ -12,7 +12,7 @@ import {
   CustomButtonMenuItem,
   useTooltip,
   Heading,
-} from 'pickleswap-uikit'
+} from 'vorpaltesttoolkit'
 import BigNumber from 'bignumber.js'
 import { useTranslation } from 'contexts/Localization'
 import { getBalanceNumber } from 'utils/formatBalance'

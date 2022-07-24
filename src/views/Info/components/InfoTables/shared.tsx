@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { Text, Flex } from 'pickleswap-uikit'
+import { Text, Flex } from 'vorpaltesttoolkit'
 
 export const ClickableColumnHeader = styled(Text)`
   cursor: pointer;

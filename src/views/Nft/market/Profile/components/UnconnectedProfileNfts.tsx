@@ -1,5 +1,5 @@
 import React from 'react'
-import { Grid, Text, Flex } from 'pickleswap-uikit'
+import { Grid, Text, Flex } from 'vorpaltesttoolkit'
 import { NftToken } from 'state/nftMarket/types'
 import { useTranslation } from 'contexts/Localization'
 import { CollectibleLinkCard } from '../../components/CollectibleCard'

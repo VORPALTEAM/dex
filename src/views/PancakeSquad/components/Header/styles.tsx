@@ -1,4 +1,4 @@
-import { Box, Flex, lightColors, Text } from 'pickleswap-uikit'
+import { Box, Flex, lightColors, Text } from 'vorpaltesttoolkit'
 import styled from 'styled-components'
 
 export const StyledSquadHeaderContainer = styled(Flex)`

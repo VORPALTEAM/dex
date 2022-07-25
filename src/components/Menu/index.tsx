@@ -27,7 +27,7 @@ const Menu = (props) => {
     <UikitMenu
       userMenu={<UserMenu />}
       globalMenu={<GlobalSettings />}
-      banner={showPhishingWarningBanner && <PhishingWarningBanner />}
+      /* banner={showPhishingWarningBanner && <PhishingWarningBanner />} */
       isDark={isDark}
       toggleTheme={toggleTheme}
       currentLang={currentLanguage.code}

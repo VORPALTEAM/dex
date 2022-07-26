@@ -98,7 +98,7 @@ function CurrencySearch({
     (currency: Currency) => {
       onCurrencySelect(currency)
       if (audioPlay) {
-        getSwapSound().play()
+        // getSwapSound().play()
       }
     },
     [audioPlay, onCurrencySelect],

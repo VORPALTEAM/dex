@@ -100,7 +100,7 @@ const Footer = () => {
           <CompositeImage {...bottomRightImage} maxHeight="256px" />
         </BottomRightImgWrapper>
       </FloatingPancakesWrapper>
-      <Wrapper>
+      {/* <Wrapper>
         <Heading mb="24px" scale="xl" color="white">
           {t('Start in seconds.')}
         </Heading>
@@ -115,7 +115,7 @@ const Footer = () => {
           {t('Learn how to start')}
         </Link>
         {!account && <ConnectWalletButton mt="24px" />}
-      </Wrapper>
+        </Wrapper> */}
     </>
   )
 }

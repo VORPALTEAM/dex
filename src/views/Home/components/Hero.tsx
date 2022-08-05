@@ -106,7 +106,7 @@ const Hero = () => {
         id="homepage-hero"
       >
         <Flex flex="1" flexDirection="column">
-          <Heading scale="xxl" color="secondary" mb="24px">
+          <Heading scale="xxl" color="#ACF800" mb="96px">
             {t('World first survive to earn metaverse.')}
           </Heading>
           <Heading scale="md" mb="24px">

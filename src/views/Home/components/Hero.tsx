@@ -80,11 +80,7 @@ const imageSrc = 'bunny'
 
 const starsImage: CompositeImageProps = {
   path: '/images/home/lunar-bunny/',
-  attributes: [
-    { src: 'star-l', alt: '3D Star' },
-    { src: 'star-r', alt: '3D Star' },
-    { src: 'star-top-r', alt: '3D Star' },
-  ],
+  attributes: [],
 }
 
 const Hero = () => {

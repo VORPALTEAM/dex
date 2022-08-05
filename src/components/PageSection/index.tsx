@@ -4,6 +4,7 @@ import { BoxProps, Box, Flex, FlexProps } from 'vorpaltesttoolkit'
 import Container from 'components/Layout/Container'
 import CurvedDivider from './CurvedDivider'
 import { ClipFill, DividerFill } from './types'
+import Wallpaper from '../images/wallpaper.png'
 
 interface PageSectionProps extends BackgroundColorProps {
   svgFill?: string
@@ -28,7 +29,7 @@ const BackgroundColor = styled(Flex)<BackgroundColorProps>`
   flex-direction: column;
   align-items: center;
   z-index: ${({ index }) => index - 1};
-  background: ${({ background, theme }) => background || theme.colors.background};
+  background: no-repeat url(${Wallpaper});
   padding: ${({ getPadding }) => getPadding()};
 `
 

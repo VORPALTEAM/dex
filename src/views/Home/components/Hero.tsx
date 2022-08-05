@@ -107,7 +107,7 @@ const Hero = () => {
       >
         <Flex flex="1" flexDirection="column">
           <Heading scale="xxl" color="secondary" mb="24px">
-            {t('Earn vorpal now')}
+            {t('World first survive to earn metaverse.')}
           </Heading>
           <Heading scale="md" mb="24px">
             {t('Exchange and liquidity are available here')}

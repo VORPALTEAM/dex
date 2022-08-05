@@ -4,7 +4,7 @@ import { BoxProps, Box, Flex, FlexProps } from 'vorpaltesttoolkit'
 import Container from 'components/Layout/Container'
 import CurvedDivider from './CurvedDivider'
 import { ClipFill, DividerFill } from './types'
-import Wallpaper from '../images/wallpaper.png'
+import Wallpaper from '..//../images/wallpaper.png'
 
 interface PageSectionProps extends BackgroundColorProps {
   svgFill?: string

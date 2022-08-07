@@ -1,10 +1,11 @@
 import React from 'react'
 import { Heading, Flex, Text, useMatchBreakpoints } from 'vorpaltesttoolkit'
 
-const StatCardContent: React.FC<{ headingText: string; bodyText: string; highlightColor: string }> = ({
+const StatCardContent: React.FC<{ headingText: string; headingSecondText: string, bodyText: string; highlightColor: string }> = ({
   headingText,
   bodyText,
   highlightColor,
+  headingSecondText,
 }) => {
   const { isMobile, isTablet } = useMatchBreakpoints()
   const isSmallerScreen = isMobile || isTablet
@@ -21,15 +22,11 @@ const StatCardContent: React.FC<{ headingText: string; bodyText: string; highlig
       justifyContent="flex-end"
       mt={[null, null, null, '64px']}
     >
-      {isSmallerScreen && remainingWords.length > 13 ? (
-        <Heading scale="lg">{remainingWords}</Heading>
-      ) : (
-        <Heading scale="xl">{remainingWords}</Heading>
-      )}
+      <Heading scale="xl">{headingText}</Heading>
       <Heading color={highlightColor} scale="xl" mb="24px">
-        {lastWord}
+        {headingSecondText}
       </Heading>
-      <Text color="textSubtle">{bodyText}</Text>
+      <Text textAlign="center" color="tertiary" fontWeight="500">{bodyText}</Text>
     </Flex>
   )
 }

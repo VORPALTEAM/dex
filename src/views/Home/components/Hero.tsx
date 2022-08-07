@@ -6,7 +6,7 @@ import { useWeb3React } from '@web3-react/core'
 import { useTranslation } from 'contexts/Localization'
 import ConnectWalletButton from 'components/ConnectWalletButton'
 import useTheme from 'hooks/useTheme'
-import { SlideSvgDark, SlideSvgLight } from './SlideSvg'
+import BorderedHeading from 'components/HeadingBorder'
 import CompositeImage, { getSrcSet, CompositeImageProps } from './CompositeImage'
 
 const flyingAnim = () => keyframes`
@@ -73,12 +73,6 @@ const StarsWrapper = styled.div`
     animation: ${fading} 2.5s ease-in-out infinite;
     animation-delay: 0.33s;
   }
-`
-
-const BorderedHeading = styled.div`
-border-top: 1px solid #6B1E60;
-height: 1px;
-padding: 16px;
 `
 
 const imagePath = '/images/home/lunar-bunny/'

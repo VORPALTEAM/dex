@@ -9,20 +9,21 @@ import StatCardContent from './StatCardContent'
 import GradientLogo from '../GradientLogoSvg'
 
 // Values fetched from bitQuery effective 6/9/21
-const txCount = 30841921
-const addressCount = 2751624
+const starsCount = 30841921
+const planetsCount = 2100000
+const federationsCount = 5
 
 const Stats = () => {
   const { t } = useTranslation()
   const data = useGetStats()
   const { theme } = useTheme()
 
-  const tvlString = data ? formatLocalisedCompactNumber(data.tvl) : '-'
-  const trades = formatLocalisedCompactNumber(txCount)
-  const users = formatLocalisedCompactNumber(addressCount)
+  const fString = formatLocalisedCompactNumber(federationsCount)
+  const stars = formatLocalisedCompactNumber(starsCount)
+  const planets = formatLocalisedCompactNumber(planetsCount)
 
-  const tvlText = t('And those users are now entrusting the platform with over $%tvl% in funds.', { tvl: tvlString })
-  const [entrusting, inFunds] = tvlText.split(tvlString)
+  const  tvlText= t('And those users are now entrusting the platform with over $%tvl% in funds.', { tvl: fString })
+  const [entrusting, inFunds] = tvlText.split(fString)
 
   const UsersCardData: IconCardData = {
     icon: <CommunityIcon color="secondary" width="36px" />,
@@ -38,48 +39,41 @@ const Stats = () => {
 
   return (
     <Flex justifyContent="center" alignItems="center" flexDirection="column">
-      <GradientLogo height="48px" width="48px" mb="24px" />
-      <Heading textAlign="center" scale="xl">
-        {t('Used by millions.')}
-      </Heading>
-      <Heading textAlign="center" scale="xl" mb="32px">
-        {t('Trusted with billions.')}
+      <GradientLogo height="334px" width="334px" mb="24px" />
+      <Heading textAlign="center" color="#ACF800" scale="xl">
+        {t('Сreated by players for players.')}
       </Heading>
       <Text textAlign="center" color="textSubtle">
-        {t('PancakeSwap has the most users of any decentralized platform, ever.')}
+        {t('Each season, players will evolve, unite, fight, breed and defend for the sole purpose of surviving in order to gain access to the “Season Bank”.')}
       </Text>
-      <Flex flexWrap="wrap">
-        <Text display="inline" textAlign="center" color="textSubtle" mb="20px">
-          {entrusting}
-          <>{data ? <>{tvlString}</> : <Skeleton display="inline-block" height={16} width={70} mt="2px" />}</>
-          {inFunds}
-        </Text>
-      </Flex>
 
-      <Text textAlign="center" color="textSubtle" bold mb="32px">
+      <Heading textAlign="center" color="textSubtle" scale="xl" mb="32px">
         {t('Will you join them?')}
-      </Text>
+      </Heading>
 
       <Flex flexDirection={['column', null, null, 'row']}>
         <IconCard {...UsersCardData} mr={[null, null, null, '16px']} mb={['16px', null, null, '0']}>
           <StatCardContent
-            headingText={t('%users% users', { users })}
-            bodyText={t('in the last 30 days')}
-            highlightColor={theme.colors.secondary}
+            headingText={t('%planets%', { planets })}
+            headingSecondText="NFT PLANETS"
+            bodyText={t('Circulating supply')}
+            highlightColor='#43D8C9'
           />
         </IconCard>
         <IconCard {...TradesCardData} mr={[null, null, null, '16px']} mb={['16px', null, null, '0']}>
           <StatCardContent
-            headingText={t('%trades% trades', { trades })}
-            bodyText={t('made in the last 30 days')}
-            highlightColor={theme.colors.primary}
+            headingText={t('%stars%', { stars })}
+            headingSecondText="NFT STARS"
+            bodyText={t('Total supply')}
+            highlightColor='#C62A88'
           />
         </IconCard>
         <IconCard {...StakedCardData}>
           <StatCardContent
-            headingText={t('$%tvl% staked', { tvl: tvlString })}
-            bodyText={t('Total Value Locked')}
-            highlightColor={theme.colors.failure}
+            headingText={t('%fString% unique', { fString })}
+            headingSecondText="FEDERATIONS"
+            bodyText={t('Make your choice')}
+            highlightColor='#590995'
           />
         </IconCard>
       </Flex>

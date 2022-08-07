@@ -1,7 +1,8 @@
 import React from 'react'
-import { Flex, Text, Button, Link } from 'vorpaltesttoolkit'
+import { Heading, Flex, Text, Button, Link } from 'vorpaltesttoolkit'
 import { Link as RouterLink } from 'react-router-dom'
 import { useTranslation } from 'contexts/Localization'
+import BorderedHeading from 'components/HeadingBorder'
 import CompositeImage, { CompositeImageProps } from '../CompositeImage'
 import ColoredWordHeading from '../ColoredWordHeading'
 
@@ -36,48 +37,58 @@ const SalesSection: React.FC<SalesSectionProps> = (props) => {
         justifyContent="center"
       >
         <Flex
-          flexDirection="column"
-          flex="1"
-          ml={[null, null, null, reverse && '64px']}
-          mr={[null, null, null, !reverse && '64px']}
-          alignSelf={['flex-start', null, null, 'center']}
-        >
-          <ColoredWordHeading text={headingTranslatedText} />
-          <Text color="textSubtle" mb="24px">
-            {bodyTranslatedText}
-          </Text>
-          <Flex>
-            <Button mr="16px">
-              {primaryButton.external ? (
-                <Link external href={primaryButton.to}>
-                  <Text color="card" bold fontSize="16px">
-                    {t(primaryButton.text)}
-                  </Text>
-                </Link>
-              ) : (
-                <RouterLink to={primaryButton.to}>
-                  <Text color="card" bold fontSize="16px">
-                    {t(primaryButton.text)}
-                  </Text>
-                </RouterLink>
-              )}
-            </Button>
-            {secondaryButton.external ? (
-              <Link external href={secondaryButton.to}>
-                {t(secondaryButton.text)}
-              </Link>
-            ) : (
-              <RouterLink to={secondaryButton.to}>{t(secondaryButton.text)}</RouterLink>
-            )}
-          </Flex>
-        </Flex>
-        <Flex
           height={['192px', null, null, '100%']}
           width={['192px', null, null, '100%']}
           flex={[null, null, null, '1']}
           mb={['24px', null, null, '0']}
         >
           <CompositeImage {...images} />
+        </Flex>
+        <Flex
+          flexDirection="column"
+          flex="1"
+          ml={[null, null, null, reverse && '64px']}
+          mr={[null, null, null, !reverse && '64px']}
+          alignSelf={['flex-start', null, null, 'center']}
+        >
+          <Heading scale="xl" color="primary">{headingTranslatedText}</Heading>
+          <BorderedHeading />
+          <Text color="textSubtle" mb="24px">
+            {bodyTranslatedText}
+          </Text>
+          <BorderedHeading />
+          <Flex>
+            <Button mr="24px">
+              {primaryButton.external ? (
+                <Link color="tertiary" external href={primaryButton.to}>
+                  <Text color="card" bold fontSize="18px">
+                    {t(primaryButton.text)}
+                  </Text>
+                </Link>
+              ) : (
+                <RouterLink to={primaryButton.to}>
+                  <Text color="card" bold fontSize="18px">
+                    {t(primaryButton.text)}
+                  </Text>
+                </RouterLink>
+              )}
+            </Button>
+            <Button mr="24px">
+              {secondaryButton.external ? (
+                <Link color="tertiary" external href={secondaryButton.to}>
+                  <Text color="card" bold fontSize="18px">
+                    {t(secondaryButton.text)}
+                  </Text>
+                </Link>
+              ) : (
+                <RouterLink to={secondaryButton.to}>
+                  <Text color="card" bold fontSize="18px">
+                    {t(secondaryButton.text)}
+                  </Text>
+                </RouterLink>
+              )}
+            </Button>
+          </Flex>
         </Flex>
       </Flex>
     </Flex>

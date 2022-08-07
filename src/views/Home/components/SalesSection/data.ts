@@ -1,16 +1,16 @@
 import { SalesSectionProps } from '.'
 
 export const swapSectionData: SalesSectionProps = {
-  headingText: 'Trade anything. No registration, no hassle.',
-  bodyText: 'Trade any token on Binance Smart Chain in seconds, just by connecting your wallet.',
+  headingText: 'VORPAL DEX is the heart of the VORPAL ecosystem',
+  bodyText: 'Limited emission and deflationary model.',
   reverse: false,
   primaryButton: {
     to: '/swap',
-    text: 'Trade Now',
+    text: 'Trade Now!',
     external: false,
   },
   secondaryButton: {
-    to: 'https://docs.pancakeswap.finance/',
+    to: '',
     text: 'Learn',
     external: true,
   },
@@ -19,14 +19,14 @@ export const swapSectionData: SalesSectionProps = {
     attributes: [
       { src: 'BNB', alt: 'BNB token' },
       { src: 'BTC', alt: 'BTC token' },
-      { src: 'CAKE', alt: 'CAKE token' },
+      { src: 'vorpal', alt: 'VORPAL token' },
     ],
   },
 }
 
 export const earnSectionData: SalesSectionProps = {
-  headingText: 'Earn passive income with crypto.',
-  bodyText: 'PancakeSwap makes it easy to make your crypto work for you.',
+  headingText: 'Earn passive income with crypto and NFT.',
+  bodyText: 'VORPAL DEX makes it easy to make your crypto and NFT  work for you.',
   reverse: true,
   primaryButton: {
     to: '/farms',
@@ -34,7 +34,7 @@ export const earnSectionData: SalesSectionProps = {
     external: false,
   },
   secondaryButton: {
-    to: 'https://docs.pancakeswap.finance/products/yield-farming',
+    to: '',
     text: 'Learn',
     external: true,
   },
@@ -49,17 +49,17 @@ export const earnSectionData: SalesSectionProps = {
 }
 
 export const cakeSectionData: SalesSectionProps = {
-  headingText: 'CAKE makes our world go round.',
+  headingText: 'VORPAL DEX MAKES OUR WORLD GO ROUND.',
   bodyText:
-    'CAKE token is at the heart of the PancakeSwap ecosystem. Buy it, win it, farm it, spend it, stake it... heck, you can even vote with it!',
+    'VORPAL DEX token is at the heart of the VORPAL DEX ecosystem. Buy it, win it, farm it, spend it, stake it...',
   reverse: false,
   primaryButton: {
-    to: '/swap?outputCurrency=0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82',
-    text: 'Buy CAKE',
+    to: '',
+    text: 'Buy',
     external: false,
   },
   secondaryButton: {
-    to: 'https://docs.pancakeswap.finance/tokenomics/cake',
+    to: '',
     text: 'Learn',
     external: true,
   },

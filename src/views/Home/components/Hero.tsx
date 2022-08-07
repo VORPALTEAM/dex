@@ -75,6 +75,12 @@ const StarsWrapper = styled.div`
   }
 `
 
+const BorderedHeading = styled.div`
+border-top: 1px solid #6B1E60;
+height: 1px;
+padding: 16px;
+`
+
 const imagePath = '/images/home/lunar-bunny/'
 const imageSrc = 'bunny'
 
@@ -95,7 +101,7 @@ const Hero = () => {
   return (
     <>
       <BgWrapper>
-        <InnerWrapper>{theme.isDark ? <SlideSvgDark width="100%" /> : <SlideSvgLight width="100%" />}</InnerWrapper>
+        { /* <InnerWrapper>{theme.isDark ? <SlideSvgDark width="100%" /> : <SlideSvgLight width="100%" />}</InnerWrapper> */}
       </BgWrapper>
       <Flex
         position="relative"
@@ -106,16 +112,18 @@ const Hero = () => {
         id="homepage-hero"
       >
         <Flex flex="1" flexDirection="column">
-          <Heading scale="xxl" color="#ACF800" mb="96px">
+          <Heading scale="xxxl" color="#ACF800" mb="96px">
             {t('World first survive to earn metaverse.')}
           </Heading>
-          <Heading scale="md" mb="24px">
-            {t('Exchange and liquidity are available here')}
-          </Heading>
+           <BorderedHeading />     
+             <Heading scale="md" color="#FFFFFF" mb="24px">
+               {t('Play, earn, trade and try to survive in the most unpredictable decentralized metaverse in the galaxy.')}
+             </Heading>
+           <BorderedHeading />    
           <Flex>
             {!account && <ConnectWalletButton mr="8px" />}
             <Link to="/swap">
-              <Button variant={!account ? 'secondary' : 'primary'}>{t('Trade Now')}</Button>
+              <Button variant={!account ? 'secondary' : 'primary'}>{t('Invest now!')}</Button>
             </Link>
           </Flex>
         </Flex>
@@ -133,9 +141,9 @@ const Hero = () => {
               <img src={`${imagePath}${imageSrc}.png`} alt={t('Lunar bunny')} />
             </picture>
           </BunnyWrapper>
-          <StarsWrapper>
+          {/* <StarsWrapper>
             <CompositeImage {...starsImage} />
-          </StarsWrapper>
+  </StarsWrapper> */}
         </Flex>
       </Flex>
     </>

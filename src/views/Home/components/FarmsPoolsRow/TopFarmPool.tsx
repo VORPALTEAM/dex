@@ -55,14 +55,14 @@ const TopFarmPool: React.FC<TopFarmPoolProps> = ({ title, percentage, index, vis
     <StyledWrapper index={index}>
       <AbsoluteWrapper index={index} visible={visible} topOffset={topOffset()}>
         {title ? (
-          <Text bold mb="8px" fontSize="12px" color="secondary">
+          <Text bold mb="8px" fontSize="12px" color="invertedContrast">
             {title}
           </Text>
         ) : (
           <Skeleton width={80} height={12} mb="8px" />
         )}
         {percentage ? (
-          <Balance lineHeight="1.1" fontSize="16px" bold unit="%" value={percentage} />
+          <Balance lineHeight="1.1" fontSize="24px" bold unit="%" value={percentage} />
         ) : (
           <Skeleton width={60} height={16} />
         )}

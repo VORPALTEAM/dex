@@ -28,7 +28,7 @@ const Balance: React.FC<BalanceProps> = ({
   }, [value])
 
   return (
-    <Text style={{ opacity: 0.5 }} color="text" onClick={onClick} {...props}>
+    <Text style={{ opacity: 0.5 }} color="primary" onClick={onClick} {...props}>
       <CountUp
         start={previousValue.current}
         end={value}

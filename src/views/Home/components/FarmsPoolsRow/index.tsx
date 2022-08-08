@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react'
 import styled from 'styled-components'
-import { Flex, Box, SwapVertIcon, IconButton } from 'vorpaltesttoolkit'
+import { Flex, Box, SwapVertIcon, IconButton, Heading } from 'vorpaltesttoolkit'
 import { useTranslation } from 'contexts/Localization'
 import { DeserializedPool } from 'state/types'
 import useIntersectionObserver from 'hooks/useIntersectionObserver'
@@ -69,7 +69,7 @@ const FarmsPoolsRow = () => {
     <div ref={observerRef}>
       <Flex flexDirection="column" mt="24px">
         <Flex mb="24px">
-          <RowHeading text={showFarms ? t('Top Farms') : t('Top Syrup Pools')} />
+          <Heading scale="xl" color="#FFFFFF">{showFarms ? t('Top Farms') : t('Top Syrup Pools')}</Heading>
           <IconButton
             variant="text"
             height="100%"

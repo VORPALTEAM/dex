@@ -67,10 +67,9 @@ export const cakeSectionData: SalesSectionProps = {
   images: {
     path: '/images/home/cake/',
     attributes: [
-      { src: 'bottom-right', alt: 'Small 3d pancake' },
-      { src: 'top-right', alt: 'Small 3d pancake' },
-      { src: 'coin', alt: 'CAKE token' },
-      { src: 'top-left', alt: 'Small 3d pancake' },
+      { src: 'bottom-right', alt: 'Small chartline' },
+      { src: 'coin', alt: 'Vorpal icon' },
+      { src: 'top-left', alt: 'Small chartline' },
     ],
   },
 }

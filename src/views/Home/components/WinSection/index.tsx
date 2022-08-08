@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Flex, Text, TicketFillIcon, PredictionsIcon } from 'vorpaltesttoolkit'
+import { Heading, Flex, Text, TicketFillIcon, PredictionsIcon } from 'vorpaltesttoolkit'
 import { useTranslation } from 'contexts/Localization'
 import useTheme from 'hooks/useTheme'
 import ColoredWordHeading from '../ColoredWordHeading'
@@ -10,12 +10,13 @@ import LotteryCardContent from './LotteryCardContent'
 import CompositeImage from '../CompositeImage'
 
 const TransparentFrame = styled.div<{ isDark: boolean }>`
-  background: ${({ theme }) => (theme.isDark ? 'rgba(8, 6, 11, 0.6)' : ' rgba(255, 255, 255, 0.6)')};
+  background-image: url('/images/home/lottery-balls/Galaxy_ls.png');
+  background-position: center center;
+  backgrount-repeat: no-repeat;
   padding: 16px;
-  border: 1px solid ${({ theme }) => theme.colors.cardBorder};
   box-sizing: border-box;
   backdrop-filter: blur(12px);
-  border-radius: 72px;
+  min-height: 960px;
 
   ${({ theme }) => theme.mediaQueries.md} {
     padding: 40px;
@@ -69,47 +70,18 @@ const LotteryCardData: IconCardData = {
   rotation: '1.43deg',
 }
 
-const bottomLeftImage = {
-  path: '/images/home/prediction-cards/',
-  attributes: [
-    { src: 'bottom-left', alt: 'CAKE card' },
-    { src: 'green', alt: 'Green CAKE card with up arrow' },
-    { src: 'red', alt: 'Red Cake card with down arrow' },
-    { src: 'top-right', alt: 'CAKE card' },
-  ],
-}
-
-const topRightImage = {
-  path: '/images/home/lottery-balls/',
-  attributes: [
-    { src: '2', alt: 'Lottery ball number 2' },
-    { src: '4', alt: 'Lottery ball number 4' },
-    { src: '6', alt: 'Lottery ball number 6' },
-    { src: '7', alt: 'Lottery ball number 7' },
-    { src: '9', alt: 'Lottery ball number 9' },
-  ],
-}
-
 const WinSection = () => {
   const { t } = useTranslation()
   const { theme } = useTheme()
 
   return (
     <>
-      <BgWrapper>
-        <BottomLeftImgWrapper>
-          <CompositeImage {...bottomLeftImage} />
-        </BottomLeftImgWrapper>
-        <TopRightImgWrapper>
-          <CompositeImage {...topRightImage} />
-        </TopRightImgWrapper>
-      </BgWrapper>
       <TransparentFrame isDark={theme.isDark}>
         <Flex flexDirection="column" alignItems="center" justifyContent="center">
-          <ColoredWordHeading textAlign="center" text={t('Win millions in prizes')} />
-          <Text color="textSubtle">{t('Provably fair, on-chain games.')}</Text>
+          <Heading scale="xl" color="primary">{t('Win millions in prizes')}</Heading>
+          <Text color="textSubtle">{t('Provably fair, on-chain game.')}</Text>
           <Text mb="40px" color="textSubtle">
-            {t('Win big with PancakeSwap.')}
+            {t('Win big with VORPAL META.')}
           </Text>
           <Flex m="0 auto" flexDirection={['column', null, null, 'row']} maxWidth="600px">
             <Flex

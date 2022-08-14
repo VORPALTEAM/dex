@@ -27,6 +27,11 @@ const StyledSunburst = styled(SunburstSvg)`
   }
 `
 
+const SubHeading = styled(Heading)`
+font-family: RoundsBlack;
+font-size: 24px;
+`
+
 const Wrapper = styled(Flex)`
   z-index: 1;
   position: relative;
@@ -64,20 +69,18 @@ const BottomRightImgWrapper = styled(Flex)`
 `
 
 const topLeftImage = {
-  path: '/images/home/flying-pancakes/',
+  path: '/images/home/flying-stars/',
   attributes: [
-    { src: '1-bottom', alt: 'Pancake flying on the bottom' },
-    { src: '1-left', alt: 'Pancake flying on the left' },
-    { src: '1-top', alt: 'Pancake flying on the top' },
+    { src: '1-bottom', alt: 'Star flying on the bottom' },
+    { src: '1-left', alt: 'Star flying on the left' },
   ],
 }
 
 const bottomRightImage = {
-  path: '/images/home/flying-pancakes/',
+  path: '/images/home/flying-stars/',
   attributes: [
     { src: '2-bottom', alt: 'Pancake flying on the bottom' },
-    { src: '2-top', alt: 'Pancake flying on the top' },
-    { src: '2-right', alt: 'Pancake flying on the right' },
+    { src: '2-right', alt: 'Star flying on the right' },
   ],
 }
 
@@ -100,9 +103,9 @@ const Footer = () => {
           <CompositeImage {...bottomRightImage} maxHeight="256px" />
         </BottomRightImgWrapper>
       </FloatingPancakesWrapper>
-      {/* <Wrapper>
-        <Heading mb="24px" scale="xl" color="white">
-          {t('Start in seconds.')}
+      <Wrapper>
+        <Heading mb="24px" scale="xl" color="primary">
+          {t('It’s time to get SCHWIFTY!')}
         </Heading>
         <Text textAlign="center" color="white">
           {t('Connect your crypto wallet to start using the app in seconds.')}
@@ -110,12 +113,14 @@ const Footer = () => {
         <Text mb="24px" bold color="white">
           {t('No registration needed.')}
         </Text>
-
-        <Link external href="https://docs.pancakeswap.finance/">
+        <SubHeading mb="16px" scale="lg" color="white">
+          {t('Show me what you got!')}
+        </SubHeading>
+        <Link external href="/">
           {t('Learn how to start')}
         </Link>
         {!account && <ConnectWalletButton mt="24px" />}
-        </Wrapper> */}
+      </Wrapper> 
     </>
   )
 }

@@ -10,22 +10,15 @@ export const footerLinks: (t: ContextApi['t']) => FooterLinkType[] = (t) => [
         href: '',
       },
       {
+        label: t('Media kit'),
+        href: '',
+      },
+      {
         label: t('Blog'),
         href: '',
       },
       {
         label: t('Community'),
-        href: '',
-      },
-      {
-        label: t('VORPAL token'),
-        href: 'http://vm-4a5f6f50.na4u.ru:3001/add/0xbB4bAcF2bF47Aa4ea54abfda014107Fb9dCC07D4/0x676F285194AbF08f12B00110dcD510E36DF1237b',
-      },
-      {
-        label: '—',
-      },
-      {
-        label: t('Online Store'),
         href: '',
         isHighlighted: true,
       },
@@ -60,17 +53,38 @@ export const footerLinks: (t: ContextApi['t']) => FooterLinkType[] = (t) => [
         href: '',
       },
       {
-        label: t('Bug Bounty'),
-        href: '',
-      },
-      {
         label: t('Audits'),
         href: '',
       },
       {
-        label: t('Careers'),
+        label: t('Bughunting'),
+        href: '',
+      }
+    ],
+  },
+  {
+    label: t('Socials'),
+    items: [
+      {
+        label: 'Telegram',
+        href: '',
+      },
+      {
+        label: t('Instagram'),
+        href: '',
+      },
+      {
+        label: t('Twitter'),
+        href: '',
+      },
+      {
+        label: t('Medium'),
+        href: '',
+      },
+      {
+        label: t('Reddit'),
         href: '',
       },
     ],
-  },
+  }
 ]

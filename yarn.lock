@@ -21839,10 +21839,10 @@ vm-browserify@^1.0.1:
   resolved "https://registry.yarnpkg.com/vm-browserify/-/vm-browserify-1.1.2.tgz#78641c488b8e6ca91a75f511e7a3b32a86e5dda0"
   integrity sha512-2ham8XPWTONajOR0ohOKOHXkm3+gaBmGut3SRuu75xLd/RRaY6vqgh8NBYYk7+RW3u5AtzPQZG8F10LHkl0lAQ==
 
-vorpaltesttoolkit@^0.70.42:
-  version "0.70.42"
-  resolved "https://registry.yarnpkg.com/vorpaltesttoolkit/-/vorpaltesttoolkit-0.70.42.tgz#7cc41477e9fca158213e64121c13524483f548de"
-  integrity sha512-Dcr1Dkbjif8ZUQCHwHK2rO5+kFuNFqyoVi9g9oG3q1mfi/bFsGVmwwj78DiCutPzRMDe897GrUxEtiLp1rrx+w==
+vorpaltesttoolkit@^0.70.45:
+  version "0.70.45"
+  resolved "https://registry.yarnpkg.com/vorpaltesttoolkit/-/vorpaltesttoolkit-0.70.45.tgz#aedb8e566da07e06f28e96238890bd035544014b"
+  integrity sha512-sSPtGTaVccGPmuupjZ67MBQbci7AyUE2GyFZ0FRlRHf50PiHLNG/Q5T123Oe9ZGGxOv9DlLyJ7VuKWO9FIHI0A==
   dependencies:
     "@popperjs/core" "^2.9.2"
     "@types/styled-system" "^5.1.10"

@@ -14,26 +14,43 @@ const StyledLink = styled(Link)`
   width: 100%;
 `
 
+const StyledButton = styled(Button)`
+  width: 260px;
+  height: 40px;
+  background: #352F44;
+  color: #FFFFFF;
+  font-weight: 500;
+  text-transform: uppercase;
+  border-radius: 6px;
+  margin: auto;
+  pointer-events: none;
+`
+
 const PredictionCardContent = () => {
   const { t } = useTranslation()
   const slowRefresh = useSlowFresh()
   const { observerRef, isIntersecting } = useIntersectionObserver()
   const [loadData, setLoadData] = useState(false)
-  const bnbBusdPrice = useBNBBusdPrice()
+  // const bnbBusdPrice = useBNBBusdPrice()
   const [bnbWon, setBnbWon] = useState(0)
-  const bnbWonInUsd = multiplyPriceByAmount(bnbBusdPrice, bnbWon)
+  // const bnbWonInUsd = multiplyPriceByAmount(bnbBusdPrice, bnbWon)
 
-  const localisedBnbUsdString = formatLocalisedCompactNumber(bnbWonInUsd)
-  const bnbWonText = t('$%bnbWonInUsd% in BNB won so far', { bnbWonInUsd: localisedBnbUsdString })
-  const [pretext, wonSoFar] = bnbWonText.split(localisedBnbUsdString)
+  const bnbWonInUsd = 200393
+  const pretext = '$'
+  const wonSoFar = 'in VORPAL prizes this round'
+  const localisedBnbUsdString = '200,393'
 
-  useEffect(() => {
+ // const localisedBnbUsdString = formatLocalisedCompactNumber(bnbWonInUsd)
+  // const bnbWonText = wonAmountText
+  // const [pretext, wonSoFar] = bnbWonText.split(localisedBnbUsdString)
+
+  /* useEffect(() => {
     if (isIntersecting) {
       setLoadData(true)
     }
-  }, [isIntersecting])
+  }, [isIntersecting]) */
 
-  useEffect(() => {
+  /* useEffect(() => {
     const fetchMarketData = async () => {
       const totalWon = await getTotalWon()
       setBnbWon(totalWon)
@@ -42,13 +59,13 @@ const PredictionCardContent = () => {
     if (loadData) {
       fetchMarketData()
     }
-  }, [slowRefresh, loadData])
+  }, [slowRefresh, loadData]) */
 
   return (
     <>
       <Flex flexDirection="column" mt="48px">
         <Text color="#280D5F" bold fontSize="16px">
-          {t('Prediction')}
+          {t('LOTTERY')}
         </Text>
         {bnbWonInUsd ? (
           <Heading color="#280D5F" my="8px" scale="xl" bold>
@@ -65,18 +82,15 @@ const PredictionCardContent = () => {
           {wonSoFar}
         </Text>
         <Text color="#280D5F" mb="40px">
-          {t('Will BNB price rise or fall? guess correctly to win!')}
+          {t('Buy tickets with CAKE, win CAKE if your numbers match')}
         </Text>
       </Flex>
       <Flex alignItems="center" justifyContent="center">
-        <StyledLink to="/prediction" id="homepage-prediction-cta">
-          <Button width="100%">
+          <StyledButton width="100%">
             <Text bold color="invertedContrast">
-              {t('Play')}
+              {t('COMING SOON!')}
             </Text>
-            <ArrowForwardIcon ml="4px" color="invertedContrast" />
-          </Button>
-        </StyledLink>
+          </StyledButton>
       </Flex>
     </>
   )

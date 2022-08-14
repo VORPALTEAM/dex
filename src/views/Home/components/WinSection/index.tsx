@@ -55,19 +55,30 @@ const TopRightImgWrapper = styled(Flex)`
     max-width: 100%;
   }
 `
+const EnvImg = styled.img`
+position: absolute;
+z-index: -4;
+display: none;
+
+${({ theme }) => theme.mediaQueries.md} {
+  display: block;
+}
+`
 
 const PredictionCardData: IconCardData = {
   icon: <PredictionsIcon width="36px" color="inverseContrast" />,
-  background: 'linear-gradient(180deg, #ffb237 0%, #ffcd51 51.17%, #ffe76a 100%);',
-  borderColor: '#ffb237',
-  rotation: '-2.36deg',
+  position: 'absolute;',
+  background: 'linear-gradient(180deg, #FFFFFF 0%, #B3B3B3 100%);',
+  borderColor: 'none',
+  rotation: '-5deg',
 }
 
 const LotteryCardData: IconCardData = {
   icon: <TicketFillIcon color="white" width="36px" />,
-  background: ' linear-gradient(180deg, #7645D9 0%, #5121B1 100%);',
-  borderColor: '#3C1786',
-  rotation: '1.43deg',
+  background: 'linear-gradient(180deg, #FFFFFF 0%, #B3B3B3 100%);',
+  borderColor: 'none',
+  rotation: '6deg',
+  width: 300
 }
 
 const WinSection = () => {
@@ -101,6 +112,30 @@ const WinSection = () => {
             </Flex>
           </Flex>
         </Flex>
+        <EnvImg src="images/home/lottery/planet_1.png" alt="planet_1" style={{
+          top: -41,
+          left: -170
+        }} />
+        <EnvImg src="images/home/lottery/planet_2.png" alt="planet_1" style={{
+          top: 226,
+          left: -344
+        }} />
+        <EnvImg src="images/home/lottery/planet_3.png" alt="planet_1" style={{
+          top: 661,
+          left: -284
+        }} />
+        <EnvImg src="images/home/lottery/galaxy_1.png" alt="planet_1" style={{
+          top: -82,
+          left: 702
+        }} />
+        <EnvImg src="images/home/lottery/galaxy_2.png" alt="planet_1" style={{
+          top: 286,
+          left: 902
+        }} />
+        <EnvImg src="images/home/lottery/galaxy_3.png" alt="planet_1" style={{
+          top: 595,
+          left: 702
+        }} />
       </TransparentFrame>
     </>
   )

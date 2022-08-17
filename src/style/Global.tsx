@@ -1,7 +1,6 @@
 import { createGlobalStyle } from 'styled-components'
 // eslint-disable-next-line import/no-unresolved
-import { PancakeTheme } from 'pickleswap-uikit/dist/theme'
-import RoundsBlack from '../fonts/Rounds-Black.ttf'
+import { PancakeTheme } from 'vorpaltesttoolkit/dist/theme'
 import RobotoBlack from '../fonts/Roboto-Black.ttf'
 import RobotoBlackItalic from '../fonts/Roboto-BlackItalic.ttf'
 import RobotoBold from '../fonts/Roboto-Bold.ttf'
@@ -79,18 +78,12 @@ const GlobalStyle = createGlobalStyle`
     font-style: italic;
     }
 
-@font-face {
-    font-family: "RoundsBlack";
-    src: local("RoundsBlack"),
-    url(${RoundsBlack}) format("truetype");
-    font-weight: bold;
-}
-
   * {
     font-family: 'Roboto';
   }
   body {
-    background-color: ${({ theme }) => theme.colors.background};
+    background: no-repeat url(/images/home/background/wallpaper.png);
+    background-attachment: fixed;
 
     img {
       height: auto;

@@ -17,6 +17,7 @@ import CakeDataRow from './components/CakeDataRow'
 import { WedgeTopLeft, InnerWedgeWrapper, OuterWedgeWrapper, WedgeTopRight } from './components/WedgeSvgs'
 import UserBanner from './components/UserBanner'
 import FarmAuctionsBanner from './components/Banners/FarmAuctionsBanner'
+import Wallpaper from '../../images/wallpaper.png'
 
 const showBanner = false
 
@@ -73,8 +74,8 @@ const Home: React.FC = () => {
         innerProps={{ style: { margin: '0', width: '100%' } }}
         background={
           theme.isDark
-            ? 'radial-gradient(103.12% 50% at 50% 50%, #21193A 0%, #191326 100%)'
-            : 'linear-gradient(139.73deg, #E6FDFF 0%, #F3EFFF 100%)'
+            ? `transparent;`
+            : `transparent;`
         }
         index={2}
         hasCurvedDivider={false}
@@ -91,8 +92,8 @@ const Home: React.FC = () => {
         innerProps={{ style: { margin: '0', width: '100%' } }}
         background={
           theme.isDark
-            ? 'linear-gradient(180deg, #09070C 22%, #201335 100%)'
-            : 'linear-gradient(180deg, #FFFFFF 22%, #D7CAEC 100%)'
+            ? 'transparent'
+            : 'transparent'
         }
         index={2}
         hasCurvedDivider={false}
@@ -101,7 +102,7 @@ const Home: React.FC = () => {
       </PageSection> 
        <PageSection
         innerProps={{ style: HomeSectionContainerStyles }}
-        background={theme.colors.background}
+        background='transparent'
         index={2}
         hasCurvedDivider={false}
       >
@@ -109,19 +110,19 @@ const Home: React.FC = () => {
       </PageSection>
       <PageSection
         innerProps={{ style: HomeSectionContainerStyles }}
-        background={theme.colors.gradients.cardHeader}
+        background='transparent'
         index={2}
         hasCurvedDivider={false}
       >
         <SalesSection {...earnSectionData} />
-        <FarmsPoolsRow />
+       {/* <FarmsPoolsRow /> */}
       </PageSection>
       <PageSection
         innerProps={{ style: HomeSectionContainerStyles }}
         background={
           theme.isDark
-            ? 'linear-gradient(180deg, #0B4576 0%, #091115 100%)'
-            : 'linear-gradient(180deg, #6FB6F1 0%, #EAF2F6 100%)'
+            ? 'transparent'
+            : 'transparent'
         }
         index={2}
         hasCurvedDivider={false}
@@ -130,16 +131,16 @@ const Home: React.FC = () => {
       </PageSection>
       <PageSection
         innerProps={{ style: HomeSectionContainerStyles }}
-        background={theme.colors.background}
+        background='transparent'
         index={2}
         hasCurvedDivider={false}
       >
         <SalesSection {...cakeSectionData} />
-        <CakeDataRow />
+      {/*  <CakeDataRow /> */}
       </PageSection>  
       <PageSection
         innerProps={{ style: HomeSectionContainerStyles }}
-        background="linear-gradient(180deg, #7645D9 0%, #5121B1 100%)"
+        background='transparent'
         index={2}
         hasCurvedDivider={false}
       >

@@ -1,5 +1,5 @@
 import React from 'react'
-import { HelpIcon, useTooltip, Box, BoxProps, Placement } from 'vorpaltesttoolkit'
+import { AskIcon, useTooltip, Box, BoxProps, Placement } from 'vorpaltesttoolkit'
 import styled from 'styled-components'
 
 interface Props extends BoxProps {
@@ -28,7 +28,7 @@ const QuestionHelper: React.FC<Props> = ({
     <Box {...props}>
       {tooltipVisible && tooltip}
       <QuestionWrapper ref={targetRef}>
-        <HelpIcon color={color} width={size} />
+        <AskIcon color={color} width={size} />
       </QuestionWrapper>
     </Box>
   )

@@ -21,7 +21,7 @@ function TradeSummary({ trade, allowedSlippage }: { trade: Trade; allowedSlippag
     <AutoColumn style={{ padding: '0 16px' }}>
       <RowBetween>
         <RowFixed>
-          <Text fontSize="12px" color="textSubtle">
+          <Text fontSize="12px" color="tertiary">
             {isExactIn ? t('Minimum received') : t('Maximum sold')}
           </Text>
           <QuestionHelper
@@ -35,7 +35,7 @@ function TradeSummary({ trade, allowedSlippage }: { trade: Trade; allowedSlippag
           />
         </RowFixed>
         <RowFixed>
-          <Text color="textSubtle" fontSize="12px">
+          <Text color="tertiary" fontSize="12px">
             {isExactIn
               ? `${slippageAdjustedAmounts[Field.OUTPUT]?.toSignificant(4)} ${trade.outputAmount.currency.symbol}` ??
                 '-'
@@ -45,7 +45,7 @@ function TradeSummary({ trade, allowedSlippage }: { trade: Trade; allowedSlippag
       </RowBetween>
       <RowBetween>
         <RowFixed>
-          <Text fontSize="12px" color="textSubtle">
+          <Text fontSize="12px" color="tertiary">
             {t('Price Impact')}
           </Text>
           <QuestionHelper
@@ -61,7 +61,7 @@ function TradeSummary({ trade, allowedSlippage }: { trade: Trade; allowedSlippag
 
       <RowBetween>
         <RowFixed>
-          <Text fontSize="12px" color="textSubtle">
+          <Text fontSize="12px" color="tertiary">
             {t('Liquidity Provider Fee')}
           </Text>
           <QuestionHelper
@@ -79,7 +79,7 @@ function TradeSummary({ trade, allowedSlippage }: { trade: Trade; allowedSlippag
             color="contrast"
           />
         </RowFixed>
-        <Text color="textSubtle" fontSize="12px">
+        <Text color="tertiary" fontSize="12px">
           {realizedLPFee ? `${realizedLPFee.toSignificant(4)} ${trade.inputAmount.currency.symbol}` : '-'}
         </Text>
       </RowBetween>

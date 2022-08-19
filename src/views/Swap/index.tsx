@@ -78,7 +78,7 @@ const Label = styled(Text)`
 const StyledButton = styled(Button)`
   width: 260px;
   height: 40px;
-  background: #DBD8E3;
+  background: #353547;
   color: ${({ theme }) => theme.colors.contrast};
   font-size: 18px;
   border-radius: 6px;

@@ -7,6 +7,7 @@ import {
   Text,
   Flex,
   HelpIcon,
+  AskIcon,
   Button,
   Heading,
   Skeleton,
@@ -74,11 +75,11 @@ const BountyCard = () => {
         <CardBody>
           <Flex flexDirection="column">
             <Flex alignItems="center" mb="12px">
-              <Text fontSize="16px" bold color="textSubtle" mr="4px">
+              <Text fontSize="16px" bold color="tetriary" mr="4px">
                 {t('Auto CAKE Bounty')}
               </Text>
               <Box ref={targetRef}>
-                <HelpIcon color="textSubtle" />
+                <AskIcon color="tetriary" />
               </Box>
             </Flex>
           </Flex>
@@ -94,7 +95,7 @@ const BountyCard = () => {
               {hasFetchedDollarBounty ? (
                 <Balance
                   fontSize="12px"
-                  color="textSubtle"
+                  color="tetriary"
                   value={dollarBountyToDisplay}
                   decimals={2}
                   unit=" USD"

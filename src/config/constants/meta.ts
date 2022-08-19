@@ -5,7 +5,7 @@ export const DEFAULT_META: PageMeta = {
   title: 'VorpalDao',
   description:
     'VORPAL DEX makes it easy to make your crypto and NFT work for you.',
-  image: '/images/home/lunar-bunny/bunny.png',
+  image: '/images/home/lunar-galaxy/bunny.png',
 }
 
 export const getCustomMeta = (path: string, t: ContextApi['t']): PageMeta => {

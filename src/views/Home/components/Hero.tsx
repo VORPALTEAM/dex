@@ -8,6 +8,7 @@ import ConnectWalletButton from 'components/ConnectWalletButton'
 import useTheme from 'hooks/useTheme'
 import BorderedHeading from 'components/HeadingBorder'
 import CompositeImage, { getSrcSet, CompositeImageProps } from './CompositeImage'
+import EnvImg from './EnvImg'
 
 const flyingAnim = () => keyframes`
   from {
@@ -75,11 +76,11 @@ const StarsWrapper = styled.div`
   }
 `
 
-const imagePath = '/images/home/lunar-bunny/'
-const imageSrc = 'bunny'
+const imagePath = '/images/home/lunar-galaxy/'
+const imageSrc = 'star-l'
 
 const starsImage: CompositeImageProps = {
-  path: '/images/home/lunar-bunny/',
+  path: '/images/home/lunar-galaxy/',
   attributes: [
     { src: '', alt: '3D Star' },
     { src: '', alt: '3D Star' },
@@ -132,13 +133,17 @@ const Hero = () => {
             <picture>
               <source type="image/webp" srcSet={getSrcSet(imagePath, imageSrc, '.webp')} />
               <source type="image/png" srcSet={getSrcSet(imagePath, imageSrc)} />
-              <img src={`${imagePath}${imageSrc}.png`} alt={t('Lunar bunny')} />
+              <img src={`${imagePath}${imageSrc}.png`} alt={t('Lunar galaxy')} />
             </picture>
           </BunnyWrapper>
           {/* <StarsWrapper>
             <CompositeImage {...starsImage} />
   </StarsWrapper> */}
         </Flex>
+        <EnvImg src="/images/home/lunar-galaxy/galaxy.png" alt="galaxy" style={{
+             top: -67,
+             left: 300
+          }} />
       </Flex>
     </>
   )

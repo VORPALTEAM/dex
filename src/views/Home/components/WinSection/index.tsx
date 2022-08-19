@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import Container from 'components/Layout/Container'
 import { Heading, Flex, Text, TicketFillIcon, PredictionsIcon } from 'vorpaltesttoolkit'
 import { useTranslation } from 'contexts/Localization'
 import useTheme from 'hooks/useTheme'
@@ -7,7 +8,8 @@ import ColoredWordHeading from '../ColoredWordHeading'
 import IconCard, { IconCardData } from '../IconCard'
 import PredictionCardContent from './PredictionCardContent'
 import LotteryCardContent from './LotteryCardContent'
-import CompositeImage from '../CompositeImage'
+import CompositeImage, { getSrcSet, CompositeImageProps } from '../CompositeImage'
+import EnvImg from '../EnvImg'
 
 const TransparentFrame = styled.div<{ isDark: boolean }>`
   background-image: url('/images/home/lottery-balls/Galaxy_ls.png');
@@ -55,15 +57,6 @@ const TopRightImgWrapper = styled(Flex)`
     max-width: 100%;
   }
 `
-const EnvImg = styled.img`
-position: absolute;
-z-index: -4;
-display: none;
-
-${({ theme }) => theme.mediaQueries.md} {
-  display: block;
-}
-`
 
 const PredictionCardData: IconCardData = {
   icon: <PredictionsIcon width="36px" color="inverseContrast" />,
@@ -80,6 +73,51 @@ const LotteryCardData: IconCardData = {
   rotation: '6deg',
   width: 300
 }
+
+const imagesPlanets : CompositeImageProps = {
+  path: 'images/home/lottery/',
+  attributes: [
+    { src: 'planet_sm_3', alt: '3D Star' },
+    { src: 'planet_sm_2', alt: '3D Star' },
+    { src: 'planet_sm_1', alt: '3D Star' },
+  ],
+}
+
+const imagesGalaxy : CompositeImageProps = {
+  path: 'images/home/lottery/',
+  attributes: [
+    { src: 'galaxy_sm_3', alt: '3D Star' },
+    { src: 'galaxy_sm_2', alt: '3D Star' },
+    { src: 'galaxy_sm_1', alt: '3D Star' },
+  ],
+}
+
+const FloatingPancakesWrapper = styled(Container)`
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  visibility: hidden;
+
+  ${({ theme }) => theme.mediaQueries.md} {
+    visibility: visible;
+  }
+`
+
+const TopLeftImgWrapper = styled(Flex)`
+  position: absolute;
+  left: 0;
+  bottom: 120px;
+`
+
+const BottomRightImgWrapper = styled(Flex)`
+  position: absolute;
+  top: 120px;
+  right: 0;
+`
 
 const WinSection = () => {
   const { t } = useTranslation()
@@ -111,8 +149,16 @@ const WinSection = () => {
               </IconCard>
             </Flex>
           </Flex>
+          <FloatingPancakesWrapper>
+            <TopLeftImgWrapper>
+               <CompositeImage {...imagesPlanets} maxHeight="256px" />
+            </TopLeftImgWrapper>
+            <BottomRightImgWrapper>
+               <CompositeImage {...imagesGalaxy} maxHeight="256px" />
+            </BottomRightImgWrapper>
+          </FloatingPancakesWrapper>
         </Flex>
-        <EnvImg src="images/home/lottery/planet_1.png" alt="planet_1" style={{
+        {/* <EnvImg src="images/home/lottery/planet_1.png" alt="planet_1" style={{
           top: -41,
           left: -170
         }} />
@@ -135,7 +181,7 @@ const WinSection = () => {
         <EnvImg src="images/home/lottery/galaxy_3.png" alt="planet_1" style={{
           top: 595,
           left: 702
-        }} />
+        }} /> */}
       </TransparentFrame>
     </>
   )

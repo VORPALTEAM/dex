@@ -15,6 +15,7 @@ const Container = styled.div`
   color: ${({ theme }) => theme.colors.text};
   flex-direction: column;
   font-size: 10px;
+  color: tertiary;
   text-transform: uppercase;
 
   ${({ theme }) => theme.mediaQueries.sm} {
@@ -36,7 +37,7 @@ const Details: React.FC<DetailsProps> = ({ actionPanelToggled }) => {
     <Container>
       {/* {!isDesktop && t('Details')} */}
       {t('Details')}
-      <ArrowIcon color="primary" toggled={actionPanelToggled} />
+      <ArrowIcon color="tertiary" toggled={actionPanelToggled} />
     </Container>
   )
 }

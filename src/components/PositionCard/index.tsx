@@ -106,28 +106,28 @@ export function MinimalPositionCard({ pair, showUnwrapped = false }: PositionCar
               <FixedHeightRow onClick={() => setShowMore(!showMore)}>
                 <RowFixed>
                   <DoubleCurrencyLogo currency0={currency0} currency1={currency1} margin size={20} />
-                  <Text small color="contrast">
+                  <Text small color="tertiary">
                     {currency0.symbol}-{currency1.symbol} LP
                   </Text>
                 </RowFixed>
                 <RowFixed>
-                  <Text color="contrast">{userPoolBalance ? userPoolBalance.toSignificant(4) : '-'}</Text>
+                  <Text color="tertiary">{userPoolBalance ? userPoolBalance.toSignificant(4) : '-'}</Text>
                 </RowFixed>
               </FixedHeightRow>
               <AutoColumn gap="4px">
                 <FixedHeightRow>
-                  <Text color="contrast" small>
+                  <Text color="tertiary" small>
                     {t('Share of Pool')}:
                   </Text>
-                  <Text color="contrast">{poolTokenPercentage ? `${poolTokenPercentage.toFixed(6)}%` : '-'}</Text>
+                  <Text color="tertiary">{poolTokenPercentage ? `${poolTokenPercentage.toFixed(6)}%` : '-'}</Text>
                 </FixedHeightRow>
                 <FixedHeightRow>
-                  <Text color="contrast" small>
+                  <Text color="tertiary" small>
                     {t('Pooled %asset%', { asset: currency0.symbol })}:
                   </Text>
                   {token0Deposited ? (
                     <RowFixed>
-                      <Text color="contrast" ml="6px">
+                      <Text color="tertiary" ml="6px">
                         {token0Deposited?.toSignificant(6)}
                       </Text>
                     </RowFixed>
@@ -136,12 +136,12 @@ export function MinimalPositionCard({ pair, showUnwrapped = false }: PositionCar
                   )}
                 </FixedHeightRow>
                 <FixedHeightRow>
-                  <Text color="contrast" small>
+                  <Text color="tertiary" small>
                     {t('Pooled %asset%', { asset: currency1.symbol })}:
                   </Text>
                   {token1Deposited ? (
                     <RowFixed>
-                      <Text color="contrast" ml="6px">
+                      <Text color="tertiary" ml="6px">
                         {token1Deposited?.toSignificant(6)}
                       </Text>
                     </RowFixed>
@@ -155,7 +155,7 @@ export function MinimalPositionCard({ pair, showUnwrapped = false }: PositionCar
         </Card>
       ) : (
         <LightCard>
-          <Text fontSize="14px" color="#F1F6F9" style={{ textAlign: 'center' }}>
+          <Text fontSize="14px" color="#353547" style={{ textAlign: 'center' }}>
             <span role="img" aria-label="pancake-icon">
               🥞
             </span>{' '}

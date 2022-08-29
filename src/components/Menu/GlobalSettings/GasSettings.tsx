@@ -1,5 +1,6 @@
 import React from 'react'
 import { Flex, Button, Text } from 'vorpaltesttoolkit'
+import styled from 'styled-components'
 import QuestionHelper from 'components/QuestionHelper'
 import { useTranslation } from 'contexts/Localization'
 import { GAS_PRICE_GWEI, GAS_PRICE } from 'state/user/hooks/helpers'
@@ -18,30 +19,41 @@ const GasSettings = () => {
   const [gasPrice, setGasPrice] = useGasPriceManager()
 
   const disableButtonStyles = {
-    color: 'black',
+    color: '#352F44',
     backgroundColor: 'transparent',
-    border: '1px solid #DBD8E3',
+    border: '1px solid #352F44',
     boxShadow: 'none',
     borderRadius: '15px',
-    width: '116px',
+    width: '122px',
     height: '30px',
-    fontSize: '14px',
+    fontSize: '11px',
   }
   const activeButtonStyles = {
     color: '#F1F6F9',
-    backgroundColor: '#DBD8E3',
-    border: '1px solid #DBD8E3',
+    backgroundColor: '#352F44',
+    border: '1px solid #352F44',
     boxShadow: 'none',
     borderRadius: '15px',
-    width: '116px',
+    width: '122px',
     height: '30px',
-    fontSize: '14px',
+    fontSize: '11px',
   }
+
+  const NoWrapTextButton = styled(Button)`
+  white-space: nowrap;
+  
+  &:active,
+  &:hover:not(:disabled):not(.pancake-button--disabled):not(.pancake-button--disabled):not(:active) {
+    opacity: 1;
+    background-color: #352F44 !important;
+    color: #F1F6F9 !important;
+  }
+`
 
   return (
     <Flex flexDirection="column">
       <Flex mb="12px" alignItems="center">
-        <Text>{t('Default Transaction Speed (GWEI)')}</Text>
+        <Text fontFamily="Roboto" color="#2A2338" fontSize="12">{t('Default Transaction Speed (GWEI)')}</Text>
         <QuestionHelper
           text={t(
             'Adjusts the gas price (transaction fee) for your transaction. Higher GWEI = higher speed = higher fees',
@@ -52,7 +64,7 @@ const GasSettings = () => {
         />
       </Flex>
       <Flex justifyContent="space-between" flexWrap="wrap">
-        <Button
+        <NoWrapTextButton
           mt="4px"
           mr="4px"
           scale="sm"
@@ -62,8 +74,8 @@ const GasSettings = () => {
           style={gasPrice === GAS_PRICE_GWEI.default ? activeButtonStyles : disableButtonStyles}
         >
           {t('Standard (%gasPrice%)', { gasPrice: GAS_PRICE.default })}
-        </Button>
-        <Button
+        </NoWrapTextButton>
+        <NoWrapTextButton
           mt="4px"
           mr="4px"
           scale="sm"
@@ -73,8 +85,8 @@ const GasSettings = () => {
           style={gasPrice === GAS_PRICE_GWEI.fast ? activeButtonStyles : disableButtonStyles}
         >
           {t('Fast (%gasPrice%)', { gasPrice: GAS_PRICE.fast })}
-        </Button>
-        <Button
+        </NoWrapTextButton>
+        <NoWrapTextButton
           mr="4px"
           mt="4px"
           scale="sm"
@@ -84,7 +96,7 @@ const GasSettings = () => {
           style={gasPrice === GAS_PRICE_GWEI.instant ? activeButtonStyles : disableButtonStyles}
         >
           {t('Instant (%gasPrice%)', { gasPrice: GAS_PRICE.instant })}
-        </Button>
+        </NoWrapTextButton>
       </Flex>
     </Flex>
   )

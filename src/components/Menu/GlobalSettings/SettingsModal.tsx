@@ -27,9 +27,11 @@ const ScrollableContainer = styled(Flex)`
 const StyledModal = styled(Modal)`
   border-bottom: ${({ theme }) => `1px solid ${theme.colors.text}`};
   border-radius: 40px;
+  background: linear-gradient(180deg, #FFFFFF 0%, #B3B3B3 100%);
 
   ${Heading} {
     font-family: 'RoundsBlack';
+    color: #2A2338;
   }
 `
 
@@ -76,7 +78,7 @@ const SettingsModal: React.FC<InjectedModalProps> = ({ onDismiss }) => {
     >
       <ScrollableContainer>
         <Flex pb="24px" flexDirection="column">
-          <Text fontFamily="RobotoBold" fontSize="16px" color="text" mb="10px">
+          <Text fontFamily="RobotoBold" textTransform="uppercase" fontSize="16px" color="#352F44" mb="10px">
             {t('Global')}
           </Text>
           {/* <Flex justifyContent="space-between">

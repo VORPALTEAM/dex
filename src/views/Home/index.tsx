@@ -89,7 +89,7 @@ const Home: React.FC = () => {
         <Hero />
       </StyledHeroSection>
       <PageSection
-        innerProps={{ style: { margin: '0', width: '100%' } }}
+        innerProps={{ style: { margin: '-80px 0 0 0', width: '100%' } }}
         background={
           theme.isDark
             ? 'transparent'

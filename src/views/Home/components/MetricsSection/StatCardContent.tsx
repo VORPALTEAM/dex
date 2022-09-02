@@ -1,4 +1,5 @@
 import React from 'react'
+import styled from 'styled-components'
 import { Heading, Flex, Text, useMatchBreakpoints } from 'vorpaltesttoolkit'
 
 const StatCardContent: React.FC<{ headingText: string; headingSecondText: string, bodyText: string; highlightColor: string }> = ({
@@ -13,6 +14,11 @@ const StatCardContent: React.FC<{ headingText: string; headingSecondText: string
   const lastWord = split.pop()
   const remainingWords = split.slice(0, split.length).join(' ')
 
+  const BottomText = styled(Text)`
+    margin-top: 34px;
+    text-align: center;
+  `
+
   return (
     <Flex
       minHeight={[null, null, null, '168px']}
@@ -20,13 +26,13 @@ const StatCardContent: React.FC<{ headingText: string; headingSecondText: string
       width="fit-content"
       flexDirection="column"
       justifyContent="flex-end"
-      mt={[null, null, null, '64px']}
+      mt={[null, null, '64px', '70px']}
     >
       <Heading scale="xl">{headingText}</Heading>
       <Heading color={highlightColor} scale="xl" mb="24px">
         {headingSecondText}
       </Heading>
-      <Text textAlign="center" color="tertiary" fontWeight="500">{bodyText}</Text>
+      <BottomText textAlign="center" color="tertiary" fontWeight="700">{bodyText}</BottomText>
     </Flex>
   )
 }

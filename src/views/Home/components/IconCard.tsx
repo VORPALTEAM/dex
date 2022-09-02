@@ -8,7 +8,7 @@ const StyledCard = styled(Card)<{ background: string; rotation?: string; positio
   box-sizing: border-box;
   position: relative;
   width: 340px;
-  height: 410px;
+  height: 290px;
 
   ${({ theme }) => theme.mediaQueries.md} {
     ${({ rotation }) => (rotation ? `transform: rotate(${rotation});` : '')}

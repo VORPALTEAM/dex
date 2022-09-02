@@ -107,7 +107,7 @@ const Hero = () => {
         id="homepage-hero"
       >
         <Flex flex="1" flexDirection="column">
-          <Heading scale="xxxl" color="#ACF800" mb="96px">
+          <Heading scale="xxxl" color="#ACF800" mb="20px">
             {t('World first survive to earn metaverse.')}
           </Heading>
            <BorderedHeading />     
@@ -116,7 +116,7 @@ const Hero = () => {
              </Heading>
            <BorderedHeading />    
           <Flex>
-            {!account && <ConnectWalletButton mr="8px" />}
+            {!account && <ConnectWalletButton mr="42px" />}
             <Link to="/swap">
               <Button variant={!account ? 'secondary' : 'primary'}>{t('Invest now!')}</Button>
             </Link>
@@ -141,8 +141,9 @@ const Hero = () => {
   </StarsWrapper> */}
         </Flex>
         <EnvImg src="/images/home/lunar-galaxy/galaxy.png" alt="galaxy" style={{
+             width: '73%',
              top: -67,
-             left: 300
+             left: 450
           }} />
       </Flex>
     </>

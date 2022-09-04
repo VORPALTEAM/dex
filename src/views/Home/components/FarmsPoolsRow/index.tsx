@@ -37,18 +37,18 @@ const FarmsPoolsRow = () => {
   const startTimer = useCallback(() => {
     timer.current = setInterval(() => {
       setShowFarms((prev) => !prev)
-    }, 6000)
+    }, 60000)
   }, [timer])
 
   useEffect(() => {
     if (isLoaded) {
-      startTimer()
+      //startTimer()
     }
 
     return () => {
       clearInterval(timer.current)
     }
-  }, [timer, isLoaded, startTimer])
+  }, [timer, isLoaded /* , startTimer */])
 
   const getPoolText = (pool: DeserializedPool) => {
     if (pool.vaultKey) {

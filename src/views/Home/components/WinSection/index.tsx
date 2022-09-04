@@ -64,6 +64,7 @@ const PredictionCardData: IconCardData = {
   background: 'linear-gradient(180deg, #FFFFFF 0%, #B3B3B3 100%);',
   borderColor: 'none',
   rotation: '-5deg',
+  height: 410
 }
 
 const LotteryCardData: IconCardData = {
@@ -71,7 +72,8 @@ const LotteryCardData: IconCardData = {
   background: 'linear-gradient(180deg, #FFFFFF 0%, #B3B3B3 100%);',
   borderColor: 'none',
   rotation: '6deg',
-  width: 300
+  width: 300,
+  height: 410
 }
 
 const imagesPlanets : CompositeImageProps = {
@@ -109,14 +111,14 @@ const FloatingPancakesWrapper = styled(Container)`
 
 const TopLeftImgWrapper = styled(Flex)`
   position: absolute;
-  left: 0;
-  bottom: 120px;
+  left: -300px;
+  bottom: 60px;
 `
 
 const BottomRightImgWrapper = styled(Flex)`
   position: absolute;
-  top: 120px;
-  right: 0;
+  top: 180px;
+  right: -200px;
 `
 
 const WinSection = () => {
@@ -149,14 +151,12 @@ const WinSection = () => {
               </IconCard>
             </Flex>
           </Flex>
-          <FloatingPancakesWrapper>
-            <TopLeftImgWrapper>
-               <CompositeImage {...imagesPlanets} maxHeight="256px" />
-            </TopLeftImgWrapper>
-            <BottomRightImgWrapper>
-               <CompositeImage {...imagesGalaxy} maxHeight="256px" />
-            </BottomRightImgWrapper>
-          </FloatingPancakesWrapper>
+          <TopLeftImgWrapper>
+               <CompositeImage {...imagesPlanets} maxHeight="512px" />
+          </TopLeftImgWrapper>
+          <BottomRightImgWrapper>
+               <CompositeImage {...imagesGalaxy} maxHeight="512px" />
+          </BottomRightImgWrapper>
         </Flex>
         {/* <EnvImg src="images/home/lottery/planet_1.png" alt="planet_1" style={{
           top: -41,

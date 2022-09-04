@@ -32,7 +32,7 @@ const StatCardContent: React.FC<{ headingText: string; headingSecondText: string
       <Heading color={highlightColor} scale="xl" mb="24px">
         {headingSecondText}
       </Heading>
-      <BottomText textAlign="center" color="tertiary" fontWeight="700">{bodyText}</BottomText>
+      <BottomText textAlign="center" color="tertiary" fontWeight="700" fontSize="18px">{bodyText}</BottomText>
     </Flex>
   )
 }

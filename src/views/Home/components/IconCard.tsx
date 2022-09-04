@@ -2,13 +2,13 @@ import React, { ReactNode } from 'react'
 import styled from 'styled-components'
 import { Card, CardBody, Box, CardProps } from 'vorpaltesttoolkit'
 
-const StyledCard = styled(Card)<{ background: string; rotation?: string; position?: string}>`
+const StyledCard = styled(Card)<{ background: string; rotation?: string; position?: string; height?: number }>`
   height: fit-content;
   padding: 1px 1px 4px 1px;
   box-sizing: border-box;
   position: relative;
   width: 340px;
-  height: 290px;
+  height: ${({ height }) => (height ? `${height}px` : 'fit-content')};
 
   ${({ theme }) => theme.mediaQueries.md} {
     ${({ rotation }) => (rotation ? `transform: rotate(${rotation});` : '')}
@@ -42,7 +42,7 @@ export interface IconCardData {
 
 const IconCard: React.FC<IconCardProps> = ({ icon, position, width, height, background, borderColor, rotation, children, ...props }) => {
   return (
-    <StyledCard background={background} borderBackground={borderColor} position={position} rotation={rotation} {...props}>
+    <StyledCard background={background} borderBackground={borderColor} position={position} height={height} rotation={rotation} {...props}>
       <CardBody>
         <IconWrapper rotation={rotation}>{icon}</IconWrapper>
         {children}

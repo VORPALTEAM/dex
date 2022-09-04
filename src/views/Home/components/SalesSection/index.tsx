@@ -1,4 +1,5 @@
 import React from 'react'
+import styled from 'styled-components'
 import { Heading, Flex, Text, Button, Link } from 'vorpaltesttoolkit'
 import { Link as RouterLink } from 'react-router-dom'
 import { useTranslation } from 'contexts/Localization'
@@ -29,9 +30,35 @@ const SalesSection: React.FC<SalesSectionProps> = (props) => {
   const headingTranslatedText = t(headingText)
   const bodyTranslatedText = t(bodyText)
 
+  const SalesHeading = (headingText.length === 36) ? styled(Heading)`
+  font-size: 60px;
+  margin-bottom: 24px;
+
+  word-wrap: break-word;
+  width: 635px;
+` : styled(Heading)`
+   font-size: 60px;
+   margin-bottom: 24px;
+`
+
+const SalesText = (bodyText.length === 108) ? styled(Text)`
+word-wrap: break-word;
+width: 630px;
+`: Text
+
+  const SalesHeadingFlex = styled(Flex)`
+  ${({ theme }) => theme.mediaQueries.md} {
+    min-width: 1000px;
+  }
+
+  ${({ theme }) => theme.mediaQueries.lg} {
+    min-width: 1400px;
+  }
+`
+
   return (
     <Flex flexDirection="column">
-      <Flex
+      <SalesHeadingFlex
         flexDirection={['column-reverse', null, null, reverse ? 'row-reverse' : 'row']}
         alignItems={['flex-end', null, null, 'center']}
         justifyContent="center"
@@ -41,23 +68,25 @@ const SalesSection: React.FC<SalesSectionProps> = (props) => {
           width={['192px', null, null, '100%']}
           flex={[null, null, null, '1']}
           mb={['24px', null, null, '0']}
+          ml={[null, null, '-24px', !reverse ? '-48px' : '48px']}
         >
           <CompositeImage {...images} />
         </Flex>
         <Flex
           flexDirection="column"
           flex="1"
-          ml={[null, null, null, reverse && '64px']}
-          mr={[null, null, null, !reverse && '64px']}
+          ml={[null, null, null, reverse ? '-96px' : '0px']}
+          mr={[null, null, null, !reverse ? '20px' : '72px']}
           alignSelf={['flex-start', null, null, 'center']}
         >
-          <Heading scale="xl" color="primary">{headingTranslatedText}</Heading>
+          <SalesHeading scale="xl" color="primary" fontSize="60px">{headingTranslatedText}</SalesHeading>
           <BorderedHeading />
-          <Text color="textSubtle" mb="24px">
+          <SalesText color="textSubtle" mb="24px" fontSize="21px">
             {bodyTranslatedText}
-          </Text>
+          </SalesText>
           <BorderedHeading />
-          <Flex>
+          <Flex
+          alignSelf={[null, null, null, !reverse ? 'flex-end' : 'flex-start']}>
             <Button mr="24px">
               {primaryButton.external ? (
                 <Link color="tertiary" external href={primaryButton.to}>
@@ -90,7 +119,7 @@ const SalesSection: React.FC<SalesSectionProps> = (props) => {
             </Button>
           </Flex>
         </Flex>
-      </Flex>
+      </SalesHeadingFlex>
     </Flex>
   )
 }

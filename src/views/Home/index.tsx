@@ -65,7 +65,7 @@ const Home: React.FC = () => {
   const { theme } = useTheme()
   const { account } = useWeb3React()
 
-  const HomeSectionContainerStyles = { margin: '0', width: '100%', maxWidth: '968px' }
+  const HomeSectionContainerStyles = { margin: '0', width: '100%' }
 
   return (
     <>

@@ -2,12 +2,12 @@ import React, { ReactNode } from 'react'
 import styled from 'styled-components'
 import { Card, CardBody, Box, CardProps } from 'vorpaltesttoolkit'
 
-const StyledCard = styled(Card)<{ background: string; rotation?: string; position?: string; height?: number }>`
+const StyledCard = styled(Card)<{ background: string; rotation?: string; position?: string; width?: number; height?: number }>`
   height: fit-content;
   padding: 1px 1px 4px 1px;
   box-sizing: border-box;
   position: relative;
-  width: 340px;
+  width: ${({ width }) => (width ? `${width}px` : '340px')};
   height: ${({ height }) => (height ? `${height}px` : 'fit-content')};
 
   ${({ theme }) => theme.mediaQueries.md} {

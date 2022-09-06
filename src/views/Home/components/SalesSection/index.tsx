@@ -41,6 +41,10 @@ const SalesSection: React.FC<SalesSectionProps> = (props) => {
    margin-bottom: 24px;
 `
 
+  const SubBorderedHeading  = styled(BorderedHeading)`
+  width: 92%;
+`
+
 const SalesText = (bodyText.length === 108) ? styled(Text)`
 word-wrap: break-word;
 width: 630px;
@@ -55,6 +59,7 @@ width: 630px;
     min-width: 1400px;
   }
 `
+
 
   return (
     <Flex flexDirection="column">
@@ -80,13 +85,14 @@ width: 630px;
           alignSelf={['flex-start', null, null, 'center']}
         >
           <SalesHeading scale="xl" color="primary" fontSize="60px">{headingTranslatedText}</SalesHeading>
-          <BorderedHeading />
-          <SalesText color="textSubtle" mb="24px" fontSize="21px">
-            {bodyTranslatedText}
-          </SalesText>
-          <BorderedHeading />
+            <SubBorderedHeading />
+             <SalesText color="textSubtle" mb="24px" fontSize="21px">
+               {bodyTranslatedText}
+             </SalesText>
+            <SubBorderedHeading />
           <Flex
-          alignSelf={[null, null, null, !reverse ? 'flex-end' : 'flex-start']}>
+           alignSelf={[null, null, null, !reverse ? 'flex-end' : 'flex-start']}
+           paddingRight="34px">
             <Button mr="24px">
               {primaryButton.external ? (
                 <Link color="tertiary" external href={primaryButton.to}>

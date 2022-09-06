@@ -17,7 +17,7 @@ const TransparentFrame = styled.div<{ isDark: boolean }>`
   backgrount-repeat: no-repeat;
   padding: 16px;
   box-sizing: border-box;
-  backdrop-filter: blur(12px);
+  backdrop-filter: opacity(0%);
   min-height: 960px;
 
   ${({ theme }) => theme.mediaQueries.md} {
@@ -61,19 +61,19 @@ const TopRightImgWrapper = styled(Flex)`
 const PredictionCardData: IconCardData = {
   icon: <PredictionsIcon width="36px" color="inverseContrast" />,
   position: 'absolute;',
-  background: 'linear-gradient(180deg, #FFFFFF 0%, #B3B3B3 100%);',
+  background: 'url(/images/home/lottery-balls/ticket.png) -10px -10px/360px 430px no-repeat',
   borderColor: 'none',
   rotation: '-5deg',
-  height: 410
+  height: 420
 }
 
 const LotteryCardData: IconCardData = {
-  icon: <TicketFillIcon color="white" width="36px" />,
-  background: 'linear-gradient(180deg, #FFFFFF 0%, #B3B3B3 100%);',
+  icon: <TicketFillIcon color="transparent" width="36px" />,
+  background: 'url(/images/home/lottery-balls/ticket.png) -10px -10px/360px 430px no-repeat',
   borderColor: 'none',
   rotation: '6deg',
-  width: 300,
-  height: 410
+  width: 320,
+  height: 420
 }
 
 const imagesPlanets : CompositeImageProps = {

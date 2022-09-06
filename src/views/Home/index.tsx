@@ -1,6 +1,7 @@
 import React from 'react'
 import { Flex } from 'vorpaltesttoolkit'
 import styled from 'styled-components'
+import BorderedHeading from 'components/HeadingBorder'
 import PageSection from 'components/PageSection'
 import { useWeb3React } from '@web3-react/core'
 import useTheme from 'hooks/useTheme'
@@ -59,6 +60,12 @@ const UserBannerWrapper = styled(Container)`
     padding-left: 24px;
     padding-right: 24px;
   }
+`
+
+const FooterBorderedHeading = styled(BorderedHeading)`
+   padding: 0;
+   margin-left: 5%;
+   width: 90%;
 `
 
 const Home: React.FC = () => {
@@ -140,12 +147,13 @@ const Home: React.FC = () => {
       </PageSection>  
       <PageSection
         innerProps={{ style: HomeSectionContainerStyles }}
-        background='transparent'
+        background='#000117'
         index={2}
         hasCurvedDivider={false}
       >
-        <Footer />
+        <Footer />   
     </PageSection> 
+    <FooterBorderedHeading  />
     </>
   )
 }

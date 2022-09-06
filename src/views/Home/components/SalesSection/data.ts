@@ -2,7 +2,7 @@ import { SalesSectionProps } from '.'
 
 export const swapSectionData: SalesSectionProps = {
   headingText: 'VORPAL DEX is the heart of the VORPAL ecosystem',
-  bodyText: 'Limited emission and deflationary model.',
+  bodyText: 'Limited emission and deflationary model',
   reverse: false,
   primaryButton: {
     to: '/swap',
@@ -25,8 +25,8 @@ export const swapSectionData: SalesSectionProps = {
 }
 
 export const earnSectionData: SalesSectionProps = {
-  headingText: 'Earn passive income with crypto and NFT.',
-  bodyText: 'VORPAL DEX makes it easy to make your crypto and NFT  work for you.',
+  headingText: 'Earn passive income with crypto and NFT',
+  bodyText: 'VORPAL DEX makes it easy to make your crypto and NFT  work for you',
   reverse: true,
   primaryButton: {
     to: '/farms',
@@ -49,7 +49,7 @@ export const earnSectionData: SalesSectionProps = {
 }
 
 export const cakeSectionData: SalesSectionProps = {
-  headingText: 'VORPAL DEX MAKES OUR WORLD GO ROUND.',
+  headingText: 'VORPAL DEX MAKES OUR WORLD GO ROUND',
   bodyText:
     'VORPAL DEX token is at the heart of the VORPAL DEX ecosystem. Buy it, win it, farm it, spend it, stake it...',
   reverse: false,

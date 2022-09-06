@@ -24,6 +24,7 @@ const StyledButton = styled(Button)`
   text-transform: uppercase;
   border-radius: 6px;
   margin: auto;
+  margin-top: 26px;
   pointer-events: none;
 `
 
@@ -116,7 +117,7 @@ const LotteryCardContent = () => {
       <Flex alignItems="center" justifyContent="center">
           <StyledButton width="100%">
             <Text bold color="invertedContrast">
-              {t('COMING SOON!')}
+              {t('COMING SOON')}
             </Text>
           </StyledButton>
       </Flex>

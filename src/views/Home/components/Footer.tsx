@@ -91,9 +91,9 @@ const Footer = () => {
   return (
     <>
       <BgWrapper>
-        <Flex alignItems="center" justifyContent="center" width="100%" height="100%">
+        {/* <Flex alignItems="center" justifyContent="center" width="100%" height="100%">
           <StyledSunburst />
-        </Flex>
+        </Flex> */}
       </BgWrapper>
       <FloatingPancakesWrapper>
         <TopLeftImgWrapper>
@@ -105,16 +105,16 @@ const Footer = () => {
       </FloatingPancakesWrapper>
       <Wrapper>
         <Heading mb="24px" scale="xl" color="primary">
-          {t('It’s time to get SCHWIFTY!')}
+          {t('It’s time to get SCHWIFTY')}
         </Heading>
         <Text textAlign="center" color="white">
-          {t('Connect your crypto wallet to start using the app in seconds.')}
+          {t('Connect your crypto wallet to start using the app in seconds')}
         </Text>
         <Text mb="24px" bold color="white">
-          {t('No registration needed.')}
+          {t('No registration needed')}
         </Text>
         <SubHeading mb="16px" scale="lg" color="white">
-          {t('Show me what you got!')}
+          {t('Show me what you got')}
         </SubHeading>
         <Link external href="/">
           {t('Learn how to start')}

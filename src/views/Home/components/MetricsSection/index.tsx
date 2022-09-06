@@ -57,10 +57,10 @@ const Stats = () => {
     <Flex justifyContent="center" alignItems="center" flexDirection="column">
       <GradientLogo height="334px" width="334px" mb="0px" />
       <LocalHeading textAlign="center" color="#ACF800" scale="xl">
-        {t('Сreated by players for players.')}
+        {t('Сreated by players for players')}
       </LocalHeading>
       <LocalText textAlign="center" color="textSubtle">
-        {t('Each season, players will evolve, unite, fight, breed and defend for the sole purpose of surviving in order to gain access to the “Season Bank”.')}
+        {t('Each season, players will evolve, unite, fight, breed and defend for the sole purpose of surviving in order to gain access to the “Season Bank”')}
       </LocalText>
 
       <LocalSubHeading textAlign="center" color="textSubtle" scale="xl" mb="32px">

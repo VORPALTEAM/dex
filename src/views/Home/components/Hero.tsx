@@ -108,11 +108,11 @@ const Hero = () => {
       >
         <Flex flex="1" flexDirection="column">
           <Heading scale="xxxl" color="#ACF800" mb="20px">
-            {t('World first survive to earn metaverse.')}
+            {t('World first survive to earn metaverse')}
           </Heading>
            <BorderedHeading />     
              <Heading scale="md" color="#FFFFFF" mb="24px">
-               {t('Play, earn, trade and try to survive in the most unpredictable decentralized metaverse in the galaxy.')}
+               {t('Play, earn, trade and try to survive in the most unpredictable decentralized metaverse in the galaxy')}
              </Heading>
            <BorderedHeading />    
           <Flex>

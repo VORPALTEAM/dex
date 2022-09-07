@@ -111,14 +111,14 @@ const FloatingPancakesWrapper = styled(Container)`
 
 const TopLeftImgWrapper = styled(Flex)`
   position: absolute;
-  left: -300px;
+  left: -330px;
   bottom: 60px;
 `
 
 const BottomRightImgWrapper = styled(Flex)`
   position: absolute;
   top: 180px;
-  right: -200px;
+  right: -260px;
 `
 
 const WinSection = () => {
@@ -146,7 +146,7 @@ const WinSection = () => {
               </IconCard>
             </Flex>
             <Flex flex="1" maxWidth={['275px', null, null, '100%']}>
-              <IconCard {...LotteryCardData}>
+              <IconCard ml="100px" {...LotteryCardData}>
                 <LotteryCardContent />
               </IconCard>
             </Flex>

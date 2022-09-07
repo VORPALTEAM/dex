@@ -12,7 +12,7 @@ const StyledCard = styled(Card)<{ background: string; rotation?: string; positio
 
   ${({ theme }) => theme.mediaQueries.md} {
     ${({ rotation }) => (rotation ? `transform: rotate(${rotation});` : '')}
-    ${({ position }) => (position ?  'position: absolute; top:280px; left:180px;' : 'inherit;')}
+    ${({ position }) => (position ?  'position: absolute; top:280px; left:280px;' : 'inherit;')}
   }
 `
 //     ${({ position }) => (position ? position : 'relative')}

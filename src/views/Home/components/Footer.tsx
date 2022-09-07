@@ -58,13 +58,13 @@ const FloatingPancakesWrapper = styled(Container)`
 
 const TopLeftImgWrapper = styled(Flex)`
   position: absolute;
-  left: 0;
+  left: -60px;
   top: 0;
 `
 
 const BottomRightImgWrapper = styled(Flex)`
   position: absolute;
-  right: 0;
+  right: -60px;
   bottom: 0;
 `
 
@@ -97,10 +97,10 @@ const Footer = () => {
       </BgWrapper>
       <FloatingPancakesWrapper>
         <TopLeftImgWrapper>
-          <CompositeImage {...topLeftImage} maxHeight="256px" />
+          <CompositeImage {...topLeftImage} maxHeight="384px" />
         </TopLeftImgWrapper>
         <BottomRightImgWrapper>
-          <CompositeImage {...bottomRightImage} maxHeight="256px" />
+          <CompositeImage {...bottomRightImage} maxHeight="384px" />
         </BottomRightImgWrapper>
       </FloatingPancakesWrapper>
       <Wrapper>

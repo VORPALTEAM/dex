@@ -1,22 +1,50 @@
 import React from 'react'
-import { BunnyPlaceholderIcon, Flex, Heading } from 'vorpaltesttoolkit'
+import styled, { keyframes } from 'styled-components'
+import { Box, Flex, Heading, Text, SubtractIcon } from 'vorpaltesttoolkit'
+import BorderedHeading from 'components/HeadingBorder'
 import { useTranslation } from 'contexts/Localization'
+import PersonalLinkBlock from './PersonalLinkBlock'
 
-interface ComingSoonProps {
-  children?: React.ReactNode
-}
-
-const ComingSoon: React.FC<ComingSoonProps> = ({ children }) => {
+const ReferralHero = () => {
   const { t } = useTranslation()
 
+  const descriptionUrl = "/"
+  const Description = styled(Text)`
+    color: #FFFFFF;
+    font-size: 21px;
+
+     .yellow {
+        color: #F8D300;
+        font-weight: 400;
+      }
+  `
+
+  const LinkText = styled.p`
+  width: 103px;
+`
+
   return (
-    <Flex flexDirection="column" alignItems="center" justifyContent="center" p="24px">
-      <BunnyPlaceholderIcon width="72px" height="72px" />
-      <Heading as="h5" scale="md" color="textDisabled">
-        {children || t('Coming Soon!')}
-      </Heading>
+    <Flex position="relative"
+    flexDirection={['column-reverse', null, null, 'row']}
+    alignItems={['flex-end', null, null, 'flex-start']}
+    justifyContent="space-between"
+    id="referral-hero">
+      <Flex
+       width={['100%', '100%', '50%', '45%']}
+       flexDirection='column'>
+       <Heading as="h5" scale="xl" color="primary" width="533px" mb="21px">
+        {t('Invite your friends. Earn cryptocurrency together')}
+       </Heading>
+       <BorderedHeading />
+         <Description mb="21px" width="556px">Earn up to <b className="yellow">20%</b> from friends swap commission on Biswap and <b className="yellow">5%</b> from their earnings on Farms and Launch pools.</Description>
+         <a href={descriptionUrl}><Text color="primary" mb="21px" fontFamily="Roboto" fontSize="21px" fontWeight="700" display="flex"><LinkText>Read more</LinkText><SubtractIcon ml="9px" mt="4px" /></Text></a>
+       <BorderedHeading />
+      </Flex>
+      <Flex>
+        <PersonalLinkBlock />
+      </Flex>
     </Flex>
   )
 }
 
-export default ComingSoon
+export default ReferralHero

@@ -26,12 +26,13 @@ const ReferralHero = () => {
   return (
     <Flex position="relative"
     flexDirection={['column-reverse', null, null, 'row']}
-    alignItems={['flex-end', null, null, 'flex-start']}
+    width="100%"
     justifyContent="space-between"
     id="referral-hero">
       <Flex
-       width={['100%', '100%', '50%', '45%']}
-       flexDirection='column'>
+       width='35%'
+       flexDirection='column'
+       >
        <Heading as="h5" scale="xl" color="primary" width="533px" mb="21px">
         {t('Invite your friends. Earn cryptocurrency together')}
        </Heading>

@@ -2,6 +2,7 @@ import React from 'react'
 import styled, { keyframes } from 'styled-components'
 import { BunnyPlaceholderIcon, Flex, Box, Heading, Text, PlusIcon, ShareReferralIcon, CopyClipboardIcon, PencilReferralIcon } from 'vorpaltesttoolkit'
 import { useTranslation } from 'contexts/Localization'
+import { GoldPercentText } from './StyledElms'
 
 const PersonalLinkBlock = () => {
   const { t } = useTranslation()
@@ -96,15 +97,6 @@ const PersonalLinkBlock = () => {
      justify-content: flex-start;
   ` 
 
-  const GoldPercentText = styled(Text)`
-     margin: 0 9px;
-     font-family: Roboto;
-     font-size: 48px;
-     color: #F8D300;
-     font-weight: 700;
-     display: flex;
-     justify-content: flex-start;
-  ` 
   const MoreSymbolSection = styled.div`
      width: 30px;
      height: 90px;

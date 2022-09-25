@@ -3,24 +3,27 @@ import { AutoRenewIcon, Flex, Heading } from 'vorpaltesttoolkit'
 import styled, { keyframes } from 'styled-components'
 import orderBy from 'lodash/orderBy'
 import Page from 'components/Layout/Page'
-import Layout from './layout'
 import ReferralHero from './components/ReferralHero'
 import WithdrawSection from './components/WithdrawSection'
+import Office from './office'
 
 // console.log(document.location)
 
 const Referral = () => {
-  const CabinetPage = styled(Page)`
+  const OfficePage = styled(Page)`
     margin: 0 auto;
     width: calc(100% - 64px);
-    max-width: 1600px
+    max-width: 1600px;
+    min-height: 200px;
   ` 
   return (
-    <CabinetPage>
+    <>
+     <OfficePage>
       <ReferralHero />
       <WithdrawSection />
-      <Layout />
-    </CabinetPage>
+     </OfficePage>
+     <Office />
+    </>
   )
 }
 

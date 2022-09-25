@@ -2,6 +2,7 @@ import React from 'react'
 import styled, { keyframes } from 'styled-components'
 import { BunnyPlaceholderIcon, Flex, Box, Button, Text, ClockAgainst, AskIcon } from 'vorpaltesttoolkit'
 import { useTranslation } from 'contexts/Localization'
+import { AscBlock } from './StyledElms'
 
 const WithdrawSection = () => {
 
@@ -16,14 +17,6 @@ const WithdrawSection = () => {
       background-position: right bottom;
       border-radius: 20px;
       overflow: hidden;
-    `
-
-    const AscBlock = styled.div`
-      display: flex;
-      margin-left: 12px;
-      margin-top: -6px;
-      background: #F8D300;
-      border-radius: 20px;
     `
 
     const StyledButton = styled(Button)`

@@ -14,7 +14,7 @@ const Referral = () => {
     margin: 0 auto;
     width: calc(100% - 64px);
     max-width: 1600px;
-    min-height: 200px;
+    min-height: 100px;
   ` 
   return (
     <>

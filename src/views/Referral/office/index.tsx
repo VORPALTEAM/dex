@@ -34,9 +34,9 @@ const Office = () => {
     min-height: 400px;
   ` 
   const urlParams = new URLSearchParams(window.location.search);
-  const activeTab = urlParams.get('tab') || "";
+  const activeTab = urlParams.get('tab') || "home";
 
-  let currentSection = (activeTab === "") ? tabs[0].section : null
+  let currentSection = (activeTab === "home" || !activeTab) ? tabs[0].section : null
 
   tabs.forEach((tab) => {
 

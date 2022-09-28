@@ -131,7 +131,7 @@ const HomeSection = () => {
         </DashboardWindow>
         <HeadingSection title="Referral List" subTitle="All your referral friends in one place" />
         <Board>
-           <Text color="contrast" fontWeight="500" ml="46%" mt="46%">No data</Text>
+           <Text color="contrast" fontWeight="500" ml="46%" pt="140px">No data</Text>
         </Board>
         <FaqSection />
     </Boards>

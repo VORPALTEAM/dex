@@ -11,13 +11,15 @@ export const Board = styled(Box)`
 export const BoardHeading = styled(Flex)`
   width: 100%;
   min-height: 50px;
-  justify-content: space-between
+  margin: 60px 0 20px 0;
+  justify-content: space-between;
 `   
 
 export const TitleContainer = styled(Box)`
 width: 20%;
 min-width: 260px;
 min-height: 50px;
+margin-left: 20px;
 `   
 export const SearchCtnr = styled.div`
   width: 300px;

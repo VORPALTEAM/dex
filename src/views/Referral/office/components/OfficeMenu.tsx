@@ -5,7 +5,7 @@ import orderBy from 'lodash/orderBy'
 
 // console.log(document.location)
 
-const OfficeMenu = ({ tabs, active = "" }) => {
+const OfficeMenu = ({ tabs, active = "home" }) => {
 
   const Menue = styled.div`
     display: flex;

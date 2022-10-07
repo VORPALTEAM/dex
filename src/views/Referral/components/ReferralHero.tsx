@@ -1,6 +1,6 @@
 import React from 'react'
 import styled, { keyframes } from 'styled-components'
-import { Box, Flex, Heading, Text, SubtractIcon } from 'vorpaltesttoolkit'
+import { Card, Box, Flex, Heading, Text, SubtractIcon } from 'vorpaltesttoolkit'
 import BorderedHeading from 'components/HeadingBorder'
 import { useTranslation } from 'contexts/Localization'
 import PersonalLinkBlock from './PersonalLinkBlock'
@@ -21,6 +21,24 @@ const ReferralHero = () => {
 
   const LinkText = styled.p`
   width: 103px;
+`
+  const StyledCard = styled(Card)`
+    position: fixed;
+    top: 300px;
+    left: 300px;
+    width: 300px;
+    z-index: 199;
+  `
+
+  const StyledCardOverlay = styled.div`
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background: #2D2D2D;
+  opacity: 0.7;
+  z-index: 190;
 `
 
   return (
@@ -44,6 +62,8 @@ const ReferralHero = () => {
       <Flex>
         <PersonalLinkBlock />
       </Flex>
+      <StyledCard>Vaporone</StyledCard>
+      <StyledCardOverlay />
     </Flex>
   )
 }

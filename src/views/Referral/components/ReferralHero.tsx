@@ -27,6 +27,7 @@ const ReferralHero = () => {
     top: 300px;
     left: 300px;
     width: 300px;
+    min-height: 300px;
     z-index: 199;
   `
 

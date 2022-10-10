@@ -20,27 +20,8 @@ const ReferralHero = () => {
   `
 
   const LinkText = styled.p`
-  width: 103px;
-`
-  const StyledCard = styled(Card)`
-    position: fixed;
-    top: 300px;
-    left: 300px;
-    width: 300px;
-    min-height: 300px;
-    z-index: 199;
+     width: 103px;
   `
-
-  const StyledCardOverlay = styled.div`
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  width: 100%;
-  height: 100%;
-  background: #2D2D2D;
-  opacity: 0.7;
-  z-index: 190;
-`
 
   return (
     <Flex position="relative"
@@ -63,8 +44,6 @@ const ReferralHero = () => {
       <Flex>
         <PersonalLinkBlock />
       </Flex>
-      <StyledCard>Vaporone</StyledCard>
-      <StyledCardOverlay />
     </Flex>
   )
 }

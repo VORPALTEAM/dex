@@ -1,13 +1,42 @@
-import React from 'react'
+import React, {useState} from 'react'
 import styled, { keyframes } from 'styled-components'
-import { BunnyPlaceholderIcon, Flex, Box, Heading, Text, PlusIcon, ShareReferralIcon, CopyClipboardIcon, PencilReferralIcon } from 'vorpaltesttoolkit'
+import { Card, 
+         Flex, 
+         CloseIcon, 
+         Box, 
+         Heading, 
+         Text, 
+         PlusIcon, 
+         IconButton,
+         ShareReferralIcon, 
+         CopyClipboardIcon,
+         ModalContainer,
+         ModalHeader, 
+         PencilReferralIcon } from 'vorpaltesttoolkit'
 import { useTranslation } from 'contexts/Localization'
+import useTheme from 'hooks/useTheme'
+import BorderedHeading from 'components/HeadingBorder'
 import { GoldPercentText } from './StyledElms'
 
 const PersonalLinkBlock = () => {
   const { t } = useTranslation()
 
+  const [popupActive, setActive] = useState(false)
+
+  const LinkCreationStart = () => {
+    setActive(true)
+  }
+
+  const LinkCreationCancel = () => {
+    setActive(false)
+  }
+
+  const LinkCreationConfirm = () => {
+    setActive(false)
+  }
+  
   const referralLink = 'vorpal.finance/?ref=4ded6d55a4455f89c0fb...'
+  const { theme } = useTheme()
 
   const ReferralBox = styled(Box)`
     width: 100%;
@@ -110,6 +139,36 @@ const PersonalLinkBlock = () => {
      border-left: 1px solid #FFFFFF;
   ` 
 
+  const StyledCard = styled(Card)`
+     position: fixed;
+     top: 300px;
+     left: 300px;
+     width: 300px;
+     min-height: 300px;
+     z-index: 199;
+     display: none;
+
+     &.active {
+        display: block
+     }
+  `
+
+  const StyledCardOverlay = styled.div`
+     position: fixed;
+     top: 0px;
+     left: 0px;
+     width: 100%;
+     height: 100%;
+     background: #2D2D2D;
+     opacity: 0.7;
+     z-index: 190;
+     display: none;
+
+     &.active {
+       display: block
+     }
+  `
+
   return (
     <Flex flexDirection="column" alignItems="center" justifyContent="space-between">
       <ReferralBox> 
@@ -119,7 +178,10 @@ const PersonalLinkBlock = () => {
             {t('My Referral Link')}
             </RefHeading>
             <RefAddLink>
-               <Text color="textSubtle" fontSize="16px" fontFamily="Roboto" fontWeight="700">Create new link</Text><PlusIcon width="26px" height="26px" mb="10px" />
+               <Text 
+                  onClick={LinkCreationStart}
+                  color="textSubtle" fontSize="16px" fontFamily="Roboto" fontWeight="700">
+                  Create new link</Text><PlusIcon width="26px" height="26px" mb="10px" />
             </RefAddLink>
           </HeadingRow>
           <LinkBlock>
@@ -159,6 +221,22 @@ const PersonalLinkBlock = () => {
           </NoteBlock>
         </RefContent>
       </ReferralBox>
+      <StyledCard className={popupActive ? "active" : ""}>
+        <ModalHeader background={theme.colors.gradients.bubblegum}>
+          <Flex alignItems="center" style={{ flex: 1 }}>
+            <Box>
+              <Heading scale="lg" mb="8px">
+                EDIT NOTE
+              </Heading>
+            </Box>
+          </Flex>
+          <IconButton variant="text" aria-label="Close the dialog" onClick={LinkCreationCancel}>
+            <CloseIcon color="text" width="24px" />
+         </IconButton>
+      </ModalHeader>
+        <BorderedHeading />
+      </StyledCard>
+      <StyledCardOverlay className={popupActive ? "active" : ""} />
     </Flex>
   )
 }

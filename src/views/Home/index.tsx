@@ -54,7 +54,7 @@ const UserBannerWrapper = styled(Container)`
   left: 50%;
   transform: translate(-50%, 0);
   padding-left: 0px;
-  padding-right: 0px;
+  padding-right: 0px; 
 
   ${({ theme }) => theme.mediaQueries.lg} {
     padding-left: 24px;

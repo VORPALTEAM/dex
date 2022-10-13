@@ -229,10 +229,10 @@ const PersonalLinkBlock = () => {
                 EDIT NOTE
               </Heading>
             </Box>
+            <IconButton variant="text" aria-label="Close the dialog" onClick={LinkCreationCancel}>
+              <CloseIcon color="text" width="24px" />
+            </IconButton>
           </Flex>
-          <IconButton variant="text" aria-label="Close the dialog" onClick={LinkCreationCancel}>
-            <CloseIcon color="text" width="24px" />
-         </IconButton>
       </ModalHeader>
         <BorderedHeading />
       </StyledCard>

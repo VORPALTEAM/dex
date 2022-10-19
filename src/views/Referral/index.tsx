@@ -1,7 +1,5 @@
 import React from 'react'
-import { AutoRenewIcon, Flex, Heading } from 'vorpaltesttoolkit'
-import styled, { keyframes } from 'styled-components'
-import orderBy from 'lodash/orderBy'
+import styled from 'styled-components'
 import Page from 'components/Layout/Page'
 import ReferralHero from './components/ReferralHero'
 import WithdrawSection from './components/WithdrawSection'

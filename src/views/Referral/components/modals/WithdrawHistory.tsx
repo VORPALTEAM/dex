@@ -45,7 +45,7 @@ const WithdrawHistory = () => {
           <Flex alignItems="center" style={{ flex: 1 }}>
             <Box>
               <Heading scale="lg" mb="8px">
-                EDIT NOTE
+                 Withdrawal history
               </Heading>
             </Box>
             <IconButton variant="text" aria-label="Close the dialog" onClick={closeWindow}>

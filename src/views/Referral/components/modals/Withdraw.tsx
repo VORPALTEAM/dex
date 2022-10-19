@@ -45,7 +45,7 @@ const WithdrawModal = () => {
           <Flex alignItems="center" style={{ flex: 1 }}>
             <Box>
               <Heading scale="lg" mb="8px">
-                EDIT NOTE
+                WITHDRAW
               </Heading>
             </Box>
             <IconButton variant="text" aria-label="Close the dialog" onClick={closeWindow}>

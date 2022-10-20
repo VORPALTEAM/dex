@@ -19,7 +19,7 @@ const FaqSection = () => {
     <FaqContainer>
       {Questions.map((question, index) => {
         return(
-          <FaqItem question={question.question} answer={question.answer} />
+          <FaqItem key={Math.round(Math.random()*10000)} question={question.question} answer={question.answer} />
         )
       })}
     </FaqContainer>  

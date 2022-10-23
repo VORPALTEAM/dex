@@ -14,7 +14,6 @@ import { Card,
          ModalHeader, 
          PencilReferralIcon } from 'vorpaltesttoolkit'
 import { useTranslation } from 'contexts/Localization'
-import useTheme from 'hooks/useTheme'
 import BorderedHeading from 'components/HeadingBorder'
 import { GoldPercentText } from './StyledElms'
 
@@ -36,7 +35,6 @@ const PersonalLinkBlock = () => {
   }
   
   const referralLink = 'vorpal.finance/?ref=4ded6d55a4455f89c0fb...'
-  const { theme } = useTheme()
 
   const ReferralBox = styled(Box)`
     width: 100%;
@@ -221,22 +219,6 @@ const PersonalLinkBlock = () => {
           </NoteBlock>
         </RefContent>
       </ReferralBox>
-      <StyledCard className={popupActive ? "active" : ""}>
-        <ModalHeader background={theme.colors.gradients.bubblegum}>
-          <Flex alignItems="center" style={{ flex: 1 }}>
-            <Box>
-              <Heading scale="lg" mb="8px">
-                EDIT NOTE
-              </Heading>
-            </Box>
-            <IconButton variant="text" aria-label="Close the dialog" onClick={LinkCreationCancel}>
-              <CloseIcon color="text" width="24px" />
-            </IconButton>
-          </Flex>
-      </ModalHeader>
-        <BorderedHeading />
-      </StyledCard>
-      <StyledCardOverlay className={popupActive ? "active" : ""} />
     </Flex>
   )
 }

@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import Page from 'components/Layout/Page'
-import { Provider } from 'react-redux';
+import { Provider as ModalProvider } from 'react-redux';
 import ReferralHero from './components/ReferralHero'
 import WithdrawSection from './components/WithdrawSection'
 import Office from './office'
@@ -19,13 +19,13 @@ const Referral = () => {
 
   return (
     <>
-     <Provider store={store}>
       <OfficePage>
+        <ModalProvider store={store}>
         <ReferralHero />
         <WithdrawSection />
+        </ModalProvider>
       </OfficePage>
       <Office />
-     </Provider>
     </>
   )
 }

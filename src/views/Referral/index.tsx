@@ -17,15 +17,15 @@ const Referral = () => {
     min-height: 100px;
   ` 
 
-console.log(<Provider store={store} />)
-
   return (
     <>
-     <OfficePage>
+     <Provider store={store}>
+      <OfficePage>
         <ReferralHero />
         <WithdrawSection />
       </OfficePage>
       <Office />
+     </Provider>
     </>
   )
 }

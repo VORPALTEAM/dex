@@ -1,10 +1,22 @@
-import React from 'react'
+import React, {useState} from 'react'
+import { useDispatch } from 'react-redux'
 import styled, { keyframes } from 'styled-components'
 import { BunnyPlaceholderIcon, Flex, Box, Button, Text, ClockAgainst, AskIcon } from 'vorpaltesttoolkit'
 import { useTranslation } from 'contexts/Localization'
 import { AscBlock } from './StyledElms'
+import { selectWindow } from '../state/modalReducer'
 
 const WithdrawSection = () => {
+
+
+    const dispatch = useDispatch()
+    const [popupActive, setActive] = useState(false)
+
+    const WithdrawStart = () => {
+        console.log(dispatch(selectWindow("withdraw")))
+        console.log("click")
+        setActive(true)
+      }
 
     const WithdrawWindow = styled.div`
       float: right;
@@ -45,7 +57,7 @@ const WithdrawSection = () => {
                     <Text ml="6px">History</Text>
                 </Flex>
                 <Text ml="20px" mt="20px" fontSize="32px" fontWeight="700" width="100%">0.0000 VRP</Text>
-                <StyledButton mt="40px" ml="20px">
+                <StyledButton onClick={WithdrawStart} mt="40px" ml="20px">
                     Withdraw
                  </StyledButton>
             </WithdrawWindow>

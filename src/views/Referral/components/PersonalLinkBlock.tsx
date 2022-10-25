@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import { useDispatch } from 'react-redux'
 import styled, { keyframes } from 'styled-components'
 import { Card, 
          Flex, 
@@ -15,13 +16,16 @@ import { Card,
 import { useTranslation } from 'contexts/Localization'
 import BorderedHeading from 'components/HeadingBorder'
 import { GoldPercentText } from './StyledElms'
+import { selectWindow } from '../state/modalReducer'
 
 const PersonalLinkBlock = () => {
   const { t } = useTranslation()
 
   const [popupActive, setActive] = useState(false)
+  const dispatch = useDispatch()
 
   const LinkCreationStart = () => {
+    console.log(dispatch(selectWindow("note")))
     setActive(true)
   }
 

@@ -6,6 +6,7 @@ import ReferralHero from './components/ReferralHero'
 import WithdrawSection from './components/WithdrawSection'
 import Office from './office'
 import store from './state'
+import ModalRefContainer from './components/modals'
 
 // console.log(document.location)
 
@@ -23,6 +24,7 @@ const Referral = () => {
         <ModalProvider store={store}>
           <ReferralHero />
           <WithdrawSection />
+          <ModalRefContainer />
         </ModalProvider>
       </OfficePage>
       <Office />

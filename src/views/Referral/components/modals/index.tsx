@@ -5,7 +5,7 @@ import GenerateLink from './GenerateLink'
 import WithdrawModal from './Withdraw'
 import WithdrawHistory from './WithdrawHistory'
 
-const ModalContainer = () => {
+const ModalRefContainer = () => {
     const [
         modal, 
         selectWindow
@@ -34,4 +34,4 @@ const ModalContainer = () => {
     )
 }
 
-export default ModalContainer
+export default ModalRefContainer

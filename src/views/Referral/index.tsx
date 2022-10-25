@@ -21,8 +21,8 @@ const Referral = () => {
     <>
       <OfficePage>
         <ModalProvider store={store}>
-        <ReferralHero />
-        <WithdrawSection />
+          <ReferralHero />
+          <WithdrawSection />
         </ModalProvider>
       </OfficePage>
       <Office />

@@ -10,7 +10,6 @@ import { Card,
          IconButton,
          ShareReferralIcon, 
          CopyClipboardIcon,
-         ModalContainer,
          ModalHeader, 
          PencilReferralIcon } from 'vorpaltesttoolkit'
 import { useTranslation } from 'contexts/Localization'

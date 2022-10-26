@@ -1,15 +1,16 @@
 import { TypedUseSelectorHook, useSelector, useDispatch } from 'react-redux'
 import { createReducer, createAction, combineReducers } from '@reduxjs/toolkit';
 
-export const initialState = {
-  window: "none"
+export const initialState = "none"
+
+export const defaultAction = {
+    type: "window",
+    payload: "none"
 }
 
 export const selectWindow = createAction<string>("window")
 
-export const SpecialReducer = createReducer(initialState, {
-    selectWindow(state) {
-       console.log(state)
-       return state;
-    }
-}) 
+export const SpecialReducer = (state = initialState, action = defaultAction) => {
+  const newState = action ? action.payload : initialState
+  return newState
+}

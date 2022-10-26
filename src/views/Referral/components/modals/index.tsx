@@ -10,12 +10,12 @@ import { selectWindow } from '../../state/modalReducer'
 const ModalRefContainer = () => {
 
     const modalR = useSelector(state => state)
-    const [
-        modal, 
-        selecLocaltWindow
-    ] = useState("none")
+    const dispatch = useDispatch()
 
-    console.log( useSelector)
+    const OverlaySlose = () => {
+      dispatch(selectWindow("none"))
+    }
+
     console.log("modal : ")
     console.log(modalR)
 
@@ -37,7 +37,7 @@ const ModalRefContainer = () => {
 
     return(
         <>
-          <StyledCardOverlay className={modal !== "none" ? "active" : ""} />
+          <StyledCardOverlay onClick={OverlaySlose} className={modalR && modalR !== "none" ? "active" : ""} />
         </>
     )
 }

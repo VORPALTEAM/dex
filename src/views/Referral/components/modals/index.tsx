@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import styled, { keyframes } from 'styled-components'
 import EditNote from './EditNote'
 import GenerateLink from './GenerateLink'
@@ -8,10 +8,16 @@ import WithdrawHistory from './WithdrawHistory'
 import { selectWindow } from '../../state/modalReducer'
  
 const ModalRefContainer = () => {
+
+    const modalR = useSelector(state => state)
     const [
         modal, 
         selecLocaltWindow
     ] = useState("none")
+
+    console.log( useSelector)
+    console.log("modal : ")
+    console.log(modalR)
 
     const StyledCardOverlay = styled.div`
        position: fixed;

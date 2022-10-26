@@ -14,7 +14,6 @@ const WithdrawSection = () => {
 
     const WithdrawStart = () => {
         console.log(dispatch(selectWindow("withdraw")))
-        console.log("click")
         setActive(true)
       }
 

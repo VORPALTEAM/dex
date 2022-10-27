@@ -13,7 +13,12 @@ const WithdrawSection = () => {
     const [popupActive, setActive] = useState(false)
 
     const WithdrawStart = () => {
-        console.log(dispatch(selectWindow("withdraw")))
+        dispatch(selectWindow("withdraw"))
+        setActive(true)
+      }
+
+    const WithdrawHistoryOpen = () => {
+        dispatch(selectWindow("history"))
         setActive(true)
       }
 
@@ -53,7 +58,7 @@ const WithdrawSection = () => {
                         <AskIcon color="tertiary" ml="4px" mt="-4px" mr="12px" />
                     </AscBlock>
                     <ClockAgainst width="37px" height="34px" mt="-4px" ml="25%" />
-                    <Text ml="6px">History</Text>
+                    <Text ml="6px" onClick={WithdrawHistoryOpen}>History</Text>
                 </Flex>
                 <Text ml="20px" mt="20px" fontSize="32px" fontWeight="700" width="100%">0.0000 VRP</Text>
                 <StyledButton onClick={WithdrawStart} mt="40px" ml="20px">

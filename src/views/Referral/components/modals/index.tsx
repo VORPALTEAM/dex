@@ -12,12 +12,9 @@ const ModalRefContainer = () => {
     const modalR = useSelector(state => state)
     const dispatch = useDispatch()
 
-    const OverlaySlose = () => {
+    const OverlayClose = () => {
       dispatch(selectWindow("none"))
     }
-
-    console.log("modal : ")
-    console.log(modalR)
 
     const StyledCardOverlay = styled.div`
        position: fixed;
@@ -35,9 +32,29 @@ const ModalRefContainer = () => {
        }
     `
 
+    function currentWindow ( windowName ) {
+      switch (windowName) {
+        case "note" :
+          return <EditNote />
+          break;
+        case "withdraw" :
+          return <WithdrawModal />
+          break;
+        case "link" :
+          return <GenerateLink />
+          break;
+        case "history" :
+          return <WithdrawHistory />
+          break;
+        default: 
+          return null;
+      }
+    }
+
     return(
         <>
-          <StyledCardOverlay onClick={OverlaySlose} className={modalR && modalR !== "none" ? "active" : ""} />
+          {currentWindow(modalR)}
+          <StyledCardOverlay onClick={OverlayClose} className={modalR && modalR !== "none" ? "active" : ""} />
         </>
     )
 }

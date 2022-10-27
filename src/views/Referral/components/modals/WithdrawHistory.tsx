@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import { useDispatch } from 'react-redux'
 import styled, { keyframes } from 'styled-components'
 import { Card, 
          Flex, 
@@ -13,15 +14,18 @@ import { Card,
          ModalHeader, 
          PencilReferralIcon } from 'vorpaltesttoolkit'
 import { useTranslation } from 'contexts/Localization'
-import useTheme from 'hooks/useTheme'
 import BorderedHeading from 'components/HeadingBorder'
 import { GoldPercentText } from '../StyledElms'
-
+import { selectWindow } from '../../state/modalReducer'
 
 const WithdrawHistory = () => {
 
-    const { theme } = useTheme()
     const [popupActive, useActive] = useState(1)
+    const dispatch = useDispatch()
+
+    const CloseWindow = () => {
+      dispatch(selectWindow("none"))
+    }
     const StyledCard = styled(Card)`
     position: fixed;
     top: 300px;
@@ -35,19 +39,17 @@ const WithdrawHistory = () => {
        display: block
     }
     `
-    const closeWindow = () => {
-      useActive(0)
-    }
+
     return (
        <StyledCard className={popupActive ? "active" : ""}>
-        <ModalHeader background={theme.colors.gradients.bubblegum}>
+        <ModalHeader background="linear-gradient(139.73deg, #E5FDFF 0%, #F3EFFF 100%)">
           <Flex alignItems="center" style={{ flex: 1 }}>
             <Box>
               <Heading scale="lg" mb="8px">
-                 Withdrawal history
+                 Withdraw History
               </Heading>
             </Box>
-            <IconButton variant="text" aria-label="Close the dialog" onClick={closeWindow}>
+            <IconButton variant="text" aria-label="Close the dialog" onClick={CloseWindow}>
               <CloseIcon color="text" width="24px" />
             </IconButton>
           </Flex>

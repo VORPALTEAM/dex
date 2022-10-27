@@ -25,17 +25,15 @@ const PersonalLinkBlock = () => {
   const dispatch = useDispatch()
 
   const LinkCreationStart = () => {
-    console.log(dispatch(selectWindow("note")))
+    dispatch(selectWindow("link"))
     setActive(true)
   }
 
-  const LinkCreationCancel = () => {
-    setActive(false)
+  const NoteCreationStart = () => {
+    dispatch(selectWindow("note"))
+    setActive(true)
   }
 
-  const LinkCreationConfirm = () => {
-    setActive(false)
-  }
   
   const referralLink = 'vorpal.finance/?ref=4ded6d55a4455f89c0fb...'
 
@@ -216,7 +214,7 @@ const PersonalLinkBlock = () => {
                 <GoldPercentText>0 %</GoldPercentText>
               </FriendsGetSection>
           </YoullGetBlock>
-          <NoteBlock>
+          <NoteBlock onClick={NoteCreationStart}>
             <PencilReferralIcon width="28px" height="28px" />
             <Text color="textSubtle" fontSize="16px" fontFamily="Roboto" fontWeight="300" ml="5px" mt="5px">Note</Text>
           </NoteBlock>

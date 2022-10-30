@@ -17,6 +17,12 @@ import { useTranslation } from 'contexts/Localization'
 import BorderedHeading from 'components/HeadingBorder'
 import { GoldPercentText } from '../StyledElms'
 import { selectWindow } from '../../state/modalReducer'
+import {RefModalWindow, 
+  RefStyledCard, 
+  CloseButton, 
+  RefModalHeading, 
+  RefModalBody,
+  StyledButton } from './common'
 
 const GenerateLink = () => {
 
@@ -40,22 +46,29 @@ const GenerateLink = () => {
     }
     `
 
-    return (
-       <StyledCard className={popupActive ? "active" : ""}>
-        <ModalHeader background="linear-gradient(139.73deg, #E5FDFF 0%, #F3EFFF 100%)">
+        return (
+       <RefModalWindow className={popupActive ? "active" : ""}>
+        <ModalHeader background="transparent">
           <Flex alignItems="center" style={{ flex: 1 }}>
-            <Box>
-              <Heading scale="lg" mb="8px">
-                GENERATE LINK
-              </Heading>
-            </Box>
-            <IconButton variant="text" aria-label="Close the dialog" onClick={CloseWindow}>
-              <CloseIcon color="text" width="24px" />
-            </IconButton>
+            <RefModalHeading title="Generate your link" />
+            <CloseButton onClick={CloseWindow} />
           </Flex>
       </ModalHeader>
-        <BorderedHeading />
-      </StyledCard>
+      <RefModalBody>
+          <Text fontSize="12px" fontWeight="300" mb="10px">
+            Profit sharing allows you to share a portion of referral rewards with your invited friends
+          </Text>
+         <BorderedHeading />
+         <div className="Buttons" style={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            marginTop: 40
+         }}>
+             <StyledButton width="48%" disabledStyle={1} onClick={CloseWindow} btnText="Cancel" />
+             <StyledButton width="48%" disabledStyle={0} onClick={CloseWindow} btnText="Confirm" />
+         </div>
+      </RefModalBody>
+      </RefModalWindow>
       )
 }
 

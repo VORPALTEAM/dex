@@ -3,18 +3,15 @@ import { useDispatch } from 'react-redux'
 import styled, { keyframes } from 'styled-components'
 import { Card, 
          Flex, 
-         CloseIcon, 
          Box, 
          Heading, 
          Text, 
          PlusIcon, 
-         IconButton,
          ShareReferralIcon, 
          CopyClipboardIcon,
          ModalHeader, 
          PencilReferralIcon } from 'vorpaltesttoolkit'
 import { useTranslation } from 'contexts/Localization'
-import BorderedHeading from 'components/HeadingBorder'
 import { GoldPercentText } from './StyledElms'
 import { selectWindow } from '../state/modalReducer'
 
@@ -138,36 +135,6 @@ const PersonalLinkBlock = () => {
      border-left: 1px solid #FFFFFF;
   ` 
 
-  const StyledCard = styled(Card)`
-     position: fixed;
-     top: 300px;
-     left: 300px;
-     width: 300px;
-     min-height: 300px;
-     z-index: 199;
-     display: none;
-
-     &.active {
-        display: block
-     }
-  `
-
-  const StyledCardOverlay = styled.div`
-     position: fixed;
-     top: 0px;
-     left: 0px;
-     width: 100%;
-     height: 100%;
-     background: #2D2D2D;
-     opacity: 0.7;
-     z-index: 190;
-     display: none;
-
-     &.active {
-       display: block
-     }
-  `
-
   return (
     <Flex flexDirection="column" alignItems="center" justifyContent="space-between">
       <ReferralBox> 
@@ -215,7 +182,7 @@ const PersonalLinkBlock = () => {
               </FriendsGetSection>
           </YoullGetBlock>
           <NoteBlock onClick={NoteCreationStart}>
-            <PencilReferralIcon width="28px" height="28px" />
+            <PencilReferralIcon width="28px" height="28px" color="white" stroke="white" />
             <Text color="textSubtle" fontSize="16px" fontFamily="Roboto" fontWeight="300" ml="5px" mt="5px">Note</Text>
           </NoteBlock>
         </RefContent>

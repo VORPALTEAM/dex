@@ -17,6 +17,7 @@ import { useTranslation } from 'contexts/Localization'
 import BorderedHeading from 'components/HeadingBorder'
 import { GoldPercentText } from '../StyledElms'
 import { selectWindow } from '../../state/modalReducer'
+import {RefModalWindow, RefStyledCard, CloseButton, RefModalHeading} from './common'
 
 const EditNote = () => {
 
@@ -41,21 +42,14 @@ const EditNote = () => {
     `
 
     return (
-       <StyledCard className={popupActive ? "active" : ""}>
-        <ModalHeader background="linear-gradient(139.73deg, #E5FDFF 0%, #F3EFFF 100%)">
+       <RefModalWindow className={popupActive ? "active" : ""}>
+        <ModalHeader background="transparent">
           <Flex alignItems="center" style={{ flex: 1 }}>
-            <Box>
-              <Heading scale="lg" mb="8px">
-                EDIT NOTE
-              </Heading>
-            </Box>
-            <IconButton variant="text" aria-label="Close the dialog" onClick={CloseWindow}>
-              <CloseIcon color="text" width="24px" />
-            </IconButton>
+            <RefModalHeading title="EDIT NOTE" />
+            <CloseButton onClick={CloseWindow} />
           </Flex>
       </ModalHeader>
-        <BorderedHeading />
-      </StyledCard>
+      </RefModalWindow>
       )
 }
 

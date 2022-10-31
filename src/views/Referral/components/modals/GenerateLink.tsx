@@ -12,7 +12,7 @@ import { Card,
          ShareReferralIcon, 
          CopyClipboardIcon,
          ModalHeader, 
-         PencilReferralIcon } from 'vorpaltesttoolkit'
+         RoundAskIcon } from 'vorpaltesttoolkit'
 import { useTranslation } from 'contexts/Localization'
 import BorderedHeading from 'components/HeadingBorder'
 import { GoldPercentText } from '../StyledElms'
@@ -46,19 +46,39 @@ const GenerateLink = () => {
     }
     `
 
+    const PercentSection = styled.div`
+       width: 100%;
+       display: flex;
+       justify-content: space-between;
+    `
+
         return (
        <RefModalWindow className={popupActive ? "active" : ""}>
         <ModalHeader background="transparent">
           <Flex alignItems="center" style={{ flex: 1 }}>
             <RefModalHeading title="Generate your link" />
-            <CloseButton onClick={CloseWindow} />
+            <CloseButton onClick={CloseWindow} marginLeft={320} />
           </Flex>
       </ModalHeader>
-      <RefModalBody>
-          <Text fontSize="12px" fontWeight="300" mb="10px">
+      <RefModalBody style={{
+        padding: "17px 28px"
+      }}>
+          <Text fontSize="12px" fontWeight="300" mb="17px">
             Profit sharing allows you to share a portion of referral rewards with your invited friends
           </Text>
          <BorderedHeading />
+         <PercentSection>
+            <div className="percent--left">
+              <Text fontSize="12px" fontWeight="300" mb="17px">
+                You receive <RoundAskIcon stroke="#352F44" />
+              </Text>
+            </div>
+            <div className="percent--right">
+              <Text fontSize="12px" fontWeight="300" mb="17px">
+                Friends receive <RoundAskIcon stroke="#352F44" />
+              </Text>
+            </div>
+         </PercentSection>
          <div className="Buttons" style={{
             display: 'flex',
             justifyContent: 'space-between',

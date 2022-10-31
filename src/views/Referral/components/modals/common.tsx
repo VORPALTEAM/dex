@@ -43,10 +43,10 @@ export const RefStyledCard = styled(Card)`
    }
 `
 
-export const CloseButton = ({ onClick }) => {
+export const CloseButton = ({ onClick, marginLeft = 266 }) => {
    const CloseBtn = styled(IconButton)`
       position: absolute;
-      margin-left: 266px;
+      margin-left: ${marginLeft}px;
    `
    return(
       <CloseBtn variant="text" aria-label="Close the dialog" onClick={onClick}>

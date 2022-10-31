@@ -56,7 +56,9 @@ const EditNote = () => {
             <CloseButton onClick={CloseWindow} />
           </Flex>
       </ModalHeader>
-      <RefModalBody>
+      <RefModalBody  style={{
+          padding: "20px 24px"
+       }}>
         <NoteInput type="text" />
          <NoteHint>
            <PencilReferralIcon width="28px" height="28px" color="black" stroke="black" />

@@ -23,7 +23,9 @@ import {RefModalWindow,
         CloseButton, 
         RefModalHeading, 
         RefModalBody,
-        StyledButton } from './common'
+        StyledButton,
+        NoteInput,
+        NoteHint } from './common'
 
 const EditNote = () => {
 
@@ -33,20 +35,6 @@ const EditNote = () => {
     const CloseWindow = () => {
       dispatch(selectWindow("none"))
     }
-
-    const NoteInput = styled.input`
-        width: 100%;
-        height: 40px;
-        border: none;
-        background: #352F4433; 
-    `
-
-    const NoteHint = styled.div`
-       position: absolute;
-       display: flex;
-       margin-top: -34px;
-       margin-left: 4px;
-    `
 
     return (
        <RefModalWindow className={popupActive ? "active" : ""}>
@@ -59,7 +47,7 @@ const EditNote = () => {
       <RefModalBody  style={{
           padding: "20px 24px"
        }}>
-        <NoteInput type="text" />
+         <NoteInput type="text" />
          <NoteHint>
            <PencilReferralIcon width="28px" height="28px" color="black" stroke="black" />
            <Text ml="4px" mt="4px" fontWeight="600" fontSize="14px">Note</Text>

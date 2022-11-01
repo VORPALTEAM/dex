@@ -43,6 +43,21 @@ export const RefStyledCard = styled(Card)`
    }
 `
 
+export const NoteInput = styled.input`
+   width: 100%;
+   height: 40px;
+   border: none;
+   background: #352F4433; 
+   border-radius: 6px;
+`
+
+export const NoteHint = styled.div`
+   position: absolute;
+   display: flex;
+   margin-top: -34px;
+   margin-left: 4px;
+`
+
 export const CloseButton = ({ onClick, marginLeft = 266 }) => {
    const CloseBtn = styled(IconButton)`
       position: absolute;
@@ -83,7 +98,7 @@ export const StyledButton = ({
       color: #FFFFFF;
       font-size: 18px;
       border-radius: 6px;
-      text-transform: capitalize;
+      text-transform: none;
       opacity: ${disabledStyle ? '0.3': '1'};
    `
    return(

@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux'
 import styled, { keyframes } from 'styled-components'
 import { Card, 
          Flex, 
-         CloseIcon, 
+         Button, 
          Box, 
          Heading, 
          Text, 
@@ -17,46 +17,47 @@ import { useTranslation } from 'contexts/Localization'
 import BorderedHeading from 'components/HeadingBorder'
 import { GoldPercentText } from '../StyledElms'
 import { selectWindow } from '../../state/modalReducer'
+import {RefModalWindow, 
+  RefStyledCard, 
+  CloseButton, 
+  RefModalHeading, 
+  RefModalBody,
+  StyledButton,
+  NoteInput,
+  NoteHint } from './common'
 
 const WithdrawHistory = () => {
 
-    const [popupActive, useActive] = useState(1)
-    const dispatch = useDispatch()
 
-    const CloseWindow = () => {
-      dispatch(selectWindow("none"))
-    }
-    const StyledCard = styled(Card)`
-    position: fixed;
-    top: 300px;
-    left: 300px;
-    width: 300px;
-    min-height: 300px;
-    z-index: 199;
-    display: none;
+  const dispatch = useDispatch()
 
-    &.active {
-       display: block
-    }
-    `
+  const CloseWindow = () => {
+    dispatch(selectWindow("none"))
+  }
 
-    return (
-       <StyledCard className={popupActive ? "active" : ""}>
-        <ModalHeader background="linear-gradient(139.73deg, #E5FDFF 0%, #F3EFFF 100%)">
-          <Flex alignItems="center" style={{ flex: 1 }}>
-            <Box>
-              <Heading scale="lg" mb="8px">
-                 Withdraw History
-              </Heading>
-            </Box>
-            <IconButton variant="text" aria-label="Close the dialog" onClick={CloseWindow}>
-              <CloseIcon color="text" width="24px" />
-            </IconButton>
-          </Flex>
-      </ModalHeader>
-        <BorderedHeading />
-      </StyledCard>
-      )
+  const WithdrHistoryEmpty = styled.div`
+     width: 100%;
+     padding: 20px 24px;
+     min-height: 200px;  
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+  `
+
+  return (
+     <RefModalWindow className="active">
+      <ModalHeader background="transparent">
+        <Flex alignItems="center" style={{ flex: 1 }}>
+          <RefModalHeading title="Withdraw" />
+          <CloseButton onClick={CloseWindow} />
+        </Flex>
+    </ModalHeader>
+    <WithdrHistoryEmpty>
+       No data
+    </WithdrHistoryEmpty>
+    </RefModalWindow>
+    )
 }
 
 export default WithdrawHistory;

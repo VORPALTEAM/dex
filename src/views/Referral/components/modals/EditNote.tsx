@@ -29,7 +29,6 @@ import {RefModalWindow,
 
 const EditNote = () => {
 
-    const [popupActive, useActive] = useState(1)
     const dispatch = useDispatch()
 
     const CloseWindow = () => {
@@ -37,7 +36,7 @@ const EditNote = () => {
     }
 
     return (
-       <RefModalWindow className={popupActive ? "active" : ""}>
+       <RefModalWindow className="active">
         <ModalHeader background="transparent">
           <Flex alignItems="center" style={{ flex: 1 }}>
             <RefModalHeading title="EDIT NOTE" />

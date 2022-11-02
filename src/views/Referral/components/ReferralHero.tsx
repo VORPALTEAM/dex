@@ -5,10 +5,11 @@ import BorderedHeading from 'components/HeadingBorder'
 import { useTranslation } from 'contexts/Localization'
 import PersonalLinkBlock from './PersonalLinkBlock'
 
-const ReferralHero = () => {
+const ReferralHero = ({ isLogin = true }) => {
   const { t } = useTranslation()
 
   const descriptionUrl = "/"
+  const noLoginUrl = "/"
   const Description = styled(Text)`
     color: #FFFFFF;
     font-size: 21px;
@@ -20,7 +21,7 @@ const ReferralHero = () => {
   `
 
   const LinkText = styled.p`
-     width: 103px;
+     width: ${isLogin ? 103 : 150}px;
   `
 
   return (
@@ -38,12 +39,20 @@ const ReferralHero = () => {
        </Heading>
        <BorderedHeading />
          <Description mb="21px" width="556px">Earn up to <b className="yellow">20%</b> from friends swap commission on Biswap and <b className="yellow">5%</b> from their earnings on Farms and Launch pools.</Description>
-         <a href={descriptionUrl}><Text color="primary" mb="21px" fontFamily="Roboto" fontSize="21px" fontWeight="700" display="flex"><LinkText>Read more</LinkText><SubtractIcon ml="9px" mt="4px" /></Text></a>
+         {isLogin ? 
+         <a href={descriptionUrl}>
+            <Text color="primary" mb="21px" fontFamily="Roboto" fontSize="21px" fontWeight="700" display="flex">
+            <LinkText>Read more</LinkText><SubtractIcon ml="9px" mt="4px" /></Text>
+         </a> : 
+         <a href={noLoginUrl}>
+            <Text color="primary" mb="21px" fontFamily="Roboto" fontSize="21px" fontWeight="700" display="flex">
+            <LinkText>Invite friends</LinkText></Text>
+         </a>}
        <BorderedHeading />
       </Flex>
-      <Flex>
+      {isLogin ? <Flex>
         <PersonalLinkBlock />
-      </Flex>
+      </Flex> : null}
     </Flex>
   )
 }

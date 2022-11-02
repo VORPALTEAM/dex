@@ -1,6 +1,14 @@
 import React from 'react'
 import { AutoRenewIcon, Flex, Box, Heading, Text, AskIcon, SearchIcon } from 'vorpaltesttoolkit'
 import styled, { keyframes } from 'styled-components'
+import Page from 'components/Layout/Page'
+
+export const Boards = styled(Page)`
+  margin: 0 auto;
+  width: calc(100% - 64px);
+  max-width: 1600px;
+  min-height: 100px;
+`
 
 export const Board = styled(Box)`
   width: 100%;
@@ -36,6 +44,10 @@ export const CustomSearch = styled.input`
     margin-left: 10px;
   }
 `   
+export const Room = styled.div`
+  background: #000117;
+  min-height: 400px;
+`
 
 export const HeadingSection = ({ title, subTitle }) => {
   return(

@@ -8,6 +8,7 @@ import HomeSection from './components/HomeSection'
 import SwapSection from './components/SwapSection'
 import LinkSection from './components/LinkSection'
 import AboutSection from './components/AboutSection'
+import { Room } from './components/OfficeToolkit'
 // console.log(document.location)
 
 const tabs = [{
@@ -29,10 +30,7 @@ const tabs = [{
   }]
 
 const Office = () => {
-  const Room = styled.div`
-    background: #000117;
-    min-height: 400px;
-  ` 
+
   const urlParams = new URLSearchParams(window.location.search);
   const activeTab = urlParams.get('tab') || "home";
 

@@ -4,7 +4,7 @@ import styled, { keyframes } from 'styled-components'
 import Page from 'components/Layout/Page'
 import orderBy from 'lodash/orderBy'
 import { AscBlock } from '../../components/StyledElms'
-import { Board, HeadingSection } from './OfficeToolkit'
+import { Boards, Board, HeadingSection } from './OfficeToolkit'
 import FaqSection from './faq'
 
 // console.log(document.location)
@@ -17,13 +17,6 @@ const HomeSection = () => {
     background: linear-gradient(90deg, #614385 0%, #516395 100%);
     border-radius: 20px;
   ` 
-  const Boards = styled(Page)`
-    margin: 0 auto;
-    width: calc(100% - 64px);
-    max-width: 1600px;
-    min-height: 100px;
-  ` 
-
   const DashboardHeading = styled.div`
     width: 100%;
     padding: 20px;
@@ -38,7 +31,6 @@ const HomeSection = () => {
      border-radius: 20px;
      display: flex;
      background: #2A2338;
-     ;
     ` 
     const CounterSection = styled(Flex)`
        width: 50%;

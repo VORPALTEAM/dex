@@ -10,7 +10,6 @@ import store from './state'
 import ModalRefContainer from './components/modals'
 import PromoPage from './promo'
 
-// console.log(document.location)
 
 const Referral = () => {
   const { account } = useActiveWeb3React()
@@ -21,8 +20,6 @@ const Referral = () => {
     max-width: 1600px;
     min-height: 100px;
   ` 
-
-  console.log(account)
   
   return (
     <>

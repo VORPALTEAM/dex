@@ -7,6 +7,8 @@ import ReferralHero from './components/ReferralHero'
 import FaqSection from './office/components/faq'
 import { Boards, Room, TabHeadingSection } from './office/components/OfficeToolkit'
 import { AscBlock } from './components/StyledElms'
+import PromoItem from './components/promo/item'
+import { steps } from './components/promo/data'
 
 const PromoPage = () => {
 
@@ -20,6 +22,12 @@ const PromoPage = () => {
        align-items: center;
        justify-content: center;
     ` 
+
+    const PromoList = styled.div`
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+    `
     const InviterBlock = styled.div`
        width: 325px;
        height: 40px;
@@ -29,6 +37,16 @@ const PromoPage = () => {
        border-radius: 29px;
        display: flex;
     ` 
+
+    const promoSteps = []
+
+    steps.forEach((step) => {
+      promoSteps.push(
+       <PromoItem 
+        key={step.id * 4}
+        item={step} 
+       />)
+    })
     
     return (
       <>
@@ -51,6 +69,9 @@ const PromoPage = () => {
                 </AscBlock>
               </InviterBlock>
             </TabHeadingSection>
+            <PromoList>
+              {promoSteps}
+            </PromoList>
             <FaqSection />
           </Boards>
         </Room>

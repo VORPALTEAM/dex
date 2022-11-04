@@ -3,6 +3,13 @@ import { AutoRenewIcon, Flex, Box, Heading, Text, AskIcon, SearchIcon } from 'vo
 import styled, { keyframes } from 'styled-components'
 import Page from 'components/Layout/Page'
 
+export const TabHeadingSection = styled.div`
+  width: 100%;
+  min-height: 60px;
+  display: flex;
+  justify-content: space-between;
+`
+
 export const Boards = styled(Page)`
   margin: 0 auto;
   width: calc(100% - 64px);

@@ -72,6 +72,9 @@ const PromoPage = () => {
             <PromoList>
               {promoSteps}
             </PromoList>
+            <TabHeadingSection>
+              <Text color="#FFFFFF" fontWeight="500" fontSize="32px">FAQ</Text>
+            </TabHeadingSection>
             <FaqSection />
           </Boards>
         </Room>

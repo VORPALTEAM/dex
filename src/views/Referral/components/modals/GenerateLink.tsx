@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import { useDispatch } from 'react-redux'
 import styled, { keyframes } from 'styled-components'
 import { Card, 
@@ -22,12 +22,15 @@ import {RefModalWindow,
   RefModalHeading, 
   RefModalBody,
   StyledButton,
+  EnabledButton,
   NoteInput,
   NoteHint } from './common'
 
 const GenerateLink = () => {
 
     const [boxChecked, checkBox] = useState(true)
+    const [linkValue, setLinkValue] = useState(0)
+    const [enabledClicks, setClicks] = useState(false)
     const dispatch = useDispatch()
 
     const CloseWindow = () => {
@@ -36,6 +39,23 @@ const GenerateLink = () => {
 
     const CheckAsDefault = () => {
       checkBox(!boxChecked)
+    }
+
+    useEffect(() => {
+      setClicks(true)
+    }, [])
+
+    const BtnClickListener = (event) => {
+      if (enabledClicks) {
+
+        if (event.target) {
+           const val = event.target.innerHTML.replace("%", "")
+           const numVal = parseInt(val)
+           setLinkValue(numVal)
+        }  else {
+          console.log("Wrong event!")
+        }
+      } 
     }
 
     const PercentSection = styled.div`
@@ -99,7 +119,7 @@ const GenerateLink = () => {
                   marginLeft: 4
                 }} />
               </Text>
-              <Text fontSize="64px" fontWeight="400" color="#2A2338">100%</Text>
+              <Text fontSize="64px" fontWeight="400" color="#2A2338">{100 - linkValue}%</Text>
             </div>
             <div className="percent--right">
               <Text fontSize="12px" fontWeight="300">
@@ -108,17 +128,17 @@ const GenerateLink = () => {
                   marginLeft: 4
                 }} />
               </Text>
-              <Text fontSize="64px" fontWeight="400" color="#2A2338">0%</Text>
+              <Text fontSize="64px" fontWeight="400" color="#2A2338">{linkValue}%</Text>
             </div>
          </PercentSection>
          <ValueSection>
             <Text>Swap <b>10%</b></Text>
          </ValueSection>
          <PercentBtns>
-            <StyledButton width="22%" disabledStyle={0} onClick={CloseWindow} btnText="0%" />
-            <StyledButton width="22%" disabledStyle={0} onClick={CloseWindow} btnText="10%" />
-            <StyledButton width="22%" disabledStyle={0} onClick={CloseWindow} btnText="25%" />
-            <StyledButton width="22%" disabledStyle={0} onClick={CloseWindow} btnText="50%" />
+            <EnabledButton key="linkvalbtn_1" width="22%" onClick={BtnClickListener} btnText="0%" >0%</EnabledButton>
+            <EnabledButton key="linkvalbtn_2" width="22%" onClick={BtnClickListener} btnText="10%" >10%</EnabledButton>
+            <EnabledButton key="linkvalbtn_3" width="22%" onClick={BtnClickListener} btnText="25%" >25%</EnabledButton>
+            <EnabledButton key="linkvalbtn_4" width="22%" onClick={BtnClickListener} btnText="50%" >50%</EnabledButton>
          </PercentBtns>
          <NoteInput type="text" style={{
             marginTop: 20

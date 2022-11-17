@@ -106,6 +106,15 @@ export const StyledButton = ({
    )
 }
 
+export const EnabledButton = styled(Button)`
+   height: 40px;
+   background: #352F44;
+   color: #FFFFFF;
+   font-size: 18px;
+   border-radius: 6px;
+   text-transform: none;
+   opacity: 1;
+`
 export const RefModalBody = styled.div`
     padding: 24px;
 `

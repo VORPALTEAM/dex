@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import { useDispatch } from 'react-redux'
 import styled, { keyframes } from 'styled-components'
+import copy from 'copy-to-clipboard';
 import { ShareReferralIcon, 
          CopyClipboardIcon } from 'vorpaltesttoolkit'
 
@@ -8,6 +9,10 @@ const PersonalLink = ({ linkId }) => {
 
   const referralLink = `https://vorpal.finance/?ref=${linkId}`
   const imagineReferralLink = `${referralLink.substring(0, 48)}...`
+
+  const CopyLink = () => {
+    copy(referralLink)
+  }
 
 
   const LinkBlock  = styled.div`
@@ -34,13 +39,13 @@ const PersonalLink = ({ linkId }) => {
   `
   const CopyIcon = styled(CopyClipboardIcon)`
      position: absolute;
-     right: 38px;
+     margin-left: 478px;
   `
 
   return (
     <LinkBlock>
        <RefInput type="text" title={referralLink} value={imagineReferralLink} />
-       <CopyIcon width="29px" height="29px" />
+       <CopyIcon width="29px" height="29px" onClick={CopyLink} />
        <ShareBlock>
           <ShareReferralIcon width="29px" height="29px" mt="6px" ml="4px" />
        </ShareBlock>

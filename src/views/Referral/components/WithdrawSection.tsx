@@ -49,6 +49,7 @@ const WithdrawSection = () => {
         flexDirection={['column-reverse', null, null, 'row']}
         width="100%"
         justifyContent="flex-end"
+        mt="40px"
         id="referral-hero">
             <WithdrawWindow>
                 <Flex mt="20px" ml="20px">

@@ -14,6 +14,7 @@ import { Card,
 import { useTranslation } from 'contexts/Localization'
 import { GoldPercentText } from './StyledElms'
 import { selectWindow } from '../state/modalReducer'
+import PersonalLink from './PersonalLink'
 
 const PersonalLinkBlock = () => {
   const { t } = useTranslation()
@@ -31,8 +32,11 @@ const PersonalLinkBlock = () => {
     setActive(true)
   }
 
-  
-  const referralLink = 'vorpal.finance/?ref=4ded6d55a4455f89c0fb...'
+  const referralIds = [
+    "6373ba0e82c6de36677c9b19",
+    "6373bfc082c6de36677c9b20",
+    "6374c1ee1309442dd4e37779"
+  ]
 
   const ReferralBox = styled(Box)`
     width: 100%;
@@ -57,33 +61,6 @@ const PersonalLinkBlock = () => {
   const RefAddLink = styled.div`
     display: flex;
     margin-top: 10px;
-  `
-
-  const LinkBlock  = styled.div`
-    display: flex;
-    padding: 10px 0 0;
-  `
-
-  const ShareBlock = styled.div`
-    width: 40px;
-    height: 40px;
-    border: 1px solid #FFF;
-    border-radius: 5px;
-  `
-  const RefInput = styled.input`
-     width: calc(100% - 50px);
-     min-width: 300px;
-     background: transparent;
-     border: 1px solid #FFF;
-     border-radius: 5px;
-     color: #F1F6F9;
-     font-size: 16px;
-     padding: 10px;
-     margin-right: 10px;
-  `
-  const CopyIcon = styled(CopyClipboardIcon)`
-     position: absolute;
-     right: 75px;
   `
 
   const YoullGetBlock  = styled.div`
@@ -150,13 +127,9 @@ const PersonalLinkBlock = () => {
                   Create new link</Text><PlusIcon width="26px" height="26px" mb="10px" />
             </RefAddLink>
           </HeadingRow>
-          <LinkBlock>
-            <RefInput type="text" value={referralLink} />
-            <CopyIcon width="29px" height="29px" />
-            <ShareBlock>
-              <ShareReferralIcon width="29px" height="29px" mt="6px" ml="4px" />
-            </ShareBlock>
-          </LinkBlock>
+          {referralIds.map((ref) => {
+             return <PersonalLink linkId={ref} />
+          })}
           <YoullGetBlock>
               <YouGetSection>
                 <GetBlockHeadText>You will get</GetBlockHeadText>

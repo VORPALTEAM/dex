@@ -14,6 +14,13 @@ import PromoPage from './promo'
 const Referral = () => {
   const { account } = useActiveWeb3React()
 
+
+  try {
+    console.log(document.location.hostname)
+  } catch (e) {
+    console.log(e)
+  }
+
   const OfficePage = styled(Page)`
     margin: 0 auto;
     width: calc(100% - 64px);
@@ -26,7 +33,7 @@ const Referral = () => {
       {!account ? <PromoPage  /> : 
       <><OfficePage>
         <ModalProvider store={store}>
-          <ReferralHero />
+          <ReferralHero account={account} />
           <WithdrawSection />
           <ModalRefContainer />
         </ModalProvider>

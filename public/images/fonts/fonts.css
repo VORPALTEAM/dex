@@ -74,6 +74,66 @@
   @font-face {
     font-family: "RoundsBlack";
     src: local("RoundsBlack"),
-    url(/images/fonts/ttf/Rounds-Black.ttf) format("truetype");
+    url(/images/fonts/ttf/Rounds-Black.woff2) format('woff2');
     font-weight: bold;
 }
+
+@font-face {
+  font-family: "RobotoBlack";
+  src: local("RobotoBlack"),
+  url(/images/fonts/Robotoblack.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: "RobotoBold";
+  src: url(/images/fonts/Robotobold.woff2) format('woff2');
+  font-weight: bold;
+  }
+
+  @font-face {
+  font-family: "RobotoItalic";
+  src: url(/images/fonts/Robotoitalic.woff2) format('woff2');
+  font-style: italic;
+  }
+
+  @font-face {
+  font-family: "RobotoBlackItalic";
+  src: url(/fonts/Robotoblackitalic.woff2) format('woff2');
+  font-style: italic;
+  }
+
+  @font-face {
+  font-family: "Roboto";
+  src: url(/images/fonts/Robotolight.woff2) format('woff2');
+  }
+  @font-face {
+  font-family: "RobotoLightItalic";
+  src: url(/images/fonts/Robotolightitalic.woff2) format('woff2');
+  font-style: italic;
+  }
+  @font-face {
+  font-family: "RobotoMedium";
+  src: url(/images/fonts/Robotomedium.woff2) format('woff2');
+  }
+
+  @font-face {
+  font-family: "RobotoMediumItalic";
+  src: url(/images/fonts/Robotomediumitalic.woff2) format('woff2');
+  font-style: italic;
+  }
+
+  @font-face {
+  font-family: "RobotoRegular";
+  src: url(/images/fonts/Robotoregular.woff2) format('woff2');
+  }
+
+  @font-face {
+  font-family: "RobotoThin";
+  src: url(/images/fonts/Robotothin.woff2) format('woff2');
+  }
+
+  @font-face {
+  font-family: "RobotoThinItalic";
+  src: url(/images/fonts/Robotothinitalic.woff2) format('woff2');
+  font-style: italic;
+  }

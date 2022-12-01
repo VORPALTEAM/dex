@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect, useMemo} from 'react'
 import { useDispatch } from 'react-redux'
 import styled, { keyframes } from 'styled-components'
 import { Card, 
@@ -7,19 +7,22 @@ import { Card,
          Heading, 
          Text, 
          PlusIcon, 
-         ShareReferralIcon, 
-         CopyClipboardIcon,
-         ModalHeader, 
          PencilReferralIcon } from 'vorpaltesttoolkit'
 import { useTranslation } from 'contexts/Localization'
 import { GoldPercentText } from './StyledElms'
 import { selectWindow } from '../state/modalReducer'
 import PersonalLink from './PersonalLink'
+import * as Hooks from '../hooks'
 
-const PersonalLinkBlock = () => {
+const defaultCreatorPercent = 90
+const defaultReferralPercent = 10
+
+const PersonalLinkBlock = ({ account }) => {
   const { t } = useTranslation()
 
-  const [popupActive, setActive] = useState(false)
+  const [isRequested, setActive] = useState(false)
+  const [clientAccount, setClientAccount] = useState(account)
+  const [referralIds, setReferralIds] = useState([])
   const dispatch = useDispatch()
 
   const LinkCreationStart = () => {
@@ -32,11 +35,45 @@ const PersonalLinkBlock = () => {
     setActive(true)
   }
 
-  const referralIds = [
-    "6373ba0e82c6de36677c9b19",
-    "6373bfc082c6de36677c9b20",
-    "6374c1ee1309442dd4e37779"
-  ]
+  useEffect(() => {
+    function handleStatusChange() {
+      if (!isRequested) {
+
+        Hooks.CheckUser (clientAccount).then((res) => {
+          if (res) {
+            Hooks.RoughRequestLinks(clientAccount).then((r) => {       
+              setReferralIds(r);
+              setActive(true)
+           })
+          } else {
+            Hooks.CreateUser(clientAccount).then(() => {       
+              Hooks.CreateLink(clientAccount, defaultCreatorPercent, defaultReferralPercent).then(
+                (response) => {
+                  console.log(response)
+                  Hooks.RoughRequestLinks(clientAccount).then((r) => {       
+                    setReferralIds(r);
+                    setActive(true)
+                 })
+                }
+              )
+           })
+          }
+        })
+        /* CheckUser(clientAccount).then((res) => {
+          console.log(res)
+        }) */
+      }
+    }
+    handleStatusChange()
+  })
+
+  /* RequestLinks(account).then((res) => {
+    setReferralIds(res)
+  }) */
+
+  /* RoughRequestLinks(account).then((res) => {
+    setReferralIds(res)
+  }) */
 
   const ReferralBox = styled(Box)`
     width: 100%;
@@ -137,7 +174,7 @@ const PersonalLinkBlock = () => {
                   display: 'flex',
                   justifyContent: 'space-between',
                 }}>
-                  <GoldPercentText>100 %</GoldPercentText>
+                  <GoldPercentText>{defaultCreatorPercent}%</GoldPercentText>
                   <MoreSymbolSection>
                     <DividerBlock />
                       <svg width="24" height="30" viewBox="0 0 24 30" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -151,7 +188,7 @@ const PersonalLinkBlock = () => {
               </YouGetSection>
               <FriendsGetSection>
                 <GetBlockHeadText>Friends will get</GetBlockHeadText>
-                <GoldPercentText>0 %</GoldPercentText>
+                <GoldPercentText>{defaultReferralPercent}%</GoldPercentText>
               </FriendsGetSection>
           </YoullGetBlock>
           <NoteBlock onClick={NoteCreationStart}>

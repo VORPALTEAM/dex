@@ -5,7 +5,7 @@ import BorderedHeading from 'components/HeadingBorder'
 import { useTranslation } from 'contexts/Localization'
 import PersonalLinkBlock from './PersonalLinkBlock'
 
-const ReferralHero = ({ isLogin = true }) => {
+const ReferralHero = ({ isLogin = true, account = "" }) => {
   const { t } = useTranslation()
 
   const descriptionUrl = "/"
@@ -51,7 +51,7 @@ const ReferralHero = ({ isLogin = true }) => {
        <BorderedHeading />
       </Flex>
       {isLogin ? <Flex>
-        <PersonalLinkBlock />
+        <PersonalLinkBlock account={account} />
       </Flex> : null}
     </Flex>
   )

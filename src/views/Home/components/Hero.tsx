@@ -140,7 +140,7 @@ const Hero = () => {
             <CompositeImage {...starsImage} />
   </StarsWrapper> */}
         </Flex>
-        <EnvImg src="/images/home/lunar-galaxy/galaxy.png" alt="galaxy" style={{
+        <EnvImg className="rotating" src="/images/home/lunar-galaxy/galaxy.png" alt="galaxy" style={{
              width: '73%',
              top: -67,
              left: 450

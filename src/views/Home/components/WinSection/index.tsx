@@ -94,21 +94,6 @@ const imagesGalaxy : CompositeImageProps = {
   ],
 }
 
-const FloatingPancakesWrapper = styled(Container)`
-  overflow: hidden;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  visibility: hidden;
-
-  ${({ theme }) => theme.mediaQueries.md} {
-    visibility: visible;
-  }
-`
-
 const TopLeftImgWrapper = styled(Flex)`
   position: absolute;
   left: -330px;

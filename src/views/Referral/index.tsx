@@ -27,7 +27,7 @@ const Referral = () => {
     max-width: 1600px;
     min-height: 100px;
   ` 
-  
+    
   return (
     <>
       {!account ? <PromoPage  /> : 

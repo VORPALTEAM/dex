@@ -128,12 +128,37 @@
   }
 
   @font-face {
-  font-family: "RobotoThin";
-  src: url(/images/fonts/Robotothin.woff2) format('woff2');
+    font-family: "RobotoThin";
+    src: url(/images/fonts/Robotothin.woff2) format('woff2');
   }
 
   @font-face {
-  font-family: "RobotoThinItalic";
-  src: url(/images/fonts/Robotothinitalic.woff2) format('woff2');
-  font-style: italic;
+    font-family: "RobotoThinItalic";
+    src: url(/images/fonts/Robotothinitalic.woff2) format('woff2');
+    font-style: italic;
+  }
+
+  @keyframes rounding {
+    from {
+      transform: rotate(359deg);
+    }
+    25% {
+      transform: rotate(270deg);
+    }
+    50% {
+      transform: rotate(180deg);
+    }
+    75% {
+      transform: rotate(90deg);
+    }
+    to {
+      transform: rotate(1deg);
+    }
+  }
+
+  .rotating {
+    animation: rounding;
+    animation-duration: 240s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
   }

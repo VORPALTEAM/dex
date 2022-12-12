@@ -12,7 +12,7 @@ import CompositeImage, { getSrcSet, CompositeImageProps } from '../CompositeImag
 import EnvImg from '../EnvImg'
 
 const TransparentFrame = styled.div<{ isDark: boolean }>`
-  background-image: url('/images/home/lottery-balls/Galaxy_ls.png');
+  /* background-image: url('/images/home/lottery-balls/Galaxy_ls.png'); */
   background-position: center center;
   backgrount-repeat: no-repeat;
   padding: 16px;
@@ -22,39 +22,6 @@ const TransparentFrame = styled.div<{ isDark: boolean }>`
 
   ${({ theme }) => theme.mediaQueries.md} {
     padding: 40px;
-  }
-`
-
-const BgWrapper = styled.div`
-  z-index: -1;
-  overflow: hidden;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0px;
-  left: 0px;
-`
-
-const BottomLeftImgWrapper = styled(Flex)`
-  position: absolute;
-  left: 0;
-  bottom: -64px;
-  max-width: 192px;
-
-  ${({ theme }) => theme.mediaQueries.md} {
-    max-width: 100%;
-  }
-`
-
-const TopRightImgWrapper = styled(Flex)`
-  position: absolute;
-  right: 0;
-  top: -64px;
-
-  max-width: 192px;
-
-  ${({ theme }) => theme.mediaQueries.md} {
-    max-width: 100%;
   }
 `
 
@@ -105,7 +72,7 @@ const BottomRightImgWrapper = styled(Flex)`
   top: 180px;
   right: -260px;
 `
-
+ 
 const WinSection = () => {
   const { t } = useTranslation()
   const { theme } = useTheme()
@@ -113,6 +80,7 @@ const WinSection = () => {
   return (
     <>
       <TransparentFrame isDark={theme.isDark}>
+        <img className="rotating" alt="win galaxy" style={{position: 'absolute'}} src="/images/home/lottery-balls/Galaxy_ls.png" />
         <Flex flexDirection="column" alignItems="center" justifyContent="center">
           <Heading scale="xl" color="primary">{t('Win millions in prizes')}</Heading>
           <Text color="textSubtle">{t('Provably fair, on-chain game.')}</Text>

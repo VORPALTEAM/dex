@@ -5,11 +5,18 @@ import EditNote from './EditNote'
 import GenerateLink from './GenerateLink'
 import WithdrawModal from './Withdraw'
 import WithdrawHistory from './WithdrawHistory'
-import { selectWindow } from '../../state/modalReducer'
+import CopyModal from '../notify/copyModal'
+import { selectWindow, notifyCopy, RootState } from '../../state/modalReducer'
  
 const ModalRefContainer = () => {
 
-    const modalR = useSelector(state => state)
+    const modalR = useSelector((state: RootState) => {
+      return state.modals
+    })
+    const coyNote = useSelector((state: RootState) => {
+      return state.notify
+    })
+
     const dispatch = useDispatch()
 
     const OverlayClose = () => {
@@ -54,6 +61,7 @@ const ModalRefContainer = () => {
     return(
         <>
           {currentWindow(modalR)}
+          {(coyNote === "1") ? <CopyModal /> : null}
           <StyledCardOverlay onClick={OverlayClose} className={modalR && modalR !== "none" ? "active" : ""} />
         </>
     )

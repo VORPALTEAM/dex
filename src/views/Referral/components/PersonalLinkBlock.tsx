@@ -13,6 +13,7 @@ import { GoldPercentText } from './StyledElms'
 import { selectWindow } from '../state/modalReducer'
 import PersonalLink from './PersonalLink'
 import * as Hooks from '../hooks'
+import CopyModal from './notify/copyModal'
 
 const defaultCreatorPercent = 90
 const defaultReferralPercent = 10
@@ -148,6 +149,10 @@ const PersonalLinkBlock = ({ account }) => {
      margin: 10px;
      border-left: 1px solid #FFFFFF;
   ` 
+
+  const TestF = () => {
+    console.log("test")
+  }
 
   return (
     <Flex flexDirection="column" alignItems="center" justifyContent="space-between">

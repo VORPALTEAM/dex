@@ -4,14 +4,18 @@ import styled, { keyframes } from 'styled-components'
 import copy from 'copy-to-clipboard';
 import { ShareReferralIcon, 
          CopyClipboardIcon } from 'vorpaltesttoolkit'
+import CopyModal from './notify/copyModal'
+import { notifyCopy } from '../state/modalReducer'
 
 const PersonalLink = ({ linkId }) => {
 
   const referralLink = `https://vorpal.finance/?ref=${linkId}`
   const imagineReferralLink = `${referralLink.substring(0, 48)}...`
+  const dispatch = useDispatch()
 
   const CopyLink = () => {
     copy(referralLink)
+    dispatch(notifyCopy("1"))
   }
 
 
@@ -25,6 +29,12 @@ const PersonalLink = ({ linkId }) => {
     height: 40px;
     border: 1px solid #FFF;
     border-radius: 5px;
+
+    svg:hover,
+    svg:focus {
+      opacity: 0.3;
+      cursor: pointer;
+    }
   `
   const RefInput = styled.input`
      width: calc(100% - 50px);
@@ -40,6 +50,12 @@ const PersonalLink = ({ linkId }) => {
   const CopyIcon = styled(CopyClipboardIcon)`
      position: absolute;
      margin-left: 478px;
+     cursor: pointer;
+
+     &:hover,
+     &:focus {
+       opacity: 0.3;
+     }
   `
 
   return (

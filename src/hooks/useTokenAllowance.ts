@@ -1,4 +1,4 @@
-import { Token, TokenAmount } from 'pickleswap-sdk2'
+import { Token, TokenAmount } from 'pickleswap-sdk'
 import { useMemo } from 'react'
 
 import { useTokenContract } from './useContract'

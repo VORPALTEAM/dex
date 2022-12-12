@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react'
 import { BigNumber } from '@ethersproject/bignumber'
 import { TransactionResponse } from '@ethersproject/providers'
-import { Currency, currencyEquals, ETHER, TokenAmount, WETH } from 'pickleswap-sdk2'
+import { Currency, currencyEquals, ETHER, TokenAmount, WETH } from 'pickleswap-sdk'
 import { Button, Text, Flex, AddIcon, CardBody, Message, useModal } from 'vorpaltesttoolkit'
 import { RouteComponentProps } from 'react-router-dom'
 import { useIsTransactionUnsupported } from 'hooks/Trades'

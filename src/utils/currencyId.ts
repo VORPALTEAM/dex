@@ -1,4 +1,4 @@
-import { Currency, ETHER, Token } from 'pickleswap-sdk2'
+import { Currency, ETHER, Token } from 'pickleswap-sdk'
 
 export function currencyId(currency: Currency): string {
   if (currency === ETHER) return 'BNB'

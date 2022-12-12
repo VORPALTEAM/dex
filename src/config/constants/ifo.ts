@@ -1,4 +1,4 @@
-import { Token, ChainId } from 'pickleswap-sdk2'
+import { Token, ChainId } from 'pickleswap-sdk'
 // import tokens from './tokens'
 import farms from './farms'
 import { Ifo } from './types'

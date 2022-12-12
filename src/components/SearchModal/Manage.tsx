@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Token } from 'pickleswap-sdk2'
+import { Token } from 'pickleswap-sdk'
 import { ButtonMenu, ButtonMenuItem, ModalBody } from 'vorpaltesttoolkit'
 import styled from 'styled-components'
 import { TokenList } from '@uniswap/token-lists'

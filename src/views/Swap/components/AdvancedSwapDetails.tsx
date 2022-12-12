@@ -1,5 +1,5 @@
 import React from 'react'
-import { Trade, TradeType } from 'pickleswap-sdk2'
+import { Trade, TradeType } from 'pickleswap-sdk'
 import { Text } from 'vorpaltesttoolkit'
 import { Field } from 'state/swap/actions'
 import { useTranslation } from 'contexts/Localization'

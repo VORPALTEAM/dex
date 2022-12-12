@@ -1,4 +1,4 @@
-import { ChainId, JSBI, Percent, Token } from 'pickleswap-sdk2'
+import { ChainId, JSBI, Percent, Token } from 'pickleswap-sdk'
 import { mainnetTokens, testnetTokens } from './tokens'
 
 export const ROUTER_ADDRESS = '0x18f74a09F8303c84490E3B1E8C0cAEfa5B752417'

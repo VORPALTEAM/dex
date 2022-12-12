@@ -1,4 +1,4 @@
-import { Token, Pair, ChainId } from 'pickleswap-sdk2'
+import { Token, Pair, ChainId } from 'pickleswap-sdk'
 import { isAddress } from 'utils'
 
 const getLpAddress = (token1: string | Token, token2: string | Token) => {

@@ -1,4 +1,4 @@
-import { ChainId, Token } from 'pickleswap-sdk2'
+import { ChainId, Token } from 'pickleswap-sdk'
 import { Tags, TokenInfo, TokenList } from '@uniswap/token-lists'
 import { useMemo } from 'react'
 import { useSelector } from 'react-redux'

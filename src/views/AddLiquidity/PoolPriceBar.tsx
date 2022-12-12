@@ -1,4 +1,4 @@
-import { Currency, Percent, Price } from 'pickleswap-sdk2'
+import { Currency, Percent, Price } from 'pickleswap-sdk'
 import React from 'react'
 import { Text } from 'vorpaltesttoolkit'
 import { useTranslation } from 'contexts/Localization'

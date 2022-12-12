@@ -1,5 +1,5 @@
 import React from 'react'
-import { Currency, Token } from 'pickleswap-sdk2'
+import { Currency, Token } from 'pickleswap-sdk'
 import { Button, Text, Modal, useModal, InjectedModalProps, Link } from 'vorpaltesttoolkit'
 import styled from 'styled-components'
 import { AutoRow } from 'components/Layout/Row'

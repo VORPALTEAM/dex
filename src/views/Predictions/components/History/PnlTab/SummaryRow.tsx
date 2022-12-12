@@ -1,5 +1,5 @@
 import React from 'react'
-import { Price } from 'pickleswap-sdk2'
+import { Price } from 'pickleswap-sdk'
 import { Flex, Text } from 'vorpaltesttoolkit'
 import { multiplyPriceByAmount } from 'utils/prices'
 import { useTranslation } from 'contexts/Localization'

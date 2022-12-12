@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react'
-import { Currency, ETHER, JSBI, TokenAmount } from 'pickleswap-sdk2'
+import { Currency, ETHER, JSBI, TokenAmount } from 'pickleswap-sdk'
 import { Button, ChevronDownIcon, Text, AddIcon, useModal } from 'vorpaltesttoolkit'
 import styled from 'styled-components'
 import { useTranslation } from 'contexts/Localization'

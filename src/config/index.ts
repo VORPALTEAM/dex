@@ -1,4 +1,4 @@
-import { ChainId } from 'pickleswap-sdk2'
+import { ChainId } from 'pickleswap-sdk'
 import BigNumber from 'bignumber.js/bignumber'
 import { BIG_TEN } from 'utils/bigNumber'
 

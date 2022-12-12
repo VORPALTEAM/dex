@@ -1,4 +1,4 @@
-import { Currency, ETHER, Token } from 'pickleswap-sdk2'
+import { Currency, ETHER, Token } from 'pickleswap-sdk'
 import { darkColors, BinanceIcon } from 'vorpaltesttoolkit'
 import React, { useMemo } from 'react'
 import styled from 'styled-components'

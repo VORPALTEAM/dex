@@ -1,5 +1,5 @@
 import React from 'react'
-import { Currency, Pair } from 'pickleswap-sdk2'
+import { Currency, Pair } from 'pickleswap-sdk'
 import { Button, ChevronDownIcon, Text, Flex, Box, darkColors, useModal } from 'vorpaltesttoolkit'
 import styled from 'styled-components'
 import { useTranslation } from 'contexts/Localization'

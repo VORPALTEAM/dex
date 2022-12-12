@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from 'react'
-import { Currency, Token } from 'pickleswap-sdk2'
+import { Currency, Token } from 'pickleswap-sdk'
 import {
   ModalContainer,
   ModalHeader,

@@ -1,5 +1,5 @@
 import React, { CSSProperties, MutableRefObject, useCallback, useMemo } from 'react'
-import { Currency, CurrencyAmount, currencyEquals, ETHER, Token } from 'pickleswap-sdk2'
+import { Currency, CurrencyAmount, currencyEquals, ETHER, Token } from 'pickleswap-sdk'
 import { Text } from 'vorpaltesttoolkit'
 import styled from 'styled-components'
 import { FixedSizeList } from 'react-window'

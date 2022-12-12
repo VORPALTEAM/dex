@@ -12,7 +12,7 @@ import {
   WalletFilledIcon,
   Skeleton,
 } from 'vorpaltesttoolkit'
-import { Price } from 'pickleswap-sdk2'
+import { Price } from 'pickleswap-sdk'
 import { useTranslation } from 'contexts/Localization'
 import { multiplyPriceByAmount } from 'utils/prices'
 import styled from 'styled-components'

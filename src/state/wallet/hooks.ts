@@ -1,4 +1,4 @@
-import { Currency, CurrencyAmount, ETHER, JSBI, Token, TokenAmount } from 'pickleswap-sdk2'
+import { Currency, CurrencyAmount, ETHER, JSBI, Token, TokenAmount } from 'pickleswap-sdk'
 import { useMemo } from 'react'
 import { useWeb3React } from '@web3-react/core'
 import ERC20_INTERFACE from 'config/abi/erc20'

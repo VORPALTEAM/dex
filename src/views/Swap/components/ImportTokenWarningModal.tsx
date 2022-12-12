@@ -1,5 +1,5 @@
 import React from 'react'
-import { Token } from 'pickleswap-sdk2'
+import { Token } from 'pickleswap-sdk'
 import { Modal, InjectedModalProps } from 'vorpaltesttoolkit'
 import ImportToken from 'components/SearchModal/ImportToken'
 import { useTranslation } from 'contexts/Localization'

@@ -1,4 +1,4 @@
-import { ChainId } from 'pickleswap-sdk2'
+import { ChainId } from 'pickleswap-sdk'
 import addresses from 'config/constants/contracts'
 import { Address } from 'config/constants/types'
 import { VaultKey } from 'state/types'

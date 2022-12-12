@@ -1,7 +1,7 @@
 import React from 'react'
 import { Flex, Text, Button, Heading, useModal, Skeleton } from 'vorpaltesttoolkit'
 import BigNumber from 'bignumber.js'
-import { Token } from 'pickleswap-sdk2'
+import { Token } from 'pickleswap-sdk'
 import { useTranslation } from 'contexts/Localization'
 import { getFullDisplayBalance, getBalanceNumber, formatNumber } from 'utils/formatBalance'
 import Balance from 'components/Balance'

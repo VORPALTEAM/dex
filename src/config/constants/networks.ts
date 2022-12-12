@@ -1,4 +1,4 @@
-import { ChainId } from 'pickleswap-sdk2'
+import { ChainId } from 'pickleswap-sdk'
 
 const NETWORK_URLS: { [chainId in ChainId]: string } = {
   [ChainId.MAINNET]: 'https://bsc-dataseed1.defibit.io',

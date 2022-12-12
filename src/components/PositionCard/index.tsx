@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { JSBI, Pair, Percent } from 'pickleswap-sdk2'
+import { JSBI, Pair, Percent } from 'pickleswap-sdk'
 import {
   Button,
   Text,

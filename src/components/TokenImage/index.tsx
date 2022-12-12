@@ -6,7 +6,7 @@ import {
   ImageProps,
 } from 'vorpaltesttoolkit'
 import tokens from 'config/constants/tokens'
-import { Token } from 'pickleswap-sdk2'
+import { Token } from 'pickleswap-sdk'
 
 interface TokenPairImageProps extends Omit<UIKitTokenPairImageProps, 'primarySrc' | 'secondarySrc'> {
   primaryToken: Token

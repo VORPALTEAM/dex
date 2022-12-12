@@ -1,5 +1,5 @@
 import React from 'react'
-import { ChainId, Currency, currencyEquals, ETHER, Token } from 'pickleswap-sdk2'
+import { ChainId, Currency, currencyEquals, ETHER, Token } from 'pickleswap-sdk'
 import { Text } from 'vorpaltesttoolkit'
 import styled from 'styled-components'
 import { useTranslation } from 'contexts/Localization'

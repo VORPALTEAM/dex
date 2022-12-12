@@ -1,4 +1,4 @@
-import { Currency } from 'pickleswap-sdk2'
+import { Currency } from 'pickleswap-sdk'
 import React from 'react'
 import styled from 'styled-components'
 import CurrencyLogo from './CurrencyLogo'

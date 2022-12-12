@@ -14,7 +14,7 @@ import {
 import { useTranslation } from 'contexts/Localization'
 import useTheme from 'hooks/useTheme'
 import useToast from 'hooks/useToast'
-import { Token } from 'pickleswap-sdk2'
+import { Token } from 'pickleswap-sdk'
 import { formatNumber } from 'utils/formatBalance'
 import { logError } from 'utils/sentry'
 import useHarvestPool from '../../../hooks/useHarvestPool'

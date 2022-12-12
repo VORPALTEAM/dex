@@ -1,5 +1,5 @@
 import React, { CSSProperties } from 'react'
-import { Token } from 'pickleswap-sdk2'
+import { Token } from 'pickleswap-sdk'
 import { Button, Text, CheckmarkCircleIcon } from 'vorpaltesttoolkit'
 import { AutoRow, RowFixed } from 'components/Layout/Row'
 import { AutoColumn } from 'components/Layout/Column'

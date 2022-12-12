@@ -1,5 +1,5 @@
 import React from 'react'
-import { Price } from 'pickleswap-sdk2'
+import { Price } from 'pickleswap-sdk'
 import { Text, AutoRenewIcon } from 'vorpaltesttoolkit'
 import { StyledBalanceMaxMini } from './styleds'
 

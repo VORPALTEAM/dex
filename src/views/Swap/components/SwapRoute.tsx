@@ -1,5 +1,5 @@
 import React, { Fragment, memo } from 'react'
-import { Trade } from 'pickleswap-sdk2'
+import { Trade } from 'pickleswap-sdk'
 import { Text, Flex, ChevronRightIcon } from 'vorpaltesttoolkit'
 import { unwrappedToken } from 'utils/wrappedCurrency'
 

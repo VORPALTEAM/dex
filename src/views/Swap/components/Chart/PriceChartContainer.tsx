@@ -1,4 +1,4 @@
-import { Currency } from 'pickleswap-sdk2'
+import { Currency } from 'pickleswap-sdk'
 import useTheme from 'hooks/useTheme'
 import React, { useCallback, useState } from 'react'
 import BnbWbnbNotice from './BnbWbnbNotice'

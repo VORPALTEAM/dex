@@ -1,4 +1,4 @@
-import { ChainId, Token } from 'pickleswap-sdk2'
+import { ChainId, Token } from 'pickleswap-sdk'
 import { serializeToken } from 'state/user/hooks/helpers'
 import { SerializedToken } from './types'
 

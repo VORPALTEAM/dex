@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from 'react'
 import styled from 'styled-components'
-import { Trade, TradeType } from 'pickleswap-sdk2'
+import { Trade, TradeType } from 'pickleswap-sdk'
 import { Button, Text, AutoRenewIcon } from 'vorpaltesttoolkit'
 import { useTranslation } from 'contexts/Localization'
 import { Field } from 'state/swap/actions'

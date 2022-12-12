@@ -1,4 +1,4 @@
-import { Currency, CurrencyAmount, Fraction, Percent } from 'pickleswap-sdk2'
+import { Currency, CurrencyAmount, Fraction, Percent } from 'pickleswap-sdk'
 import React from 'react'
 import styled from 'styled-components'
 import { Button, Text, Flex } from 'vorpaltesttoolkit'

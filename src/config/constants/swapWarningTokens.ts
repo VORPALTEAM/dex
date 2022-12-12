@@ -1,4 +1,4 @@
-import { Token } from 'pickleswap-sdk2'
+import { Token } from 'pickleswap-sdk'
 // import tokens from 'config/constants/tokens'
 
 // const { bondly, safemoon } = tokens

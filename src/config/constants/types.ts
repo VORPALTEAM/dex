@@ -1,5 +1,5 @@
 import BigNumber from 'bignumber.js'
-import { Token } from 'pickleswap-sdk2'
+import { Token } from 'pickleswap-sdk'
 
 export type TranslatableText =
   | string

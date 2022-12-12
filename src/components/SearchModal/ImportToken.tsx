@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Token, Currency } from 'pickleswap-sdk2'
+import { Token, Currency } from 'pickleswap-sdk'
 import { Button, Text, ErrorIcon, Flex, Message, Checkbox, Link, Tag, Grid } from 'vorpaltesttoolkit'
 import { AutoColumn } from 'components/Layout/Column'
 import { useAddUserToken } from 'state/user/hooks'

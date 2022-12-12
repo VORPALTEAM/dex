@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react'
 import styled from 'styled-components'
-import { CurrencyAmount, JSBI, Token, Trade } from 'pickleswap-sdk2'
+import { CurrencyAmount, JSBI, Token, Trade } from 'pickleswap-sdk'
 import {
   Button,
   Text,

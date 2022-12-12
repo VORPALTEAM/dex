@@ -17,7 +17,7 @@
     "prepare": "husky install",
     "tsc": "tsc --noEmit",
     "updateUI": "yarn remove vorpaltesttoolkit && yarn add vorpaltesttoolkit && yarn start",
-    "updateSDK": "yarn remove pickleswap-sdk2 && yarn add pickleswap-sdk2 && yarn start"
+    "updateSDK": "yarn remove pickleswap-sdk && yarn add pickleswap-sdk && yarn start"
   },
   "browserslist": {
     "production": [
@@ -70,7 +70,6 @@
     "multicodec": "^2.0.0",
     "multihashes": "^3.0.1",
     "numeral": "^2.0.6",
-    "pickleswap-sdk2": "^2.5.6",
     "pickleswap-uikit": "^0.70.0",
     "qs": "^6.9.4",
     "react": "^17.0.1",
@@ -93,7 +92,8 @@
     "styled-components": "^5.3.0",
     "swiper": "^6.8.4",
     "typescript": "^4.3.2",
-    "vorpaltesttoolkit": "^0.71.11"
+    "vorpaltesttoolkit": "^0.71.11",
+    "pickleswap-sdk": "^2.4.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^13.1.0",

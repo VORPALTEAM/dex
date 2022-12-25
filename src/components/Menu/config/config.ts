@@ -55,13 +55,13 @@ const config: (t: ContextApi['t']) => ConfigMenuItemsType[] = (t) => [
   //     },
   //   ],
   // },
-  {
+  /* {
     label: t('Soon'),
     href: '/soon',
     icon: 'Trophy',
     hideSubNav: false,
     items: [],
-  },
+  }, */
   {
     label: t('Referral'),
     href: '/referral',
@@ -70,9 +70,17 @@ const config: (t: ContextApi['t']) => ConfigMenuItemsType[] = (t) => [
     items: [],
   },
   {
-    label: t('Sale'),
-    href: '/sale',
+    label: t('Starmap'),
+    href: '/pppp',
     icon: 'Trophy',
+    hideSubNav: false,
+    items: [],
+  },
+  {
+    label: t('Sale'),
+    href: 'https://sale.vorpal.finance/',
+    icon: 'Green',
+    template: 'green',
     hideSubNav: false,
     items: [],
   },
@@ -97,41 +105,22 @@ const config: (t: ContextApi['t']) => ConfigMenuItemsType[] = (t) => [
   // },
   {
     label: '...',
-    href: '/info',
+    href: null,
     icon: 'More',
     hideSubNav: true,
     items: [
       {
-        label: t('Info'),
-        href: '/info',
-      },
-      {
-        label: t('IFO'),
-        href: '/ifo',
-      },
-      {
-        label: t('Voting'),
-        href: '/voting',
-      },
-      {
-        type: DropdownMenuItemType.DIVIDER,
-      },
-      {
-        label: t('Leaderboard'),
-        href: '/teams',
-      },
-      {
-        type: DropdownMenuItemType.DIVIDER,
+        label: t('Light paper'),
+        href: '/404',
+       // type: DropdownMenuItemType.EXTERNAL_LINK,
       },
       {
         label: t('Blog'),
-        href: '',
-        type: DropdownMenuItemType.EXTERNAL_LINK,
+        href: '/404'
       },
       {
         label: t('Docs'),
-        href: '',
-        type: DropdownMenuItemType.EXTERNAL_LINK,
+        href: '/404'
       },
     ],
   },

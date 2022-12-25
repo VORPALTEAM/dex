@@ -25,8 +25,7 @@ export const SpecialReducer = (state = initialState, action = defaultAction) => 
 }
 
 export const NotifyReducer = (state = notifyInitialState, action = notifyAction) => {
-  console.log(state)
-  console.log(action)
+
   const newState = action ? ((action.type === "notify" && action.payload) ? 
   action.payload : notifyInitialState) : notifyInitialState
   return newState

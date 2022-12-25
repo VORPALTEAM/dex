@@ -17,6 +17,7 @@ import user, { initialState as userInitialState } from './user/reducer'
 import transactions, { initialState as transactionsInitialState } from './transactions/reducer'
 import swap from './swap/reducer'
 import mint from './mint/reducer'
+import ReferralReducer from './referral'
 import lists, { initialState as listsInitialState } from './lists/reducer'
 import burn from './burn/reducer'
 import multicall from './multicall/reducer'
@@ -47,7 +48,7 @@ const store = configureStore({
     lottery: lotteryReducer,
     info: infoReducer,
     nftMarket: nftMarketReducer,
-
+    referral: ReferralReducer,
     // Exchange
     user,
     transactions,

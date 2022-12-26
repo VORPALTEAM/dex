@@ -117,7 +117,7 @@ const Hero = () => {
            <BorderedHeading />    
           <Flex>
             {!account && <ConnectWalletButton mr="42px" />}
-            <Link to="/swap">
+            <Link to="https://sale.vorpal.finance/">
               <Button variant={!account ? 'secondary' : 'primary'}>{t('Invest now!')}</Button>
             </Link>
           </Flex>

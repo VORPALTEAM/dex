@@ -26,7 +26,9 @@ const TransparentFrame = styled.div<{ isDark: boolean }>`
 `
 
 const PredictionCardData: IconCardData = {
-  icon: <PredictionsIcon width="36px" color="inverseContrast" />,
+  icon: <PredictionsIcon width="36px" color="inverseContrast" style={{
+    transform: 'rotate(-4deg)'
+  }} />,
   position: 'absolute;',
   background: 'url(/images/home/lottery-balls/ticket.png) -10px -10px/360px 430px no-repeat',
   borderColor: 'none',
@@ -35,7 +37,9 @@ const PredictionCardData: IconCardData = {
 }
 
 const LotteryCardData: IconCardData = {
-  icon: <TicketFillIcon color="transparent" width="36px" />,
+  icon: <TicketFillIcon color="transparent" width="36px" style={{
+    transform: 'rotate(-4deg)'
+  }} />,
   background: 'url(/images/home/lottery-balls/ticket.png) -10px -10px/360px 430px no-repeat',
   borderColor: 'none',
   rotation: '6deg',
@@ -80,11 +84,12 @@ const WinSection = () => {
   return (
     <>
       <TransparentFrame isDark={theme.isDark}>
-        <img className="rotating" alt="win galaxy" style={{position: 'absolute'}} src="/images/home/lottery-balls/Galaxy_ls.png" />
-        <Flex flexDirection="column" alignItems="center" justifyContent="center">
-          <Heading scale="xl" color="primary">{t('Win millions in prizes')}</Heading>
-          <Text color="textSubtle">{t('Provably fair, on-chain game.')}</Text>
-          <Text mb="40px" color="textSubtle">
+        <img className="rotating" alt="win galaxy" style={{position: 'absolute', zIndex: -1, marginTop: 40}} 
+        src="/images/home/lottery-balls/Galaxy_ls.png" />
+        <Flex flexDirection="column" alignItems="center" justifyContent="center"  mb="80px">
+          <Heading scale="xxl" color="primary">{t('Win millions in prizes')}</Heading>
+          <Text color="textSubtle" fontSize="40px">{t('Provably fair, on-chain game.')}</Text>
+          <Text mb="40px" color="textSubtle" fontSize="40px">
             {t('Win big with VORPAL META.')}
           </Text>
           <Flex m="0 auto" flexDirection={['column', null, null, 'row']} maxWidth="600px">
@@ -99,7 +104,7 @@ const WinSection = () => {
               </IconCard>
             </Flex>
             <Flex flex="1" maxWidth={['275px', null, null, '100%']}>
-              <IconCard ml="100px" {...LotteryCardData}>
+              <IconCard ml="150px" mt="100px" {...LotteryCardData}>
                 <LotteryCardContent />
               </IconCard>
             </Flex>

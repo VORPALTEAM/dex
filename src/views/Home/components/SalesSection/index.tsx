@@ -62,7 +62,7 @@ width: 630px;
 
 
   return (
-    <Flex flexDirection="column">
+    <Flex flexDirection="column" mt="40px" mb="60px">
       <SalesHeadingFlex
         flexDirection={['column-reverse', null, null, reverse ? 'row-reverse' : 'row']}
         alignItems={['flex-end', null, null, 'center']}

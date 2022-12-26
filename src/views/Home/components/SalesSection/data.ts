@@ -29,7 +29,7 @@ export const earnSectionData: SalesSectionProps = {
   bodyText: 'VORPAL DEX makes it easy to make your crypto and NFT  work for you',
   reverse: true,
   primaryButton: {
-    to: '/farms',
+    to: 'https://starmap.vorpal.finance/',
     text: 'Explore',
     external: false,
   },
@@ -54,7 +54,7 @@ export const cakeSectionData: SalesSectionProps = {
     'VORPAL DEX token is at the heart of the VORPAL DEX ecosystem. Buy it, win it, farm it, spend it, stake it...',
   reverse: false,
   primaryButton: {
-    to: '',
+    to: 'https://sale.vorpal.finance/',
     text: 'Buy',
     external: false,
   },

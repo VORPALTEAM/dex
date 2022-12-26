@@ -12,7 +12,7 @@ const StyledCard = styled(Card)<{ background: string; rotation?: string; positio
 
   ${({ theme }) => theme.mediaQueries.md} {
     ${({ rotation }) => (rotation ? `transform: rotate(${rotation});` : '')}
-    ${({ position }) => (position ?  'position: absolute; top:280px; left:280px;' : 'inherit;')}
+    ${({ position }) => (position ?  'position: absolute; top:445px; left:354px;' : 'inherit;')}
   }
 `
 //     ${({ position }) => (position ? position : 'relative')}
@@ -21,9 +21,9 @@ const IconWrapper = styled(Box)<{ rotation?: string }>`
   top: 24px;
   right: 24px;
 
-  ${({ theme }) => theme.mediaQueries.md} {
-    ${({ rotation }) => (rotation ? `transform: rotate(${rotation});` : '')}
-  }
+   ${({ theme }) => theme.mediaQueries.md} {
+    ${({ rotation }) => (rotation ? `transform: rotate(-4deg);` : '')}
+  } 
 `
 
 interface IconCardProps extends IconCardData, CardProps {

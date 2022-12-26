@@ -103,7 +103,7 @@ const Footer = () => {
           <CompositeImage {...bottomRightImage} maxHeight="384px" />
         </BottomRightImgWrapper>
       </FloatingPancakesWrapper>
-      <Wrapper>
+      <Wrapper mt="60px" mb="60px">
         <Heading mb="24px" scale="xl" color="primary">
           {t('It’s time to get SCHWIFTY')}
         </Heading>

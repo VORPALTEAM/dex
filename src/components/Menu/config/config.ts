@@ -71,7 +71,7 @@ const config: (t: ContextApi['t']) => ConfigMenuItemsType[] = (t) => [
   },
   {
     label: t('Starmap'),
-    href: '/pppp',
+    href: 'https://starmap.vorpal.finance/',
     icon: 'Trophy',
     hideSubNav: false,
     items: [],

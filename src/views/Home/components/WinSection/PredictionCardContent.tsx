@@ -83,7 +83,7 @@ const PredictionCardContent = () => {
           {wonSoFar}
         </Text>
         <Text color="#280D5F" mb="40px">
-          {t('Buy tickets with CAKE, win CAKE if your numbers match')}
+          {t('Buy tickets with VRP, win VRP if your numbers match')}
         </Text>
       </Flex>
       <Flex alignItems="center" justifyContent="center">

@@ -15,6 +15,7 @@ const GlobalStyle = createGlobalStyle`
   body {
     background: no-repeat url(/images/home/background/wallpaper.png);
     background-attachment: fixed;
+    background-size: 120%;
 
     img {
       height: auto;

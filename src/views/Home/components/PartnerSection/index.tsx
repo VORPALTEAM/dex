@@ -12,7 +12,7 @@ const PartnerSection = () => {
            <Flex mt="40px" mb="60px" flexWrap="wrap" width="100%">
               {logos.map((item) => {
                 return(
-                    <a href={item.link} style={{
+                    <a href={item.link} target="_blank" style={{
                         width: "40%",
                         margin: 40
                     }}>

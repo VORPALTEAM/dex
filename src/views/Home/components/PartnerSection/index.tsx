@@ -6,6 +6,8 @@ import { logos } from './data'
 
 const PartnerSection = () => {
 
+    const  singleWidth = `${100 / logos.length}%`
+
     return(
         <Flex flexDirection="column" mt="40px" mb="60px" alignItems="center">
            <Heading  scale="xl" color="primary" fontSize="60px">Our partners</Heading>
@@ -13,7 +15,7 @@ const PartnerSection = () => {
               {logos.map((item) => {
                 return(
                     <a href={item.link} target="_blank" rel="noreferrer" style={{
-                        width: "40%",
+                        width: singleWidth,
                         margin: 40
                     }}>
                         <img style={{

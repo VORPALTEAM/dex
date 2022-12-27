@@ -13,7 +13,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Roboto';
   }
   body {
-    background: no-repeat url(/images/home/background/wallpaper.png);
+    background: repeat url(/images/home/background/wallpaper.png);
     background-attachment: fixed;
     background-size: 120%;
 

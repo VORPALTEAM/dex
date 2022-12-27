@@ -12,6 +12,7 @@ import { swapSectionData, earnSectionData, cakeSectionData } from './components/
 import MetricsSection from './components/MetricsSection'
 import SalesSection from './components/SalesSection'
 import WinSection from './components/WinSection'
+import PartnerSection from './components/PartnerSection'
 import Footer from './components/Footer'
 import UserBanner from './components/UserBanner'
 import FarmAuctionsBanner from './components/Banners/FarmAuctionsBanner'
@@ -141,7 +142,14 @@ const Home: React.FC = () => {
       >
         <SalesSection {...cakeSectionData} />
       {/*  <CakeDataRow /> */}
-      </PageSection>  
+      </PageSection> 
+      <PageSection
+        innerProps={{ style: HomeSectionContainerStyles }}
+        background='transparent'
+        index={2}
+        hasCurvedDivider={false}>
+        <PartnerSection />
+      </PageSection> 
       <PageSection
         innerProps={{ style: HomeSectionContainerStyles }}
         background='#000117'

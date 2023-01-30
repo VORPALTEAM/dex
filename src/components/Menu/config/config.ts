@@ -72,7 +72,8 @@ const config: (t: ContextApi['t']) => ConfigMenuItemsType[] = (t) => [
   {
     label: t('Starmap'),
     href: 'https://starmap.vorpal.finance/',
-    icon: 'Trophy',
+    icon: 'Star',
+    template: 'star',
     hideSubNav: false,
     items: [],
   },
@@ -110,18 +111,48 @@ const config: (t: ContextApi['t']) => ConfigMenuItemsType[] = (t) => [
     hideSubNav: true,
     items: [
       {
-        label: t('Light paper'),
-        href: '/404',
-       // type: DropdownMenuItemType.EXTERNAL_LINK,
+        label: t("LitePaper"),
+        href: 'https://drive.google.com/file/d/1cIb9qYmjKwp0Br5g-tJvyCzQ6V_5iW8T/view?usp=sharing',
+        target: "_blank"
       },
       {
         label: t('Blog'),
-        href: '/404'
+        href: 'https://vorpaldao.medium.com/',
+        target: "_blank"
       },
       {
-        label: t('Docs'),
-        href: '/404'
-      },
+        label: t('Twitter'),
+        href: 'https://twitter.com/VorpalDAO',
+        target: "_blank"
+      }, {
+        label: t("Linkedin"),
+        href: "https://www.linkedin.com/company/vorpaldao",
+        target: "_blank"
+      }, {
+        label: t("Telegram"),
+        href: "https://t.me/VorpalAnnouncements",
+        target: "_blank"
+      }, {
+        label: t("Github"),
+        href: "https://github.com/VORPALTEAM",
+        target: "_blank"
+      }, {
+        label: t("Reddit"),
+        href: "https://www.reddit.com/user/VorpalDAO",
+        target: "_blank"
+      }, {
+        label: t("Youtube"),
+        href: "https://www.youtube.com/@vorpaldao",
+        target: "_blank"
+      }, {
+        label: t("Vimeo"),
+        href: "https://vimeo.com/vorpaldao",
+        target: "_blank"
+      }, {
+        label: t("Discord"),
+        href: "https://discord.gg/epUsWEPaDA",
+        target: "_blank"
+      }
     ],
   },
 ]

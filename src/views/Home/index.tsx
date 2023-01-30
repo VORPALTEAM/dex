@@ -15,6 +15,7 @@ import WinSection from './components/WinSection'
 import PartnerSection from './components/PartnerSection'
 import Footer from './components/Footer'
 import UserBanner from './components/UserBanner'
+import ModalContainer from './components/Modals'
 import FarmAuctionsBanner from './components/Banners/FarmAuctionsBanner'
 import Wallpaper from '../../images/wallpaper.png'
 
@@ -159,7 +160,8 @@ const Home: React.FC = () => {
         <Footer />   
     </PageSection> 
     <FooterBorderedHeading  />
-    </>
+    <ModalContainer />
+   </>
   )
 }
 

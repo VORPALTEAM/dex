@@ -1,9 +1,14 @@
 import React from 'react'
 import styled, { keyframes } from 'styled-components'
+import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { Flex, Heading, Button } from 'vorpaltesttoolkit'
 import { useWeb3React } from '@web3-react/core'
 import { useTranslation } from 'contexts/Localization'
+import { windowNames } from 'state/referral'
+import { refSelectWindow } from 'state/actions'
+import { State } from 'state/types'
+import { useAppDispatch } from 'state'
 import ConnectWalletButton from 'components/ConnectWalletButton'
 import useTheme from 'hooks/useTheme'
 import BorderedHeading from 'components/HeadingBorder'
@@ -22,18 +27,6 @@ const flyingAnim = () => keyframes`
   }
 `
 
-const fading = () => keyframes`
-  from {
-    opacity: 0.9;
-  }
-  50% {
-    opacity: 0.1;
-  }
-  to {
-    opacity: 0.9;
-  }
-`
-
 const BgWrapper = styled.div`
   z-index: -1;
   overflow: hidden;
@@ -44,54 +37,42 @@ const BgWrapper = styled.div`
   left: 0px;
 `
 
-const InnerWrapper = styled.div`
-  position: absolute;
-  width: 100%;
-  bottom: -3px;
-`
-
+const PlayImgButton = styled(Button)`
+    background: url(/images/home/lunar-galaxy/video_play.png);
+    background-repeat: no-repeat;
+    position: absolute;
+    background-position: center;
+    background-size: 500px;
+    width: 35%;
+    height: 300px;
+    top: 193px;
+    left: 661px;
+    box-shadow: none;
+    border: none;
+  `
+  
 const BunnyWrapper = styled.div`
   width: 100%;
   animation: ${flyingAnim} 3.5s ease-in-out infinite;
 `
-
-const StarsWrapper = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-
-  & :nth-child(2) {
-    animation: ${fading} 2s ease-in-out infinite;
-    animation-delay: 1s;
-  }
-
-  & :nth-child(3) {
-    animation: ${fading} 5s ease-in-out infinite;
-    animation-delay: 0.66s;
-  }
-
-  & :nth-child(4) {
-    animation: ${fading} 2.5s ease-in-out infinite;
-    animation-delay: 0.33s;
-  }
-`
-
 const imagePath = '/images/home/lunar-galaxy/'
 const imageSrc = 'star-l'
-
-const starsImage: CompositeImageProps = {
-  path: '/images/home/lunar-galaxy/',
-  attributes: [
-    { src: '', alt: '3D Star' },
-    { src: '', alt: '3D Star' },
-    { src: '', alt: '3D Star' },
-  ],
-}
 
 const Hero = () => {
   const { t } = useTranslation()
   const { account } = useWeb3React()
   const { theme } = useTheme()
+  const dispatch = useAppDispatch()
+  const newState = useSelector((state: State) => {
+     return state
+  })
+
+  const OpenVideo = () => {
+    dispatch(refSelectWindow(windowNames.video))
+    setTimeout(() => {
+       console.log(newState)
+    }, 999)
+  }
 
   return (
     <>
@@ -145,6 +126,7 @@ const Hero = () => {
              top: -67,
              left: 450
           }} />
+          <PlayImgButton onClick={OpenVideo} />  
       </Flex>
     </>
   )

@@ -17,7 +17,7 @@ import user, { initialState as userInitialState } from './user/reducer'
 import transactions, { initialState as transactionsInitialState } from './transactions/reducer'
 import swap from './swap/reducer'
 import mint from './mint/reducer'
-import ReferralReducer from './referral'
+import ReferralReducer, { actionNames, windowNames } from './referral'
 import lists, { initialState as listsInitialState } from './lists/reducer'
 import burn from './burn/reducer'
 import multicall from './multicall/reducer'
@@ -49,6 +49,9 @@ const store = configureStore({
     info: infoReducer,
     nftMarket: nftMarketReducer,
     referral: ReferralReducer,
+    modal: (state = windowNames.none, action) => {
+        return ( action.type === actionNames.modal ) ? action.payload : state
+    },
     // Exchange
     user,
     transactions,

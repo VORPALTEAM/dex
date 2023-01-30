@@ -4,9 +4,9 @@ export const logos = [
         link: "https://bernardgroup.de/",
         name: "Bernard group"
     },
-    /* {
+    {
         img: "/images/home/partners/mbn-group.png",
         link: "http://mbngruppe.com/",
         name: "MBN group"
-    } */
+    }
 ]

@@ -11,12 +11,14 @@ const PartnerSection = () => {
     return(
         <Flex flexDirection="column" mt="40px" mb="60px" alignItems="center">
            <Heading  scale="xl" color="primary" fontSize="60px">Our partners</Heading>
-           <Flex mt="40px" mb="60px" flexWrap="wrap" width="100%">
-              {logos.map((item) => {
+           <Flex mt="40px" mb="60px" flexWrap="nowrap" width="100%">
+              {logos.map((item, index) => {
                 return(
                     <a href={item.link} target="_blank" rel="noreferrer" style={{
                         width: singleWidth,
-                        margin: 40
+                        margin: 0,
+                        padding: 40,
+                        borderLeft: index > 0 ? "1px solid white" : "none"
                     }}>
                         <img style={{
                             width: "100%"

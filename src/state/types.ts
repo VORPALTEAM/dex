@@ -604,4 +604,5 @@ export interface State {
   lottery: LotteryState
   nftMarket: NftMarketState
   referral: ReferralStateType
+  modal: string
 }

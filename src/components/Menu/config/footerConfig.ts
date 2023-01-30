@@ -67,23 +67,33 @@ export const footerLinks: (t: ContextApi['t']) => FooterLinkType[] = (t) => [
     items: [
       {
         label: 'Telegram',
-        href: '',
+        href: 'https://t.me/VorpalAnnouncements',
+        target: "_blank"
       },
       {
-        label: t('Instagram'),
-        href: '',
+        label: t('Linkedin'),
+        href: 'https://www.linkedin.com/company/vorpaldao',
+        target: "_blank"
+      },
+      {
+        label: t('Discord'),
+        href: 'https://discord.com/invite/epUsWEPaDA',
+        target: "_blank"
       },
       {
         label: t('Twitter'),
-        href: '',
+        href: 'https://twitter.com/VorpalDAO',
+        target: "_blank"
       },
       {
         label: t('Medium'),
-        href: '',
+        href: 'https://vorpaldao.medium.com/',
+        target: "_blank"
       },
       {
         label: t('Reddit'),
-        href: '',
+        href: 'https://www.reddit.com/user/VorpalDAO',
+        target: "_blank"
       },
     ],
   }

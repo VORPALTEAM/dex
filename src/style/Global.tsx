@@ -12,6 +12,12 @@ const GlobalStyle = createGlobalStyle`
   * {
     font-family: 'Roboto';
   }
+  html, body { 
+    position: relative;
+    max-width: 100%; 
+    overflow-x: hidden; 
+  }
+  
   body {
     background: repeat url(/images/home/background/wallpaper.png);
     background-attachment: fixed;

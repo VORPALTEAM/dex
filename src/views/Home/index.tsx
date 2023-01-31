@@ -151,7 +151,7 @@ const Home: React.FC = () => {
         hasCurvedDivider={false}>
         <PartnerSection />
       </PageSection> 
-      <PageSection
+     <PageSection
         innerProps={{ style: HomeSectionContainerStyles }}
         background='#000117'
         index={2}

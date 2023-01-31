@@ -43,12 +43,21 @@ const PlayImgButton = styled(Button)`
     position: absolute;
     background-position: center;
     background-size: 500px;
-    width: 35%;
-    height: 300px;
-    top: 193px;
-    left: 661px;
+    width: 275px;
+    height: 275px;
+    top: 220px;
+    left: 732px;
     box-shadow: none;
     border: none;
+
+    &:hover,
+    &:focus {
+      background: url(/images/home/lunar-galaxy/video_play_open.png);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 500px;
+      opacity: 1;
+    }
   `
   
 const BunnyWrapper = styled.div`

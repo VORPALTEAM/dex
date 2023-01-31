@@ -59,8 +59,32 @@ const Stats = () => {
      border: 3px solid #00F0FF;
      border-radius: 10px;
      box-shadow: 0px 0px 10px 0px #00F0FF;
-     margin-bottom: 36px;
+     margin: 48px 0;
+
+     padding-top: 8px;
+     padding-bottom: 6px;
+     font-weight: 700;
+     text-decoration: none;
+     font-size: 24px;
+     color: #00F0FF;
+
+     &:hover,
+     &:focus {
+        background: #00F0FF;
+        opacity: 1 !important;
+        color: #000;
+        text-decoration: none !important;
+
+     }
+    `
+
+  const ExploreLink = styled(Link)`  
+     text-decoration: none !important;
   `
+
+  const StarmapLink = () => {
+     document.location.href="https://starmap.vorpal.finance/"
+  }
 
   return (
     <Flex justifyContent="center" alignItems="center" flexDirection="column">
@@ -75,11 +99,6 @@ const Stats = () => {
       <LocalSubHeading textAlign="center" color="textSubtle" scale="xl" mb="32px">
         {t('Will you join them?')}
       </LocalSubHeading>
-      <ExploreButton>
-        <Link href="https://starmap.vorpal.finance/" target="_blank" color="#00F0FF">
-          <Text color="#00F0FF" bold fontSize="24px" pt="8px" pb="6px">Explore</Text>
-        </Link>
-      </ExploreButton>
       <Flex flexDirection={['column', null, null, 'row']}>
         <IconCard {...UsersCardData} mr={[null, null, null, '16px']} mb={['16px', null, null, '0']}>
           <StatCardContent
@@ -106,6 +125,12 @@ const Stats = () => {
           />
         </IconCard>
       </Flex>
+      <ExploreLink href="https://starmap.vorpal.finance/" 
+      target="_blank" color="#00F0FF">
+        <ExploreButton href="https://starmap.vorpal.finance/">
+          Explore
+        </ExploreButton>
+      </ExploreLink>
     </Flex>
   )
 }

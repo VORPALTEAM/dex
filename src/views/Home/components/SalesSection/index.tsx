@@ -58,7 +58,18 @@ const SalesSection: React.FC<SalesSectionProps> = (props) => {
   const SalesText = (bodyText.length === 108) ? styled(Text)`
      word-wrap: break-word;
      width: 630px;
-  `: Text
+
+     ${({ theme }) => theme.mediaQueries.mobile} {
+      font-size: 12px;
+      text-align: center;
+     }
+  `: styled(Text)`
+
+    ${({ theme }) => theme.mediaQueries.mobile} {
+      font-size: 12px;
+      text-align: center;
+    }
+  `
 
   const SalesHeadingFlex = styled(Flex)`
    ${({ theme }) => theme.mediaQueries.md} {
@@ -89,6 +100,15 @@ const SalesSection: React.FC<SalesSectionProps> = (props) => {
    }
   `
 
+  const ButtonFlex =  styled(Flex)`
+
+    padding-right: 34px;
+
+   ${({ theme }) => theme.mediaQueries.mobile} {
+    padding-right: 0px;
+   }
+  `
+ 
 
   return (
     <Flex flexDirection="column" mt="40px" mb="60px">
@@ -112,7 +132,7 @@ const SalesSection: React.FC<SalesSectionProps> = (props) => {
           mt={["300px", null, null, null]}
           ml={[null, null, null, reverse ? '-96px' : '0px']}
           mr={[null, null, null, !reverse ? '20px' : '72px']}
-          alignSelf={['flex-start', null, null, 'center']}
+          alignSelf={['center', null, null, 'center']}
         >
           <SalesHeading scale="xl" color="primary" fontSize="60px">{headingTranslatedText}</SalesHeading>
             <SubBorderedHeading />
@@ -120,40 +140,39 @@ const SalesSection: React.FC<SalesSectionProps> = (props) => {
                {bodyTranslatedText}
              </SalesText>
             <SubBorderedHeading />
-          <Flex
-           alignSelf={[null, null, null, !reverse ? 'flex-end' : 'flex-start']}
-           paddingRight="34px">
+          <ButtonFlex
+           alignSelf={[null, null, null, !reverse ? 'flex-end' : 'flex-start']}>
             <Button mr="24px">
               {primaryButton.external ? (
                 <Link color="tertiary" external href={primaryButton.to}>
-                  <Text color="card" bold fontSize="18px">
+                  <SalesText color="card" bold fontSize="18px">
                     {t(primaryButton.text)}
-                  </Text>
+                  </SalesText>
                 </Link>
               ) : (
                 <RouterLink to={primaryButton.to}>
-                  <Text color="card" bold fontSize="18px">
+                  <SalesText color="card" bold fontSize="18px">
                     {t(primaryButton.text)}
-                  </Text>
+                  </SalesText>
                 </RouterLink>
               )}
             </Button>
             <Button mr="24px">
               {secondaryButton.external ? (
                 <Link color="tertiary" external href={secondaryButton.to}>
-                  <Text color="card" bold fontSize="18px">
+                  <SalesText color="card" bold fontSize="18px">
                     {t(secondaryButton.text)}
-                  </Text>
+                  </SalesText>
                 </Link>
               ) : (
                 <RouterLink to={secondaryButton.to}>
-                  <Text color="card" bold fontSize="18px">
+                  <SalesText color="card" bold fontSize="18px">
                     {t(secondaryButton.text)}
-                  </Text>
+                  </SalesText>
                 </RouterLink>
               )}
             </Button>
-          </Flex>
+          </ButtonFlex>
         </HeadingFlex>
       </SalesHeadingFlex>
     </Flex>

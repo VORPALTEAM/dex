@@ -23,6 +23,11 @@ const TransparentFrame = styled.div<{ isDark: boolean }>`
   ${({ theme }) => theme.mediaQueries.md} {
     padding: 40px;
   }
+
+  ${({ theme }) => theme.mediaQueries.mobile} {
+    margin-top: -80px;
+    min-height: 450px;
+  }
 `
 
 const PredictionCardData: IconCardData = {
@@ -69,12 +74,50 @@ const TopLeftImgWrapper = styled(Flex)`
   position: absolute;
   left: -330px;
   bottom: 60px;
+
+  ${({ theme }) => theme.mediaQueries.mobile} {
+    display: none;
+  }
 `
 
 const BottomRightImgWrapper = styled(Flex)`
   position: absolute;
   top: 180px;
   right: -260px;
+
+  ${({ theme }) => theme.mediaQueries.mobile} {
+    display: none;
+  }
+`
+
+const LotteryHeading = styled(Heading)`
+  
+  ${({ theme }) => theme.mediaQueries.mobile} {
+    font-size: 36px;
+    text-align: center;
+  }
+`
+
+const LotteryText = styled(Heading)`
+  
+  ${({ theme }) => theme.mediaQueries.mobile} {
+    font-size: 21px;
+    text-align: center;
+  }
+`
+
+const LotteryGalaxy = styled.img`
+
+  position: absolute;
+  z-index: -1;
+  margin-top: 0px;
+  width: 50%;
+  
+  ${({ theme }) => theme.mediaQueries.mobile} {
+    width: 100%;
+    margin-top: 80px;
+    margin-left: -5%;
+  }
 `
  
 const WinSection = () => {
@@ -82,20 +125,21 @@ const WinSection = () => {
   const { theme } = useTheme()
 
   return (
-    <>
+    <>        
+      <LotteryGalaxy className="rotating" alt="win galaxy"
+      src="/images/home/lottery-balls/Galaxy_ls.png" />
       <TransparentFrame isDark={theme.isDark}>
-        <img className="rotating" alt="win galaxy" style={{position: 'absolute', zIndex: -1, marginTop: 40}} 
-        src="/images/home/lottery-balls/Galaxy_ls.png" />
         <Flex flexDirection="column" alignItems="center" justifyContent="center"  mb="80px">
-          <Heading scale="xxl" color="primary">{t('Win millions in prizes')}</Heading>
-          <Text color="textSubtle" fontSize="40px">{t('Provably fair, on-chain game.')}</Text>
-          <Text mb="40px" color="textSubtle" fontSize="40px">
+          <LotteryHeading scale="xxl" color="primary">{t('Win millions in prizes')}</LotteryHeading>
+          <LotteryText color="textSubtle" fontSize="40px">{t('Provably fair, on-chain game.')}</LotteryText>
+          <LotteryText mb="40px" color="textSubtle" fontSize="40px">
             {t('Win big with VORPAL META.')}
-          </Text>
+          </LotteryText>
           <Flex m="0 auto" flexDirection={['column', null, null, 'row']} maxWidth="600px">
             <Flex
               flex="1"
-              maxWidth={['275px', null, null, '100%']}
+              width={['100%', null, null, '100%']}
+              maxWidth={['100%', null, null, '100%']}
               mr={[null, null, null, '24px']}
               mb={['32px', null, null, '0']}
             >
@@ -103,8 +147,9 @@ const WinSection = () => {
                 <PredictionCardContent />
               </IconCard>
             </Flex>
-            <Flex flex="1" maxWidth={['275px', null, null, '100%']}>
-              <IconCard ml="150px" mt="100px" {...LotteryCardData}>
+            <Flex flex="1" maxWidth={['100%', null, null, '100%']}>
+              <IconCard ml={[null, null, "150px", "150px"]} 
+              mt={[null, null, "100px", "100px"]}  {...LotteryCardData}>
                 <LotteryCardContent />
               </IconCard>
             </Flex>

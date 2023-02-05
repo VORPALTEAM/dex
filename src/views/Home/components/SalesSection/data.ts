@@ -5,7 +5,7 @@ export const swapSectionData: SalesSectionProps = {
   bodyText: 'Limited emission and deflationary model',
   reverse: false,
   primaryButton: {
-    to: '/swap',
+    to: 'https://sale.vorpal.finance',
     text: 'Trade Now!',
     external: false,
   },

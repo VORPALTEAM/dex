@@ -10,9 +10,13 @@ const StyledCard = styled(Card)<{ background: string; rotation?: string; positio
   width: ${({ width }) => (width ? `${width}px` : '340px')};
   height: ${({ height }) => (height ? `${height}px` : 'fit-content')};
 
-  ${({ theme }) => theme.mediaQueries.md} {
-    ${({ rotation }) => (rotation ? `transform: rotate(${rotation});` : '')}
-    ${({ position }) => (position ?  'position: absolute; top:445px; left:354px;' : 'inherit;')}
+  ${({ rotation }) => (rotation ? `transform: rotate(${rotation});` : '')}
+  ${({ position }) => (position ?  'position: absolute; top:445px; left:354px;' : 'inherit;')}
+
+  ${({ theme }) => theme.mediaQueries.mobile} { 
+    ${({ position }) => (position ?  'position: absolute; top:280px; left:0px;' : 'inherit;')}
+    ${({ rotation }) => (rotation ? `transform: rotate(${rotation}) scale(0.5);` : 
+    'transform: scale(0.5);')}
   }
 `
 //     ${({ position }) => (position ? position : 'relative')}

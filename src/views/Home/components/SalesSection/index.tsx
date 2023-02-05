@@ -36,29 +36,58 @@ const SalesSection: React.FC<SalesSectionProps> = (props) => {
 
   word-wrap: break-word;
   width: 635px;
+
+  ${({ theme }) => theme.mediaQueries.mobile} {
+    font-size: 36px;
+    text-align: center;
+  }
 ` : styled(Heading)`
    font-size: 60px;
    margin-bottom: 24px;
+
+   ${({ theme }) => theme.mediaQueries.mobile} {
+    font-size: 36px;
+    text-align: center;
+  }
 `
 
   const SubBorderedHeading  = styled(BorderedHeading)`
   width: 92%;
 `
 
-const SalesText = (bodyText.length === 108) ? styled(Text)`
-word-wrap: break-word;
-width: 630px;
-`: Text
+  const SalesText = (bodyText.length === 108) ? styled(Text)`
+     word-wrap: break-word;
+     width: 630px;
+  `: Text
 
   const SalesHeadingFlex = styled(Flex)`
-  ${({ theme }) => theme.mediaQueries.md} {
-    min-width: 1000px;
-  }
+   ${({ theme }) => theme.mediaQueries.md} {
+     min-width: 1000px;
+   }
 
-  ${({ theme }) => theme.mediaQueries.lg} {
-    min-width: 1400px;
-  }
-`
+    ${({ theme }) => theme.mediaQueries.lg} {
+      min-width: 1400px;
+    }
+
+    ${({ theme }) => theme.mediaQueries.mobile} {
+      width: 100%;
+    }
+  `
+
+  const ImageFlex =  styled(Flex)`
+
+   ${({ theme }) => theme.mediaQueries.mobile} {
+     position: absolute;
+     margin-top: -100px;
+   }
+  `
+
+  const HeadingFlex =  styled(Flex)`
+
+   ${({ theme }) => theme.mediaQueries.mobile} {
+     width: 100%;
+   }
+  `
 
 
   return (
@@ -68,18 +97,19 @@ width: 630px;
         alignItems={['flex-end', null, null, 'center']}
         justifyContent="center"
       >
-        <Flex
-          height={['192px', null, null, '100%']}
-          width={['192px', null, null, '100%']}
+        <ImageFlex
+          height={['100%', null, null, '100%']}
+          width={['100%', null, null, '100%']}
           flex={[null, null, null, '1']}
           mb={['24px', null, null, '0']}
           ml={[null, null, '-24px', !reverse ? '-48px' : '48px']}
         >
           <CompositeImage {...images} />
-        </Flex>
-        <Flex
+        </ImageFlex>
+        <HeadingFlex
           flexDirection="column"
           flex="1"
+          mt={["300px", null, null, null]}
           ml={[null, null, null, reverse ? '-96px' : '0px']}
           mr={[null, null, null, !reverse ? '20px' : '72px']}
           alignSelf={['flex-start', null, null, 'center']}
@@ -124,7 +154,7 @@ width: 630px;
               )}
             </Button>
           </Flex>
-        </Flex>
+        </HeadingFlex>
       </SalesHeadingFlex>
     </Flex>
   )

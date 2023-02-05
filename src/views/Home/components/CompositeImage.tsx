@@ -54,6 +54,10 @@ const ImageWrapper = styled(Box)`
     max-height: 100%;
     width: auto;
   }
+
+  @media screen and (max-width: 768px) {
+     width: 100%;
+  }
 `
 
 enum Resolution {

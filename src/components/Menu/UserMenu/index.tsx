@@ -18,7 +18,7 @@ const StyledButton = styled(ConnectWalletButton)`
   background: ${({ theme }) => theme.colors.primary};
   color: black;
   border-radius: 20px;
-`
+` 
 
 const UserMenu = () => {
   const { t } = useTranslation()

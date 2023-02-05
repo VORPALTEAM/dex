@@ -31,6 +31,10 @@ const BackgroundColor = styled(Flex)<BackgroundColorProps>`
   z-index: ${({ index }) => index - 1};
   /* background: no-repeat url(${Wallpaper}); */
   padding: ${({ getPadding }) => getPadding()};
+
+  @media screen and (max-width: 768px) {
+    padding: 16px 0;
+  }
 `
 
 const ChildrenWrapper = styled(Container)`

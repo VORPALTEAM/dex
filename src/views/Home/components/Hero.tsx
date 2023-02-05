@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import styled, { keyframes } from 'styled-components'
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
@@ -36,8 +36,60 @@ const BgWrapper = styled.div`
   bottom: 0px;
   left: 0px;
 `
+  
+const BunnyWrapper = styled.div`
+  width: 100%;
+  animation: ${flyingAnim} 3.5s ease-in-out infinite;
+`
 
-const PlayImgButton = styled(Button)`
+const GalaxyImg = styled(EnvImg)`
+  width: 73%;
+  top: -67px;
+  left: 450px;
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    left: 0px;
+    display: block;
+  }
+`
+
+const imagePath = '/images/home/lunar-galaxy/'
+const imageSrc = 'star-l'
+
+const Hero = () => {
+  const { t } = useTranslation()
+  const { account } = useWeb3React()
+  const { theme } = useTheme()
+  const [playBtnTop, setPlayBtn] = useState(500)
+  const [headingMarginMobile, setMH] = useState(-20)
+  const dispatch = useAppDispatch()
+  const newState = useSelector((state: State) => {
+     return state
+  })
+
+  const MobilePlayBtnSetup = () => {
+     const galaxy = document.getElementById("lunar--galaxy")
+     const heading = document.getElementById("main--heading")
+     const hRect = heading.getBoundingClientRect().y
+     const gRect = galaxy.getBoundingClientRect().y
+     const gHeight = galaxy.getBoundingClientRect().height
+     const gBottom = galaxy.getBoundingClientRect().bottom
+     const hMargin = -40 + (gBottom - 380)
+
+     setMH(hMargin)
+     setPlayBtn (-230.5 + (gRect + (gHeight / 2)))
+  }
+
+  useEffect(() => {
+    MobilePlayBtnSetup()
+  
+    window.addEventListener('resize', () => {
+      MobilePlayBtnSetup()
+    })
+  }, [])
+
+  const PlayImgButton = styled(Button)`
     background: url(/images/home/lunar-galaxy/video_play.png);
     background-repeat: no-repeat;
     position: absolute;
@@ -58,23 +110,55 @@ const PlayImgButton = styled(Button)`
       background-size: 500px;
       opacity: 1;
     }
-  `
-  
-const BunnyWrapper = styled.div`
-  width: 100%;
-  animation: ${flyingAnim} 3.5s ease-in-out infinite;
-`
-const imagePath = '/images/home/lunar-galaxy/'
-const imageSrc = 'star-l'
 
-const Hero = () => {
-  const { t } = useTranslation()
-  const { account } = useWeb3React()
-  const { theme } = useTheme()
-  const dispatch = useAppDispatch()
-  const newState = useSelector((state: State) => {
-     return state
-  })
+    @media screen and (max-width: 768px) {
+      width: 50%;
+      top: ${playBtnTop}px;
+      background-size: 200px;
+      left: 25%;
+      display: block;
+
+      &:hover,
+      &:focus {
+        background-size: 200px;
+        opacity: 1;
+      }
+    }
+  `
+
+  const HeroHeading = styled(Heading)`
+
+   @media screen and (max-width: 768px) {
+       text-align: center;
+       font-size: 36px;
+       margin-top: ${headingMarginMobile}px;
+    }
+  `
+
+  const HeroConnectButton = styled(ConnectWalletButton)`
+
+  @media screen and (max-width: 768px) {
+      width: 40% !important;
+      padding: 12px;
+   }
+ `
+
+ const HeroAddButton = styled(Button)`
+
+ @media screen and (max-width: 768px) {
+     width: 100% !important;
+     font-size: 12px !important;
+  }
+`
+
+  const HeroSubHeading = styled(Heading)`
+
+   @media screen and (max-width: 768px) {
+       text-align: center;
+       font-size 16px;
+
+    }
+  `
 
   const OpenVideo = () => {
     dispatch(refSelectWindow(windowNames.video))
@@ -82,7 +166,7 @@ const Hero = () => {
        console.log(newState)
     }, 999)
   }
-
+ 
   return (
     <>
       <BgWrapper>
@@ -93,22 +177,23 @@ const Hero = () => {
         flexDirection={['column-reverse', null, null, 'row']}
         alignItems={['flex-end', null, null, 'center']}
         justifyContent="center"
-        mt={[account ? '280px' : '50px', null, 0]}
         id="homepage-hero"
       >
         <Flex flex="1" flexDirection="column">
-          <Heading scale="xxxl" color="#ACF800" mb="20px">
+          <HeroHeading id="main--heading" scale="xxxl" color="#ACF800" mb="20px">
             {t('World first survive to earn metaverse')}
-          </Heading>
+          </HeroHeading>
            <BorderedHeading />     
-             <Heading scale="md" color="#FFFFFF" mb="24px">
+             <HeroSubHeading scale="md" color="#FFFFFF" mb="24px">
                {t('Play, earn, trade and try to survive in the most unpredictable decentralized metaverse in the galaxy')}
-             </Heading>
+             </HeroSubHeading>
            <BorderedHeading />    
-          <Flex>
-            {!account && <ConnectWalletButton mr="42px" />}
+          <Flex justifyContent="space-between">
+            {!account && <HeroConnectButton mr="42px" />}
             <Link to="https://sale.vorpal.finance/">
-              <Button variant={!account ? 'secondary' : 'primary'}>{t('Invest now!')}</Button>
+              <HeroAddButton variant={!account ? 'secondary' : 'primary'}>
+                {t('Invest now!')}
+              </HeroAddButton>
             </Link>
           </Flex>
         </Flex>
@@ -130,11 +215,8 @@ const Hero = () => {
             <CompositeImage {...starsImage} />
   </StarsWrapper> */}
         </Flex>
-        <EnvImg className="rotating" src="/images/home/lunar-galaxy/galaxy.png" alt="galaxy" style={{
-             width: '73%',
-             top: -67,
-             left: 450
-          }} />
+        <GalaxyImg id="lunar--galaxy" onLoad={MobilePlayBtnSetup}
+        className="rotating" src="/images/home/lunar-galaxy/galaxy.png" alt="galaxy" />
           <PlayImgButton onClick={OpenVideo} />  
       </Flex>
     </>

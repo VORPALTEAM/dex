@@ -82,6 +82,12 @@ const Stats = () => {
      text-decoration: none !important;
   `
 
+  const MetricsCard = styled(IconCard)`  
+    ${({ theme }) => theme.mediaQueries.mobile} {
+      transform: scale(1);
+    }
+  `
+
   const StarmapLink = () => {
      document.location.href="https://starmap.vorpal.finance/"
   }
@@ -100,30 +106,30 @@ const Stats = () => {
         {t('Will you join them?')}
       </LocalSubHeading>
       <Flex flexDirection={['column', null, null, 'row']}>
-        <IconCard {...UsersCardData} mr={[null, null, null, '16px']} mb={['16px', null, null, '0']}>
+        <MetricsCard {...UsersCardData} mr={[null, null, null, '16px']} mb={['16px', null, null, '0']}>
           <StatCardContent
             headingText={t('%planets%', { planets })}
             headingSecondText="NFT PLANETS"
             bodyText={t('Circulating supply')}
             highlightColor='#43D8C9'
           />
-        </IconCard>
-        <IconCard {...TradesCardData} mr={[null, null, null, '16px']} mb={['16px', null, null, '0']}>
+        </MetricsCard>
+        <MetricsCard {...TradesCardData} mr={[null, null, null, '16px']} mb={['16px', null, null, '0']}>
           <StatCardContent
             headingText={t('%stars%', { stars })}
             headingSecondText="NFT STARS"
             bodyText={t('Total supply')}
             highlightColor='#C62A88'
           />
-        </IconCard>
-        <IconCard {...StakedCardData}>
+        </MetricsCard>
+        <MetricsCard {...StakedCardData}>
           <StatCardContent
             headingText={t('%fString% unique', { fString })}
             headingSecondText="FEDERATIONS"
             bodyText={t('Make your choice')}
             highlightColor='#590995'
           />
-        </IconCard>
+        </MetricsCard>
       </Flex>
       <ExploreLink href="https://starmap.vorpal.finance/" 
       target="_blank" color="#00F0FF">

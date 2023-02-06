@@ -50,8 +50,7 @@ export const earnSectionData: SalesSectionProps = {
 
 export const cakeSectionData: SalesSectionProps = {
   headingText: 'VORPAL DEX MAKES OUR WORLD GO ROUND',
-  bodyText:
-    'VORPAL DEX token is at the heart of the VORPAL DEX ecosystem. Buy it, win it, farm it, spend it, stake it...',
+  bodyText:  'VORPAL DEX token is at the heart of the VORPAL DEX ecosystem.  Buy it, win it, farm it, spend it, stake it...',
   reverse: false,
   primaryButton: {
     to: 'https://sale.vorpal.finance/',
@@ -63,7 +62,6 @@ export const cakeSectionData: SalesSectionProps = {
     text: 'Learn',
     external: true,
   },
-
   images: {
     path: '/images/home/cake/',
     attributes: [
@@ -73,3 +71,4 @@ export const cakeSectionData: SalesSectionProps = {
     ],
   },
 }
+

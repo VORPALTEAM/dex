@@ -104,7 +104,7 @@ const Footer = () => {
         </BottomRightImgWrapper>
       </FloatingPancakesWrapper>
       <Wrapper mt="60px" mb="60px">
-        <Heading mb="24px" scale="xl" color="primary">
+        <Heading className="mobile--center" mb="24px" scale="xl" color="primary">
           {t('It’s time to get SCHWIFTY')}
         </Heading>
         <Text textAlign="center" color="white">
@@ -119,7 +119,7 @@ const Footer = () => {
         <Link external href="/">
           {t('Learn how to start')}
         </Link>
-        {!account && <ConnectWalletButton mt="24px" />}
+        {!account && <ConnectWalletButton className="mobile--long" mt="24px" />}
       </Wrapper> 
     </>
   )

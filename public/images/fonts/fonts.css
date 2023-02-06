@@ -197,3 +197,13 @@
     height: 40vh;
     background: hsl(180, 4%, 5%);
   }
+
+  @media screen and (max-width: 857px) {
+    .mobile--center {
+      text-align: center;
+    }
+
+    .mobile--long {
+      width: 240px !important;
+    }
+  }

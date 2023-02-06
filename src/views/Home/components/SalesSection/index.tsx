@@ -129,7 +129,7 @@ const SalesSection: React.FC<SalesSectionProps> = (props) => {
         <HeadingFlex
           flexDirection="column"
           flex="1"
-          mt={["300px", null, null, null]}
+          mt={["220px", null, null, null]}
           ml={[null, null, null, reverse ? '-96px' : '0px']}
           mr={[null, null, null, !reverse ? '20px' : '72px']}
           alignSelf={['center', null, null, 'center']}

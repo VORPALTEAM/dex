@@ -194,8 +194,8 @@
     border-radius: 8px;
     left: 20%;
     width: 60%;
-    height: 40vh;
-    background: hsl(180, 4%, 5%);
+    height: 60vh;
+    background: transparent;
   }
 
   @media screen and (max-width: 857px) {
@@ -205,5 +205,12 @@
 
     .mobile--long {
       width: 240px !important;
+    }
+
+    .video--frame { 
+       width: 90%;
+       top: 5%;
+       left: 5%;
+       height: 50vh;
     }
   }

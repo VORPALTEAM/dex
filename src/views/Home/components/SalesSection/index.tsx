@@ -93,7 +93,7 @@ const SalesSection: React.FC<SalesSectionProps> = (props) => {
 
    ${({ theme }) => theme.mediaQueries.mobile} {
      position: absolute;
-     margin-top: -100px;
+     margin-top: -60px;
    }
   `
 

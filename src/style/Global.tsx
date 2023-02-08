@@ -37,7 +37,7 @@ const GlobalStyle = createGlobalStyle`
   @media screen and (max-width: 768px) {
     body {
       background-color: #000;
-      background: repeat url(/images/home/background/mobileWall.png);
+      /* background: repeat url(/images/home/background/mobileWall.png); */
       background-attachment: fixed;
       background-size: 100%;
     }

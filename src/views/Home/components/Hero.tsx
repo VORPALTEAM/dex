@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import styled, { keyframes } from 'styled-components'
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
-import { Flex, Heading, Button } from 'vorpaltesttoolkit'
+import { Flex, Box, Heading, Button } from 'vorpaltesttoolkit'
 import { useWeb3React } from '@web3-react/core'
 import { useTranslation } from 'contexts/Localization'
 import { windowNames } from 'state/referral'
@@ -15,18 +15,6 @@ import BorderedHeading from 'components/HeadingBorder'
 import CompositeImage, { getSrcSet, CompositeImageProps } from './CompositeImage'
 import EnvImg from './EnvImg'
 
-const flyingAnim = () => keyframes`
-  from {
-    transform: translate(0,  0px);
-  }
-  50% {
-    transform: translate(-5px, -5px);
-  }
-  to {
-    transform: translate(0, 0px);
-  }
-`
-
 const BgWrapper = styled.div`
   z-index: -1;
   overflow: hidden;
@@ -36,12 +24,6 @@ const BgWrapper = styled.div`
   bottom: 0px;
   left: 0px;
 `
-  
-const BunnyWrapper = styled.div`
-  width: 100%;
-  animation: ${flyingAnim} 3.5s ease-in-out infinite;
-`
-
 const GalaxyImg = styled(EnvImg)`
   width: 73%;
   top: -67px;
@@ -66,11 +48,12 @@ background-position: center;
 background-size: 300px;
 width: 250px;
 height: 250px;
-top: 220px;
-left: 752px;
+top: 245px;
+left: 735px;
 box-shadow: none;
 border: none;
 border-radius: 120px;
+z-index: 5;
 
 &:hover,
 &:focus {
@@ -84,16 +67,29 @@ border-radius: 120px;
 @media screen and (max-width: 857px) {
   width: 50%;
   top: calc(40px + 10vw);
-  background-size: 200px;
+  background-size: 175px;
   left: 25%;
   display: block;
 
   &:hover,
   &:focus {
-    background-size: 200px;
+    background-size: 175px;
     opacity: 1;
   }
 }
+`
+
+const GalaxySection = styled(Box)`
+  position: absolute;
+  width: 73%;
+  top: -67px;
+  left: 450px;
+  z-index: -1;
+
+  @media screen and (max-width: 857px) {
+     left: 0;
+     width: 100%;
+  }
 `
 
 const HeroHeading = styled(Heading)`
@@ -147,28 +143,28 @@ const Hero = () => {
   const { account } = useWeb3React()
   const { theme } = useTheme()
   const [playBtnTop, setPlayBtn] = useState(500)
-  const [headingMarginMobile, setMH] = useState(-20)
+  const [galaxyTop, setGTop] = useState(0)
+  const [headingMarginMobile, setMH] = useState(125)
   const dispatch = useAppDispatch()
   const newState = useSelector((state: State) => {
      return state
   })
 
   const MobilePlayBtnSetup = () => {
-     const galaxy = document.getElementById("lunar--galaxy")
+    const galaxy = document.getElementById("lunar--galaxy")
      const heading = document.getElementById("main--heading")
-     const hRect = heading.getBoundingClientRect().y
      const gRect = galaxy.getBoundingClientRect().y
      const gHeight = galaxy.getBoundingClientRect().height
      const gBottom = galaxy.getBoundingClientRect().bottom
-     const hMargin = -40 + (gBottom - 380)
 
      const heroS = document.getElementById("homepage-hero")
-     const heroRect = heroS.getBoundingClientRect().y
      const offset = heroS.offsetTop
-     const scr = document.documentElement.clientWidth
+     const defr = window.pageYOffset
+     const scr = document.documentElement.clientWidth  
+     
+     const playBtnBase = -210.5 + (gRect + (gHeight / 2))
 
-     setMH(scr > 856 ? null : hMargin - offset)
-     setPlayBtn (scr > 856 ? null : -200.5 + (gRect + (gHeight / 2)) - offset)
+     setPlayBtn (scr > 856 ? null : playBtnBase + defr)
   }
 
   useEffect(() => {
@@ -228,20 +224,24 @@ const Hero = () => {
           mb={['24px', null, null, '0']}
           position="relative"
         >
-          <BunnyWrapper>
+          {/* <BunnyWrapper>
             <picture>
               <source type="image/webp" srcSet={getSrcSet(imagePath, imageSrc, '.webp')} />
               <source type="image/png" srcSet={getSrcSet(imagePath, imageSrc)} />
               <img src={`${imagePath}${imageSrc}.png`} alt={t('Lunar galaxy')} />
             </picture>
-          </BunnyWrapper>
+          </BunnyWrapper> */}
           {/* <StarsWrapper>
             <CompositeImage {...starsImage} />
   </StarsWrapper> */}
         </Flex>
-        <GalaxyImg id="lunar--galaxy" onLoad={MobilePlayBtnSetup} onClick={OpenVideo}
+        <GalaxySection>
+          <img className="rotating" onLoad={MobilePlayBtnSetup} id="lunar--galaxy" src="/images/home/lunar-galaxy/galaxy.png" alt="galaxy" />
+        </GalaxySection>
+        <PlayImgButton id="mainPlayBtn" style={{top: playBtnTop}} onClick={OpenVideo} />
+        {/* <GalaxyImg style={{ top: galaxyTop }} id="lunar--galaxy" onLoad={MobilePlayBtnSetup}
         className="rotating" src="/images/home/lunar-galaxy/galaxy.png" alt="galaxy" />
-        <PlayImgButton style={{top: playBtnTop}} onClick={OpenVideo} />
+        <PlayImgButton style={{top: playBtnTop}} onClick={OpenVideo} /> */}
         {/* <img src="/images/home/lunar-galaxy/video_play.png" onClick={OpenVideo} style={
           {
             position: 'absolute',
@@ -249,6 +249,7 @@ const Hero = () => {
             left: 732,
             width: 275,
             height: 275
+
           }
         }/> */}
       </Flex>

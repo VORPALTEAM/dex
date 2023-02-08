@@ -64,12 +64,13 @@ background-repeat: no-repeat;
 position: absolute;
 background-position: center;
 background-size: 300px;
-width: 275px;
-height: 275px;
+width: 250px;
+height: 250px;
 top: 220px;
-left: 732px;
+left: 752px;
 box-shadow: none;
 border: none;
+border-radius: 120px;
 
 &:hover,
 &:focus {

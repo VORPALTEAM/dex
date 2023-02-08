@@ -47,7 +47,7 @@ const GalaxyImg = styled(EnvImg)`
   top: -67px;
   left: 450px;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 857px) {
     width: 100%;
     left: 0px;
     display: block;
@@ -56,6 +56,90 @@ const GalaxyImg = styled(EnvImg)`
 
 const imagePath = '/images/home/lunar-galaxy/'
 const imageSrc = 'star-l'
+
+
+const PlayImgButton = styled(Button)`
+background: url(/images/home/lunar-galaxy/video_play.png);
+background-repeat: no-repeat;
+position: absolute;
+background-position: center;
+background-size: 300px;
+width: 275px;
+height: 275px;
+top: 220px;
+left: 732px;
+box-shadow: none;
+border: none;
+
+&:hover,
+&:focus {
+  background: url(/images/home/lunar-galaxy/video_play_open.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 300px;
+  opacity: 1;
+}
+
+@media screen and (max-width: 857px) {
+  width: 50%;
+  top: calc(40px + 10vw);
+  background-size: 200px;
+  left: 25%;
+  display: block;
+
+  &:hover,
+  &:focus {
+    background-size: 200px;
+    opacity: 1;
+  }
+}
+`
+
+const HeroHeading = styled(Heading)`
+
+@media screen and (max-width: 857px) {
+   text-align: center;
+   font-size: 36px;
+   margin-top: 40vw;
+}
+`
+
+const HeroConnectButton = styled(ConnectWalletButton)`
+
+@media screen and (max-width: 857px) {
+  width: 40% !important;
+  padding: 12px;
+}
+`
+
+const HeroAddButton = styled(Button)`
+
+ @media screen and (max-width: 857px) {
+   width: 100% !important;
+   font-size: 12px !important;
+}
+`
+
+const HeroSubHeading = styled(Heading)`
+
+ @media screen and (max-width: 857px) {
+   text-align: center;
+   font-size 16px;
+
+ }
+`
+
+const HeroBtnFlex = styled(Flex)`
+
+ @media screen and (max-width: 857px) {
+
+    justify-content: space-between;
+
+  &.centered {
+    justify-content: center;
+  }
+ }
+`
 
 const Hero = () => {
   const { t } = useTranslation()
@@ -75,90 +159,29 @@ const Hero = () => {
      const gRect = galaxy.getBoundingClientRect().y
      const gHeight = galaxy.getBoundingClientRect().height
      const gBottom = galaxy.getBoundingClientRect().bottom
-     const hMargin = -40 + (gBottom - 380)
+     const hMargin = -10 + (gBottom - 380)
 
-     setMH(hMargin)
-     setPlayBtn (-230.5 + (gRect + (gHeight / 2)))
+     const heroS = document.getElementById("homepage-hero")
+     const heroRect = heroS.getBoundingClientRect().y
+     const offset = heroS.offsetTop
+     const scr = document.documentElement.clientWidth
+
+     setMH(scr > 856 ? null : hMargin - offset)
+     setPlayBtn (scr > 856 ? null : -200.5 + (gRect + (gHeight / 2)) - offset)
   }
 
   useEffect(() => {
     MobilePlayBtnSetup()
-  
-    window.addEventListener('resize', () => {
+
+    window.addEventListener('resize',() => {
       MobilePlayBtnSetup()
     })
+
+    window.addEventListener('scroll',() => {
+      MobilePlayBtnSetup()
+    })
+
   }, [])
-
-  const PlayImgButton = styled(Button)`
-    background: url(/images/home/lunar-galaxy/video_play.png);
-    background-repeat: no-repeat;
-    position: absolute;
-    background-position: center;
-    background-size: 500px;
-    width: 275px;
-    height: 275px;
-    top: 220px;
-    left: 732px;
-    box-shadow: none;
-    border: none;
-
-    &:hover,
-    &:focus {
-      background: url(/images/home/lunar-galaxy/video_play_open.png);
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: 500px;
-      opacity: 1;
-    }
-
-    @media screen and (max-width: 768px) {
-      width: 50%;
-      top: ${playBtnTop}px;
-      background-size: 200px;
-      left: 25%;
-      display: block;
-
-      &:hover,
-      &:focus {
-        background-size: 200px;
-        opacity: 1;
-      }
-    }
-  `
-
-  const HeroHeading = styled(Heading)`
-
-   @media screen and (max-width: 768px) {
-       text-align: center;
-       font-size: 36px;
-       margin-top: ${headingMarginMobile}px;
-    }
-  `
-
-  const HeroConnectButton = styled(ConnectWalletButton)`
-
-  @media screen and (max-width: 768px) {
-      width: 40% !important;
-      padding: 12px;
-   }
- `
-
- const HeroAddButton = styled(Button)`
-
- @media screen and (max-width: 768px) {
-     width: 100% !important;
-     font-size: 12px !important;
-  }
-`
-
-  const HeroSubHeading = styled(Heading)`
-
-   @media screen and (max-width: 768px) {
-       text-align: center;
-       font-size 16px;
-
-    }
-  `
 
   const OpenVideo = () => {
     dispatch(refSelectWindow(windowNames.video))
@@ -180,7 +203,7 @@ const Hero = () => {
         id="homepage-hero"
       >
         <Flex flex="1" flexDirection="column">
-          <HeroHeading id="main--heading" scale="xxxl" color="#ACF800" mb="20px">
+          <HeroHeading style={{marginTop: headingMarginMobile}} id="main--heading" scale="xxxl" color="#ACF800" mb="20px">
             {t('World first survive to earn metaverse')}
           </HeroHeading>
            <BorderedHeading />     
@@ -188,14 +211,14 @@ const Hero = () => {
                {t('Play, earn, trade and try to survive in the most unpredictable decentralized metaverse in the galaxy')}
              </HeroSubHeading>
            <BorderedHeading />    
-          <Flex justifyContent="space-between">
+          <HeroBtnFlex className={account ? "centered" : ""}>
             {!account && <HeroConnectButton mr="42px" />}
             <Link to="https://sale.vorpal.finance/">
               <HeroAddButton variant={!account ? 'secondary' : 'primary'}>
                 {t('Invest now!')}
               </HeroAddButton>
             </Link>
-          </Flex>
+          </HeroBtnFlex>
         </Flex>
         <Flex
           height={['192px', null, null, '100%']}
@@ -215,9 +238,18 @@ const Hero = () => {
             <CompositeImage {...starsImage} />
   </StarsWrapper> */}
         </Flex>
-        <GalaxyImg id="lunar--galaxy" onLoad={MobilePlayBtnSetup}
+        <GalaxyImg id="lunar--galaxy" onLoad={MobilePlayBtnSetup} onClick={OpenVideo}
         className="rotating" src="/images/home/lunar-galaxy/galaxy.png" alt="galaxy" />
-          <PlayImgButton onClick={OpenVideo} />  
+        <PlayImgButton style={{top: playBtnTop}} onClick={OpenVideo} />
+        {/* <img src="/images/home/lunar-galaxy/video_play.png" onClick={OpenVideo} style={
+          {
+            position: 'absolute',
+            top: playBtnTop,
+            left: 732,
+            width: 275,
+            height: 275
+          }
+        }/> */}
       </Flex>
     </>
   )

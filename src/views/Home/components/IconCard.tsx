@@ -18,6 +18,12 @@ const StyledCard = styled(Card)<{ background: string; rotation?: string; positio
     ${({ rotation }) => (rotation ? `transform: rotate(${rotation}) scale(0.7);` : 
     'transform: scale(0.7);')}
   }
+
+  @media screen and (max-width: 449px) {
+    ${({ position }) => (position ?  'position: absolute; top:240px; left:-65px;' : 'inherit;')}
+    ${({ rotation }) => (rotation ? `transform: rotate(${rotation}) scale(0.5);` : 
+    'transform: scale(0.5);')}
+  }
 `
 //     ${({ position }) => (position ? position : 'relative')}
 const IconWrapper = styled(Box)<{ rotation?: string }>`

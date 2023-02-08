@@ -17,7 +17,6 @@ import Footer from './components/Footer'
 import UserBanner from './components/UserBanner'
 import ModalContainer from './components/Modals'
 import FarmAuctionsBanner from './components/Banners/FarmAuctionsBanner'
-import Wallpaper from '../../images/wallpaper.png'
 
 const showBanner = false
 

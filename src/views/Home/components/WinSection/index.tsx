@@ -112,6 +112,7 @@ const LotteryGalaxy = styled.img`
   z-index: -1;
   margin-top: 0px;
   width: 50%;
+  max-width: 1100px;
   
   ${({ theme }) => theme.mediaQueries.mobile} {
     width: 100%;
@@ -120,6 +121,7 @@ const LotteryGalaxy = styled.img`
   }
 `
  
+
 const WinSection = () => {
   const { t } = useTranslation()
   const { theme } = useTheme()
@@ -148,7 +150,7 @@ const WinSection = () => {
               </IconCard>
             </Flex>
             <Flex flex="1" maxWidth={['100%', null, null, '100%']}>
-              <IconCard ml={["100px", null, "150px", "150px"]} 
+              <IconCard ml={[null, null, "150px", "150px"]} mr={["-100px", "-100px", null, null]} 
               mt={[null, null, "100px", "100px"]}  {...LotteryCardData}>
                 <LotteryCardContent />
               </IconCard>

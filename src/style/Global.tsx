@@ -19,13 +19,27 @@ const GlobalStyle = createGlobalStyle`
   }
   
   body {
-    background: repeat url(/images/home/background/wallpaper.png);
-    background-attachment: fixed;
-    background-size: 120%;
 
     img {
       height: auto;
       max-width: 100%;
+    }
+  }
+
+  @media screen and (min-width: 769px) {
+    body {
+      background: repeat url(/images/home/background/wallpaper.png);
+      background-attachment: fixed;
+      background-size: 120%;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    body {
+      background-color: #000;
+      /* background: repeat url(/images/home/background/mobileWall.png); */
+      background-attachment: fixed;
+      background-size: 100%;
     }
   }
 `

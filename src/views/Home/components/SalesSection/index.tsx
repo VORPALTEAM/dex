@@ -53,6 +53,10 @@ const SalesSection: React.FC<SalesSectionProps> = (props) => {
 
   const SubBorderedHeading  = styled(BorderedHeading)`
   width: 92%;
+
+  ${({ theme }) => theme.mediaQueries.mobile} {
+    width: 100%;
+  }
 `
 
   const SalesText = (bodyText.length === 108) ? styled(Text)`
@@ -142,7 +146,7 @@ const SalesSection: React.FC<SalesSectionProps> = (props) => {
             <SubBorderedHeading />
           <ButtonFlex
            alignSelf={[null, null, null, !reverse ? 'flex-end' : 'flex-start']}>
-            <Button mr="24px">
+            <Button mr={["12px", null, "24px", "24px"]}>
               {primaryButton.external ? (
                 <Link color="tertiary" external href={primaryButton.to}>
                   <SalesText color="card" bold fontSize="18px">
@@ -157,7 +161,7 @@ const SalesSection: React.FC<SalesSectionProps> = (props) => {
                 </RouterLink>
               )}
             </Button>
-            <Button mr="24px">
+            <Button mr={[null, null, "24px", "24px"]} ml={["12px", "12px", null, null]}>
               {secondaryButton.external ? (
                 <Link color="tertiary" external href={secondaryButton.to}>
                   <SalesText color="card" bold fontSize="18px">

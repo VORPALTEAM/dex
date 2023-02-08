@@ -151,7 +151,7 @@ const WinSection = () => {
             </Flex>
             <Flex flex="1" maxWidth={['100%', null, null, '100%']}>
               <IconCard ml={[null, null, "150px", "150px"]} mr={["-100px", "-100px", null, null]} 
-              mt={[null, null, "100px", "100px"]}  {...LotteryCardData}>
+              mt={["-50px", null, "100px", "100px"]}  {...LotteryCardData}>
                 <LotteryCardContent />
               </IconCard>
             </Flex>

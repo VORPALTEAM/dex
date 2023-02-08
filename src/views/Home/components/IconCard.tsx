@@ -14,15 +14,15 @@ const StyledCard = styled(Card)<{ background: string; rotation?: string; positio
   ${({ position }) => (position ?  'position: absolute; top:445px; left:354px;' : 'inherit;')}
 
   ${({ theme }) => theme.mediaQueries.mobile} { 
-    ${({ position }) => (position ?  'position: absolute; top:240px; left:-50px;' : 'inherit;')}
+    ${({ position }) => (position ?  'position: absolute; top:240px; left:-10px;' : 'inherit;')}
     ${({ rotation }) => (rotation ? `transform: rotate(${rotation}) scale(0.7);` : 
     'transform: scale(0.7);')}
   }
 
   @media screen and (max-width: 449px) {
-    ${({ position }) => (position ?  'position: absolute; top:240px; left:-65px;' : 'inherit;')}
-    ${({ rotation }) => (rotation ? `transform: rotate(${rotation}) scale(0.5);` : 
-    'transform: scale(0.5);')}
+    ${({ position }) => (position ?  'position: absolute; top:210px; left:-50px;' : 'inherit;')}
+    ${({ rotation }) => (rotation ? `transform: rotate(${rotation}) scale(0.6);` : 
+    'transform: scale(0.6);')}
   }
 `
 //     ${({ position }) => (position ? position : 'relative')}

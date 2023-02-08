@@ -161,10 +161,15 @@ const Hero = () => {
      const offset = heroS.offsetTop
      const defr = window.pageYOffset
      const scr = document.documentElement.clientWidth  
+     const scrH = document.documentElement.clientHeight
      
      const playBtnBase = -210.5 + (gRect + (gHeight / 2))
-
-     setPlayBtn (scr > 856 ? null : playBtnBase + defr)
+     const addDefr = defr
+     
+     if (gBottom > -600) {
+      setPlayBtn (scr > 856 ? null : playBtnBase + addDefr )
+      setMH(scr > 856 ? null : (gBottom  - 380 - (scr * 0.1) + addDefr ))
+     }
   }
 
   useEffect(() => {

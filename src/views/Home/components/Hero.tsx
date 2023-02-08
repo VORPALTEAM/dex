@@ -57,7 +57,7 @@ const GalaxyImg = styled(EnvImg)`
 const imagePath = '/images/home/lunar-galaxy/'
 const imageSrc = 'star-l'
 
-
+ 
 const PlayImgButton = styled(Button)`
 background: url(/images/home/lunar-galaxy/video_play.png);
 background-repeat: no-repeat;
@@ -160,7 +160,7 @@ const Hero = () => {
      const gRect = galaxy.getBoundingClientRect().y
      const gHeight = galaxy.getBoundingClientRect().height
      const gBottom = galaxy.getBoundingClientRect().bottom
-     const hMargin = -10 + (gBottom - 380)
+     const hMargin = -40 + (gBottom - 380)
 
      const heroS = document.getElementById("homepage-hero")
      const heroRect = heroS.getBoundingClientRect().y

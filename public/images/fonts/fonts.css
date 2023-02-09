@@ -207,10 +207,14 @@
       width: 240px !important;
     }
 
+    .modal--window {
+      padding: 0;
+      border-radius: 0;
+    }
+
     .video--frame { 
-       width: 90%;
-       top: 5%;
-       left: 5%;
-       height: 50vh;
+       width: 100%;
+       top: 50px;
+       left: 0;
     }
   }

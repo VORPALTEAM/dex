@@ -111,7 +111,7 @@ const LotteryGalaxy = styled.img`
   position: absolute;
   z-index: -1;
   margin-top: 0px;
-  width: 50%;
+  width: 100%;
   max-width: 1100px;
   
   ${({ theme }) => theme.mediaQueries.mobile} {

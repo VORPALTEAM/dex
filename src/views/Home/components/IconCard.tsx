@@ -11,7 +11,7 @@ const StyledCard = styled(Card)<{ background: string; rotation?: string; positio
   height: ${({ height }) => (height ? `${height}px` : 'fit-content')};
 
   ${({ rotation }) => (rotation ? `transform: rotate(${rotation});` : '')}
-  ${({ position }) => (position ?  'position: absolute; top:445px; left:354px;' : 'inherit;')}
+  ${({ position }) => (position ?  'position: absolute; top:445px; left: calc(50% - 200px)' : 'inherit;')}
 
   ${({ theme }) => theme.mediaQueries.mobile} { 
     ${({ position }) => (position ?  'position: absolute; top:240px; left:-10px;' : 'inherit;')}
@@ -20,7 +20,7 @@ const StyledCard = styled(Card)<{ background: string; rotation?: string; positio
   }
 
   @media screen and (max-width: 449px) {
-    ${({ position }) => (position ?  'position: absolute; top:210px; left:-50px;' : 'inherit;')}
+    ${({ position }) => (position ?  'position: absolute; top:150px; left:-50px;' : 'inherit;')}
     ${({ rotation }) => (rotation ? `transform: rotate(${rotation}) scale(0.6);` : 
     'transform: scale(0.6);')}
   }

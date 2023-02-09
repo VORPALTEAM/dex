@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 
 
 const VideoModal = () => {
+
     return(
         <div className="modal--window video--frame">
             <iframe title="Vorpal teaser" 

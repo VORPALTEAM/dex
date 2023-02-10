@@ -39,6 +39,8 @@ const Wrapper = styled(Flex)`
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  padding: 0;
+  max-width: 9999px;
 `
 
 const FloatingPancakesWrapper = styled(Container)`
@@ -58,13 +60,13 @@ const FloatingPancakesWrapper = styled(Container)`
 
 const TopLeftImgWrapper = styled(Flex)`
   position: absolute;
-  left: -60px;
+  left: -30px;
   top: 0;
 `
 
 const BottomRightImgWrapper = styled(Flex)`
   position: absolute;
-  right: -60px;
+  right: -30px;
   bottom: 0;
 `
 

@@ -20,6 +20,13 @@ import FarmAuctionsBanner from './components/Banners/FarmAuctionsBanner'
 
 const showBanner = false
 
+
+const FooterSection = styled(PageSection)`
+   width: 100%;
+   padding: 0;
+   max-width: 9999px !important;
+`
+
 const HomeBanner = ({ account }: { account: string }) => {
   if (!showBanner) {
     return null
@@ -62,8 +69,8 @@ const UserBannerWrapper = styled(Container)`
 
 const FooterBorderedHeading = styled(BorderedHeading)`
    padding: 0;
-   margin-left: 5%;
-   width: 90%;
+   margin-left: 0%;
+   width: 100%;
 `
 
 const Home: React.FC = () => {
@@ -150,14 +157,14 @@ const Home: React.FC = () => {
         hasCurvedDivider={false}>
         <PartnerSection />
       </PageSection> 
-     <PageSection
+     <FooterSection
         innerProps={{ style: HomeSectionContainerStyles }}
         background='#000117'
         index={2}
         hasCurvedDivider={false}
       >
         <Footer />   
-    </PageSection> 
+    </FooterSection> 
     <FooterBorderedHeading  />
     <ModalContainer />
    </>

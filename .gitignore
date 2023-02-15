@@ -28,6 +28,10 @@ cypress/fixtures/example.json
 .env.development.local
 .env.test.local
 .env.production.local
+.env
+.env.development
+.env.production
+.env.test
 
 # debug
 npm-debug.log*

@@ -1,5 +1,5 @@
 import React, {useState, useEffect, useMemo} from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import styled, { keyframes } from 'styled-components'
 import { Card, 
          Flex, 
@@ -13,13 +13,14 @@ import { GoldPercentText } from './StyledElms'
 import { selectWindow } from '../state/modalReducer'
 import PersonalLink from './PersonalLink'
 import * as Hooks from '../hooks'
+import * as DevHooks from '../hooks/dev'
 import CopyModal from './notify/copyModal'
-
-const defaultCreatorPercent = 90
-const defaultReferralPercent = 10
+import { defaultCreatorPercent, defaultReferralPercent } from '../config'
 
 const PersonalLinkBlock = ({ account }) => {
   const { t } = useTranslation()
+
+
 
   const [isRequested, setActive] = useState(false)
   const [clientAccount, setClientAccount] = useState(account)
@@ -36,35 +37,40 @@ const PersonalLinkBlock = ({ account }) => {
     setActive(true)
   }
 
-  useEffect(() => {
-    function handleStatusChange() {
-      if (!isRequested) {
+  async function handleStatusChange () {
+    if (!isRequested) {
 
-        Hooks.CheckUser (clientAccount).then((res) => {
-          if (res) {
-            Hooks.RoughRequestLinks(clientAccount).then((r) => {       
-              setReferralIds(r);
-              setActive(true)
-           })
-          } else {
-            Hooks.CreateUser(clientAccount).then(() => {       
-              Hooks.CreateLink(clientAccount, defaultCreatorPercent, defaultReferralPercent).then(
-                (response) => {
-                  console.log(response)
-                  Hooks.RoughRequestLinks(clientAccount).then((r) => {       
-                    setReferralIds(r);
-                    setActive(true)
-                 })
-                }
-              )
-           })
-          }
+      const refLinks = await DevHooks.RequestLinks(clientAccount)
+
+      console.log(refLinks)
+
+      try {
+        let linkArray = Array.from(refLinks.result)
+
+        const links = []
+
+        if (linkArray.length < 1) {
+          const newLink = await DevHooks.CreateLink (clientAccount, defaultCreatorPercent, defaultReferralPercent)
+          const newRefLinks = await DevHooks.RequestLinks(clientAccount)
+          linkArray = Array.from(newRefLinks.result)
+        }
+
+        linkArray.forEach((lnk : any) => { 
+          links.push(lnk.link_key) 
         })
-        /* CheckUser(clientAccount).then((res) => {
-          console.log(res)
-        }) */
+
+        setReferralIds(links)
+
+      } catch (e : any) {
+         console.log(e.message)
       }
+
+      setActive(true)
     }
+  }
+
+  useEffect(() => {
+
     handleStatusChange()
   })
 

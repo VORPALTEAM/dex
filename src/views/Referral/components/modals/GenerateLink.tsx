@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import { useDispatch } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import styled, { keyframes } from 'styled-components'
 import { Card, 
          Flex, 
@@ -15,7 +15,7 @@ import { Card,
          CheckInCheckBox } from 'vorpaltesttoolkit'
 import BorderedHeading from 'components/HeadingBorder'
 import { GoldPercentText } from '../StyledElms'
-import { selectWindow } from '../../state/modalReducer'
+import { selectWindow, RootState } from '../../state/modalReducer'
 import {RefModalWindow, 
   RefStyledCard, 
   CloseButton, 
@@ -25,6 +25,9 @@ import {RefModalWindow,
   EnabledButton,
   NoteInput,
   NoteHint } from './common'
+import * as DevHooks from '../../hooks/dev'
+import { defaultCreatorPercent, defaultReferralPercent } from '../../config'
+
 
 const GenerateLink = () => {
 
@@ -33,12 +36,22 @@ const GenerateLink = () => {
     const [enabledClicks, setClicks] = useState(false)
     const dispatch = useDispatch()
 
+    const State = useSelector((state: RootState) => {
+       return state
+    })
+
     const CloseWindow = () => {
       dispatch(selectWindow("none"))
     }
 
     const CheckAsDefault = () => {
       checkBox(!boxChecked)
+    }
+
+    const NewLink = async () => {
+      const newLink = await DevHooks.CreateLink(State.account, 
+      defaultCreatorPercent, defaultReferralPercent)
+
     }
 
     useEffect(() => {

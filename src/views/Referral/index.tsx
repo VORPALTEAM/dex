@@ -1,12 +1,13 @@
 import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import Page from 'components/Layout/Page'
-import { Provider as ModalProvider, useSelector } from 'react-redux';
+import { Provider as ModalProvider, useSelector, useDispatch } from 'react-redux';
 import useActiveWeb3React from '../../hooks/useActiveWeb3React'
 import ReferralHero from './components/ReferralHero'
 import WithdrawSection from './components/WithdrawSection'
 import Office from './office'
 import store from './state'
+import { setAccount } from './state/modalReducer'
 import { FindState } from '../../state/referral/hooks'
 import ModalRefContainer from './components/modals'
 import PromoPage from './promo'
@@ -14,6 +15,7 @@ import { State } from '../../state/types'
 
 const Referral = () => {
   const { account } = useActiveWeb3React()
+  const dispatch = useDispatch()
   // const parentStates = useSelector((state : State) => state)
 
 
@@ -22,6 +24,10 @@ const Referral = () => {
   } catch (e) {
     console.log(e)
   }
+
+  /* useEffect(() => {
+    dispatch(setAccount(account))
+  }, []) */
 
   // console.log(FindState())
 

@@ -18,13 +18,6 @@ const Referral = () => {
   const dispatch = useDispatch()
   // const parentStates = useSelector((state : State) => state)
 
-
-  try {
-    console.log(document.location.hostname)
-  } catch (e) {
-    console.log(e)
-  }
-
   /* useEffect(() => {
     dispatch(setAccount(account))
   }, []) */

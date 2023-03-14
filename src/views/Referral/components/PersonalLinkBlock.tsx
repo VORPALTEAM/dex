@@ -10,7 +10,7 @@ import { Card,
          PencilReferralIcon } from 'vorpaltesttoolkit'
 import { useTranslation } from 'contexts/Localization'
 import { GoldPercentText } from './StyledElms'
-import { selectWindow } from '../state/modalReducer'
+import { selectWindow, setIds, RootState } from '../state/modalReducer'
 import PersonalLink from './PersonalLink'
 import * as Hooks from '../hooks'
 import * as DevHooks from '../hooks/dev'
@@ -20,7 +20,9 @@ import { defaultCreatorPercent, defaultReferralPercent } from '../config'
 const PersonalLinkBlock = ({ account }) => {
   const { t } = useTranslation()
 
-
+  const State = useSelector((state: RootState) =>{
+     return state
+  })
 
   const [isRequested, setActive] = useState(false)
   const [clientAccount, setClientAccount] = useState(account)
@@ -47,7 +49,7 @@ const PersonalLinkBlock = ({ account }) => {
       try {
         let linkArray = Array.from(refLinks.result)
 
-        const links = []
+        const links : string[] = []
 
         if (linkArray.length < 1) {
           const newLink = await DevHooks.CreateLink (clientAccount, defaultCreatorPercent, defaultReferralPercent)
@@ -60,6 +62,7 @@ const PersonalLinkBlock = ({ account }) => {
         })
 
         setReferralIds(links)
+        dispatch(setIds(links))
 
       } catch (e : any) {
          console.log(e.message)
@@ -175,7 +178,7 @@ const PersonalLinkBlock = ({ account }) => {
                   Create new link</Text><PlusIcon width="26px" height="26px" mb="10px" />
             </RefAddLink>
           </HeadingRow>
-          {referralIds.map((ref) => {
+          {State.refLinks.map((ref) => {
              return <PersonalLink linkId={ref} />
           })}
           <YoullGetBlock>

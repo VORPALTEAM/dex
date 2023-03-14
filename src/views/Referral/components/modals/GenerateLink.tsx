@@ -15,7 +15,8 @@ import { Card,
          CheckInCheckBox } from 'vorpaltesttoolkit'
 import BorderedHeading from 'components/HeadingBorder'
 import { GoldPercentText } from '../StyledElms'
-import { selectWindow, RootState } from '../../state/modalReducer'
+import useActiveWeb3React from '../../../../hooks/useActiveWeb3React'
+import { selectWindow, setIds, RootState } from '../../state/modalReducer'
 import {RefModalWindow, 
   RefStyledCard, 
   CloseButton, 
@@ -32,13 +33,11 @@ import { defaultCreatorPercent, defaultReferralPercent } from '../../config'
 const GenerateLink = () => {
 
     const [boxChecked, checkBox] = useState(true)
-    const [linkValue, setLinkValue] = useState(0)
+    const [linkValue, setLinkValue] = useState<number>(0)
     const [enabledClicks, setClicks] = useState(false)
     const dispatch = useDispatch()
 
-    const State = useSelector((state: RootState) => {
-       return state
-    })
+    const { account } = useActiveWeb3React()
 
     const CloseWindow = () => {
       dispatch(selectWindow("none"))
@@ -49,9 +48,22 @@ const GenerateLink = () => {
     }
 
     const NewLink = async () => {
-      const newLink = await DevHooks.CreateLink(State.account, 
-      defaultCreatorPercent, defaultReferralPercent)
+      const val1 : number = linkValue || defaultCreatorPercent
+      const val2 : number = linkValue || defaultReferralPercent
+      const newLink = await DevHooks.CreateLink(account, val1, val2)
+      dispatch(selectWindow("none"))
+      const newRefLinks = await DevHooks.RequestLinks(account)
+      const links : string[] = []
+      try {
+        const linkArray = Array.from(newRefLinks.result)
+        linkArray.forEach((lnk : any) => { 
+          links.push(lnk.link_key) 
+        })
+      } catch (e : any) {
+        console.log(e.message)
+      }
 
+      dispatch(setIds(links))
     }
 
     useEffect(() => {
@@ -179,7 +191,7 @@ const GenerateLink = () => {
             justifyContent: 'center',
             marginTop: 20
          }}>
-          <StyledButton width="100%" disabledStyle={0} onClick={CloseWindow} btnText="Generate a referral link" />
+          <StyledButton width="100%" disabledStyle={0} onClick={NewLink} btnText="Generate a referral link" />
           <PlusIcon style={{
             position: 'absolute',
             marginRight: 215

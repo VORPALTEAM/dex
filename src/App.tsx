@@ -1,4 +1,4 @@
-import React, { lazy } from 'react'
+import React, { lazy, useEffect } from 'react'
 import { Router, Redirect, Route, Switch } from 'react-router-dom'
 import { ResetCSS } from 'vorpaltesttoolkit'
 // import { useWeb3React } from '@web3-react/core'
@@ -12,6 +12,7 @@ import { usePollCoreFarmData } from 'state/farms/hooks'
 // import { nftsBaseUrl } from 'views/Nft/market/constants'
 import SubgraphHealthIndicator from 'components/SubgraphHealthIndicator'
 import GlobalStyle from './style/Global'
+import useActiveWeb3React from './hooks/useActiveWeb3React'
 import Menu from './components/Menu'
 import SuspenseWithChunkError from './components/SuspenseWithChunkError'
 import { ToastListener } from './contexts/ToastsContext'
@@ -31,6 +32,7 @@ import RedirectOldRemoveLiquidityPathStructure from './views/RemoveLiquidity/red
 import { RedirectPathToSwapOnly, RedirectToSwap } from './views/Swap/redirects'
 import { useInactiveListener } from './hooks/useInactiveListener'
 import useSentryUser from './hooks/useSentryUser'
+import { RegisterReferral } from './views/Referral/hooks/dev'
 // import useNftClaimStatusCheck from './hooks/useNftClaimStatusCheck'
 
 // Route-based code splitting
@@ -66,7 +68,7 @@ BigNumber.config({
 })
 
 const App: React.FC = () => {
-  // const { account } = useWeb3React()
+  const { account } = useActiveWeb3React()
 
   usePollBlockNumber()
   useEagerConnect()
@@ -77,6 +79,19 @@ const App: React.FC = () => {
   useInactiveListener()
   useSentryUser()
   // useNftClaimStatusCheck()
+  
+
+    const queryString = window.location.search;
+    // const { account } = useActiveWeb3React()
+    console.log(queryString)
+    const urlParams = new URLSearchParams(queryString);
+    const ref = urlParams.get('ref')
+    if (ref && account) {
+      RegisterReferral (account, ref).then(() => {
+        console.log("Registered")
+      })
+    }
+
 
   return (
     <Router history={history}>

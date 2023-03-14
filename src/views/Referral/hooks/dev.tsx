@@ -42,10 +42,23 @@ export async function CreateLink (
      return linkResponse
  }
 
- export async function CreateUser (
-    creator : string, 
-    CreatorPercent : number = defaultCreatorPercent, 
-    RefPercent : number = defaultReferralPercent ) {
-        const isLinks = RequestLinks(creator)
+ export async function RegisterReferral (
+    account : string, 
+    Link : string ) {
+      if (!account || !Link) return false
+      const linkData = await fetch(`${defaultApiUrl}`,
+      {
+       headers: {
+         'Accept': 'application/json',
+         'Content-Type': 'application/json'
+       },
+       method: "POST",
+       body: JSON.stringify({
+              action: "RegisterReferral",
+              client: account,
+              link: Link
+           })
+      })
+      return true
     }
 

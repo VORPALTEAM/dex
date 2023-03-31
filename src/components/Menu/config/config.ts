@@ -62,13 +62,13 @@ const config: (t: ContextApi['t']) => ConfigMenuItemsType[] = (t) => [
     hideSubNav: false,
     items: [],
   }, */
-  {
+  /* {
     label: t('Referral'),
     href: '/referral',
     icon: 'Trophy',
     hideSubNav: false,
     items: [],
-  },
+  }, */
   {
     label: t('Starmap'),
     href: 'https://starmap.vorpal.finance/',

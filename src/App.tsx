@@ -119,9 +119,9 @@ const App: React.FC = () => {
             {/* <Route path="/ifo">
               <Ifos />
             </Route> */}
-            <Route exact path="/referral">
+            {/*<Route exact path="/referral">
               <Referral />
-            </Route>
+            </Route> */}
             <Route exact path="/funding">
               <Funding />
             </Route>

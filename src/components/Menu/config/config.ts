@@ -85,6 +85,14 @@ const config: (t: ContextApi['t']) => ConfigMenuItemsType[] = (t) => [
     hideSubNav: false,
     items: [],
   },
+  {
+    label: t('LitePaper'),
+    href: 'https://drive.google.com/file/d/1cIb9qYmjKwp0Br5g-tJvyCzQ6V_5iW8T/view?usp=sharing',
+    icon: 'default',
+    template: 'default',
+    hideSubNav: false,
+    items: [],
+  },
   // {
   //   label: t('NFT'),
   //   href: `${nftsBaseUrl}`,
@@ -110,11 +118,6 @@ const config: (t: ContextApi['t']) => ConfigMenuItemsType[] = (t) => [
     icon: 'More',
     hideSubNav: true,
     items: [
-      {
-        label: t("LitePaper"),
-        href: 'https://drive.google.com/file/d/1cIb9qYmjKwp0Br5g-tJvyCzQ6V_5iW8T/view?usp=sharing',
-        target: "_blank"
-      },
       {
         label: t('Blog'),
         href: 'https://vorpaldao.medium.com/',

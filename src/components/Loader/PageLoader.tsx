@@ -12,7 +12,8 @@ const Wrapper = styled(Page)`
 const PageLoader: React.FC = () => {
   return (
     <Wrapper>
-      <Spinner />
+      <img src="/loader.svg" alt="loading" />
+      {/* <Spinner /> */}
     </Wrapper>
   )
 }

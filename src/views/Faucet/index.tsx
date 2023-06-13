@@ -6,6 +6,14 @@ import { useWeb3React } from '@web3-react/core'
 import { Image, Heading, RowType, Toggle, Text, Flex, SearchIcon, InputGroup } from 'vorpaltesttoolkit'
 import { ChainId } from 'pickleswap-sdk'
 import styled from 'styled-components'
+import Web3 from 'web3'
+import useActiveWeb3React from 'hooks/useActiveWeb3React'
+import { MintableABI } from './ABIFaucet'
+
+const env = window.ethereum
+
+const web3 = new Web3(env || Web3.givenProvider)
+const plasma = '0xBC8F69419A68B377607067FEc8D38ab26070879D'
 
 const Ctnr = styled.div`
    min-height: 600px;
@@ -65,8 +73,10 @@ const Form = styled.div`
 
 const Faucet = () => {
 
+    const { account } = useActiveWeb3React()
+
     const [amount, enterAmount] = useState(0)
-    const [address, enterAddress] = useState("")
+    const [address, enterAddress] = useState(account)
     const addrSymbols = "0123456789abcdefABCDEF"
 
     const UpdateAmount = (event : any) => {
@@ -85,7 +95,6 @@ const Faucet = () => {
         const symbols = [...String(val)]
         let checkSymbols = true
         symbols.forEach((symbol, index) => {
-            console.log(symbol)
             if (index === 0 && symbol !== '0') {
                 checkSymbols = false
             }
@@ -102,12 +111,33 @@ const Faucet = () => {
         }
     }
 
-    const MintPlasma = () => {
-        const env = window.ethereum
+    const MintPlasma = async () => {
+
+        console.log(env)
+
         if (!env) {
             return null
         }
-        return null
+
+        console.log("env ok")
+
+        if (!account) {
+            alert("Please connect wallet!")
+            return null
+        }
+        
+        try {
+            const contract = new web3.eth.Contract(MintableABI, plasma)
+            await contract.methods.Mint(String(BigInt(amount * 1e18)), address).send({
+                from: account
+            })
+            alert("Token minted, check the balance")
+            return 0
+
+        } catch (e : any) {
+            alert(e.message)
+            return null
+        }
     }
 
     return(

@@ -13,7 +13,7 @@ import { MintableABI } from './ABIFaucet'
 const env = window.ethereum
 
 const web3 = new Web3(env || Web3.givenProvider)
-const plasma = '0xBC8F69419A68B377607067FEc8D38ab26070879D'
+const plasma = '0x5291337c93a0c86E570F4189965BB9Cca48A474e'
 
 const Ctnr = styled.div`
    min-height: 600px;

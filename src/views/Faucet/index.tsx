@@ -113,23 +113,22 @@ const Faucet = () => {
 
     const MintPlasma = async () => {
 
-        console.log(env)
-
         if (!env) {
             return null
         }
-
-        console.log("env ok")
 
         if (!account) {
             alert("Please connect wallet!")
             return null
         }
+
+        const GasPrice = await web3.eth.getGasPrice()
         
         try {
             const contract = new web3.eth.Contract(MintableABI, plasma)
             await contract.methods.Mint(String(BigInt(amount * 1e18)), address).send({
-                from: account
+                from: account,
+                gasPrice: Number(GasPrice) < 1600000000 ? '1600000000' : GasPrice
             })
             alert("Token minted, check the balance")
             return 0

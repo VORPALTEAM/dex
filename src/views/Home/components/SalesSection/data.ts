@@ -5,7 +5,7 @@ export const swapSectionData: SalesSectionProps = {
   bodyText: 'Limited emission and deflationary model',
   reverse: false,
   primaryButton: {
-    to: 'https://sale.vorpal.finance',
+    to: '/swap',
     text: 'Trade Now!',
     external: false,
   },
@@ -31,10 +31,10 @@ export const earnSectionData: SalesSectionProps = {
   primaryButton: {
     to: 'https://starmap.vorpal.finance/',
     text: 'Explore',
-    external: false,
+    external: true,
   },
   secondaryButton: {
-    to: '',
+    to: 'https://drive.google.com/file/d/1cIb9qYmjKwp0Br5g-tJvyCzQ6V_5iW8T/view?usp=sharing',
     text: 'Learn',
     external: true,
   },
@@ -55,10 +55,10 @@ export const cakeSectionData: SalesSectionProps = {
   primaryButton: {
     to: 'https://sale.vorpal.finance/',
     text: 'Buy',
-    external: false,
+    external: true,
   },
   secondaryButton: {
-    to: '',
+    to: 'https://drive.google.com/file/d/1cIb9qYmjKwp0Br5g-tJvyCzQ6V_5iW8T/view?usp=sharing',
     text: 'Learn',
     external: true,
   },

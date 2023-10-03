@@ -10,7 +10,7 @@ export const swapSectionData: SalesSectionProps = {
     external: false,
   },
   secondaryButton: {
-    to: '',
+    to: 'https://drive.google.com/file/d/1cIb9qYmjKwp0Br5g-tJvyCzQ6V_5iW8T/view?usp=sharing',
     text: 'Learn',
     external: true,
   },
@@ -29,9 +29,9 @@ export const earnSectionData: SalesSectionProps = {
   bodyText: 'VORPAL DEX makes it easy to make your crypto and NFT  work for you',
   reverse: true,
   primaryButton: {
-    to: 'https://starmap.vorpal.finance/',
+    to: '/liquidity',
     text: 'Explore',
-    external: true,
+    external: false,
   },
   secondaryButton: {
     to: 'https://drive.google.com/file/d/1cIb9qYmjKwp0Br5g-tJvyCzQ6V_5iW8T/view?usp=sharing',

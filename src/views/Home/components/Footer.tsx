@@ -118,7 +118,7 @@ const Footer = () => {
         <SubHeading mb="16px" scale="lg" color="white">
           {t('Show me what you got')}
         </SubHeading>
-        <Link external href="/">
+        <Link external href="https://teletype.in/@vorpaldao/cA5JT7Mw3C1" target="_blank">
           {t('Learn how to start')}
         </Link>
         {!account && <ConnectWalletButton className="mobile--long" mt="24px" />}

@@ -215,7 +215,7 @@ const Hero = () => {
            <BorderedHeading />    
           <HeroBtnFlex className={account ? "centered" : ""}>
             {!account && <HeroConnectButton mr="42px" />}
-            <Link to={{ pathname: "https://sale.vorpal.finance/" }}>
+            <Link to={{ pathname: "https://sale.vorpal.finance/" }} target="_blank">
               <HeroAddButton variant={!account ? 'secondary' : 'primary'}>
                 {t('Invest now!')}
               </HeroAddButton>

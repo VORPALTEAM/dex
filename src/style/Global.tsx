@@ -28,11 +28,20 @@ const GlobalStyle = createGlobalStyle`
 
   @media screen and (min-width: 769px) {
     body {
-      background: repeat url(/images/home/background/wallpaper.png);
+      background-color: #000;
+      background: repeat url(/images/home/background/wallpaper_l.webp);
       background-attachment: fixed;
       background-size: 120%;
     }
   }
+
+  @media screen and (min-width: 1336px) {
+     background: repeat url(/images/home/background/wallpaper_sd.webp);
+  }
+
+  @media screen and (min-width: 1920px) {
+    background: repeat url(/images/home/background/wallpaper_hd.webp);
+ }
 
   @media screen and (max-width: 768px) {
     body {

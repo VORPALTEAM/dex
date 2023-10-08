@@ -36,12 +36,16 @@ const GlobalStyle = createGlobalStyle`
   }
 
   @media screen and (min-width: 1336px) {
-     background: repeat url(/images/home/background/wallpaper_sd.webp);
+    body {
+      background: repeat url(/images/home/background/wallpaper_sd.webp);
+    }
   }
 
   @media screen and (min-width: 1920px) {
-    background: repeat url(/images/home/background/wallpaper_hd.webp);
- }
+    body {
+      background: repeat url(/images/home/background/wallpaper_hd.webp);
+    }
+  }
 
   @media screen and (max-width: 768px) {
     body {

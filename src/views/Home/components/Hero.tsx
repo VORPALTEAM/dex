@@ -241,7 +241,7 @@ const Hero = () => {
   </StarsWrapper> */}
         </Flex>
         <GalaxySection>
-          <img className="rotating" onLoad={MobilePlayBtnSetup} id="lunar--galaxy" src="/images/home/lunar-galaxy/galaxy.png" alt="galaxy" />
+          <img className="rotating" onLoad={MobilePlayBtnSetup} id="lunar--galaxy" src="/images/home/lunar-galaxy/galaxy.webp" alt="galaxy" />
         </GalaxySection>
         <PlayImgButton id="mainPlayBtn" style={{top: playBtnTop}} onClick={OpenVideo} />
         {/* <GalaxyImg style={{ top: galaxyTop }} id="lunar--galaxy" onLoad={MobilePlayBtnSetup}

@@ -29,13 +29,13 @@ const GlobalStyle = createGlobalStyle`
   @media screen and (min-width: 769px) {
     body {
       background-color: #000;
-      background: repeat url(/images/home/background/wallpaper_l.webp);
+      background: repeat url(/images/home/background/wallpaper_hd.webp);
       background-attachment: fixed;
       background-size: 120%;
     }
   }
 
-  @media screen and (min-width: 1336px) {
+  /* @media screen and (min-width: 1336px) {
     body {
       background: repeat url(/images/home/background/wallpaper_sd.webp);
     }
@@ -45,7 +45,7 @@ const GlobalStyle = createGlobalStyle`
     body {
       background: repeat url(/images/home/background/wallpaper_hd.webp);
     }
-  }
+  } */
 
   @media screen and (max-width: 768px) {
     body {

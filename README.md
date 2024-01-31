@@ -1,12 +1,15 @@
-# 🥞 Pancake Frontend
+Repository for local dex development. Include a main page source code.
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/7bebf1a3-be7b-4165-afd1-446256acd5e3/deploy-status)](https://app.netlify.com/sites/pancake-prod/deploys)
+How to build :
 
-This project contains the main features of the pancake application.
+    Checkout to actual dev branch:
 
-If you want to contribute, please refer to the [contributing guidelines](./CONTRIBUTING.md) of this project.
+git checkout dev_070922_mobile
 
-## Documentation
+    yarn install (Build through yarn only!)
 
-- [Info](doc/Info.md)
-- [Cypress tests](doc/Cypress.md)
+    yarn start - debug
+
+    create .env file the same as .env.example (copy and rename)
+
+    yarn build

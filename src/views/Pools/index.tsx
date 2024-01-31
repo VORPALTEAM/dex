@@ -5,7 +5,7 @@ import { ethers } from 'ethers'
 import { formatUnits } from 'ethers/lib/utils'
 import BigNumber from 'bignumber.js'
 import { useWeb3React } from '@web3-react/core'
-import { Heading, Flex, Image, Text } from '@pancakeswap/uikit'
+import { Heading, Flex, Image, Text } from 'vorpaltesttoolkit'
 import orderBy from 'lodash/orderBy'
 import partition from 'lodash/partition'
 import { useTranslation } from 'contexts/Localization'
@@ -107,7 +107,10 @@ const Pools: React.FC = () => {
   const pools = usePoolsWithVault()
 
   // TODO aren't arrays in dep array checked just by reference, i.e. it will rerender every time reference changes?
-  const [finishedPools, openPools] = useMemo(() => partition(pools, (pool) => pool.isFinished), [pools])
+  const [finishedPools, openPools] = useMemo(
+    () => partition(pools, (pool) => pool.isFinished && pool.sousId !== 0),
+    [pools],
+  )
   const stakedOnlyFinishedPools = useMemo(
     () =>
       finishedPools.filter((pool) => {
@@ -252,13 +255,13 @@ const Pools: React.FC = () => {
       <PageHeader>
         <Flex justifyContent="space-between" flexDirection={['column', null, null, 'row']}>
           <Flex flex="1" flexDirection="column" mr={['8px', 0]}>
-            <Heading as="h1" scale="xxl" color="secondary" mb="24px">
+            <Heading as="h1" scale="xxl" color="primary" mb="24px">
               {t('Syrup Pools')}
             </Heading>
-            <Heading scale="md" color="text">
+            <Heading scale="md" color="primary">
               {t('Just stake some tokens to earn.')}
             </Heading>
-            <Heading scale="md" color="text">
+            <Heading scale="md" color="primary">
               {t('High APR, low risk.')}
             </Heading>
           </Flex>

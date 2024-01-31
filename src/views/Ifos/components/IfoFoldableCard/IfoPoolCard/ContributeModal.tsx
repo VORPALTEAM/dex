@@ -15,7 +15,7 @@ import {
   TooltipText,
   Box,
   Link,
-} from '@pancakeswap/uikit'
+} from 'vorpaltesttoolkit'
 import { PoolIds, Ifo } from 'config/constants/types'
 import { WalletIfoData, PublicIfoData } from 'views/Ifos/types'
 import { useTranslation } from 'contexts/Localization'

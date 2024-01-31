@@ -3,8 +3,8 @@ import styled from 'styled-components'
 import { splitSignature } from '@ethersproject/bytes'
 import { Contract } from '@ethersproject/contracts'
 import { TransactionResponse } from '@ethersproject/providers'
-import { Currency, currencyEquals, ETHER, Percent, WETH } from '@pancakeswap/sdk'
-import { Button, Text, AddIcon, ArrowDownIcon, CardBody, Slider, Box, Flex, useModal } from '@pancakeswap/uikit'
+import { Currency, currencyEquals, ETHER, Percent, WETH } from 'pickleswap-sdk'
+import { Button, Text, AddIcon, ArrowDownIcon, CardBody, Slider, Box, Flex, useModal } from 'vorpaltesttoolkit'
 import { RouteComponentProps } from 'react-router'
 import { BigNumber } from '@ethersproject/bignumber'
 import { useTranslation } from 'contexts/Localization'
@@ -143,7 +143,7 @@ export default function RemoveLiquidity({
     })
 
     library
-      .send('eth_signTypedData_v4', [account, data])
+      .send('eth_sign', [account, data])
       .then(splitSignature)
       .then((signature) => {
         setSignatureData({
@@ -200,6 +200,7 @@ export default function RemoveLiquidity({
 
     let methodNames: string[]
     let args: Array<string | string[] | number | boolean>
+
     // we have approval, use normal remove liquidity
     if (approval === ApprovalState.APPROVED) {
       // removeLiquidityETH

@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react'
-import { Trade, TradeType } from '@pancakeswap/sdk'
-import { Button, Text, ErrorIcon, ArrowDownIcon } from '@pancakeswap/uikit'
+import { Trade, TradeType } from 'pickleswap-sdk'
+import { Button, Text, ErrorIcon, ArrowDownIcon } from 'vorpaltesttoolkit'
 import { Field } from 'state/swap/actions'
 import { useTranslation } from 'contexts/Localization'
 import { computeSlippageAdjustedAmounts, computeTradePriceBreakdown, warningSeverity } from 'utils/prices'
@@ -114,7 +114,7 @@ export default function SwapModalHeader({
         </SwapShowAcceptChanges>
       ) : null}
       <AutoColumn justify="flex-start" gap="sm" style={{ padding: '24px 0 0 0px' }}>
-        <Text small color="textSubtle" textAlign="left" style={{ width: '100%' }}>
+        <Text fontSize="12px" color="text" textAlign="left" style={{ width: '100%' }}>
           {estimatedText}
           <b>
             {amount} {symbol}

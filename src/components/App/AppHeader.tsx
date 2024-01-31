@@ -1,10 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Text, Flex, Heading, IconButton, ArrowBackIcon, NotificationDot } from '@pancakeswap/uikit'
+import { Text, Flex, Heading, IconButton, ArrowBackIcon, NotificationDot } from 'vorpaltesttoolkit'
 import { Link } from 'react-router-dom'
 import { useExpertModeManager } from 'state/user/hooks'
 import GlobalSettings from 'components/Menu/GlobalSettings'
-import Transactions from './Transactions'
+// import Transactions from './Transactions'
 import QuestionHelper from '../QuestionHelper'
 
 interface Props {
@@ -18,9 +18,16 @@ interface Props {
 const AppHeaderContainer = styled(Flex)`
   align-items: center;
   justify-content: space-between;
-  padding: 24px;
-  width: 100%;
-  border-bottom: 1px solid ${({ theme }) => theme.colors.cardBorder};
+  padding: 24px 0px 24px 0px;
+  width: 580px;
+  margin: 50px auto 20px auto;
+  border-top: 1px solid ${({ theme }) => theme.colors.text};
+  border-bottom: 1px solid ${({ theme }) => theme.colors.text};
+`
+
+const CustomHeading = styled(Heading)`
+  font-family: 'RoundsBlack';
+  font-size: '24px';
 `
 
 const AppHeader: React.FC<Props> = ({ title, subtitle, helper, backTo, noConfig = false }) => {
@@ -35,23 +42,21 @@ const AppHeader: React.FC<Props> = ({ title, subtitle, helper, backTo, noConfig 
           </IconButton>
         )}
         <Flex flexDirection="column">
-          <Heading as="h2" mb="8px">
+          <CustomHeading as="h2" mb="8px">
             {title}
-          </Heading>
-          <Flex alignItems="center">
-            {helper && <QuestionHelper text={helper} mr="4px" placement="top-start" />}
-            <Text color="textSubtle" fontSize="14px">
-              {subtitle}
-            </Text>
+          </CustomHeading>
+          <Flex alignItems="self-end">
+            <Text fontSize="12px">{subtitle}</Text>
+            {helper && <QuestionHelper size="20px" color="text" text={helper} mr="4px" placement="top-start" />}
           </Flex>
         </Flex>
       </Flex>
       {!noConfig && (
         <Flex alignItems="center">
           <NotificationDot show={expertMode}>
-            <GlobalSettings />
+            <GlobalSettings color="text" />
           </NotificationDot>
-          <Transactions />
+          {/* <Transactions color="text" /> */}
         </Flex>
       )}
     </AppHeaderContainer>

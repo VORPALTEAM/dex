@@ -7,11 +7,14 @@ const Grouping = styled(RowBetween)`
   width: 50%;
 `
 
+// background-color: ${({ theme, confirmed, disabled }) =>
+// disabled ? theme.colors.backgroundDisabled : confirmed ? theme.colors.success : theme.colors.primary};
+
 const Circle = styled.div<{ confirmed?: boolean; disabled?: boolean }>`
   min-width: 20px;
   min-height: 20px;
   background-color: ${({ theme, confirmed, disabled }) =>
-    disabled ? theme.colors.backgroundDisabled : confirmed ? theme.colors.success : theme.colors.primary};
+    disabled ? theme.colors.backgroundDisabled : confirmed ? theme.colors.success : ' #4DA1A3'};
   border-radius: 50%;
   color: #ffffff;
   display: flex;
@@ -27,20 +30,17 @@ const CircleRow = styled.div`
   align-items: center;
 `
 
+// ${({ theme, prevConfirmed, disabled }) =>
+// disabled ? theme.colors.backgroundDisabled : prevConfirmed ? theme.colors.success : theme.colors.primary}
+
 const Connector = styled.div<{ prevConfirmed?: boolean; disabled?: boolean }>`
   width: 100%;
   height: 2px;
   background: linear-gradient(
     90deg,
+    #4da1a3 0%,
     ${({ theme, prevConfirmed, disabled }) =>
-        disabled ? theme.colors.backgroundDisabled : prevConfirmed ? theme.colors.success : theme.colors.primary}
-      0%,
-    ${({ theme, prevConfirmed, disabled }) =>
-        disabled
-          ? theme.colors.backgroundDisabled
-          : prevConfirmed
-          ? theme.colors.primary
-          : theme.colors.backgroundDisabled}
+        disabled ? theme.colors.backgroundDisabled : prevConfirmed ? '#4DA1A3' : theme.colors.backgroundDisabled}
       80%
   );
   opacity: 0.6;

@@ -1,24 +1,27 @@
 import React, { useCallback, useEffect, useState } from 'react'
 import { BigNumber } from '@ethersproject/bignumber'
 import { TransactionResponse } from '@ethersproject/providers'
-import { Currency, currencyEquals, ETHER, TokenAmount, WETH } from '@pancakeswap/sdk'
-import { Button, Text, Flex, AddIcon, CardBody, Message, useModal } from '@pancakeswap/uikit'
+import { Currency, currencyEquals, ETHER, TokenAmount, WETH } from 'pickleswap-sdk'
+import { Button, Text, Flex, AddIcon, CardBody, Message, useModal } from 'vorpaltesttoolkit'
 import { RouteComponentProps } from 'react-router-dom'
 import { useIsTransactionUnsupported } from 'hooks/Trades'
 import { useTranslation } from 'contexts/Localization'
 import UnsupportedCurrencyFooter from 'components/UnsupportedCurrencyFooter'
 import useActiveWeb3React from 'hooks/useActiveWeb3React'
 import { useDispatch } from 'react-redux'
+import styled from 'styled-components'
 import { AppDispatch } from '../../state'
-import { LightCard } from '../../components/Card'
+import { CustomCard } from '../../components/Card'
 import { AutoColumn, ColumnCenter } from '../../components/Layout/Column'
 import TransactionConfirmationModal, { ConfirmationModalContent } from '../../components/TransactionConfirmationModal'
-import CurrencyInputPanel from '../../components/CurrencyInputPanel'
+// import CurrencyInputPanel from '../../components/CurrencyInputPanel'
+import CustomCurrencyInputPanel from '../../components/CustomCurrencyInputPanel'
 import { DoubleCurrencyLogo } from '../../components/Logo'
 import { AppHeader, AppBody } from '../../components/App'
 import { MinimalPositionCard } from '../../components/PositionCard'
 import Row, { RowBetween } from '../../components/Layout/Row'
-import ConnectWalletButton from '../../components/ConnectWalletButton'
+// import ConnectWalletButton from '../../components/ConnectWalletButton'
+import StyledConnectWalletButton from '../../style/ConnectWalletButton'
 
 import { ROUTER_ADDRESS } from '../../config/constants'
 import { PairState } from '../../hooks/usePairs'
@@ -38,6 +41,27 @@ import ConfirmAddModalBottom from './ConfirmAddModalBottom'
 import { currencyId } from '../../utils/currencyId'
 import PoolPriceBar from './PoolPriceBar'
 import Page from '../Page'
+
+// const StyledAppBody = styled(AppBody)`
+//   width: 554px;
+// `
+
+const StyledEnableButton = styled(Button)`
+  background: ${({ theme }) => theme.colors.turquoise};
+  color: ${({ theme }) => theme.colors.contrast};
+  border-radius: 6px;
+`
+
+const StyledSupplyButton = styled(Button)`
+  background: ${({ theme }) => theme.colors.turquoise};
+  height: 70px;
+  font-size: 18px;
+  color: ${({ theme }) => theme.colors.contrast};
+`
+
+const StyledMessageBox = styled(Message)`
+  width: 100%;
+`
 
 export default function AddLiquidity({
   match: {
@@ -167,11 +191,12 @@ export default function AddLiquidity({
         wrappedCurrency(currencyB, chainId)?.address ?? '',
         parsedAmountA.raw.toString(),
         parsedAmountB.raw.toString(),
-        amountsMin[Field.CURRENCY_A].toString(),
-        amountsMin[Field.CURRENCY_B].toString(),
+        '0',
+        '0',
         account,
         deadline.toHexString(),
       ]
+
       value = null
     }
 
@@ -317,7 +342,7 @@ export default function AddLiquidity({
 
   return (
     <Page>
-      <AppBody>
+      <AppBody width={620}>
         <AppHeader
           title={t('Add Liquidity')}
           subtitle={t('Add liquidity to receive LP tokens')}
@@ -326,22 +351,24 @@ export default function AddLiquidity({
           )}
           backTo="/pool"
         />
-        <CardBody>
-          <AutoColumn gap="20px">
+        <CardBody style={{ width: '620px', padding: '0px 20px 20px 20px' }}>
+          <AutoColumn gap="20px" style={{ width: '580px' }}>
             {noLiquidity && (
               <ColumnCenter>
-                <Message variant="warning">
+                <StyledMessageBox variant="customWarning">
                   <div>
-                    <Text bold mb="8px">
+                    <Text color="yellow" bold mb="8px">
                       {t('You are the first liquidity provider.')}
                     </Text>
-                    <Text mb="8px">{t('The ratio of tokens you add will set the price of this pool.')}</Text>
-                    <Text>{t('Once you are happy with the rate click supply to review.')}</Text>
+                    <Text color="yellow" mb="8px">
+                      {t('The ratio of tokens you add will set the price of this pool.')}
+                    </Text>
+                    <Text color="yellow">{t('Once you are happy with the rate click supply to review.')}</Text>
                   </div>
-                </Message>
+                </StyledMessageBox>
               </ColumnCenter>
             )}
-            <CurrencyInputPanel
+            <CustomCurrencyInputPanel
               value={formattedAmounts[Field.CURRENCY_A]}
               onUserInput={onFieldAInput}
               onMax={() => {
@@ -356,7 +383,7 @@ export default function AddLiquidity({
             <ColumnCenter>
               <AddIcon width="16px" />
             </ColumnCenter>
-            <CurrencyInputPanel
+            <CustomCurrencyInputPanel
               value={formattedAmounts[Field.CURRENCY_B]}
               onUserInput={onFieldBInput}
               onCurrencySelect={handleCurrencyBSelect}
@@ -370,21 +397,21 @@ export default function AddLiquidity({
             />
             {currencies[Field.CURRENCY_A] && currencies[Field.CURRENCY_B] && pairState !== PairState.INVALID && (
               <>
-                <LightCard padding="0px" borderRadius="20px">
+                <CustomCard padding="0px" borderRadius="6px">
                   <RowBetween padding="1rem">
                     <Text fontSize="14px">
                       {noLiquidity ? t('Initial prices and pool share') : t('Prices and pool share')}
                     </Text>
                   </RowBetween>{' '}
-                  <LightCard padding="1rem" borderRadius="20px">
+                  <CustomCard padding="1rem" borderRadius="6px">
                     <PoolPriceBar
                       currencies={currencies}
                       poolTokenPercentage={poolTokenPercentage}
                       noLiquidity={noLiquidity}
                       price={price}
                     />
-                  </LightCard>
-                </LightCard>
+                  </CustomCard>
+                </CustomCard>
               </>
             )}
 
@@ -393,9 +420,9 @@ export default function AddLiquidity({
                 {t('Unsupported Asset')}
               </Button>
             ) : !account ? (
-              <ConnectWalletButton />
+              <StyledConnectWalletButton />
             ) : (
-              <AutoColumn gap="md">
+              <AutoColumn gap="md" justify="center">
                 {(approvalA === ApprovalState.NOT_APPROVED ||
                   approvalA === ApprovalState.PENDING ||
                   approvalB === ApprovalState.NOT_APPROVED ||
@@ -403,7 +430,7 @@ export default function AddLiquidity({
                   isValid && (
                     <RowBetween>
                       {approvalA !== ApprovalState.APPROVED && (
-                        <Button
+                        <StyledEnableButton
                           onClick={approveACallback}
                           disabled={approvalA === ApprovalState.PENDING}
                           width={approvalB !== ApprovalState.APPROVED ? '48%' : '100%'}
@@ -413,10 +440,10 @@ export default function AddLiquidity({
                           ) : (
                             t('Enable %asset%', { asset: currencies[Field.CURRENCY_A]?.symbol })
                           )}
-                        </Button>
+                        </StyledEnableButton>
                       )}
                       {approvalB !== ApprovalState.APPROVED && (
-                        <Button
+                        <StyledEnableButton
                           onClick={approveBCallback}
                           disabled={approvalB === ApprovalState.PENDING}
                           width={approvalA !== ApprovalState.APPROVED ? '48%' : '100%'}
@@ -426,11 +453,12 @@ export default function AddLiquidity({
                           ) : (
                             t('Enable %asset%', { asset: currencies[Field.CURRENCY_B]?.symbol })
                           )}
-                        </Button>
+                        </StyledEnableButton>
                       )}
                     </RowBetween>
                   )}
-                <Button
+                <StyledSupplyButton
+                  style={{ width: '340px' }}
                   variant={
                     !isValid && !!parsedAmounts[Field.CURRENCY_A] && !!parsedAmounts[Field.CURRENCY_B]
                       ? 'danger'
@@ -446,7 +474,7 @@ export default function AddLiquidity({
                   disabled={!isValid || approvalA !== ApprovalState.APPROVED || approvalB !== ApprovalState.APPROVED}
                 >
                   {error ?? t('Supply')}
-                </Button>
+                </StyledSupplyButton>
               </AutoColumn>
             )}
           </AutoColumn>
@@ -454,7 +482,17 @@ export default function AddLiquidity({
       </AppBody>
       {!addIsUnsupported ? (
         pair && !noLiquidity && pairState !== PairState.INVALID ? (
-          <AutoColumn style={{ minWidth: '20rem', width: '100%', maxWidth: '400px', marginTop: '1rem' }}>
+          <AutoColumn
+            style={{
+              minWidth: '20rem',
+              width: '100%',
+              maxWidth: '620px',
+              marginTop: '1rem',
+              backgroundColor: '#DBD8E3',
+              color: '#F1F6F9',
+              borderRadius: '40px',
+            }}
+          >
             <MinimalPositionCard showUnwrapped={oneCurrencyIsWETH} pair={pair} />
           </AutoColumn>
         ) : null

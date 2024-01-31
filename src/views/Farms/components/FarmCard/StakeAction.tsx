@@ -2,7 +2,7 @@ import React, { useCallback } from 'react'
 import { useWeb3React } from '@web3-react/core'
 import styled from 'styled-components'
 import BigNumber from 'bignumber.js'
-import { Button, Flex, Heading, IconButton, AddIcon, MinusIcon, useModal } from '@pancakeswap/uikit'
+import { Button, Flex, Heading, IconButton, AddIcon, MinusIcon, useModal } from 'vorpaltesttoolkit'
 import { useLocation } from 'react-router-dom'
 import Balance from 'components/Balance'
 import { useTranslation } from 'contexts/Localization'
@@ -33,6 +33,28 @@ const IconButtonWrapper = styled.div`
   svg {
     width: 20px;
   }
+`
+
+const StyledIconButton = styled(IconButton)`
+  width: 45px;
+  height: 45px;
+
+  background: #ededed;
+  border: 1px solid #ffffff;
+  box-shadow: 0px 0px 5px 1px #ffffff, inset 0px 0px 5px 2px rgba(0, 0, 0, 0.15);
+  border-radius: 6px;
+`
+
+const StyledButton = styled(Button)`
+  width: 100px;
+  height: 40px;
+  background: ${({ theme }) => theme.colors.text};
+  border: ${({ theme }) => theme.colors.contrast};
+  box-shadow: 0px 0px 5px 1px #ffffff, inset 0px 0px 5px 2px rgba(0, 0, 0, 0.15);
+  border-radius: 6px;
+  color: ${({ theme }) => theme.colors.contrast};
+  white-space: nowrap;
+  font-size: 18px;
 `
 
 const StakeAction: React.FC<FarmCardActionsProps> = ({
@@ -97,24 +119,24 @@ const StakeAction: React.FC<FarmCardActionsProps> = ({
 
   const renderStakingButtons = () => {
     return stakedBalance.eq(0) ? (
-      <Button
+      <StyledButton
         onClick={onPresentDeposit}
         disabled={['history', 'archived'].some((item) => location.pathname.includes(item))}
       >
         {t('Stake LP')}
-      </Button>
+      </StyledButton>
     ) : (
       <IconButtonWrapper>
-        <IconButton variant="tertiary" onClick={onPresentWithdraw} mr="6px">
-          <MinusIcon color="primary" width="14px" />
-        </IconButton>
-        <IconButton
+        <StyledIconButton variant="tertiary" onClick={onPresentWithdraw} mr="6px">
+          <MinusIcon color="backgroundAlt1" width="14px" />
+        </StyledIconButton>
+        <StyledIconButton
           variant="tertiary"
           onClick={onPresentDeposit}
           disabled={['history', 'archived'].some((item) => location.pathname.includes(item))}
         >
-          <AddIcon color="primary" width="14px" />
-        </IconButton>
+          <AddIcon color="backgroundAlt1" width="14px" />
+        </StyledIconButton>
       </IconButtonWrapper>
     )
   }
@@ -122,7 +144,8 @@ const StakeAction: React.FC<FarmCardActionsProps> = ({
   return (
     <Flex justifyContent="space-between" alignItems="center">
       <Flex flexDirection="column" alignItems="flex-start">
-        <Heading color={stakedBalance.eq(0) ? 'textDisabled' : 'text'}>{displayBalance()}</Heading>
+        {/* <Heading color={stakedBalance.eq(0) ? 'textDisabled' : 'text'}>{displayBalance()}</Heading> */}
+        <Heading color="text">{displayBalance()}</Heading>
         {stakedBalance.gt(0) && lpPrice.gt(0) && (
           <Balance
             fontSize="12px"

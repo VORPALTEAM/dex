@@ -1,4 +1,5 @@
 import React from 'react'
+import styled from 'styled-components'
 import {
   Tag,
   VerifiedIcon,
@@ -9,15 +10,26 @@ import {
   TimerIcon,
   BlockIcon,
   VoteIcon,
-} from '@pancakeswap/uikit'
+} from 'vorpaltesttoolkit'
 import { useTranslation } from 'contexts/Localization'
+
+const StyledCoreTag = styled(Tag)`
+  background: transparent;
+  border: ${({ theme }) => `2px solid ${theme.colors.text}`};
+  color: ${({ theme }) => theme.colors.text};
+`
 
 const CoreTag: React.FC<TagProps> = (props) => {
   const { t } = useTranslation()
   return (
-    <Tag variant="secondary" outline startIcon={<VerifiedIcon width="18px" color="secondary" mr="4px" />} {...props}>
+    <StyledCoreTag
+      variant="secondary"
+      outline
+      startIcon={<VerifiedIcon width="18px" color="primary" mr="4px" />}
+      {...props}
+    >
       {t('Core')}
-    </Tag>
+    </StyledCoreTag>
   )
 }
 

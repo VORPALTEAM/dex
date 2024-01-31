@@ -1,9 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
-import { BoxProps, Box, Flex, FlexProps } from '@pancakeswap/uikit'
+import { BoxProps, Box, Flex, FlexProps } from 'vorpaltesttoolkit'
 import Container from 'components/Layout/Container'
 import CurvedDivider from './CurvedDivider'
 import { ClipFill, DividerFill } from './types'
+import Wallpaper from '../../images/wallpaper.png'
 
 interface PageSectionProps extends BackgroundColorProps {
   svgFill?: string
@@ -28,8 +29,12 @@ const BackgroundColor = styled(Flex)<BackgroundColorProps>`
   flex-direction: column;
   align-items: center;
   z-index: ${({ index }) => index - 1};
-  background: ${({ background, theme }) => background || theme.colors.background};
+  /* background: no-repeat url(${Wallpaper}); */
   padding: ${({ getPadding }) => getPadding()};
+
+  @media screen and (max-width: 768px) {
+    padding: 16px 0;
+  }
 `
 
 const ChildrenWrapper = styled(Container)`
@@ -43,8 +48,8 @@ const ChildrenWrapper = styled(Container)`
   }
 
   ${({ theme }) => theme.mediaQueries.lg} {
-    padding-top: 48px;
-    padding-bottom: 48px;
+    padding-top: 0px;
+    padding-bottom: 0px;
   }
 `
 

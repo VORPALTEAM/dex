@@ -32,7 +32,8 @@ const useUserInfos = ({ account, refreshCounter, setCallback }) => {
             [currentTicketsOfUser],
           ] = await multicallv2(nftSaleAbi, calls)
 
-          const currentNumberTokensOfUser = await pancakeSquadContract.balanceOf(account)
+          // const currentNumberTokensOfUser = await pancakeSquadContract.balanceOf(account)
+          // const currentNumberTokensOfUser = 0
 
           setCallback({
             canClaimForGen0: currentCanClaimForGen0,
@@ -40,7 +41,7 @@ const useUserInfos = ({ account, refreshCounter, setCallback }) => {
             numberTicketsUsedForGen0: currentNumberTicketsUsedForGen0.toNumber(),
             numberTicketsOfUser: currentNumberTicketsOfUser.toNumber(),
             ticketsOfUser: currentTicketsOfUser,
-            numberTokensOfUser: currentNumberTokensOfUser.toNumber(),
+            numberTokensOfUser: 0,
           })
         }
       } catch (e) {

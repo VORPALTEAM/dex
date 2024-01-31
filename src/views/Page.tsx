@@ -1,8 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Box, Flex } from '@pancakeswap/uikit'
+import { Box, Flex } from 'vorpaltesttoolkit'
 import Footer from 'components/Menu/Footer'
 import { PageMeta } from 'components/Layout/Page'
+import Wallpaper from '../images/wallpaper.png'
 
 const StyledPage = styled.div<{ $removePadding: boolean }>`
   display: flex;
@@ -12,7 +13,7 @@ const StyledPage = styled.div<{ $removePadding: boolean }>`
   padding: ${({ $removePadding }) => ($removePadding ? '0' : '16px')};
   padding-bottom: 0;
   min-height: calc(100vh - 64px);
-  background: ${({ theme }) => theme.colors.gradients.bubblegum};
+  background: no-repeat url(${Wallpaper});
 
   ${({ theme }) => theme.mediaQueries.xs} {
     background-size: auto;
@@ -37,7 +38,7 @@ const Page: React.FC<
     <>
       <PageMeta />
       <StyledPage $removePadding={removePadding} {...props}>
-        {children}
+        { children  }
         <Flex flexGrow={1} />
         <Box display={['block', null, null, hideFooterOnDesktop ? 'none' : 'block']} width="100%">
           <Footer />

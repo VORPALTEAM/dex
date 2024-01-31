@@ -1,5 +1,7 @@
 import React from 'react'
-import { Heading, Flex, Text, Skeleton, ChartIcon, CommunityIcon, SwapIcon } from '@pancakeswap/uikit'
+import { Heading, Flex, Text, Skeleton, 
+  ChartIcon, CommunityIcon, SwapIcon, Button, Link } from 'vorpaltesttoolkit'
+import styled from 'styled-components'
 import { useTranslation } from 'contexts/Localization'
 import { useGetStats } from 'hooks/api'
 import useTheme from 'hooks/useTheme'
@@ -9,20 +11,20 @@ import StatCardContent from './StatCardContent'
 import GradientLogo from '../GradientLogoSvg'
 
 // Values fetched from bitQuery effective 6/9/21
-const txCount = 30841921
-const addressCount = 2751624
+const starsCount = 21000
+const planetsCount = 2100000
+const federationsCount = 5
 
 const Stats = () => {
   const { t } = useTranslation()
-  const data = useGetStats()
-  const { theme } = useTheme()
+  // const data = useGetStats()
 
-  const tvlString = data ? formatLocalisedCompactNumber(data.tvl) : '-'
-  const trades = formatLocalisedCompactNumber(txCount)
-  const users = formatLocalisedCompactNumber(addressCount)
+  const fString = formatLocalisedCompactNumber(federationsCount)
+  const stars = formatLocalisedCompactNumber(starsCount)
+  const planets = formatLocalisedCompactNumber(planetsCount)
 
-  const tvlText = t('And those users are now entrusting the platform with over $%tvl% in funds.', { tvl: tvlString })
-  const [entrusting, inFunds] = tvlText.split(tvlString)
+  const  tvlText= t('And those users are now entrusting the platform with over $%tvl% in funds.', { tvl: fString })
+  // const [entrusting, inFunds] = tvlText.split(fString)
 
   const UsersCardData: IconCardData = {
     icon: <CommunityIcon color="secondary" width="36px" />,
@@ -36,53 +38,105 @@ const Stats = () => {
     icon: <ChartIcon color="failure" width="36px" />,
   }
 
+  const LocalHeading = styled(Heading)`
+  margin: -36px 0 0 0;
+`
+  const LocalText = styled(Text)`
+  margin: 18px 0 0 0;
+
+  ${({ theme }) => theme.mediaQueries.md} {
+    width: 48%;
+  }
+`
+
+  const LocalSubHeading = styled(Heading)`
+    margin: 30px 0 32px 0;
+    font-size: 30px;
+  `
+
+  const ExploreButton = styled(Button)`
+     background: transparent;
+     border: 3px solid #00F0FF;
+     border-radius: 10px;
+     box-shadow: 0px 0px 10px 0px #00F0FF;
+     margin: 48px 0;
+
+     padding-top: 8px;
+     padding-bottom: 6px;
+     font-weight: 700;
+     text-decoration: none;
+     font-size: 24px;
+     color: #00F0FF;
+
+     &:hover,
+     &:focus {
+        background: #00F0FF;
+        opacity: 1 !important;
+        color: #000;
+        text-decoration: none !important;
+
+     }
+    `
+
+  const ExploreLink = styled(Link)`  
+     text-decoration: none !important;
+  `
+
+  const MetricsCard = styled(IconCard)`  
+    ${({ theme }) => theme.mediaQueries.mobile} {
+      transform: scale(1);
+    }
+  `
+
+  const StarmapLink = () => {
+     document.location.href="https://starmap.vorpal.finance/"
+  }
+
   return (
     <Flex justifyContent="center" alignItems="center" flexDirection="column">
-      <GradientLogo height="48px" width="48px" mb="24px" />
-      <Heading textAlign="center" scale="xl">
-        {t('Used by millions.')}
-      </Heading>
-      <Heading textAlign="center" scale="xl" mb="32px">
-        {t('Trusted with billions.')}
-      </Heading>
-      <Text textAlign="center" color="textSubtle">
-        {t('PancakeSwap has the most users of any decentralized platform, ever.')}
-      </Text>
-      <Flex flexWrap="wrap">
-        <Text display="inline" textAlign="center" color="textSubtle" mb="20px">
-          {entrusting}
-          <>{data ? <>{tvlString}</> : <Skeleton display="inline-block" height={16} width={70} mt="2px" />}</>
-          {inFunds}
-        </Text>
-      </Flex>
+      <GradientLogo height="334px" width="334px" mb="0px" />
+      <LocalHeading textAlign="center" color="#ACF800" scale="xl">
+        {t('Сreated by players for players')}
+      </LocalHeading>
+      <LocalText textAlign="center" color="textSubtle">
+        {t('Each season, players will evolve, unite, fight, breed and defend for the sole purpose of surviving in order to gain access to the “Season Bank”')}
+      </LocalText>
 
-      <Text textAlign="center" color="textSubtle" bold mb="32px">
+      <LocalSubHeading textAlign="center" color="textSubtle" scale="xl" mb="32px">
         {t('Will you join them?')}
-      </Text>
-
+      </LocalSubHeading>
       <Flex flexDirection={['column', null, null, 'row']}>
-        <IconCard {...UsersCardData} mr={[null, null, null, '16px']} mb={['16px', null, null, '0']}>
+        <MetricsCard {...UsersCardData} mr={[null, null, null, '16px']} mb={['16px', null, null, '0']}>
           <StatCardContent
-            headingText={t('%users% users', { users })}
-            bodyText={t('in the last 30 days')}
-            highlightColor={theme.colors.secondary}
+            headingText={t('%planets%', { planets })}
+            headingSecondText="NFT PLANETS"
+            bodyText={t('Circulating supply')}
+            highlightColor='#43D8C9'
           />
-        </IconCard>
-        <IconCard {...TradesCardData} mr={[null, null, null, '16px']} mb={['16px', null, null, '0']}>
+        </MetricsCard>
+        <MetricsCard {...TradesCardData} mr={[null, null, null, '16px']} mb={['16px', null, null, '0']}>
           <StatCardContent
-            headingText={t('%trades% trades', { trades })}
-            bodyText={t('made in the last 30 days')}
-            highlightColor={theme.colors.primary}
+            headingText={t('%stars%', { stars })}
+            headingSecondText="NFT STARS"
+            bodyText={t('Total supply')}
+            highlightColor='#C62A88'
           />
-        </IconCard>
-        <IconCard {...StakedCardData}>
+        </MetricsCard>
+        <MetricsCard {...StakedCardData}>
           <StatCardContent
-            headingText={t('$%tvl% staked', { tvl: tvlString })}
-            bodyText={t('Total Value Locked')}
-            highlightColor={theme.colors.failure}
+            headingText={t('%fString% unique', { fString })}
+            headingSecondText="FEDERATIONS"
+            bodyText={t('Make your choice')}
+            highlightColor='#590995'
           />
-        </IconCard>
+        </MetricsCard>
       </Flex>
+      <ExploreLink href="https://starmap.vorpal.finance/" 
+      target="_blank" color="#00F0FF">
+        <ExploreButton href="https://starmap.vorpal.finance/">
+          Explore
+        </ExploreButton>
+      </ExploreLink>
     </Flex>
   )
 }

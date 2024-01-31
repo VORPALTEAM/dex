@@ -15,10 +15,10 @@ import {
   MessageText,
   useModal,
   Link,
-} from '@pancakeswap/uikit'
+} from 'vorpaltesttoolkit'
 import styled from 'styled-components'
 import { useWeb3React } from '@web3-react/core'
-import { Token } from '@pancakeswap/sdk'
+import { Token } from 'pickleswap-sdk'
 import { Ifo, PoolIds } from 'config/constants/types'
 import tokens from 'config/constants/tokens'
 import { cakeBnbLpToken } from 'config/constants/ifo'
@@ -258,9 +258,11 @@ const IfoCardTokens: React.FC<IfoCardTokensProps> = ({
           <MessageTextLink href="#ifo-how-to" textAlign="center">
             {t('How does it work?')} »
           </MessageTextLink>
-          <Button mt="24px" onClick={onPresentStake}>
-            {t('Stake CAKE in IFO pool')}
-          </Button>
+          {!pool.isFinished && (
+            <Button mt="24px" onClick={onPresentStake}>
+              {t('Stake CAKE in IFO pool')}
+            </Button>
+          )}
         </Flex>
       ) : (
         <>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import { Token } from '@pancakeswap/sdk'
-import { ButtonMenu, ButtonMenuItem, ModalBody } from '@pancakeswap/uikit'
+import { Token } from 'pickleswap-sdk'
+import { ButtonMenu, ButtonMenuItem, ModalBody } from 'vorpaltesttoolkit'
 import styled from 'styled-components'
 import { TokenList } from '@uniswap/token-lists'
 import { useTranslation } from 'contexts/Localization'
@@ -9,7 +9,22 @@ import ManageTokens from './ManageTokens'
 import { CurrencyModalView } from './types'
 
 const StyledButtonMenu = styled(ButtonMenu)`
-  width: 100%;
+  width: 322px;
+  background: #ededed;
+  box-shadow: inset 0px 0px 5px 2px rgba(0, 0, 0, 0.15);
+  border: 1px solid #ffffff;
+`
+
+const StyledButtonMenuItem = styled(ButtonMenuItem)`
+  border-radius: 16px;
+  text-transform: uppercase;
+  background-color: ${({ isActive }) => {
+    return isActive ? '#DBD8E3' : 'transparent'
+  }};
+
+  color: ${({ isActive }) => {
+    return isActive ? '#F1F6F9' : '#2A2338'
+  }};
 `
 
 export default function Manage({
@@ -28,16 +43,16 @@ export default function Manage({
   const { t } = useTranslation()
 
   return (
-    <ModalBody>
+    <ModalBody style={{ width: '400px', display: 'flex', alignItems: 'center' }}>
       <StyledButtonMenu
         activeIndex={showLists ? 0 : 1}
         onItemClick={() => setShowLists((prev) => !prev)}
         scale="sm"
         variant="subtle"
-        mb="32px"
+        mb="20px"
       >
-        <ButtonMenuItem width="50%">{t('Lists')}</ButtonMenuItem>
-        <ButtonMenuItem width="50%">{t('Tokens')}</ButtonMenuItem>
+        <StyledButtonMenuItem width="50%">{t('Lists')}</StyledButtonMenuItem>
+        <StyledButtonMenuItem width="50%">{t('Tokens')}</StyledButtonMenuItem>
       </StyledButtonMenu>
       {showLists ? (
         <ManageLists setModalView={setModalView} setImportList={setImportList} setListUrl={setListUrl} />

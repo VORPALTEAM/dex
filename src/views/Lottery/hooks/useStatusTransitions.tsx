@@ -46,7 +46,7 @@ const useStatusTransitions = () => {
       const interval = setInterval(async () => {
         dispatch(fetchCurrentLotteryId())
         dispatch(fetchPublicLotteries({ currentLotteryId }))
-      }, 10000)
+      }, 1000000) // 10000
       return () => clearInterval(interval)
     }
     return () => null

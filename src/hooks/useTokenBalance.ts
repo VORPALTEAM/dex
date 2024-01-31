@@ -27,11 +27,13 @@ const useTokenBalance = (tokenAddress: string) => {
     fetchStatus: NOT_FETCHED,
   })
   const { account } = useWeb3React()
+  const web3 = useWeb3React()
   const fastRefresh = useFastFresh()
 
   useEffect(() => {
     const fetchBalance = async () => {
-      const contract = getBep20Contract(tokenAddress)
+      const contract = getBep20Contract(tokenAddress, web3.library?.getSigner())
+
       try {
         const res = await contract.balanceOf(account)
         setBalanceState({ balance: new BigNumber(res.toString()), fetchStatus: SUCCESS })
@@ -47,7 +49,7 @@ const useTokenBalance = (tokenAddress: string) => {
     if (account) {
       fetchBalance()
     }
-  }, [account, tokenAddress, fastRefresh, SUCCESS, FAILED])
+  }, [account, tokenAddress, fastRefresh, SUCCESS, FAILED, web3])
 
   return balanceState
 }
@@ -75,9 +77,10 @@ export const useBurnedBalance = (tokenAddress: string) => {
 
   useEffect(() => {
     const fetchBalance = async () => {
-      const contract = getBep20Contract(tokenAddress)
-      const res = await contract.balanceOf('0x000000000000000000000000000000000000dEaD')
-      setBalance(new BigNumber(res.toString()))
+      // const contract = getBep20Contract(tokenAddress)
+      // const res = await contract.balanceOf('0x000000000000000000000000000000000000dEaD')
+      // setBalance(new BigNumber(res.toString()))
+      setBalance(new BigNumber(0))
     }
 
     fetchBalance()

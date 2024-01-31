@@ -1,19 +1,18 @@
 import React from 'react'
 import styled from 'styled-components'
 import {
-  ChartIcon,
+  // ChartIcon,
   Flex,
   Heading,
-  HistoryIcon,
-  IconButton,
-  NotificationDot,
+  // HistoryIcon,
+  // IconButton,
+  // NotificationDot,
   Text,
-  useModal,
-  ChartDisableIcon,
-} from '@pancakeswap/uikit'
-import TransactionsModal from 'components/App/Transactions/TransactionsModal'
-import GlobalSettings from 'components/Menu/GlobalSettings'
-import { useExpertModeManager } from 'state/user/hooks'
+  // ChartDisableIcon,
+} from 'vorpaltesttoolkit'
+// import TransactionsModal from 'components/App/Transactions/TransactionsModal'
+// import GlobalSettings from 'components/Menu/GlobalSettings'
+// import { useExpertModeManager } from 'state/user/hooks'
 
 interface Props {
   title: string
@@ -25,47 +24,54 @@ interface Props {
 
 const CurrencyInputContainer = styled(Flex)`
   align-items: center;
-  padding: 24px;
+  padding: 0px 0px 0px 0px;
+  width: 554px;
+  // border-bottom: 1px solid ${({ theme }) => theme.colors.cardBorder};
+`
+
+const StyledSubTitle = styled(Flex)`
   width: 100%;
-  border-bottom: 1px solid ${({ theme }) => theme.colors.cardBorder};
+  padding: 9px 0px;
+  border-top: 1px solid ${({ theme }) => theme.colors.text};
+  border-bottom: 1px solid ${({ theme }) => theme.colors.text};
 `
 
-const ColoredIconButton = styled(IconButton)`
-  color: ${({ theme }) => theme.colors.textSubtle};
-`
+// const ColoredIconButton = styled(IconButton)`
+//   color: ${({ theme }) => theme.colors.textSubtle};
+// `
 
-const CurrencyInputHeader: React.FC<Props> = ({ title, subtitle, setIsChartDisplayed, isChartDisplayed }) => {
-  const [expertMode] = useExpertModeManager()
-  const toggleChartDisplayed = () => {
-    setIsChartDisplayed((currentIsChartDisplayed) => !currentIsChartDisplayed)
-  }
-  const [onPresentTransactionsModal] = useModal(<TransactionsModal />)
+const CurrencyInputHeader: React.FC<Props> = ({ title, subtitle }) => {
+  // const [expertMode] = useExpertModeManager()
+  // const toggleChartDisplayed = () => {
+  //   setIsChartDisplayed((currentIsChartDisplayed) => !currentIsChartDisplayed)
+  // }
+  // const [onPresentTransactionsModal] = useModal(<TransactionsModal />)
 
   return (
     <CurrencyInputContainer>
-      <Flex width="100%" alignItems="flex-start" justifyContent="space-between">
-        {setIsChartDisplayed && (
+      <Flex width="100%" alignItems="flex-start" justifyContent="center">
+        {/* {setIsChartDisplayed && (
           <ColoredIconButton onClick={toggleChartDisplayed} variant="text" scale="sm">
             {isChartDisplayed ? <ChartDisableIcon color="textSubtle" /> : <ChartIcon width="24px" color="textSubtle" />}
           </ColoredIconButton>
-        )}
-        <Flex flexDirection="column" alignItems="center">
-          <Heading as="h2" mb="8px">
+        )} */}
+        <Flex style={{ paddingTop: 40 }} width="475px" flexDirection="column" alignItems="center">
+          <Heading as="h2" mb="8px" scale="sm" fontFamily="RoundsBlack">
             {title}
           </Heading>
-          <Flex alignItems="center">
-            <Text color="textSubtle" fontSize="14px">
-              {subtitle}
+          <StyledSubTitle alignItems="center">
+            <Text color="text" fontSize="12px" fontFamily="RobotoBold">
+              {subtitle.toUpperCase()}
             </Text>
-          </Flex>
+          </StyledSubTitle>
         </Flex>
         <Flex>
-          <NotificationDot show={expertMode}>
+          {/* <NotificationDot show={expertMode}>
             <GlobalSettings color="textSubtle" mr="0" />
-          </NotificationDot>
-          <IconButton onClick={onPresentTransactionsModal} variant="text" scale="sm">
+          </NotificationDot> */}
+          {/* <IconButton onClick={onPresentTransactionsModal} variant="text" scale="sm">
             <HistoryIcon color="textSubtle" width="24px" />
-          </IconButton>
+          </IconButton> */}
         </Flex>
       </Flex>
     </CurrencyInputContainer>

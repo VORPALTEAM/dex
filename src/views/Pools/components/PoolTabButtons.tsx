@@ -2,7 +2,7 @@ import React from 'react'
 import { useRouteMatch, Link } from 'react-router-dom'
 import { ViewMode } from 'state/user/actions'
 import styled from 'styled-components'
-import { ButtonMenu, ButtonMenuItem, Toggle, Text, NotificationDot } from '@pancakeswap/uikit'
+import { ButtonMenu, ButtonMenuItem, Toggle, Text, NotificationDot } from 'vorpaltesttoolkit'
 import { useTranslation } from 'contexts/Localization'
 import ToggleView from './ToggleView/ToggleView'
 
@@ -76,7 +76,7 @@ const PoolTabButtons = ({ stakedOnly, setStakedOnly, hasStakeInFinishedPools, vi
   const stakedOnlySwitch = (
     <ToggleWrapper>
       <Toggle checked={stakedOnly} onChange={() => setStakedOnly(!stakedOnly)} scale="sm" />
-      <Text> {t('Staked only')}</Text>
+      <Text color="primary"> {t('Staked only')}</Text>
     </ToggleWrapper>
   )
 

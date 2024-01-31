@@ -4,7 +4,7 @@ import ApyButton from 'views/Farms/components/FarmCard/ApyButton'
 import BigNumber from 'bignumber.js'
 import { BASE_ADD_LIQUIDITY_URL } from 'config'
 import getLiquidityUrlPathParts from 'utils/getLiquidityUrlPathParts'
-import { Skeleton } from '@pancakeswap/uikit'
+import { Skeleton } from 'vorpaltesttoolkit'
 
 export interface AprProps {
   value: string
@@ -58,7 +58,8 @@ const Apr: React.FC<AprProps> = ({
 
   return originalValue !== 0 ? (
     <Container>
-      {originalValue ? (
+      {
+        // {originalValue ? (
         <ApyButton
           variant={hideButton ? 'text' : 'text-and-button'}
           pid={pid}
@@ -70,11 +71,12 @@ const Apr: React.FC<AprProps> = ({
           displayApr={value}
           addLiquidityUrl={addLiquidityUrl}
         />
-      ) : (
-        <AprWrapper>
-          <Skeleton width={60} />
-        </AprWrapper>
-      )}
+        // ) : (
+        //   <AprWrapper>
+        //     <Skeleton width={60} />
+        //   </AprWrapper>
+        // )
+      }
     </Container>
   ) : (
     <Container>

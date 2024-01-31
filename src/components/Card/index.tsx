@@ -1,5 +1,6 @@
 import styled from 'styled-components'
-import { Box } from '@pancakeswap/uikit'
+// import { Box } from 'vorpaltesttoolkit'
+import { Box } from 'vorpaltesttoolkit'
 
 const Card = styled(Box)<{
   width?: string
@@ -13,13 +14,18 @@ const Card = styled(Box)<{
   padding: ${({ padding }) => padding};
   border: ${({ border }) => border};
   border-radius: ${({ borderRadius }) => borderRadius};
-  background-color: ${({ theme }) => theme.colors.background};
+  background-color: ${({ theme }) => theme.colors.backgroundAlt1};
 `
 export default Card
 
 export const LightCard = styled(Card)`
   border: 1px solid ${({ theme }) => theme.colors.background};
-  background-color: ${({ theme }) => theme.colors.backgroundAlt};
+  background-color: #DBD8E3;
+`
+
+export const CustomCard = styled(Card)`
+  border: 1px solid ${({ theme }) => theme.colors.background};
+  background-color: transparent;
 `
 
 export const LightGreyCard = styled(Card)`

@@ -10,11 +10,11 @@ import {
   ButtonMenuItem,
   HelpIcon,
   useTooltip,
-} from '@pancakeswap/uikit'
+} from 'vorpaltesttoolkit'
 import { useTranslation } from 'contexts/Localization'
 import useTheme from 'hooks/useTheme'
 import useToast from 'hooks/useToast'
-import { Token } from '@pancakeswap/sdk'
+import { Token } from 'pickleswap-sdk'
 import { formatNumber } from 'utils/formatBalance'
 import { logError } from 'utils/sentry'
 import useHarvestPool from '../../../hooks/useHarvestPool'

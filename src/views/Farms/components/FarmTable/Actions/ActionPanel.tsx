@@ -1,7 +1,7 @@
 import React from 'react'
 import styled, { keyframes, css } from 'styled-components'
 import { useTranslation } from 'contexts/Localization'
-import { LinkExternal, Text } from '@pancakeswap/uikit'
+import { LinkExternal, Text } from 'vorpaltesttoolkit'
 import { FarmWithStakedValue } from 'views/Farms/components/FarmCard/FarmCard'
 import getLiquidityUrlPathParts from 'utils/getLiquidityUrlPathParts'
 import { getAddress } from 'utils/addressHelpers'
@@ -51,7 +51,7 @@ const Container = styled.div<{ expanded }>`
           ${collapseAnimation} 300ms linear forwards
         `};
   overflow: hidden;
-  background: ${({ theme }) => theme.colors.background};
+  background: ${({ theme }) => theme.colors.contrast};
   display: flex;
   width: 100%;
   flex-direction: column-reverse;
@@ -65,6 +65,8 @@ const Container = styled.div<{ expanded }>`
 
 const StyledLinkExternal = styled(LinkExternal)`
   font-weight: 400;
+  font-size: 11px;
+  color: ${({ theme }) => theme.colors.text};
 `
 
 const StakeContainer = styled.div`
@@ -81,10 +83,9 @@ const StakeContainer = styled.div`
 const TagsContainer = styled.div`
   display: flex;
   align-items: center;
-  margin-top: 25px;
 
   ${({ theme }) => theme.mediaQueries.sm} {
-    margin-top: 16px;
+    /* margin-top: 16px; */
   }
 
   > div {
@@ -102,6 +103,8 @@ const TagsContainer = styled.div`
 const ActionContainer = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  height: 50px;
 
   ${({ theme }) => theme.mediaQueries.sm} {
     flex-direction: row;
@@ -112,7 +115,11 @@ const ActionContainer = styled.div`
 `
 
 const InfoContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
   min-width: 200px;
+  height: 50px;
 `
 
 const ValueContainer = styled.div`
@@ -128,6 +135,11 @@ const ValueWrapper = styled.div`
   align-items: center;
   justify-content: space-between;
   margin: 4px 0px;
+`
+
+const LinkContainer = styled.div`
+  display: flex;
+  flex-direction: column;
 `
 
 const ActionPanel: React.FunctionComponent<ActionPanelProps> = ({
@@ -155,15 +167,17 @@ const ActionPanel: React.FunctionComponent<ActionPanelProps> = ({
   return (
     <Container expanded={expanded}>
       <InfoContainer>
-        {isActive && (
-          <StakeContainer>
-            <StyledLinkExternal href={`/add/${liquidityUrlPathParts}`}>
-              {t('Get %symbol%', { symbol: lpLabel })}
-            </StyledLinkExternal>
-          </StakeContainer>
-        )}
-        <StyledLinkExternal href={bsc}>{t('View Contract')}</StyledLinkExternal>
-        <StyledLinkExternal href={info}>{t('See Pair Info')}</StyledLinkExternal>
+        <LinkContainer>
+          {isActive && (
+            <StakeContainer>
+              <StyledLinkExternal href={`/add/${liquidityUrlPathParts}`}>
+                {t('Get %symbol%', { symbol: lpLabel })}
+              </StyledLinkExternal>
+            </StakeContainer>
+          )}
+          <StyledLinkExternal href={bsc}>{t('View Contract')}</StyledLinkExternal>
+          <StyledLinkExternal href={info}>{t('See Pair Info')}</StyledLinkExternal>
+        </LinkContainer>
         <TagsContainer>
           {farm.isCommunity ? <CommunityTag /> : <CoreTag />}
           {dual ? <DualTag /> : null}

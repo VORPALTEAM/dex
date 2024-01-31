@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useMemo } from 'react'
-import { Flex, Text, Skeleton, Button, ArrowForwardIcon } from '@pancakeswap/uikit'
+import { Flex, Text, Skeleton, Button, ArrowForwardIcon, Heading } from 'vorpaltesttoolkit'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'contexts/Localization'
 import { useSlowFresh } from 'hooks/useRefresh'
@@ -13,6 +13,19 @@ import { getBalanceAmount } from 'utils/formatBalance'
 
 const StyledLink = styled(Link)`
   width: 100%;
+`
+
+const StyledButton = styled(Button)`
+  width: 260px;
+  height: 40px;
+  background: #352F44;
+  color: #FFFFFF;
+  font-weight: 500;
+  text-transform: uppercase;
+  border-radius: 6px;
+  margin: auto;
+  margin-top: 26px;
+  pointer-events: none;
 `
 
 const StyledBalance = styled(Balance)`
@@ -30,14 +43,14 @@ const LotteryCardContent = () => {
   const [currentLotteryPrize, setCurrentLotteryPrize] = useState<BigNumber>(null)
   const cakePriceBusdAsString = usePriceCakeBusd().toString()
 
-  const cakePrizesText = t('%cakePrizeInUsd% in CAKE prizes this round', { cakePrizeInUsd: cakePriceBusdAsString })
+  const cakePrizesText = t('%cakePrizeInUsd% in VORPAL prizes this round', { cakePrizeInUsd: cakePriceBusdAsString })
   const [pretext, prizesThisRound] = cakePrizesText.split(cakePriceBusdAsString)
 
   const cakePriceBusd = useMemo(() => {
     return new BigNumber(cakePriceBusdAsString)
   }, [cakePriceBusdAsString])
 
-  useEffect(() => {
+  /* useEffect(() => {
     if (isIntersecting) {
       setLoadData(true)
     }
@@ -53,7 +66,9 @@ const LotteryCardContent = () => {
     if (loadData) {
       fetchCurrentID()
     }
-  }, [loadData, setLotteryId])
+  }, [loadData, setLotteryId]) */
+
+  const lotAmount = '$131,919'
 
   useEffect(() => {
     // get public data for current lottery
@@ -71,44 +86,40 @@ const LotteryCardContent = () => {
   return (
     <>
       <Flex flexDirection="column" mt="48px">
-        <Text color="white" bold fontSize="16px">
-          {t('Lottery')}
+        <Text color="#280D5F" bold fontSize="16px">
+          {t('LOTTERY')}
         </Text>
         {pretext && (
           <Text color="white" mt="12px" bold fontSize="16px">
             {pretext}
           </Text>
         )}
-        {currentLotteryPrize && currentLotteryPrize.gt(0) ? (
-          <StyledBalance
-            fontSize="40px"
-            bold
-            prefix="$"
-            decimals={0}
-            value={getBalanceAmount(currentLotteryPrize).toNumber()}
-          />
+        <Heading color="#280D5F" my="8px" scale="xl" bold>
+            {lotAmount}
+          </Heading>
+        {/* currentLotteryPrize && currentLotteryPrize.gt(0) ? (
+           <Heading color="#280D5F" my="8px" scale="xl" bold>
+            {lotAmount}
+          </Heading>
         ) : (
           <>
             <Skeleton width={200} height={40} my="8px" />
             <div ref={observerRef} />
           </>
-        )}
-        <Text color="white" mb="24px" bold fontSize="16px">
+        ) */}
+        <Text color="#280D5F" mb="24px" bold fontSize="16px">
           {prizesThisRound}
         </Text>
-        <Text color="white" mb="40px">
-          {t('Buy tickets with CAKE, win CAKE if your numbers match')}
+        <Text color="#280D5F" mb="40px">
+          {t('Buy tickets with VRP, win VRP if your numbers match')}
         </Text>
       </Flex>
       <Flex alignItems="center" justifyContent="center">
-        <StyledLink to="/lottery" id="homepage-prediction-cta">
-          <Button width="100%">
+          <StyledButton width="100%">
             <Text bold color="invertedContrast">
-              {t('Buy Tickets')}
+              {t('COMING SOON')}
             </Text>
-            <ArrowForwardIcon ml="4px" color="invertedContrast" />
-          </Button>
-        </StyledLink>
+          </StyledButton>
       </Flex>
     </>
   )

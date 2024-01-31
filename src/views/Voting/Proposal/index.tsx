@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { ArrowBackIcon, Box, Button, Flex, Heading } from '@pancakeswap/uikit'
+import { ArrowBackIcon, Box, Button, Flex, Heading } from 'vorpaltesttoolkit'
 import { useWeb3React } from '@web3-react/core'
 import { Link, useParams } from 'react-router-dom'
 import { useAppDispatch } from 'state'
@@ -22,7 +22,7 @@ import Details from './Details'
 import Results from './Results'
 import Vote from './Vote'
 import Votes from './Votes'
-import { PageMeta } from '../../../components/Layout/Page'
+import Page, { PageMeta } from '../../../components/Layout/Page'
 
 const Proposal = () => {
   const { id }: { id: string } = useParams()
@@ -50,7 +50,7 @@ const Proposal = () => {
   }, [proposalId, snapshot, dispatch])
 
   if (!proposal) {
-    return <PageLoader />
+    return <Page />
   }
 
   return (

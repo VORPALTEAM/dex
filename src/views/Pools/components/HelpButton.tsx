@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Text, Button, HelpIcon, Link } from '@pancakeswap/uikit'
+import { Text, Button, AskIcon, Link } from 'vorpaltesttoolkit'
 import { useTranslation } from 'contexts/Localization'
 
 const ButtonText = styled(Text)`
@@ -30,12 +30,12 @@ const HelpButton = () => {
   const { t } = useTranslation()
   return (
     <Container>
-      <StyledLink external href="https://docs.pancakeswap.finance/products/syrup-pool/syrup-pool-faq">
-        <Button px={['14px', null, null, null, '20px']} variant="subtle">
-          <ButtonText color="backgroundAlt" bold fontSize="16px">
+      <StyledLink external href="">
+        <Button px={['14px', null, null, null, '20px']} color="tetriary" variant="contrast">
+          <ButtonText color="tetriary" bold fontSize="16px">
             {t('Help')}
           </ButtonText>
-          <HelpIcon color="backgroundAlt" ml={[null, null, null, 0, '6px']} />
+          <AskIcon color="tetriary" ml={[null, null, null, 0, '6px']} />
         </Button>
       </StyledLink>
     </Container>

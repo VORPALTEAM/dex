@@ -1,16 +1,23 @@
 import React from 'react'
-import { Heading, Flex, Text, useMatchBreakpoints } from '@pancakeswap/uikit'
+import styled from 'styled-components'
+import { Heading, Flex, Text, useMatchBreakpoints } from 'vorpaltesttoolkit'
 
-const StatCardContent: React.FC<{ headingText: string; bodyText: string; highlightColor: string }> = ({
+const StatCardContent: React.FC<{ headingText: string; headingSecondText: string, bodyText: string; highlightColor: string }> = ({
   headingText,
   bodyText,
   highlightColor,
+  headingSecondText,
 }) => {
   const { isMobile, isTablet } = useMatchBreakpoints()
   const isSmallerScreen = isMobile || isTablet
   const split = headingText.split(' ')
   const lastWord = split.pop()
   const remainingWords = split.slice(0, split.length).join(' ')
+
+  const BottomText = styled(Text)`
+    margin-top: 34px;
+    text-align: center;
+  `
 
   return (
     <Flex
@@ -19,17 +26,13 @@ const StatCardContent: React.FC<{ headingText: string; bodyText: string; highlig
       width="fit-content"
       flexDirection="column"
       justifyContent="flex-end"
-      mt={[null, null, null, '64px']}
+      mt={[null, null, '64px', '70px']}
     >
-      {isSmallerScreen && remainingWords.length > 13 ? (
-        <Heading scale="lg">{remainingWords}</Heading>
-      ) : (
-        <Heading scale="xl">{remainingWords}</Heading>
-      )}
+      <Heading scale="xl">{headingText}</Heading>
       <Heading color={highlightColor} scale="xl" mb="24px">
-        {lastWord}
+        {headingSecondText}
       </Heading>
-      <Text color="textSubtle">{bodyText}</Text>
+      <BottomText textAlign="center" color="tertiary" fontWeight="700" fontSize="18px">{bodyText}</BottomText>
     </Flex>
   )
 }

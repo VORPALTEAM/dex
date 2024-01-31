@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Flex, Heading, Text, Link } from '@pancakeswap/uikit'
+import { Flex, Heading, Text, Link } from 'vorpaltesttoolkit'
 import { useTranslation } from 'contexts/Localization'
 import ConnectWalletButton from 'components/ConnectWalletButton'
 import Container from 'components/Layout/Container'
@@ -27,6 +27,11 @@ const StyledSunburst = styled(SunburstSvg)`
   }
 `
 
+const SubHeading = styled(Heading)`
+font-family: RoundsBlack;
+font-size: 24px;
+`
+
 const Wrapper = styled(Flex)`
   z-index: 1;
   position: relative;
@@ -34,6 +39,8 @@ const Wrapper = styled(Flex)`
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  padding: 0;
+  max-width: 9999px;
 `
 
 const FloatingPancakesWrapper = styled(Container)`
@@ -53,31 +60,29 @@ const FloatingPancakesWrapper = styled(Container)`
 
 const TopLeftImgWrapper = styled(Flex)`
   position: absolute;
-  left: 0;
+  left: -30px;
   top: 0;
 `
 
 const BottomRightImgWrapper = styled(Flex)`
   position: absolute;
-  right: 0;
+  right: -30px;
   bottom: 0;
 `
 
 const topLeftImage = {
-  path: '/images/home/flying-pancakes/',
+  path: '/images/home/flying-stars/',
   attributes: [
-    { src: '1-bottom', alt: 'Pancake flying on the bottom' },
-    { src: '1-left', alt: 'Pancake flying on the left' },
-    { src: '1-top', alt: 'Pancake flying on the top' },
+    { src: '1-bottom', alt: 'Star flying on the bottom' },
+    { src: '1-left', alt: 'Star flying on the left' },
   ],
 }
 
 const bottomRightImage = {
-  path: '/images/home/flying-pancakes/',
+  path: '/images/home/flying-stars/',
   attributes: [
     { src: '2-bottom', alt: 'Pancake flying on the bottom' },
-    { src: '2-top', alt: 'Pancake flying on the top' },
-    { src: '2-right', alt: 'Pancake flying on the right' },
+    { src: '2-right', alt: 'Star flying on the right' },
   ],
 }
 
@@ -88,34 +93,36 @@ const Footer = () => {
   return (
     <>
       <BgWrapper>
-        <Flex alignItems="center" justifyContent="center" width="100%" height="100%">
+        {/* <Flex alignItems="center" justifyContent="center" width="100%" height="100%">
           <StyledSunburst />
-        </Flex>
+        </Flex> */}
       </BgWrapper>
       <FloatingPancakesWrapper>
         <TopLeftImgWrapper>
-          <CompositeImage {...topLeftImage} maxHeight="256px" />
+          <CompositeImage {...topLeftImage} maxHeight="384px" />
         </TopLeftImgWrapper>
         <BottomRightImgWrapper>
-          <CompositeImage {...bottomRightImage} maxHeight="256px" />
+          <CompositeImage {...bottomRightImage} maxHeight="384px" />
         </BottomRightImgWrapper>
       </FloatingPancakesWrapper>
-      <Wrapper>
-        <Heading mb="24px" scale="xl" color="white">
-          {t('Start in seconds.')}
+      <Wrapper mt="60px" mb="60px">
+        <Heading className="mobile--center" mb="24px" scale="xl" color="primary">
+          {t('It’s time to get SCHWIFTY')}
         </Heading>
         <Text textAlign="center" color="white">
-          {t('Connect your crypto wallet to start using the app in seconds.')}
+          {t('Connect your crypto wallet to start using the app in seconds')}
         </Text>
         <Text mb="24px" bold color="white">
-          {t('No registration needed.')}
+          {t('No registration needed')}
         </Text>
-
-        <Link external href="https://docs.pancakeswap.finance/">
+        <SubHeading mb="16px" scale="lg" color="white">
+          {t('Show me what you got')}
+        </SubHeading>
+        <Link external href="https://teletype.in/@vorpaldao/cA5JT7Mw3C1" target="_blank">
           {t('Learn how to start')}
         </Link>
-        {!account && <ConnectWalletButton mt="24px" />}
-      </Wrapper>
+        {!account && <ConnectWalletButton className="mobile--long" mt="24px" />}
+      </Wrapper> 
     </>
   )
 }

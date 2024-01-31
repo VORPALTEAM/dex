@@ -1,4 +1,4 @@
-import { ErrorIcon, Text } from '@pancakeswap/uikit'
+import { ErrorIcon, Text } from 'vorpaltesttoolkit'
 import { AutoColumn } from 'components/Layout/Column'
 import React from 'react'
 import styled, { css } from 'styled-components'
@@ -29,14 +29,14 @@ export const ErrorText = styled(Text)<{ severity?: 0 | 1 | 2 | 3 | 4 }>`
       : severity === 2
       ? theme.colors.warning
       : severity === 1
-      ? theme.colors.text
-      : theme.colors.success};
+      ? theme.colors.contrast
+      : '#4DA1A3'};
 `
 
 export const StyledBalanceMaxMini = styled.button`
   height: 22px;
   width: 22px;
-  background-color: ${({ theme }) => theme.colors.background};
+  background-color: transparent;
   border: none;
   border-radius: 50%;
   padding: 0.2rem;
@@ -51,10 +51,8 @@ export const StyledBalanceMaxMini = styled.button`
   float: right;
 
   :hover {
-    background-color: ${({ theme }) => theme.colors.dropdown};
   }
   :focus {
-    background-color: ${({ theme }) => theme.colors.dropdown};
     outline: none;
   }
 `

@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react'
-import { Input } from '@pancakeswap/uikit'
+import { Input } from 'vorpaltesttoolkit'
 import styled from 'styled-components'
 import debounce from 'lodash/debounce'
 import { useTranslation } from 'contexts/Localization'
@@ -7,6 +7,9 @@ import { useTranslation } from 'contexts/Localization'
 const StyledInput = styled(Input)`
   border-radius: 16px;
   margin-left: auto;
+  background-color: transparent;
+  height: 30px;
+  border: ${({ theme }) => `1px solid ${theme.colors.primary}`};
 `
 
 const InputWrapper = styled.div`

@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { Box } from '@pancakeswap/uikit'
+import { Box } from 'vorpaltesttoolkit'
 
 const Row = styled(Box)<{
   width?: string
@@ -20,6 +20,11 @@ const Row = styled(Box)<{
 `
 
 export const RowBetween = styled(Row)`
+  justify-content: space-between;
+`
+
+export const CustomRowBetween = styled(Row)`
+  width: 100%;
   justify-content: space-between;
 `
 

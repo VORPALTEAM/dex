@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
-import { Button, ChevronUpIcon } from '@pancakeswap/uikit'
+import { Button, ChevronUpIcon } from 'vorpaltesttoolkit'
 import { useTranslation } from 'contexts/Localization'
 
 const FixedContainer = styled.div`
@@ -37,7 +37,7 @@ const ScrollToTopButton = () => {
 
   return (
     <FixedContainer style={{ display: visible ? 'inline' : 'none' }}>
-      <Button variant="subtle" endIcon={<ChevronUpIcon color="invertedContrast" />} onClick={scrollToTop}>
+      <Button variant="subtle" endIcon={<ChevronUpIcon color="text" />} onClick={scrollToTop}>
         {t('To Top')}
       </Button>
     </FixedContainer>

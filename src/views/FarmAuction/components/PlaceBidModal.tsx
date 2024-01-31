@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import BigNumber from 'bignumber.js'
 import { ethers } from 'ethers'
-import { Modal, Text, Flex, BalanceInput, Box, Button, PancakeRoundIcon } from '@pancakeswap/uikit'
+import { Modal, Text, Flex, BalanceInput, Box, Button, PancakeRoundIcon } from 'vorpaltesttoolkit'
 import { useTranslation } from 'contexts/Localization'
 import { useWeb3React } from '@web3-react/core'
 import { formatNumber, getBalanceAmount, getBalanceNumber } from 'utils/formatBalance'
@@ -13,13 +13,14 @@ import useApproveConfirmTransaction from 'hooks/useApproveConfirmTransaction'
 import { useCake, useFarmAuctionContract } from 'hooks/useContract'
 import { DEFAULT_TOKEN_DECIMAL } from 'config'
 import useToast from 'hooks/useToast'
-import ConnectWalletButton from 'components/ConnectWalletButton'
+// import ConnectWalletButton from 'components/ConnectWalletButton'
 import ApproveConfirmButtons, { ButtonArrangement } from 'components/ApproveConfirmButtons'
 import { ConnectedBidder } from 'config/constants/types'
 import { usePriceCakeBusd } from 'state/farms/hooks'
 import { useCallWithGasPrice } from 'hooks/useCallWithGasPrice'
 import { ToastDescriptionWithTx } from 'components/Toast'
 import tokens from 'config/constants/tokens'
+import StyledConnectWalletButton from '../../../style/ConnectWalletButton'
 
 const StyledModal = styled(Modal)`
   min-width: 280px;
@@ -248,7 +249,7 @@ const PlaceBidModal: React.FC<PlaceBidModalProps> = ({
               buttonArrangement={ButtonArrangement.SEQUENTIAL}
             />
           ) : (
-            <ConnectWalletButton />
+            <StyledConnectWalletButton />
           )}
         </Flex>
         <Text color="textSubtle" small mt="24px">

@@ -1,6 +1,6 @@
 import { BigNumber } from '@ethersproject/bignumber'
 import { Contract } from '@ethersproject/contracts'
-import { JSBI, Percent, Router, SwapParameters, Trade, TradeType } from '@pancakeswap/sdk'
+import { JSBI, Percent, Router, SwapParameters, Trade, TradeType } from 'pickleswap-sdk'
 import { useMemo } from 'react'
 import useActiveWeb3React from 'hooks/useActiveWeb3React'
 import { useGasPrice } from 'state/user/hooks'
@@ -127,12 +127,16 @@ export function useSwapCallback(
 
             return contract.estimateGas[methodName](...args, options)
               .then((gasEstimate) => {
+                // console.log(gasEstimate)
+
                 return {
                   call,
                   gasEstimate,
                 }
               })
               .catch((gasError) => {
+                // console.log(gasError)
+
                 console.error('Gas estimate failed, trying eth_call to extract error', call)
 
                 return contract.callStatic[methodName](...args, options)
@@ -172,6 +176,8 @@ export function useSwapCallback(
           },
           gasEstimate,
         } = successfulEstimation
+
+        // console.log(successfulEstimation)
 
         return contract[methodName](...args, {
           gasLimit: calculateGasMargin(gasEstimate),

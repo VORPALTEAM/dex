@@ -14,6 +14,7 @@ import {
   DeserializedFarmConfig,
 } from 'config/constants/types'
 import { NftToken, State as NftMarketState } from './nftMarket/types'
+import { ReferralStateType } from './referral'
 
 export type AppThunk<ReturnType = void> = ThunkAction<ReturnType, State, unknown, AnyAction>
 
@@ -42,17 +43,18 @@ export interface SerializedFarm extends SerializedFarmConfig {
   tokenPriceBusd?: string
   quoteTokenPriceBusd?: string
   tokenAmountTotal?: SerializedBigNumber
+  quoteTokenAmountTotal?: SerializedBigNumber
   lpTotalInQuoteToken?: SerializedBigNumber
   lpTotalSupply?: SerializedBigNumber
   tokenPriceVsQuote?: SerializedBigNumber
   poolWeight?: SerializedBigNumber
   userData?: SerializedFarmUserData
 }
-
 export interface DeserializedFarm extends DeserializedFarmConfig {
   tokenPriceBusd?: string
   quoteTokenPriceBusd?: string
   tokenAmountTotal?: BigNumber
+  quoteTokenAmountTotal?: BigNumber
   lpTotalInQuoteToken?: BigNumber
   lpTotalSupply?: BigNumber
   tokenPriceVsQuote?: BigNumber
@@ -157,6 +159,7 @@ export interface CakeVault {
 export interface IfoCakeVault extends Omit<CakeVault, 'userData'> {
   userData?: IfoVaultUser
   creditStartBlock?: number
+  creditEndBlock?: number
 }
 
 export interface PoolsState {
@@ -600,4 +603,6 @@ export interface State {
   voting: VotingState
   lottery: LotteryState
   nftMarket: NftMarketState
+  referral: ReferralStateType
+  modal: string
 }

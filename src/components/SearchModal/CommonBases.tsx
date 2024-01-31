@@ -1,6 +1,6 @@
 import React from 'react'
-import { ChainId, Currency, currencyEquals, ETHER, Token } from '@pancakeswap/sdk'
-import { Text } from '@pancakeswap/uikit'
+import { ChainId, Currency, currencyEquals, ETHER, Token } from 'pickleswap-sdk'
+import { Text } from 'vorpaltesttoolkit'
 import styled from 'styled-components'
 import { useTranslation } from 'contexts/Localization'
 
@@ -11,15 +11,24 @@ import { AutoRow } from '../Layout/Row'
 import { CurrencyLogo } from '../Logo'
 
 const BaseWrapper = styled.div<{ disable?: boolean }>`
-  border: 1px solid ${({ theme, disable }) => (disable ? 'transparent' : theme.colors.dropdown)};
+  // border: 1px solid ${({ theme, disable }) => (disable ? 'transparent' : theme.colors.dropdown)};
+  width: 118px;
   border-radius: 10px;
   display: flex;
   padding: 6px;
 
+  ${Text} {
+    font-family: 'RobotoBold';
+  }
+
   align-items: center;
   :hover {
     cursor: ${({ disable }) => !disable && 'pointer'};
-    background-color: ${({ theme, disable }) => !disable && theme.colors.background};
+    /* background-color: ${({ theme, disable }) => !disable && theme.colors.background}; */
+    ${Text} {
+      color: ${({ theme }) => theme.colors.purple};
+      font-family: 'RobotoBold';
+    }
   }
 
   background-color: ${({ theme, disable }) => disable && theme.colors.dropdown};
@@ -39,7 +48,9 @@ export default function CommonBases({
   return (
     <AutoColumn gap="md">
       <AutoRow>
-        <Text fontSize="14px">{t('Common bases')}</Text>
+        <Text textTransform="uppercase" fontFamily="RobotoBold" fontSize="12px">
+          {t('Common bases')}
+        </Text>
         <QuestionHelper text={t('These tokens are commonly paired with other tokens.')} ml="4px" />
       </AutoRow>
       <AutoRow gap="auto">
@@ -51,14 +62,14 @@ export default function CommonBases({
           }}
           disable={selectedCurrency === ETHER}
         >
-          <CurrencyLogo currency={ETHER} style={{ marginRight: 8 }} />
+          <CurrencyLogo size="36px" currency={ETHER} style={{ marginRight: 8 }} />
           <Text>BNB</Text>
         </BaseWrapper>
         {(chainId ? SUGGESTED_BASES[chainId] : []).map((token: Token) => {
           const selected = selectedCurrency instanceof Token && selectedCurrency.address === token.address
           return (
             <BaseWrapper onClick={() => !selected && onSelect(token)} disable={selected} key={token.address}>
-              <CurrencyLogo currency={token} style={{ marginRight: 8 }} />
+              <CurrencyLogo size="36px" currency={token} style={{ marginRight: 8 }} />
               <Text>{token.symbol}</Text>
             </BaseWrapper>
           )

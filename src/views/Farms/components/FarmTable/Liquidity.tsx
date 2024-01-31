@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { HelpIcon, Text, Skeleton, useTooltip } from '@pancakeswap/uikit'
+import { HelpIcon, Text, Skeleton, useTooltip } from 'vorpaltesttoolkit'
 import { useTranslation } from 'contexts/Localization'
 import BigNumber from 'bignumber.js'
 
@@ -48,7 +48,7 @@ const Liquidity: React.FunctionComponent<LiquidityProps> = ({ liquidity }) => {
         <Text>{displayLiquidity}</Text>
       </LiquidityWrapper>
       <ReferenceElement ref={targetRef}>
-        <HelpIcon color="textSubtle" />
+        <HelpIcon color="text" />
       </ReferenceElement>
       {tooltipVisible && tooltip}
     </Container>

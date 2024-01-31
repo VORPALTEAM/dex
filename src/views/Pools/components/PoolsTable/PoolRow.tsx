@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import { useMatchBreakpoints } from '@pancakeswap/uikit'
+import { useMatchBreakpoints } from 'vorpaltesttoolkit'
 import { DeserializedPool, VaultKey } from 'state/types'
 import useDelayedUnmount from 'hooks/useDelayedUnmount'
 import NameCell from './Cells/NameCell'
@@ -52,7 +52,7 @@ const PoolRow: React.FC<PoolRowProps> = ({ pool, account, userDataLoaded }) => {
           <EarningsCell pool={pool} account={account} userDataLoaded={userDataLoaded} />
         )}
         {pool.vaultKey === VaultKey.IfoPool ? (
-          <AvgBalanceCell account={account} userDataLoaded={userDataLoaded} />
+          <AvgBalanceCell account={account} />
         ) : isXLargerScreen && isCakePool ? (
           <StakedCell pool={pool} account={account} userDataLoaded={userDataLoaded} />
         ) : null}

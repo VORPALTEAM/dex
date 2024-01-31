@@ -1,13 +1,18 @@
 import React from 'react'
-import { HistoryIcon, Button, useModal } from '@pancakeswap/uikit'
+import { HistoryIcon, Button, useModal } from 'vorpaltesttoolkit'
 import TransactionsModal from './TransactionsModal'
 
-const Transactions = () => {
+interface Props {
+  color: string
+}
+
+const Transactions: React.FC<Props> = (props) => {
+  const { color } = props
   const [onPresentTransactionsModal] = useModal(<TransactionsModal />)
   return (
     <>
       <Button variant="text" p={0} onClick={onPresentTransactionsModal} ml="16px">
-        <HistoryIcon color="textSubtle" width="24px" />
+        <HistoryIcon color={color ?? 'textSubtle'} width="24px" />
       </Button>
     </>
   )

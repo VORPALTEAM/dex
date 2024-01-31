@@ -10,7 +10,7 @@ import {
   ModalContainer,
   ModalHeader as UIKitModalHeader,
   ModalTitle,
-} from '@pancakeswap/uikit'
+} from 'vorpaltesttoolkit'
 import { parseUnits } from 'ethers/lib/utils'
 import { useTranslation } from 'contexts/Localization'
 import styled from 'styled-components'
@@ -30,7 +30,7 @@ interface WalletModalProps extends InjectedModalProps {
 export const LOW_BNB_BALANCE = parseUnits('2', 'gwei')
 
 const ModalHeader = styled(UIKitModalHeader)`
-  background: ${({ theme }) => theme.colors.gradients.bubblegum};
+  background: ${({ theme }) => theme.colors.backgroundAlt};
 `
 
 const Tabs = styled.div`
@@ -55,7 +55,11 @@ const WalletModal: React.FC<WalletModalProps> = ({ initialView = WalletView.WALL
         <ModalTitle>
           <Heading>{t('Your Wallet')}</Heading>
         </ModalTitle>
-        <IconButton variant="text" onClick={onDismiss}>
+        <IconButton
+          style={{ justifyContent: 'flex-end', height: '20px', width: '100%' }}
+          variant="text"
+          onClick={onDismiss}
+        >
           <CloseIcon width="24px" color="text" />
         </IconButton>
       </ModalHeader>

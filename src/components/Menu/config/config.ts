@@ -1,11 +1,11 @@
-import { MenuItemsType, DropdownMenuItemType } from '@pancakeswap/uikit'
+import { MenuItemsType, DropdownMenuItemType } from 'vorpaltesttoolkit'
 import { ContextApi } from 'contexts/Localization/types'
-import { nftsBaseUrl } from 'views/Nft/market/constants'
+// import { nftsBaseUrl } from 'views/Nft/market/constants'
 
 export type ConfigMenuItemsType = MenuItemsType & { hideSubNav?: boolean }
 
 const config: (t: ContextApi['t']) => ConfigMenuItemsType[] = (t) => [
-  {
+  /* {
     label: t('Trade'),
     icon: 'Swap',
     href: '/swap',
@@ -35,83 +35,127 @@ const config: (t: ContextApi['t']) => ConfigMenuItemsType[] = (t) => [
         href: '/pools',
       },
     ],
-  },
-  {
-    label: t('Win'),
-    href: '/prediction',
+  }, */
+  // {
+  //   label: t('Win'),
+  //   href: '/prediction',
+  //   icon: 'Trophy',
+  //   items: [
+  //     {
+  //       label: t('Trading Competition'),
+  //       href: '/competition',
+  //     },
+  //     {
+  //       label: t('Prediction (BETA)'),
+  //       href: '/prediction',
+  //     },
+  //     {
+  //       label: t('Lottery'),
+  //       href: '/lottery',
+  //     },
+  //   ],
+  // },
+  /* {
+    label: t('Soon'),
+    href: '/soon',
     icon: 'Trophy',
-    items: [
-      {
-        label: t('Trading Competition'),
-        href: '/competition',
-      },
-      {
-        label: t('Prediction (BETA)'),
-        href: '/prediction',
-      },
-      {
-        label: t('Lottery'),
-        href: '/lottery',
-      },
-    ],
+    hideSubNav: false,
+    items: [],
+  }, */
+  /* {
+    label: t('Referral'),
+    href: '/referral',
+    icon: 'Trophy',
+    hideSubNav: false,
+    items: [],
+  }, */
+  {
+    label: t('Starmap'),
+    href: 'https://starmap.vorpal.finance/',
+    icon: 'Star',
+    template: 'star',
+    hideSubNav: false,
+    items: [],
   },
   {
-    label: t('NFT'),
-    href: `${nftsBaseUrl}`,
-    icon: 'Nft',
-    items: [
-      {
-        label: t('Overview'),
-        href: `${nftsBaseUrl}`,
-      },
-      {
-        label: t('Collections'),
-        href: `${nftsBaseUrl}/collections`,
-      },
-      {
-        label: t('Activity'),
-        href: `${nftsBaseUrl}/activity`,
-      },
-    ],
+    label: t('Sale'),
+    href: 'https://sale.vorpal.finance/',
+    icon: 'Green',
+    template: 'green',
+    hideSubNav: false,
+    items: [],
   },
   {
-    label: '',
-    href: '/info',
+    label: t('LitePaper'),
+    href: 'https://drive.google.com/file/d/1cIb9qYmjKwp0Br5g-tJvyCzQ6V_5iW8T/view?usp=sharing',
+    icon: 'default',
+    template: 'default',
+    hideSubNav: false,
+    items: [],
+  },
+  // {
+  //   label: t('NFT'),
+  //   href: `${nftsBaseUrl}`,
+  //   icon: 'Nft',
+  //   items: [
+  //     {
+  //       label: t('Overview'),
+  //       href: `${nftsBaseUrl}`,
+  //     },
+  //     {
+  //       label: t('Collections'),
+  //       href: `${nftsBaseUrl}/collections`,
+  //     },
+  //     {
+  //       label: t('Activity'),
+  //       href: `${nftsBaseUrl}/activity`,
+  //     },
+  //   ],
+  // },
+  {
+    label: '...',
+    href: null,
     icon: 'More',
     hideSubNav: true,
     items: [
       {
-        label: t('Info'),
-        href: '/info',
-      },
-      {
-        label: t('IFO'),
-        href: '/ifo',
-      },
-      {
-        label: t('Voting'),
-        href: '/voting',
-      },
-      {
-        type: DropdownMenuItemType.DIVIDER,
-      },
-      {
-        label: t('Leaderboard'),
-        href: '/teams',
-      },
-      {
-        type: DropdownMenuItemType.DIVIDER,
-      },
-      {
         label: t('Blog'),
-        href: 'https://medium.com/pancakeswap',
-        type: DropdownMenuItemType.EXTERNAL_LINK,
+        href: 'https://vorpaldao.medium.com/',
+        target: "_blank"
       },
       {
-        label: t('Docs'),
-        href: 'https://docs.pancakeswap.finance',
-        type: DropdownMenuItemType.EXTERNAL_LINK,
-      },
+        label: t('Twitter'),
+        href: 'https://twitter.com/VorpalDAO',
+        target: "_blank"
+      }, {
+        label: t("Linkedin"),
+        href: "https://www.linkedin.com/company/vorpaldao",
+        target: "_blank"
+      }, {
+        label: t("Telegram"),
+        href: "https://t.me/VorpalAnnouncements",
+        target: "_blank"
+      }, {
+        label: t("Github"),
+        href: "https://github.com/VORPALTEAM",
+        target: "_blank"
+      }, {
+        label: t("Reddit"),
+        href: "https://www.reddit.com/user/VorpalDAO",
+        target: "_blank"
+      }, {
+        label: t("Youtube"),
+        href: "https://www.youtube.com/@vorpaldao",
+        target: "_blank"
+      }, {
+        label: t("Vimeo"),
+        href: "https://vimeo.com/vorpaldao",
+        target: "_blank"
+      }, {
+        label: t("Discord"),
+        href: "https://discord.gg/epUsWEPaDA",
+        target: "_blank"
+      }
     ],
   },
 ]

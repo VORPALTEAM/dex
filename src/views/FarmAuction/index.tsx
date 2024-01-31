@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Link as RouterLink } from 'react-router-dom'
-import { Button, Heading, Text, Flex, Link, Breadcrumbs } from '@pancakeswap/uikit'
+import { Button, Heading, Text, Flex, Link, Breadcrumbs } from 'vorpaltesttoolkit'
 import { useWeb3React } from '@web3-react/core'
 import { useTranslation } from 'contexts/Localization'
 import PageHeader from 'components/PageHeader'
@@ -17,6 +17,13 @@ import ReclaimBidCard from './components/ReclaimBidCard'
 import NotWhitelistedNotice from './components/NotWhitelistedNotice'
 import CongratulationsCard from './components/CongratulationsCard'
 import AuctionCakeBurn from './components/AuctionCakeBurn'
+
+const FAQS_BG_LIGHT = 'linear-gradient(180deg, #CBD7EF 0%, #9A9FD0 100%)'
+const FAQ_BG_DARK = 'linear-gradient(180deg, #434575 0%, #66578D 100%)'
+const CAKE_BURN_BG_LIGHT = 'radial-gradient(50% 79.31% at 50% 50%, #FAF9FA 0%, #EAECF4 100%)'
+const CAKE_BURN_TOP_FILL_LIGHT = 'radial-gradient(ellipse at bottom, #f0f1f6, #EAECF4)'
+const CAKE_BURN_BG_DARK = 'radial-gradient(103.12% 50% at 50% 50%, #152534 0%, #191326 100%)'
+const CAKE_BURN_TOP_FILL_DARK = '#191326'
 
 const StyledHeader = styled(PageHeader)`
   max-height: max-content;
@@ -67,12 +74,6 @@ const FarmAuction = () => {
   const { account } = useWeb3React()
 
   const { currentAuction, bidders, connectedBidder, refreshBidders } = useCurrentFarmAuction(account)
-  const FAQS_BG_LIGHT = 'linear-gradient(180deg, #CBD7EF 0%, #9A9FD0 100%)'
-  const FAQ_BG_DARK = 'linear-gradient(180deg, #434575 0%, #66578D 100%)'
-  const CAKE_BURN_BG_LIGHT = 'radial-gradient(50% 79.31% at 50% 50%, #FAF9FA 0%, #EAECF4 100%)'
-  const CAKE_BURN_TOP_FILL_LIGHT = 'radial-gradient(ellipse at bottom, #f0f1f6, #EAECF4)'
-  const CAKE_BURN_BG_DARK = 'radial-gradient(103.12% 50% at 50% 50%, #152534 0%, #191326 100%)'
-  const CAKE_BURN_TOP_FILL_DARK = '#191326'
 
   return (
     <>

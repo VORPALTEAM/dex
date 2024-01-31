@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react'
 import styled, { css } from 'styled-components'
-import { ArrowDropDownIcon, Box, BoxProps, Text } from '@pancakeswap/uikit'
+import { ArrowDropDownIcon, Box, BoxProps, Text } from 'vorpaltesttoolkit'
 
 const DropDownHeader = styled.div`
   width: 100%;
@@ -10,9 +10,9 @@ const DropDownHeader = styled.div`
   justify-content: space-between;
   padding: 0px 16px;
   box-shadow: ${({ theme }) => theme.shadows.inset};
-  border: 1px solid ${({ theme }) => theme.colors.inputSecondary};
+  /* border: 1px solid ${({ theme }) => theme.colors.inputSecondary}; */
   border-radius: 16px;
-  background: ${({ theme }) => theme.colors.input};
+  /* background: ${({ theme }) => theme.colors.input}; */
   transition: border-radius 0.15s;
 `
 
@@ -38,7 +38,8 @@ const DropDownContainer = styled(Box)<{ isOpen: boolean }>`
   cursor: pointer;
   width: 100%;
   position: relative;
-  background: ${({ theme }) => theme.colors.input};
+  /* background: ${({ theme }) => theme.colors.input}; */
+  background: transparent;
   border-radius: 16px;
   height: 40px;
   min-width: 136px;
@@ -141,9 +142,9 @@ const Select: React.FunctionComponent<SelectProps> = ({
   return (
     <DropDownContainer isOpen={isOpen} {...props}>
       <DropDownHeader onClick={toggling}>
-        <Text>{options[selectedOptionIndex].label}</Text>
+        <Text color="contrast">{options[selectedOptionIndex].label}</Text>
       </DropDownHeader>
-      <ArrowDropDownIcon color="text" onClick={toggling} />
+      <ArrowDropDownIcon color="primary" onClick={toggling} />
       <DropDownListContainer>
         <DropDownList ref={dropdownRef}>
           {options.map((option, index) =>

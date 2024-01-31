@@ -1,7 +1,8 @@
 import React, { useMemo } from 'react'
 import styled from 'styled-components'
-import { Pair } from '@pancakeswap/sdk'
-import { Text, Flex, CardBody, CardFooter, Button, AddIcon } from '@pancakeswap/uikit'
+import { Pair } from 'pickleswap-sdk'
+// import { Pair } from 'pickleswap-sdk'
+import { Button, Text, Flex, CardBody, CardFooter, AddIcon } from 'vorpaltesttoolkit'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'contexts/Localization'
 import useActiveWeb3React from 'hooks/useActiveWeb3React'
@@ -14,7 +15,25 @@ import { AppHeader, AppBody } from '../../components/App'
 import Page from '../Page'
 
 const Body = styled(CardBody)`
-  background-color: ${({ theme }) => theme.colors.dropdownDeep};
+  background-color: #1a192e;
+`
+
+const CustomButton = styled(Button)`
+  display: flex;
+  justify-content: center;
+  width: 192px;
+  height: 30px;
+  align-items: center;
+  border: 1px solid #acf800;
+  border-radius: 15px;
+  color: #acf800;
+  padding: 10px;
+  font-size: 14px;
+`
+
+const StyledButton = styled(Button)`
+  font-size: 18px;
+  text-transform: uppercase;
 `
 
 export default function Pool() {
@@ -76,7 +95,7 @@ export default function Pool() {
       ))
     }
     return (
-      <Text color="textSubtle" textAlign="center">
+      <Text color="textSubtle" fontSize="18px" textAlign="center">
         {t('No liquidity found.')}
       </Text>
     )
@@ -84,7 +103,7 @@ export default function Pool() {
 
   return (
     <Page>
-      <AppBody>
+      <AppBody width={620}>
         <AppHeader title={t('Your Liquidity')} subtitle={t('Remove liquidity to receive tokens back')} />
         <Body>
           {renderBody()}
@@ -93,16 +112,26 @@ export default function Pool() {
               <Text color="textSubtle" mb="8px">
                 {t("Don't see a pool you joined?")}
               </Text>
-              <Button id="import-pool-link" variant="secondary" scale="sm" as={Link} to="/find">
+              <CustomButton id="import-pool-link" variant="secondary" scale="sm" as={Link} to="/find">
                 {t('Find other LP tokens')}
-              </Button>
+              </CustomButton>
             </Flex>
           )}
         </Body>
         <CardFooter style={{ textAlign: 'center' }}>
-          <Button id="join-pool-button" as={Link} to="/add" width="100%" startIcon={<AddIcon color="white" />}>
-            {t('Add Liquidity')}
-          </Button>
+          <div style={{ textAlign: 'center', padding: '23px' }}>
+            <Button
+              variant="subPrimary"
+              id="join-pool-button"
+              as={Link}
+              to="/add"
+              width="340px"
+              startIcon={<AddIcon color="white" />}
+              style={{ textTransform: 'uppercase' }}
+            >
+              {t('Add Liquidity')}
+            </Button>
+          </div>
         </CardFooter>
       </AppBody>
     </Page>

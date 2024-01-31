@@ -2,8 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 import { useFarmUser } from 'state/farms/hooks'
 import { useTranslation } from 'contexts/Localization'
-import { Text } from '@pancakeswap/uikit'
-import { Token } from '@pancakeswap/sdk'
+import { Text } from 'vorpaltesttoolkit'
+import { Token } from 'pickleswap-sdk'
 import { getBalanceNumber } from 'utils/formatBalance'
 import { TokenPairImage } from 'components/TokenImage'
 
@@ -57,7 +57,9 @@ const Farm: React.FunctionComponent<FarmProps> = ({ token, quoteToken, label, pi
       </TokenWrapper>
       <div>
         {handleRenderFarming()}
-        <Text bold>{label}</Text>
+        <Text fontSize="14px" fontFamily="RoundsBlack">
+          {label}
+        </Text>
       </div>
     </Container>
   )

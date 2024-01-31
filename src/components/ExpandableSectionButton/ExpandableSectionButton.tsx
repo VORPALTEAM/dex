@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { ChevronDownIcon, ChevronUpIcon, Text } from '@pancakeswap/uikit'
+import { CustomArrowDown, Text } from 'vorpaltesttoolkit'
 import { useTranslation } from 'contexts/Localization'
 
 export interface ExpandableSectionButtonProps {
@@ -12,7 +12,9 @@ const Wrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   cursor: pointer;
+  padding: 0px;
 
   svg {
     fill: ${({ theme }) => theme.colors.primary};
@@ -24,10 +26,14 @@ const ExpandableSectionButton: React.FC<ExpandableSectionButtonProps> = ({ onCli
 
   return (
     <Wrapper aria-label={t('Hide or show expandable content')} role="button" onClick={() => onClick()}>
-      <Text color="primary" bold>
+      <Text fontSize="12px" textTransform="uppercase" color="text" bold>
         {expanded ? t('Hide') : t('Details')}
       </Text>
-      {expanded ? <ChevronUpIcon /> : <ChevronDownIcon />}
+      {expanded ? (
+        <CustomArrowDown width="9px" style={{ transform: 'rotateZ(180deg)' }} />
+      ) : (
+        <CustomArrowDown width="9px" />
+      )}
     </Wrapper>
   )
 }

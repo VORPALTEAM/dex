@@ -1,6 +1,7 @@
 import React from 'react'
-import { Flex } from '@pancakeswap/uikit'
+import { Flex } from 'vorpaltesttoolkit'
 import styled from 'styled-components'
+import BorderedHeading from 'components/HeadingBorder'
 import PageSection from 'components/PageSection'
 import { useWeb3React } from '@web3-react/core'
 import useTheme from 'hooks/useTheme'
@@ -11,14 +12,20 @@ import { swapSectionData, earnSectionData, cakeSectionData } from './components/
 import MetricsSection from './components/MetricsSection'
 import SalesSection from './components/SalesSection'
 import WinSection from './components/WinSection'
-import FarmsPoolsRow from './components/FarmsPoolsRow'
+import PartnerSection from './components/PartnerSection'
 import Footer from './components/Footer'
-import CakeDataRow from './components/CakeDataRow'
-import { WedgeTopLeft, InnerWedgeWrapper, OuterWedgeWrapper, WedgeTopRight } from './components/WedgeSvgs'
 import UserBanner from './components/UserBanner'
+import ModalContainer from './components/Modals'
 import FarmAuctionsBanner from './components/Banners/FarmAuctionsBanner'
 
 const showBanner = false
+
+
+const FooterSection = styled(PageSection)`
+   width: 100%;
+   padding: 0;
+   max-width: 9999px !important;
+`
 
 const HomeBanner = ({ account }: { account: string }) => {
   if (!showBanner) {
@@ -52,7 +59,7 @@ const UserBannerWrapper = styled(Container)`
   left: 50%;
   transform: translate(-50%, 0);
   padding-left: 0px;
-  padding-right: 0px;
+  padding-right: 0px; 
 
   ${({ theme }) => theme.mediaQueries.lg} {
     padding-left: 24px;
@@ -60,11 +67,17 @@ const UserBannerWrapper = styled(Container)`
   }
 `
 
+const FooterBorderedHeading = styled(BorderedHeading)`
+   padding: 0;
+   margin-left: 0%;
+   width: 100%;
+`
+
 const Home: React.FC = () => {
   const { theme } = useTheme()
   const { account } = useWeb3React()
 
-  const HomeSectionContainerStyles = { margin: '0', width: '100%', maxWidth: '968px' }
+  const HomeSectionContainerStyles = { margin: '0', width: '100%' }
 
   return (
     <>
@@ -73,65 +86,55 @@ const Home: React.FC = () => {
         innerProps={{ style: { margin: '0', width: '100%' } }}
         background={
           theme.isDark
-            ? 'radial-gradient(103.12% 50% at 50% 50%, #21193A 0%, #191326 100%)'
-            : 'linear-gradient(139.73deg, #E6FDFF 0%, #F3EFFF 100%)'
+            ? `transparent;`
+            : `transparent;`
         }
         index={2}
         hasCurvedDivider={false}
       >
-        {account && (
+        {/* account && (
           <UserBannerWrapper>
             <UserBanner />
           </UserBannerWrapper>
-        )}
+        ) */}
         <HomeBanner account={account} />
         <Hero />
       </StyledHeroSection>
       <PageSection
-        innerProps={{ style: { margin: '0', width: '100%' } }}
+        innerProps={{ style: { margin: '-80px 0 0 0', width: '100%' } }}
         background={
           theme.isDark
-            ? 'linear-gradient(180deg, #09070C 22%, #201335 100%)'
-            : 'linear-gradient(180deg, #FFFFFF 22%, #D7CAEC 100%)'
+            ? 'transparent'
+            : 'transparent'
         }
         index={2}
         hasCurvedDivider={false}
       >
         <MetricsSection />
-      </PageSection>
-      <PageSection
+      </PageSection> 
+       <PageSection
         innerProps={{ style: HomeSectionContainerStyles }}
-        background={theme.colors.background}
+        background='transparent'
         index={2}
         hasCurvedDivider={false}
       >
-        <OuterWedgeWrapper>
-          <InnerWedgeWrapper top fill={theme.isDark ? '#201335' : '#D8CBED'}>
-            <WedgeTopLeft />
-          </InnerWedgeWrapper>
-        </OuterWedgeWrapper>
         <SalesSection {...swapSectionData} />
       </PageSection>
       <PageSection
         innerProps={{ style: HomeSectionContainerStyles }}
-        background={theme.colors.gradients.cardHeader}
+        background='transparent'
         index={2}
         hasCurvedDivider={false}
       >
-        <OuterWedgeWrapper>
-          <InnerWedgeWrapper width="150%" top fill={theme.colors.background}>
-            <WedgeTopRight />
-          </InnerWedgeWrapper>
-        </OuterWedgeWrapper>
         <SalesSection {...earnSectionData} />
-        <FarmsPoolsRow />
+       {/* <FarmsPoolsRow /> */}
       </PageSection>
       <PageSection
         innerProps={{ style: HomeSectionContainerStyles }}
         background={
           theme.isDark
-            ? 'linear-gradient(180deg, #0B4576 0%, #091115 100%)'
-            : 'linear-gradient(180deg, #6FB6F1 0%, #EAF2F6 100%)'
+            ? 'transparent'
+            : 'transparent'
         }
         index={2}
         hasCurvedDivider={false}
@@ -140,22 +143,31 @@ const Home: React.FC = () => {
       </PageSection>
       <PageSection
         innerProps={{ style: HomeSectionContainerStyles }}
-        background={theme.colors.background}
+        background='transparent'
         index={2}
         hasCurvedDivider={false}
       >
         <SalesSection {...cakeSectionData} />
-        <CakeDataRow />
-      </PageSection>
+      {/*  <CakeDataRow /> */}
+      </PageSection> 
       <PageSection
         innerProps={{ style: HomeSectionContainerStyles }}
-        background="linear-gradient(180deg, #7645D9 0%, #5121B1 100%)"
+        background='transparent'
+        index={2}
+        hasCurvedDivider={false}>
+        <PartnerSection />
+      </PageSection> 
+     <FooterSection
+        innerProps={{ style: HomeSectionContainerStyles }}
+        background='#000117'
         index={2}
         hasCurvedDivider={false}
       >
-        <Footer />
-      </PageSection>
-    </>
+        <Footer />   
+    </FooterSection> 
+    <FooterBorderedHeading  />
+    <ModalContainer />
+   </>
   )
 }
 

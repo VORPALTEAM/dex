@@ -1,11 +1,12 @@
 import React, { KeyboardEvent, RefObject, useCallback, useMemo, useRef, useState, useEffect } from 'react'
-import { Currency, ETHER, Token } from '@pancakeswap/sdk'
-import { Text, Input, Box } from '@pancakeswap/uikit'
+import { Currency, ETHER, Token } from 'pickleswap-sdk'
+import { Text, Input, Box, SearchIcon, InputGroup } from 'vorpaltesttoolkit'
 import { useTranslation } from 'contexts/Localization'
 import { FixedSizeList } from 'react-window'
 import { useAudioModeManager } from 'state/user/hooks'
 import useDebounce from 'hooks/useDebounce'
 import useActiveWeb3React from 'hooks/useActiveWeb3React'
+import styled from 'styled-components'
 import { useAllTokens, useToken, useIsUserAddedToken, useFoundOnInactiveList } from '../../hooks/Tokens'
 import { isAddress } from '../../utils'
 import Column, { AutoColumn } from '../Layout/Column'
@@ -17,6 +18,28 @@ import useTokenComparator from './sorting'
 import { getSwapSound } from './swapSound'
 
 import ImportRow from './ImportRow'
+
+const StyledInput = styled(Input)`
+  display: flex;
+  width: 466px;
+  margin: auto;
+  color: #dbd8e3;
+  background-color: #fff;
+  border: 1px solid #fff;
+  box-shadow: 0px 0px 5px 1px #d3cee0, inset 0px 0px 5px 2px rgb(0 0 0 / 15%);
+  border-radius: 20px;
+  font-size: 12px;
+
+  &:focus:not(:disabled) {
+    border: none;
+  }
+`
+
+const StyledListContainer = styled.div`
+  border-top: 1px solid #2a2338;
+  border-bottom: 1px solid #2a2338;
+  padding: 22px 0px;
+`
 
 interface CurrencySearchProps {
   selectedCurrency?: Currency | null
@@ -75,7 +98,7 @@ function CurrencySearch({
     (currency: Currency) => {
       onCurrencySelect(currency)
       if (audioPlay) {
-        getSwapSound().play()
+        // getSwapSound().play()
       }
     },
     [audioPlay, onCurrencySelect],
@@ -123,16 +146,18 @@ function CurrencySearch({
       <div>
         <AutoColumn gap="16px">
           <Row>
-            <Input
-              id="token-search-input"
-              placeholder={t('Search name or paste address')}
-              scale="lg"
-              autoComplete="off"
-              value={searchQuery}
-              ref={inputRef as RefObject<HTMLInputElement>}
-              onChange={handleInput}
-              onKeyDown={handleEnter}
-            />
+            <InputGroup startIcon={<SearchIcon style={{ transform: 'rotate(90deg)' }} />}>
+              <StyledInput
+                id="token-search-input"
+                placeholder={t('Search name or paste address')}
+                scale="lg"
+                autoComplete="off"
+                value={searchQuery}
+                ref={inputRef as RefObject<HTMLInputElement>}
+                onChange={handleInput}
+                onKeyDown={handleEnter}
+              />
+            </InputGroup>
           </Row>
           {showCommonBases && (
             <CommonBases chainId={chainId} onSelect={handleCurrencySelect} selectedCurrency={selectedCurrency} />
@@ -144,20 +169,22 @@ function CurrencySearch({
           </Column>
         ) : filteredSortedTokens?.length > 0 || filteredInactiveTokens?.length > 0 ? (
           <Box margin="24px -24px">
-            <CurrencyList
-              height={390}
-              showETH={showETH}
-              currencies={
-                filteredInactiveTokens ? filteredSortedTokens.concat(filteredInactiveTokens) : filteredSortedTokens
-              }
-              breakIndex={inactiveTokens && filteredSortedTokens ? filteredSortedTokens.length : undefined}
-              onCurrencySelect={handleCurrencySelect}
-              otherCurrency={otherSelectedCurrency}
-              selectedCurrency={selectedCurrency}
-              fixedListRef={fixedList}
-              showImportView={showImportView}
-              setImportToken={setImportToken}
-            />
+            <StyledListContainer>
+              <CurrencyList
+                height={390}
+                showETH={showETH}
+                currencies={
+                  filteredInactiveTokens ? filteredSortedTokens.concat(filteredInactiveTokens) : filteredSortedTokens
+                }
+                breakIndex={inactiveTokens && filteredSortedTokens ? filteredSortedTokens.length : undefined}
+                onCurrencySelect={handleCurrencySelect}
+                otherCurrency={otherSelectedCurrency}
+                selectedCurrency={selectedCurrency}
+                fixedListRef={fixedList}
+                showImportView={showImportView}
+                setImportToken={setImportToken}
+              />
+            </StyledListContainer>
           </Box>
         ) : (
           <Column style={{ padding: '20px', height: '100%' }}>

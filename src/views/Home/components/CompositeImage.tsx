@@ -1,6 +1,6 @@
 import React from 'react'
 import styled, { keyframes } from 'styled-components'
-import { Box } from '@pancakeswap/uikit'
+import { Box } from 'vorpaltesttoolkit'
 
 const floatingAnim = (x: string, y: string) => keyframes`
   from {
@@ -53,6 +53,11 @@ const ImageWrapper = styled(Box)`
   img {
     max-height: 100%;
     width: auto;
+  }
+
+  @media screen and (max-width: 768px) {
+     width: 70%;
+     margin-left: 15%;
   }
 `
 

@@ -1,4 +1,4 @@
-import { ChainId, Token } from '@pancakeswap/sdk'
+import { ChainId, Token } from 'pickleswap-sdk'
 import { serializeToken } from 'state/user/hooks/helpers'
 import { SerializedToken } from './types'
 
@@ -13,14 +13,14 @@ const defineTokens = <T extends TokenList>(t: T) => t
 export const mainnetTokens = defineTokens({
   wbnb: new Token(
     MAINNET,
-    '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c',
+    '0x094616F0BdFB0b526bD735Bf66Eca0Ad254ca81F',
     18,
     'WBNB',
     'Wrapped BNB',
     'https://www.binance.com/',
   ),
   // bnb here points to the wbnb contract. Wherever the currency BNB is required, conditional checks for the symbol 'BNB' can be used
-  bnb: new Token(MAINNET, '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c', 18, 'BNB', 'BNB', 'https://www.binance.com/'),
+  bnb: new Token(MAINNET, '0x094616F0BdFB0b526bD735Bf66Eca0Ad254ca81F', 18, 'BNB', 'BNB', 'https://www.binance.com/'),
   cake: new Token(
     MAINNET,
     '0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82',
@@ -1931,15 +1931,21 @@ export const mainnetTokens = defineTokens({
 export const testnetTokens = defineTokens({
   wbnb: new Token(
     TESTNET,
-    '0x094616F0BdFB0b526bD735Bf66Eca0Ad254ca81F',
+    '0x8BC473Ce9f557fD47298f7Ce8b4459999E720a28',
     18,
     'WBNB',
     'Wrapped BNB',
     'https://www.binance.com/',
   ),
+  one: new Token(TESTNET, '0xAd962dA76091272dE4B89E2ebf28c7fF28f985AF', 18, '1', '1 Token', ''),
+  two: new Token(TESTNET, '0xea34969cd9C0D96d4a29B0FAfe17637a2823deaC', 18, '2', '2 Token', ''),
+  rtt: new Token(TESTNET, '0xa4cD3cBB12709115d400b11b29AbFd6072d465Be', 18, 'RTT', 'RTT Token', ''),
+  swt: new Token(TESTNET, '0x676F285194AbF08f12B00110dcD510E36DF1237b', 18, 'SWT', 'SWT Token', ''),
+  bsw: new Token(TESTNET, '0xb99D0130C9Bba7928f7F62600eBe0125A50106aF', 18, 'BSW', 'BSW Token', ''),
+  avk: new Token(TESTNET, '0x836634ce58c151d690dcd457fd38982bbc974548', 18, 'AVK', 'Avokado Token', ''),
   cake: new Token(
     TESTNET,
-    '0xa35062141Fa33BCA92Ce69FeD37D0E8908868AAe',
+    '0xDEBdFD14ED0BFDacB2EC7aEe3011a456878Da32C',
     18,
     'CAKE',
     'PancakeSwap Token',
@@ -1955,7 +1961,7 @@ export const testnetTokens = defineTokens({
   ),
   syrup: new Token(
     TESTNET,
-    '0xfE1e507CeB712BDe086f3579d2c03248b2dB77f9',
+    '0xcA8CB8f54360Fdd20a202009A84CC7A478744594',
     18,
     'SYRUP',
     'SyrupBar Token',
@@ -1971,20 +1977,20 @@ export const testnetTokens = defineTokens({
   ),
 } as const)
 
-const tokens = () => {
-  const chainId = process.env.REACT_APP_CHAIN_ID
+// const tokens = () => {
+//   const chainId = process.env.REACT_APP_CHAIN_ID
 
-  // If testnet - return list comprised of testnetTokens wherever they exist, and mainnetTokens where they don't
-  if (parseInt(chainId, 10) === ChainId.TESTNET) {
-    return Object.keys(mainnetTokens).reduce((accum, key) => {
-      return { ...accum, [key]: testnetTokens[key] || mainnetTokens[key] }
-    }, {} as typeof testnetTokens & typeof mainnetTokens)
-  }
+//   // If testnet - return list comprised of testnetTokens wherever they exist, and mainnetTokens where they don't
+//   if (parseInt(chainId, 10) === ChainId.TESTNET) {
+//     return Object.keys(mainnetTokens).reduce((accum, key) => {
+//       return { ...accum, [key]: testnetTokens[key] || mainnetTokens[key] }
+//     }, {} as typeof testnetTokens & typeof mainnetTokens)
+//   }
 
-  return mainnetTokens
-}
+//   return mainnetTokens
+// }
 
-const unserializedTokens = tokens()
+const unserializedTokens = testnetTokens
 
 type SerializedTokenList = Record<keyof typeof unserializedTokens, SerializedToken>
 

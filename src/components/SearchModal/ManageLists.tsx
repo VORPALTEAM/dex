@@ -1,5 +1,5 @@
 import React, { memo, useCallback, useMemo, useState, useEffect } from 'react'
-import { Button, Text, CheckmarkIcon, CogIcon, Input, Toggle, LinkExternal, useTooltip } from '@pancakeswap/uikit'
+import { Button, Text, CheckmarkIcon, CustomCogIcon, Input, Toggle, LinkExternal, useTooltip } from 'vorpaltesttoolkit'
 import { useDispatch, useSelector } from 'react-redux'
 import styled from 'styled-components'
 import { TokenList, Version } from '@uniswap/token-lists'
@@ -28,21 +28,43 @@ const Wrapper = styled(Column)`
   height: 100%;
 `
 
-const RowWrapper = styled(Row)<{ active: boolean }>`
-  background-color: ${({ active, theme }) => (active ? `${theme.colors.success}19` : 'transparent')};
-  border: solid 1px;
-  border-color: ${({ active, theme }) => (active ? theme.colors.success : theme.colors.tertiary)};
+const StyledLinkExternal = styled(LinkExternal)`
+  color: #4da1a3;
+  font-size: 14px;
+`
+
+const StyledButton = styled(Button)`
+  background: ${({ theme }) => theme.colors.backgroundAlt1};
+  border-radius: 6px;
+`
+
+const RowWrapper = styled(Row)<{ active: boolean; isLast: boolean }>`
+  // background-color: ${({ active, theme }) => (active ? `${theme.colors.success}19` : 'transparent')};
+  // border: solid 1px;
+  // border-color: ${({ active, theme }) => (active ? theme.colors.success : theme.colors.tertiary)};
+  border-bottom: ${({ isLast }) => (isLast ? 'none' : 'solid 1px rgba(42, 35, 56, 0.2)')};
+  padding-bottom: 14px;
   transition: 200ms;
   align-items: center;
-  padding: 1rem;
-  border-radius: 20px;
+  // border-radius: 20px;
+`
+
+const StyledInput = styled(Input)`
+  width: 325px;
+  height: 40px;
+  background: #ffffff;
+  border: 1px solid #ffffff;
+  box-sizing: border-box;
+  border-radius: 6px;
+  font-size: 12px;
+  box-shadow: 0px 0px 5px 1px #d3cee0, inset 0px 0px 5px 2px rgba(0, 0, 0, 0.15);
 `
 
 function listUrlRowHTMLId(listUrl: string) {
   return `list-row-${listUrl.replace(/\./g, '-')}`
 }
 
-const ListRow = memo(function ListRow({ listUrl }: { listUrl: string }) {
+const ListRow = memo(function ListRow({ listUrl, isLast }: { listUrl: string; isLast: boolean }) {
   const listsByUrl = useSelector<AppState, AppState['lists']['byUrl']>((state) => state.lists.byUrl)
   const dispatch = useDispatch<AppDispatch>()
   const { current: list, pendingUpdate: pending } = listsByUrl[listUrl]
@@ -73,17 +95,22 @@ const ListRow = memo(function ListRow({ listUrl }: { listUrl: string }) {
 
   const { targetRef, tooltip, tooltipVisible } = useTooltip(
     <div>
-      <Text>{list && listVersionLabel(list.version)}</Text>
-      <LinkExternal external href={`https://tokenlists.org/token-list?url=${listUrl}`}>
+      <Text fontSize="14px">{list && listVersionLabel(list.version)}</Text>
+      <StyledLinkExternal external href={`https://tokenlists.org/token-list?url=${listUrl}`}>
         {t('See')}
-      </LinkExternal>
-      <Button variant="danger" scale="xs" onClick={handleRemoveList} disabled={Object.keys(listsByUrl).length === 1}>
+      </StyledLinkExternal>
+      <StyledButton
+        variant="danger"
+        scale="xs"
+        onClick={handleRemoveList}
+        disabled={Object.keys(listsByUrl).length === 1}
+      >
         {t('Remove')}
-      </Button>
+      </StyledButton>
       {pending && (
-        <Button variant="text" onClick={handleAcceptListUpdate} style={{ fontSize: '12px' }}>
+        <StyledButton variant="text" onClick={handleAcceptListUpdate} style={{ fontSize: '12px' }}>
           {t('Update list')}
-        </Button>
+        </StyledButton>
       )}
     </div>,
     { placement: 'right-end', trigger: 'click' },
@@ -92,27 +119,32 @@ const ListRow = memo(function ListRow({ listUrl }: { listUrl: string }) {
   if (!list) return null
 
   return (
-    <RowWrapper active={isActive} key={listUrl} id={listUrlRowHTMLId(listUrl)}>
+    <RowWrapper active={isActive} key={listUrl} id={listUrlRowHTMLId(listUrl)} isLast={isLast}>
       {tooltipVisible && tooltip}
       {list.logoURI ? (
-        <ListLogo size="40px" style={{ marginRight: '1rem' }} logoURI={list.logoURI} alt={`${list.name} list logo`} />
+        <ListLogo size="36px" style={{ marginRight: '1rem' }} logoURI={list.logoURI} alt={`${list.name} list logo`} />
       ) : (
         <div style={{ width: '24px', height: '24px', marginRight: '1rem' }} />
       )}
       <Column style={{ flex: '1' }}>
         <Row>
-          <Text bold>{list.name}</Text>
+          <Text fontFamily="RobotoBold" bold>
+            {list.name}
+          </Text>
         </Row>
         <RowFixed mt="4px">
           <Text fontSize="12px" mr="6px" textTransform="lowercase">
             {list.tokens.length} {t('Tokens')}
           </Text>
           <span ref={targetRef}>
-            <CogIcon color="text" width="12px" />
+            <CustomCogIcon color="text" width="12px" />
           </span>
         </RowFixed>
       </Column>
       <Toggle
+        scale="md"
+        defaultColor="contrast"
+        checkedColor="backgroundAlt1"
         checked={isActive}
         onChange={() => {
           if (isActive) {
@@ -129,7 +161,6 @@ const ListRow = memo(function ListRow({ listUrl }: { listUrl: string }) {
 const ListContainer = styled.div`
   padding: 1rem 0;
   height: 100%;
-  overflow: auto;
 `
 
 function ManageLists({
@@ -236,10 +267,10 @@ function ManageLists({
   }, [listUrlInput, setImportList, setListUrl, setModalView, tempList])
 
   return (
-    <Wrapper>
-      <AutoColumn gap="14px">
+    <Wrapper style={{ display: 'flex', alignItems: 'center' }}>
+      <AutoColumn gap="10px">
         <Row>
-          <Input
+          <StyledInput
             id="list-add-input"
             scale="lg"
             placeholder={t('https:// or ipfs:// or ENS name')}
@@ -248,7 +279,7 @@ function ManageLists({
           />
         </Row>
         {addError ? (
-          <Text color="failure" style={{ textOverflow: 'ellipsis', overflow: 'hidden' }}>
+          <Text color="failure" fontSize="12px" style={{ textOverflow: 'ellipsis', overflow: 'hidden' }}>
             {addError}
           </Text>
         ) : null}
@@ -280,10 +311,10 @@ function ManageLists({
           </Card>
         </AutoColumn>
       )}
-      <ListContainer>
+      <ListContainer style={{ width: '325px', padding: '10px 0px' }}>
         <AutoColumn gap="md">
-          {sortedLists.map((listUrl) => (
-            <ListRow key={listUrl} listUrl={listUrl} />
+          {sortedLists.map((listUrl, index) => (
+            <ListRow isLast={sortedLists.length === index + 1} key={listUrl} listUrl={listUrl} />
           ))}
         </AutoColumn>
       </ListContainer>

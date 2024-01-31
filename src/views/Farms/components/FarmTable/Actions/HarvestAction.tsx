@@ -1,4 +1,4 @@
-import { Button, Heading, Skeleton, Text } from '@pancakeswap/uikit'
+import { Button, Heading, Skeleton, Text } from 'vorpaltesttoolkit'
 import { useWeb3React } from '@web3-react/core'
 import BigNumber from 'bignumber.js'
 import Balance from 'components/Balance'
@@ -8,6 +8,7 @@ import React, { useState } from 'react'
 import { useAppDispatch } from 'state'
 import { fetchFarmUserDataAsync } from 'state/farms'
 import { usePriceCakeBusd } from 'state/farms/hooks'
+import styled from 'styled-components'
 import { BIG_ZERO } from 'utils/bigNumber'
 import { getBalanceAmount } from 'utils/formatBalance'
 import { logError } from 'utils/sentry'
@@ -18,6 +19,11 @@ import { ActionContainer, ActionContent, ActionTitles } from './styles'
 interface HarvestActionProps extends FarmWithStakedValue {
   userDataReady: boolean
 }
+
+const StyledButton = styled(Button)`
+  width: 100px;
+  height: 40px;
+`
 
 const HarvestAction: React.FunctionComponent<HarvestActionProps> = ({ pid, userData, userDataReady }) => {
   const { toastSuccess, toastError } = useToast()
@@ -43,10 +49,10 @@ const HarvestAction: React.FunctionComponent<HarvestActionProps> = ({ pid, userD
   return (
     <ActionContainer>
       <ActionTitles>
-        <Text bold textTransform="uppercase" color="secondary" fontSize="12px" pr="4px">
-          CAKE
+        <Text bold textTransform="uppercase" color="text" fontFamily="RobotoBold" fontSize="12px" pr="4px">
+          pickle
         </Text>
-        <Text bold textTransform="uppercase" color="textSubtle" fontSize="12px">
+        <Text bold textTransform="uppercase" color="text" fontFamily="RobotoBold" fontSize="12px">
           {t('Earned')}
         </Text>
       </ActionTitles>
@@ -57,7 +63,8 @@ const HarvestAction: React.FunctionComponent<HarvestActionProps> = ({ pid, userD
             <Balance fontSize="12px" color="textSubtle" decimals={2} value={earningsBusd} unit=" USD" prefix="~" />
           )}
         </div>
-        <Button
+        <StyledButton
+          variant="farmsButton"
           disabled={earnings.eq(0) || pendingTx || !userDataReady}
           onClick={async () => {
             setPendingTx(true)
@@ -81,7 +88,7 @@ const HarvestAction: React.FunctionComponent<HarvestActionProps> = ({ pid, userD
           ml="4px"
         >
           {pendingTx ? t('Harvesting') : t('Harvest')}
-        </Button>
+        </StyledButton>
       </ActionContent>
     </ActionContainer>
   )
